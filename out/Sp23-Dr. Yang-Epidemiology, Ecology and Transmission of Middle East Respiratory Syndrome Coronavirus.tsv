@@ -1,0 +1,486 @@
+start	end	text
+0	29120	My pleasure to introduce Professor Yang, who joined UGA last semester and as a class chair
+29360	34960	of ecology, mathematics, and statistics, but he doesn't have any commitment to
+35920	45120	or ecology. So this seminar also serves for his application for the adjunct position with IOB.
+45120	53760	So if you're a student and looking for lab, you may want to talk to him. His major research area
+53760	60960	is infectious disease, and he is a statistician modeling for infectious disease. As you know,
+60960	68000	to understand infectious disease, we need the knowledge in ecology, population genetics,
+68000	75600	molecular genetics, to understand evolution of pathogens, and mathematics, you know,
+75600	81520	as well as statistics. So it's very hard to find an expert in all of those areas,
+81520	87840	and here we go. Professor Yang, so if you're interested in doing research in infectious
+87840	98160	disease, you probably want to talk to him. He has a lot of grants. He's already published over 100
+98160	106400	papers, and this is, believe me, this is just the first page of his CV. So I cannot read out
+106480	117200	all the CVs. It's 19 pages. So he, let's see. Sorry, I'm aging, so I cannot see that. So he
+117200	130240	got his PhD in 2004 from Emory, and he did his postdoc at Howard, right, so for the following
+130240	140560	year, and then he worked at Brad Hutchinson Cancer Center, and then he moved to University
+140560	147600	of Florida, and last semester, he joined again. So today, he's going to talk about epidemiology
+147680	155520	and ecology of Middle East Respiratory Syndrome coronavirus.
+162160	166480	Okay, good. Thank you, Liang, for this nice introduction and over compliment.
+167040	176160	I'm not expert in everything, and I mainly specialize in modeling of infectious disease
+176160	183280	transmission, and just started working with Dr. Liu on how to combine the epidemiological part
+183280	190000	and the physiological part into the same model so that we can better model the dynamics of
+190000	197200	transmission. Today, I'm going to talk about epidemiology and the ecology of MERS-CoV.
+199440	204560	If you read the flyer before, I changed my title a little bit. I used to have
+204560	211360	transmission as well, but I found myself too many. I had to cut some, so I moved that one out.
+212000	214960	So today, we'll only be talking about epidemiology and the ecology.
+216080	223280	Hopefully, you will be interested in these topics. So this is during the work with Dr.
+223280	230720	Yichun Fang and Wenqiang Shi at Beijing Institute of Microbiology and Epidemiology, as well as Dr.
+230800	236240	Anna Zhang at Shandong University. Anna was a business student in my lab at UF.
+237360	242400	That's when she was leading this project, part of this project.
+243920	246720	Please feel free to stop me anytime if you have any questions.
+247360	251360	So some background about the disease and the pathogen as well.
+253040	257120	You're probably quite familiar with this disease because of the pandemic of SARS-CoV-2.
+259120	266400	MERS is a respiratory infection disease first found in the kingdom of Saudi Arabia.
+267200	276640	As of January this year, there were a total of 27 countries that have reported about 2,600
+276640	284880	lab-confirmed cases, together with 935 deaths. So that's a pretty good number.
+285840	296240	That has reported about 2,600 lab-confirmed cases, together with 935 deaths. So that's a
+296240	300960	pretty high case fatality rate. We use the CMR of about 36%.
+303440	309440	Luckily, human-to-human transmission is pretty rare, and many occurred in healthcare settings
+309440	317360	and households. And in healthcare settings, it's pretty much patients who are immune-compromised.
+317360	320720	So that's why they are at high risk of transmission.
+322160	327280	And the zoonotic infection is mainly driven by exposure to the dummy debris,
+327920	335600	wire droplets, fomites, and consumption of some raw products of this animal, such as milk.
+336320	341280	And people also suspect the use of chemical urine as a traditional medicine is another
+341280	351280	transmission route. And given that there has been no effective treatment or vaccine yet,
+351280	356880	so people are very concerned about the potential of this virus causing another global pandemic
+356880	364720	if it's fully adapted itself to the human population. And in 2018, WHO incorporated MERS
+364720	372480	into its research and development blueprint, which lists a variety of disease pathogens
+372480	378080	that people will spend more time developing vaccines toward those pathogens.
+385280	393120	And about the virus itself, it's an RNA virus with a genome about 30 kb long.
+395520	406480	And MERS-CoV belongs to the lineage C of the genus beta coronavirus. The famous or infamous
+406480	413440	SARS-CoV and SARS-CoV-2, they belong to the lineage B. And the common code coronaviruses,
+413440	420800	OC43 and HKU1, they belong to the lineage K. So they're related, but a little bit distant
+420800	430400	from each other. MERS-CoV was phylogenetically classified into clade A and clade B. A includes
+430960	437920	the early detected human cases, viruses, and B includes the more contemporary viruses.
+437920	445440	But however, this classification was based on a pretty few number of sequences. So we've done
+445440	449280	a much more comprehensive work on this, and we'll show that later.
+452960	459600	Although the disease was quite new, but circulation of MERS-like coronaviruses
+463280	470080	in Africa and the Arabian Peninsula occurred well before 2012.
+471040	478640	And a little bit about the immunity background of this virus. The virus used the S1 protein
+478640	487360	to bind to two types of host cell surface molecules. One is called the DPP4, and the other
+487360	495280	is the well-known alpha-2 or alpha-3 astatic acids. And it replicates mainly in the nasal
+495840	505680	epithelium of dromedaries, but only in the lower respiratory tract of humans. So that's probably
+505680	513360	why it's so highly transmissible among the dromedaries, but not so much among human beings.
+516320	520480	All right, so that's enough for the background. Let me get into the needs.
+520800	528480	We'll try to identify determinants for case fatality rate and also characterize the spatial
+528480	534480	division pattern of the disease. And we want to also look at evolution and migration history
+534480	541840	of the virus. Finally, we'll provide some more comprehensive picture about the ecology of the
+541840	548000	virus. And we'll also look at the evolution and migration history of the virus, and we'll also
+548000	553920	picture about the ecology of the virus and associated socio-environmental drivers.
+554960	559440	But this talk has two parts. The first two are part one, and this is part two.
+570720	574160	So in this slide, I talk about the data sources.
+574960	581760	We first collected data on all confirmed human cases, and there are three major sources for that.
+583040	592080	We looked at the official reports of WHO. Now, WHO does not provide the line list it used to.
+592080	599120	So we were lucky. At that time, we got a line list. And the Food and Agriculture Organization
+599680	606000	of the United Nations, as well as the health departments of affected countries.
+607600	613680	So we collected demographic data whenever it's available, and the dates of
+615600	622000	critical events, like the onset, hospitalization, and the lab confirmation.
+623360	628160	The most important one is to explore your history, but it's very simple. It's just whether
+628160	638880	the case has had a history of exposure to animal production or other confirmed patient.
+639600	648960	And we validate this data via literature research. We also collected a bunch of socio-environmental
+648960	656480	variables, which are listed here, and we'll utilize them, especially using, for example,
+656480	664720	meteorological data and land cover data for ecology study. The gene sequence data were
+664720	672720	downloaded from our gene bank, and we used data up to the June of 2020, and that's also
+673280	678880	the time upper limit for the case data we downloaded.
+687360	693360	This is an epidemic curve actually provided in the WHO report, and it only listed cases
+694240	703200	in the eastern Mediterranean region. It's not for the whole world, but because we want to
+703200	711520	check the seasonality, so we decided to focus on the endemic in the zoonotic region instead of the
+711520	720640	local region. And it covers from June 2012 to January 2023. This is more comprehensive than
+720640	728000	the data that we used. We used up to June of 2020, but luckily there weren't many cases after that.
+729920	735040	I mentioned it was first discovered in September 2012, but you can see here,
+735040	738960	actually the earliest case shown here can be traced back to early
+738960	743440	2012, so there could be some cases retrospectively identified.
+745360	751360	All right. Majority of these cases from Saudi Arabia. That's understandable. Everyone knows that.
+752640	761520	And we see a huge peak in 2014 and some subsequent large outbreaks in 2015.
+761520	767680	And you can also see there were about two peaks per year and sometimes three peaks
+769440	778480	right. One in the early spring and the other one probably in the late summer or early fall.
+779600	788000	And the early ones in the spring, it's more like an animal exposure in a triggered spinoma.
+788000	802320	So here is a summary table of the kind of baseline characteristics of all the
+802960	807040	worst cases we included in our study covering this period.
+807760	814240	Right. And I colored some of these interesting results.
+817200	823120	In Saudi Arabia, it has far more number of cases as well as number of deaths
+823120	829920	compared to other countries. And if you look at the CFR, it's also much higher than other regions.
+830720	834240	In South Korea, I should say South Korea, sorry for that,
+835840	845280	the number of female patients were much higher than other countries.
+847040	851840	That's possibly due to, because in Korea, if you know the history of MERS,
+851840	857040	there was a big outbreak in, if I remember correctly, it was in 2015.
+858000	866400	It's kind of driven by one single imported case. And that patient kind of stimulated large outbreaks
+866400	872480	in several hospitals. So it's purely kind of a person-to-person transmission. And in that case,
+873040	878960	it doesn't really distinguish between different sexes, right? But for animal exposure, we'll see
+879440	887920	later, most of the patients with animal exposure are men. And so that will make some difference.
+888720	898720	And in these countries, KSA, UAE, and some other countries, the majority of patients are male.
+899600	905600	And South Korea also has a very large percent of hospital-related
+906720	912080	patients. And that's exactly because we only had hospital outbreaks in that country.
+914480	922320	And the time from disease onset to diagnosis was shortest in South Korea. And that's also
+922320	927280	understandable because those were hospital-triggered investigations. They are very efficient, right?
+928240	941600	In the United Arab Emirates, we noticed that the age was, the patients were much younger
+941600	947920	compared to other countries. And that is probably because of the high proportion of healthcare
+947920	955040	workers compared to other countries. And this country also has the highest proportion of
+955040	966320	asymptomatic infection. How you identify asymptomatic infection is a very tricky question.
+966960	976800	Usually, for syndrome-based surveillance, you only can find symptomatic cases. Because of
+976800	982640	this high proportion of healthcare workers, probably they did some regular monitoring
+982720	987280	for infection status. And that's how they identified asymptomatic infections.
+989840	996640	And this country also has a very long time from disease onset to death. The reason for that
+996640	1006080	is unknown, but probably related to the management of patient or facility in the hospitals.
+1008720	1011280	So that's for the summary table. Any questions?
+1013440	1021200	Okay. So that's the basic epidemiology. Let's go to more interesting materials.
+1022960	1031360	In this table, we compare the characteristics between cases with animal contact and those without.
+1032240	1038880	About one-fourth of patients were reported animal contact.
+1040800	1047200	So we can see patients with animal contact were much less likely to be female
+1048720	1059920	compared to this proportion. And they were older. And the case fatality rate was much higher.
+1061840	1068400	But we need to be very careful for interpreting this much higher case fatality rate. Because
+1068400	1073680	this animal contact, we'll see later, it's confounded with other factors like age,
+1073680	1080960	like baseline chronic conditions. If we really want to assess animal contact
+1081600	1085840	effect on case fatality rate, we need to adjust for those confounders.
+1086800	1095120	It's also less likely to be asymptomatic. But that, again, is a question mark. That probably
+1095120	1106400	does not give you any epidemiological... It doesn't describe epidemiology in that regard
+1106400	1112160	faithfully. Because for people with animal contact, many of them probably asymptomatic,
+1112480	1115520	asymptomatic, and they were not captured by this learning system.
+1118640	1123280	And they had much higher proportion of underlying conditions, as I mentioned before.
+1124480	1130240	So they're probably at higher risk to death. And they generally had a much longer time from
+1130240	1137120	the disease onset to diagnosis. So we'll find later. So that will also probably increase the
+1137120	1145280	fatality rate. But for some reason, a slightly longer time from disease onset to death,
+1145280	1152240	which we don't quite understand, probably related to some immunology issues.
+1153120	1158560	If we look at the proportion of animal contact, a patient with animal contact,
+1158560	1162160	across the years, now these proportions are the low proportions.
+1162720	1169360	Even though we had fewer and fewer cases over the years, we actually see a different story
+1169360	1175440	for this proportion of animal contact. It increases up to 2018, and then they kind of
+1175440	1180400	plateaued. And it's not decreasing yet. I'm not sure about the most recent years.
+1180400	1183760	The data is not available yet.
+1196240	1203680	So this figure shows the spatial distribution of human MERS cases in the whole globe.
+1204080	1212640	We categorize the countries into four categories. The first two categories
+1213760	1223520	corresponds to the colors of, I would say, maybe I can call that pink, and a little bit of purple.
+1224080	1232880	Those countries had zoonotic transmissions, basically animal exposure. The pink ones
+1233040	1239200	reported a human-to-human transmission, and the purple one did not report,
+1239200	1244240	or at least did not find concrete evidence for human-to-human transmission.
+1244880	1250080	And if you look at this map, only Kuwait is the country colored with purple.
+1251520	1256640	And it doesn't really mean it did not have human-to-human transmission. I'll explain why.
+1257600	1263120	The other two categories are the countries with many important infections,
+1263760	1271280	so they're colored with yellow or brown. The yellow indicates there was human-to-human
+1271280	1278640	transmission following the importation. And the brown ones, I believe,
+1280480	1286160	are the ones without subsequent human-to-human. Oh no, sorry, it's reversed. The yellow ones,
+1286480	1292240	did not have human-to-human transmission, but the brown ones had this type of incidence.
+1294720	1301680	All right, and for each country with reported cases, we impose a bar chart like this,
+1302320	1308160	and the size of the bar indicates number of cases, and then the colors indicate
+1309280	1315520	animal contact history. The red indicates the proportion of patients with animal contact.
+1316160	1324400	And if you look at Kuwait, it's basically red and green. Green simply means unknown,
+1325200	1330960	right? So whether there were human-to-human transmission, we don't know, just not confirmed.
+1333200	1339360	And interestingly, Qatar is the country with the highest proportion of animal contact,
+1340160	1350240	followed by ASA, UAE, and Oman. Some small countries like these,
+1351520	1358560	Bahrain has too few cases, so I wouldn't make any conclusion for that.
+1358560	1378000	Some European countries also reported patients with animal contact, as well as here in Southeast
+1378000	1388080	Asia. But these people most likely already had animal contact before they entered
+1388560	1400320	those countries. So to look at what factors contributed to the risk of death,
+1400320	1410480	so we performed a standard logistic regression. For all the variables that we have that we think
+1410480	1415200	are related, we throw them into the model, we perform the univariable analysis and the
+1415200	1421840	multivariable analysis, and all these factors we throw in are significant in both univariable and
+1421840	1431840	multivariable analysis. These are strong predictors for case fatality. Let's just go ahead with the
+1431840	1443280	multivariable analysis. Don't look at the age, sex, and animal contact yet, because we have
+1443280	1451120	interaction terms in the model. And these numbers, like this high number, 10.52, does not represent a
+1451120	1456560	marginal effect of age group. It does not. It's just specific to one particular subgroup, and I'll talk
+1456560	1465520	about that later. So let's just look at the effects of, say, a healthcare worker, as much lower risk
+1465520	1475680	of death. And underlying condition, well, that's a more than three-fold increase in the risk of death.
+1477520	1486160	OTC stands for the time from onset to confirmation, it's basically diagnosis, right? Then
+1486560	1495200	this has also a significant result. A longer time from onset to confirmation
+1495200	1502800	increases the risk of death. And if we compare the years, we divide the time into three segments,
+1502800	1508880	and this early phase, this middle phase with large outbreaks, and this later phase with very few cases.
+1509440	1516640	And all compared to the early years, we can see a jump in the risk of death. That's probably,
+1517360	1524160	at least partly due to the constrained, exhausted healthcare facilities, because the large number
+1524160	1530720	of patients. And in the later years, we see a slightly decrease in the risk of death,
+1531280	1539600	possibly related to improved patient management, and also the much fewer number of patients.
+1541440	1550080	So we left out the most three interesting factors, age, sex, and animal contact. So let's get into those.
+1550640	1559440	In this table, we look at age effect, conditioning on sex and animal contact.
+1562640	1571040	Let's focus on the adjusted odd ratio directly. These are all pretty big numbers,
+1571600	1579120	these are all pretty big numbers, all significant. But let's do some comparison.
+1579760	1589120	Let's first compare the results between female and male, right?
+1589120	1593760	But you have to condition on the same contact history, right? So with contact history, with
+1593760	1602640	animal contact history, if you compare female with male, and then without contact history, female with
+1609120	1613680	female with male, right? Without actually comparing this guy, this guy with that guy.
+1614560	1621440	So basically, this is bigger than that, and this is bigger than that. So within females,
+1622080	1627440	age effect is more prominent, regardless of animal contact history.
+1630880	1637200	Age effect is basically comparing the older age to the younger age.
+1638480	1644160	And this number shows in the previous table, it's just for this particular subset of population.
+1644880	1653600	So age is the most prominent driver for the risk of death. And that's not affected by
+1655440	1663120	by either sex or, no, it is affected by sex, right? In female, it's more prominent.
+1663680	1670080	And it's not that affected, it is also affected by animal contact. Let's compare the animal contact history.
+1670240	1682880	So if you look at, just compare with to without, with to without, and with to without,
+1684400	1692160	you can see without animal contact, age effect is more prominent, regardless of the underlying sex.
+1692160	1699760	So that's quite interesting. Why is that? Why is that?
+1703120	1711200	Remember, males, many of them were actually farm workers, they had animal exposure. So
+1713280	1720800	we can reasonably speculate that these patients were constantly challenged by the virus.
+1722960	1728800	Okay, probably that's a buildup of immunity towards this virus.
+1730080	1736640	So after adjusting for the underlying conditions, and adjusted for the
+1740560	1744000	yeah, adjusted for underlying conditions and some other risk factors,
+1744960	1754320	we can see the difference in the age group between people with, without animal contact.
+1754320	1760320	With animal contact, the age effect is not that prominent, but without, it is very prominent.
+1763040	1772400	And most of the animal workers, they were older than younger. So that's for age effect.
+1772480	1776480	Let's look at the effect of gender.
+1785440	1794160	We don't see many strong signals. The only statistically significant result is within
+1794160	1802240	the subgroup of male, the older patients without animal contact.
+1804000	1808000	And male has a much higher risk of death than female.
+1810560	1819600	However, we also noticed that this effect is, you know, has some kind of a marginal signal here.
+1819600	1823600	And it is in the opposite direction compared to what we see here.
+1823600	1830080	And this subgroup is for the younger, no, for the older patients with animal contact.
+1834320	1839360	So that's, that's also quite interesting. For younger patients without animal contact,
+1840000	1846160	male has much higher risk of death. But within older patients with animal contact,
+1846560	1852960	male has actually lower risk of death.
+1855520	1859680	And that again, give us a difficult question to answer, why is that?
+1860880	1868800	However, we should also notice that within the category of older patients with animal contact
+1868800	1875200	and female, we have small number. So that's why this is not statistically significant.
+1876160	1884480	So that could be just due to random noise. So maybe we should not over-interpret this 0.45.
+1887680	1894080	You actually use a mouse because I don't think, and this is my laser point, that means online.
+1895840	1898320	You cannot see that? You actually use mouse.
+1898320	1905760	Yeah, let me use mouse. I apologize to the online audience.
+1908240	1915680	All right, now finally, let's look at the effect of animal contact conditioning on sex and age group.
+1916640	1931120	Now, here, let's just focus on the significant results. The most significant result is this guy.
+1931120	1936640	That's ignored, unknown category, just to focus on what we've done.
+1936960	1943440	Right, so within the subgroup of female patients and younger female patients,
+1944080	1953520	we see a huge increased risk of death for patients with animal contact.
+1955200	1962240	Remember, these are female patients. Most animal workers were males.
+1962240	1972080	So females, if they had animal contact, it's probably more likely to be a vocational contact,
+1972080	1979680	not a professional contact. So that means you may not have to build up immunity against this virus.
+1980880	1987600	Right, so once you had contact with animal and got infected, then it's probably a high risk of
+1987600	1994960	death. And this virus just jumped from animal to human, has not been adapted much to the human
+1995520	2003200	immune system. But if you look at the subgroup of male patients, the older male patients,
+2004160	2009920	if you look at with, without animal contact, you see a huge reduction in the risk of death.
+2010160	2014720	And most of these male patients with animal contact, especially the older ones,
+2015440	2023280	they were actually animal workers. They had probably long exposure to the virus.
+2030080	2037280	Any questions? A lot of information here, difficult to digest in such a short time.
+2039920	2060000	Oh, I already see people have put in chat. Okay, let's move on. So those were for the
+2060560	2066560	risk factors for death. Now let's look at the spatial diffusion pattern.
+2070080	2082160	So what we did here is we look at the time from the first case overall to the first case
+2082160	2089920	in each local district. That's the first time the local district was invaded by this virus.
+2090560	2100320	With this time as my outcome, I did some, you know, spatial smoothing to construct this contour
+2100320	2113760	plot. And this contour plot can tell me the diffusion pattern. And the wider gap between the
+2114720	2130880	two contours indicates, let me put it this way, because the gap between each contour plot is
+2131680	2140320	kind of fixed for the time interval, 200 days. And a wider gap means a longer spatial distance.
+2141120	2154320	So that means a faster spread, right? The first case, first case was here in a city
+2154320	2164800	called Bisho, somewhere in south, in western KSA. And this star marks the first patient that
+2164800	2174480	sparked a outbreak, human patient cluster. So this Bisho is kind of in the central
+2176240	2186000	point of these contour plots. And in the more recent times, we can see actually faster spreading
+2186000	2193600	and the direction was towards Oman and somewhere of UAE.
+2196560	2204560	Right. But that's a characteristic of this plot. We did not show the uncertainty, right?
+2204560	2212160	So probably here you have fewer data, then uncertainty could be high. And whether the
+2212160	2219200	conclusion that they have fastest spreading, maybe just a noise. But however, if you look
+2219200	2227200	at this figure, this map here, let me use mouse again. If you look at the map in the right panel,
+2227920	2234880	you can see in this corner, we still have a bunch of cases. So those cases will inform
+2234880	2241120	the construction of this contour plot. So the signal here in this corner should be reliable.
+2243120	2250880	Right. And you can also notice that we overlay this map with the transportation network.
+2251440	2260320	The white, black lines indicate railway and these gray lines indicate the major roads.
+2262000	2268080	And you can see a pretty good overlap of the cases with this transportation network.
+2268080	2272400	And that's what we're going to show in another model fitting.
+2279520	2286560	So here we perform the survival analysis. Again, the outcome is a time from the first
+2286560	2296640	ever reported worst case to the first importation of case into each district.
+2297200	2305680	The so-called district here, it is a second level administrative unit in most countries,
+2305680	2313200	except for KSA. Because KSA is relatively big. So in case A, we use county, which is a third level
+2313200	2322240	administrative area. And we fit this survival model, trying to look at, this is not an
+2322240	2326560	ecological model. It's just to try to look at what might have contributed to
+2327360	2332400	the invasion of the virus into these different spatial units. Right. Again,
+2332400	2338160	that's just a look at the multivariable analysis. And here we are estimating hazard ratio.
+2343040	2349440	The most prominent hazard ratio is related to the intersection with the main road.
+2349760	2360320	So after that, it was elevation, the higher elevation, the higher hazard ratio.
+2361520	2368000	And also intersection with railway, it more than doubled the hazard of invasion.
+2370080	2377040	And interestingly, the coverage of cropland, it seems to deter the spread, which is also
+2377040	2393600	understandable. These bio variables, they are meteorological variables. And I listed the
+2393600	2401040	interpretations here. Bio one is simply the annual average temperature. And the bio two is the
+2401040	2405760	average diurnal range of temperature, which is simply is kind of the average.
+2408160	2413040	The difference between the maximum temperature and a minimum temperature within each month,
+2413040	2421440	then you take an average. It reflects the variation over time, but within each month.
+2422080	2429600	So these two had shown some significant results, increasing the higher temperature or the higher
+2430400	2434480	mortality, increase the hazard of invasion.
+2445280	2449360	Finally, comes down to the something that may be interesting.
+2449840	2459120	So we collected the whole genome sequence from GenBank. And we analyzed these sequences using
+2459120	2468960	the toolkits provided by Nextstrain. The sequences were aligned using MAFFT, what do you call it?
+2469760	2484080	MAFFT? MAFFT. And the alignment was trained to a reference genome in GenBank. And we constructed
+2484080	2492400	the phylogenetic tree using the maximum likelihood approach implemented in the IQ tree software.
+2493200	2502320	And for the final geographic analysis, we use the tree time to estimate, you know,
+2502320	2510240	the location and host time of those internal nerves. And initial analysis shown on the left
+2510880	2514240	panel suggested that
+2516480	2525120	the sequences from bats, I think by these pink leaf nodes, and hedgehog,
+2525680	2534640	not by the yellow leaf nodes, they separated kind of distant from the main clades of sequences
+2534640	2544080	formed by humans and camels, as well as a single strain from a llama, I think, the animal.
+2545200	2547440	It is hiding here.
+2552880	2563200	And we, so then we just exclude all the sequences of bats and hedgehogs and only focus on the
+2564960	2567840	human and the camel genes.
+2574160	2581760	So on the right hand panel, you can see we had several clusters for human and camel genes.
+2581760	2590400	We have five clusters. The largest cluster is called C5, which contains majority of the sequences.
+2591280	2600480	And you can see the mixture of human and camel sequences throughout the tree, except for the
+2600480	2606880	most recent ones, where I think this was more like a sampling using, rather than a
+2609920	2617840	systematic pattern. So this mixture of human-camel sequences
+2618320	2625920	suggests that there were probably constant importation of sphere number from camel to human.
+2634000	2640000	Now, this figure shows the phylogeny in a much better way because we can we can
+2640400	2649040	time here, right? So although the human and camel sequences are mixed together,
+2649040	2653680	but if you look at the samples collected after 2016,
+2655520	2661520	the human genes are quite distant from the camel genes, right?
+2662080	2671520	And the common ancestor was dated around 2007, and the posterior probability for the host being
+2671520	2677520	camel, human, kind of 50-50. We later did a sensitivity analysis. We downsampled the human
+2678320	2685040	sequences because there's just too many of them. And then the camel will have a 99%
+2685040	2693120	for the posterior probability being the common ancestor.
+2695920	2700240	We also tried to associate case fatality rate with sequences.
+2700240	2705520	So what we did is we look at, we kind of divide the spatial temporal
+2707760	2713760	range into several chunks and calculate the case fatality rate within each chunk.
+2713760	2720720	And then we look at the individual sequences and associate them with the case fatality rate
+2721680	2731600	in that chunk, the location and the time. And then we, for each sequence, we have a bar
+2731600	2737440	with a color indicating the underlying case fatality rate in that space time chunk.
+2738160	2745120	And then we average for each cluster to compare the potential difference in case fatality rate
+2746240	2757040	between clusters. If you compare C5 to other clusters, C1 to C4, you cannot really see much
+2757040	2763280	difference between the two. Actually, there's only 1% difference in case fatality rate there,
+2763280	2769920	only 1%. But it is significant, probably because of the sample size, but we cannot
+2769920	2780960	fully interpret that. If you compare only the sub-clade C5.1 with C1 to C4, we actually see
+2780960	2790640	a 4% difference, which is not true. So that means the more recent clade is probably more lethal.
+2794240	2802560	We also associated the incidence rate with sequences, but we cannot see much signal there,
+2802560	2816560	so I'm going to ignore that. Oh, there's another thing I want to share. Okay, so we,
+2817280	2822560	remember, we performed some phylogeographic analysis. So let's take a look at a movie.
+2823360	2826160	Hopefully, this movie will show. Let's see.
+2832800	2834160	Just a copy-paste.
+2834160	2857520	Oh, we're not. We should go back to the window mode, and just copy-paste this one.
+2864160	2871520	Let's see if we can do it.
+2871520	2896880	Let's see if it works or not.
+2897840	2912240	Oh, I have to move it to...
+2919440	2922240	Oh, I have to stop sharing.
+2922320	2925600	Oh, I see, I see. Yeah, okay.
+2933600	2939600	Let me click on it here.
+2939600	2954400	I want to see that geographic location.
+2958240	2959920	I'm scrolling down, maybe.
+2960320	2961040	Scrolling down.
+2965920	2969280	All right, yes, and then replay.
+2971280	2976320	I'm sorry for this problem, but it's kind of out of my control.
+2979040	2980000	Where is play?
+2980000	2981040	Just click play.
+2981440	2986400	Okay, yeah, now let's take a look.
+2986400	3011360	Yeah, it's almost finished. All right, good.
+3011360	3012960	Good, okay.
+3016080	3020160	Now, let me... Oh, still, that's correct to share a screen, right?
+3026720	3029840	Right, okay.
+3029840	3033280	Now, some highlights for that movie, right?
+3033600	3054640	The top three most likely locations for the common access route were three cities, Riyadh of KSA and now Delta region, which is in Egypt and Jordan.
+3055360	3062480	The possibilities are 31%, 17% and 12% respectively.
+3063040	3071760	And Riyadh appears to be the major source of exporting infections, both locally and internationally.
+3072960	3082720	And it is the common ancestor node of subclades C3, C4 and C5 for 99% of time.
+3085600	3095120	Okay, and the early exportation to Egypt and Jordan occurred well before 2010.
+3095680	3104080	And the circulation of the MERS-CoV among camels in East Africa possibly started also before 2010.
+3105040	3116960	The virus migrated from Egypt to Ethiopia during 2011-2013, and subsequently to Kenya during 2014-2017.
+3117840	3128560	And that's partially supported by a zoological study conducted in Egypt in 2013, where they also sampled animals from Kenya and found nothing.
+3129520	3146800	The intense migration from Riyadh towards local cities in KSA, as well as Abu Dhabi in UAE, started around the 1970s, which matches our knowledge.
+3146800	3156080	And Abu Dhabi joined Riyadh as the second home for exporting the virus, both locally and internationally. So that's quite early.
+3156160	3165120	And the model also captures the opportunistic exportation to the US as well as to the US.
+3170960	3177280	So we also did some kind of detection of
+3177840	3190640	positive selection across proteins and the sites. Remember in the previous slide, see here.
+3191280	3199600	Now I'm notating here branch A and branch B. Branch A is kind of separating
+3199840	3207040	the hedgehog sequences from the rest, and branch B is separating hedgehog and
+3208240	3213840	bat sequences from human and camel sequences. So we performed the
+3215760	3219200	positive selection analysis along these two branches.
+3219760	3238480	Okay, the first three rows of branch A, we identified three proteins, the non-structural three, nucleoprotein, and this 1AB polyprotein is, I believe, it's from the open reading form 1.
+3238480	3243920	I may be wrong, but that's my impression. And we identified the signs
+3244080	3254320	with positive selection. Only in this 1AB polyprotein, not in the other two. Along the branch B, we identified these two proteins, including the spike protein.
+3255120	3261840	For the branch A, we did not detect the spike protein for any positive selection.
+3262560	3268800	And also for the spike protein, we identified these sides to be under high
+3269280	3280480	pressure for positive selection. And the three ones marked by red, those are newly found. They did not appear in the literature.
+3284480	3293120	And we all know spike protein is the one that most interacts with animal cells.
+3294080	3295280	How much time do I have?
+3297680	3298240	It's already...
+3298240	3299680	Yeah, already 10 seconds.
+3299680	3308880	Okay, okay. Then I'll probably ignore the ecology part. For the ecology part, I can just mention some main findings.
+3309440	3317520	What we did here is we used several machine learning approaches like post-signal regression tree,
+3318240	3326720	supported by commission, and random forest to learn the ecology of the spike protein.
+3327280	3342880	And then we build a meta-learner on top of this. It will give us another round of prediction, and it turns out that the ensemble machine, which is a meta-learner,
+3342880	3359440	outperforms the three base models. Not by much, but a little bit. If you look at the AUC, if you look at the accuracy, as well as F1 score and compound,
+3359920	3383600	not really a good performance in terms of sensitivity, but sensitivity here is a little bit deceptive because we have very few positive cases.
+3384160	3394160	This model is based on about 100 positive districts with confirmed cases, and about 400
+3397360	3399200	districts without any detection.
+3399280	3412560	And we did identify... Let me see. We did identify the most prominent risk driver for ecology of MERS-CoV. It's actually something called the coverage of bare land.
+3412560	3421520	Bare land, that's very, very difficult to define. Basically, a land without many, you know, vegetation, trees, like that, right?
+3423280	3427760	But we also adjusted for camel density here. Camel density is picked up by the model,
+3429120	3435600	but not as a very prominent driver. So we want to control the camel density. Then it's bare land,
+3436160	3442160	in addition to camel, it may also contain other animal hosts that we have not discovered yet.
+3450160	3457360	Okay, so let me just draw some conclusions on the epithelium model.
+3458080	3461120	So we observed that the cases with animal contact
+3462320	3470560	tend to be older, more likely to be male, symptomatic, and also having underlying conditions. Even though by our
+3471440	3477040	logistic model with interactions, we kind of see that once you adjust your model,
+3477520	3487280	underlying conditions, adjusting for age and gender, animal contact actually does not always increase the risk of death.
+3488160	3495440	Remember, in the older population, and male, it actually decreases the risk of death.
+3496240	3499600	But overall, for those older males who are farm workers, animal workers, because they had underlying conditions, and they were old,
+3500800	3508880	overall, they do have a higher risk of death.
+3509520	3512720	So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+3514320	3522160	But overall, for those older males who are farm workers, animal workers, because they had underlying conditions, and they were old,
+3522160	3527840	overall, they do have a higher risk of death. And we need to pay attention to that.
+3529360	3536320	So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+3537280	3545760	And animal-to-human transmission events mainly occurred between January and March,
+3546800	3551680	and human-to-human transmission occurred later in summer.
+3551680	3558240	So that suggests the importance of blocking the spillover from animal to human in the early spring.
+3558880	3569920	And also mentioning, we found sample sequences after 2014, many human sequences, and then camel becomes the host for the root ancestor with a very high possibility.
+3569920	3577920	And we also found Abu Dhabi of UAE is a hub for international exportation of this virus.
+3578000	3584000	So this virus, probably, we should recommend some kind of screening procedure for infected travelers.
+3584000	3590480	And the novel amino acids positions that we found on spike protein associated with public selection,
+3590480	3596640	those can be potential pockets for the spread of this virus.
+3596640	3602640	So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+3602800	3604800	And the novel amino acids positions that we found on spike protein associated with public selection,
+3604800	3611520	those can be potential pockets for development of future antiviral vaccines against this virus.
+3612560	3617600	So that's all for that material.
+3619760	3626240	And the NP paper is published in this journal, and the ecology paper is published in this journal.
+3626240	3628800	Thank you very much. Any questions, you're welcome.
+3632640	3649120	Yes, please. I'm really interested about the phylogeny. Can you go back to the figure four or five?
+3649520	3667680	Yeah, that's the one. So, since after 2016, it's really interesting, like, human birds and
+3667680	3673760	camels are pretty much distinct. Do you think it's because the sampling bios of the camel,
+3673760	3681280	or do you believe there's somehow a low level circulation of human population?
+3681280	3689120	That's a good question. I don't have the answer. My intuition is sampling virus is at least a contributing factor.
+3690480	3696800	It's hard to imagine, because this virus is endemic in camels. It's hard to imagine it's gone. I don't think it's gone.
+3696800	3705920	So, Ryan in the chat would like to know what type of models make up your own sample.
+3705920	3712960	Oh, so the base models are a random forest, boosted regression tree, and
+3713760	3720160	support vector machine. And then on top of that, the meta-learner is actually XGBoost.
+3720160	3728160	Does that answer your question?
+3728160	3729200	Yes, thank you.
+3734880	3740400	Yes, so it seems like this is a fairly small tree. Why did you end up choosing
+3741440	3747760	using the Nextstrain pipeline as opposed to a different tree building pipeline?
+3748640	3756880	It was not my decision. My intuition would always try maybe like a beast first.
+3758880	3765360	However, I wouldn't say it's a small data set either, because we have, I think, about 500 sequences together.
+3766320	3772640	A beast may need some time to run. And another nice thing about the Nextstrain is that it provides
+3773040	3780320	all sorts of tools together for you to use, and with this nice movie. So I think that's
+3780320	3786080	probably the only reason why we chose Nextstrain. But I think definitely you can try a beast as well,
+3786880	3791280	especially for the geographic analysis.
+3792960	3800240	Could you tell us more about surveillance or genome sequencing of camel or
+3800240	3805520	reservoir species? I think that's really important because it can give us a
+3806080	3812640	good background about circulation in these reservoirs and spillover between them.
+3814080	3819600	I'm not quite sure whether there is a systematic surveillance system for animals.
+3821200	3829520	Actually, in terms of animal hosts, although at least the bats and hedgehogs here
+3831200	3837840	if you look into the literature, it's still kind of debatable, right? We all have common sense.
+3837840	3843760	Bats is the natural reservoir for all types of coronaviruses, including MERS,
+3844400	3850320	MERS-CoV. But as a matter of fact, so far people have only found, to my knowledge,
+3851280	3856080	kind of similar gene segments in the virus as in the form of bats.
+3856720	3862320	That's not considered some very solid evidence by many of our biologists and immunologists.
+3864560	3870320	Yeah, I know less about the hedgehogs, so I cannot say much about that.
+3871200	3877760	So the primary animal host that's solidly convincing people is camels,
+3878240	3882960	scum, gondolins. And we should do surveillance.
+3885840	3890160	I have a question about student training because you're applying for adjunct
+3891760	3897680	faculty position here. So what kind, what type of students would you expect working in your lab,
+3897680	3904480	or how would you train bioinformatics students? In terms of bioinformatics itself,
+3905440	3914480	I need a partner like Dr. Liu. Myself, no, I cannot train you. I'm very interested in this
+3915040	3922400	field, but myself, I need to be trained as well. But my vision is that, you know,
+3922400	3929600	we don't have this vision. We want to combine biological data, gene sequence data. So far,
+3929600	3933440	we're only talking about the pathogen sequence, right? It could be human sequence as well,
+3933440	3939760	but that's a long shot. And also like human movement data, all together to inform us about
+3939760	3945680	the transmission dynamics. And that's also very important to understand how the virus is going to
+3946720	3951440	evolve in terms of its transmissibility, pathogenicity, and so on.
+3954000	3961920	So far, there have been some efforts in this kind of joint modeling in the past 10 years, but
+3963440	3971440	it's still under investigated. It's still a very promising direction. So anybody with interest in
+3971440	3980160	both bioinformatics and statistics and computational methods are welcome to join this effort.
+3984480	3990400	Yeah, sure. It says elevation was insignificant in the univariable analysis. Why was it included
+3990400	3994800	in the multivariable and into that mix? Good question. Let me check.
+3996640	4005920	Elevation. That's for the survival analysis, is that? Yes.
+4005920	4011040	Yeah.
+4019600	4026560	Oh, this is kind of more like a statistical philosophy question,
+4027520	4034640	right? Because here, we did not explore the potential interactions explicitly.
+4035440	4042160	So there could be interactions among these factors. And in the univariable analysis,
+4042160	4047440	it's not significant. Actually, the p-value is very close to one, but that does not mean
+4048480	4054480	it's not having an interaction. Or it could be a confounder. Because if you look at the
+4054480	4061760	coverage of a bare land with elevation, there is some correlation there.
+4062720	4066880	Right? Not very high, not super high, but there is some substantial correlation there.
+4066880	4072240	So we cannot just rule it out. In the multivariable model, we did not just leave
+4072240	4080320	out those non-significant in the multivariate model. We actually add them back one by one
+4080320	4084960	to check whether they're going to become significant after adjusting for other factors.
+4085600	4086480	So that's the reason.
+4091120	4096240	Thank you. All right. If there's no questions, let's send Professor Gao.
+4109200	4112800	Yeah, I think I set it up. I know I have to clean up, so I won't be there.
+4115600	4118080	All right. I think that's something else.
+4118960	4121680	Yeah. Should I go?
+4121680	4127200	You can just show up. I'll show up at the booth, I guess.

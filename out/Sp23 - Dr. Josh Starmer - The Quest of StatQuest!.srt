@@ -1,0 +1,2236 @@
+1
+00:00:00,000 --> 00:00:13,080
+Yeah, okay.
+
+2
+00:00:13,080 --> 00:00:17,080
+Yeah, yeah.
+
+3
+00:00:17,080 --> 00:00:20,080
+Yeah.
+
+4
+00:00:20,080 --> 00:00:22,080
+Yeah.
+
+5
+00:00:22,080 --> 00:00:24,080
+Yeah.
+
+6
+00:00:24,080 --> 00:00:29,080
+Yeah.
+
+7
+00:00:29,080 --> 00:00:33,080
+That's really interesting. Yeah.
+
+8
+00:00:33,080 --> 00:00:39,080
+Welcome to our seminar.
+
+9
+00:00:39,080 --> 00:00:59,080
+Just summary is a data scientist, educator and musician is the founder and CEO of stat quest online educational platform that teaches data science machine learning and statistics is also the AI educator at lightning AI, and the member of the
+
+10
+00:00:59,080 --> 00:01:04,080
+Board of Directors for the Society for Scientific Advancement.
+
+11
+00:01:04,080 --> 00:01:06,080
+Prior to this.
+
+12
+00:01:06,080 --> 00:01:18,080
+He was an assistant professor at the University of North Carolina at Chapel Hill, where he developed statistics and visualization methods for high throughput sequencing technologies.
+
+13
+00:01:18,080 --> 00:01:26,080
+Please give him a round of applause.
+
+14
+00:01:26,080 --> 00:01:34,080
+This is my quest to stack list, and it's gonna be clearly explained.
+
+15
+00:01:34,080 --> 00:01:39,080
+Right.
+
+16
+00:01:39,080 --> 00:01:45,080
+Hey, can the people online can they hear how do we can we, we know that they're hearing things.
+
+17
+00:01:45,080 --> 00:01:50,080
+Yes, affirmative. Hooray. Okay.
+
+18
+00:01:50,080 --> 00:01:57,080
+So, um, note this seminar will probably be a little different from what you're used to.
+
+19
+00:01:57,080 --> 00:02:05,080
+The big difference is that I'm going to read everything right off the slide, like I'm doing right now.
+
+20
+00:02:05,080 --> 00:02:07,080
+I do this for two reasons.
+
+21
+00:02:07,080 --> 00:02:15,080
+One, often for people that speak English as a second language, reading can be easier than listening.
+
+22
+00:02:15,080 --> 00:02:19,080
+So if you're familiar with a sing along. Think of this as a readable.
+
+23
+00:02:19,080 --> 00:02:26,080
+And also generally speaking, when I script every single word, the stuff that comes out of my mouth makes more sense.
+
+24
+00:02:26,080 --> 00:02:30,080
+In other words, I'm just not good at telling a story without writing it down.
+
+25
+00:02:31,080 --> 00:02:51,080
+Also, and I don't actually know if this is true, it may be purely anecdotal, but I've read a few places online which is very reputable, because it's just online, that if you read, and you hear the exact same things at the same time, it helps with retention.
+
+26
+00:02:51,080 --> 00:02:59,080
+I don't know that actually true it's just something I saw on the internet, and I believe it.
+
+27
+00:02:59,080 --> 00:03:02,080
+I want to see some data.
+
+28
+00:03:02,080 --> 00:03:15,080
+I'd like to believe it. Okay, so with that said, let's get started. All right. If you don't already know, my name is Josh Starmer and I run a YouTube channel called StatQuest.
+
+29
+00:03:15,080 --> 00:03:17,080
+I'll tell you more about this picture later.
+
+30
+00:03:17,080 --> 00:03:32,080
+Every day, people around the world watch StatQuest to learn statistics, machine learning, and other data science subjects.
+
+31
+00:03:32,080 --> 00:03:49,080
+Okay, more importantly, people say StatQuest helped them win data science competitions, pass exams, graduate, and get jobs and promotions. Hooray!
+
+32
+00:03:49,080 --> 00:03:56,080
+So far, no one has told me that StatQuest helped them get married, but maybe one day it'll happen.
+
+33
+00:03:56,080 --> 00:03:59,080
+That'd be cool, right? Who knows?
+
+34
+00:03:59,080 --> 00:04:05,080
+People watch StatQuest because it makes complicated sounding things easy to understand.
+
+35
+00:04:05,080 --> 00:04:10,080
+And here's some nice comments that people said about me and my channel.
+
+36
+00:04:10,080 --> 00:04:13,080
+They said, awesome!
+
+37
+00:04:13,080 --> 00:04:19,080
+Anyway, believe it or not, creating a YouTube channel was never the plan.
+
+38
+00:04:19,080 --> 00:04:24,080
+Instead, when I was in high school, I wanted to become a classical cello player.
+
+39
+00:04:24,080 --> 00:04:27,080
+And that's a picture of me in high school with my string quartet.
+
+40
+00:04:27,080 --> 00:04:33,080
+I got the cello, obviously. That's me again, back in the day.
+
+41
+00:04:33,080 --> 00:04:38,080
+I used to dream about playing the Elgar cello concerto like Jacqueline Dupre.
+
+42
+00:04:38,080 --> 00:04:45,080
+If you're not familiar with the Elgar cello concerto, I'd highly recommend checking it out. It's awesome.
+
+43
+00:04:45,080 --> 00:04:46,080
+And she played it great.
+
+44
+00:04:46,080 --> 00:04:52,080
+Anyways, I ended up going to Oberlin, which is a school up in Ohio. It's a tiny school.
+
+45
+00:04:52,080 --> 00:04:58,080
+But they have a music conservatory, so I got a degree in music from them.
+
+46
+00:04:58,080 --> 00:05:01,080
+So I got a Bachelor in Music Composition.
+
+47
+00:05:01,080 --> 00:05:09,080
+And just to be safe, my parents made me.
+
+48
+00:05:09,080 --> 00:05:13,080
+I got a Bachelor of Arts in Computer Science.
+
+49
+00:05:14,080 --> 00:05:18,080
+So I ended up with two possible career paths.
+
+50
+00:05:18,080 --> 00:05:22,080
+And this is one of those things where I hate to say that my parents were right, but they were.
+
+51
+00:05:22,080 --> 00:05:24,080
+It's embarrassing.
+
+52
+00:05:24,080 --> 00:05:28,080
+When I was 19 years old, I was so certain. I had it all figured out.
+
+53
+00:05:28,080 --> 00:05:36,080
+Okay, anyways, on the one hand, I could potentially become a professional orchestral musician.
+
+54
+00:05:36,080 --> 00:05:40,080
+Or I could become a professional coder.
+
+55
+00:05:40,080 --> 00:05:45,080
+On the surface, being a musician seemed glamorous.
+
+56
+00:05:45,080 --> 00:05:49,080
+You get to wear fancy clothes. Look at me now.
+
+57
+00:05:49,080 --> 00:05:53,080
+You spend time with fancy people.
+
+58
+00:05:53,080 --> 00:05:58,080
+But it's fundamentally boring.
+
+59
+00:05:58,080 --> 00:06:01,080
+At least to me. And here's why.
+
+60
+00:06:01,080 --> 00:06:10,080
+Beethoven wrote his Fifth Symphony in 1808, over 200 years ago, and it has not changed much since.
+
+61
+00:06:10,080 --> 00:06:14,080
+Don't get me wrong, Beethoven's Fifth Symphony is awesome.
+
+62
+00:06:14,080 --> 00:06:20,080
+But playing it every year for the rest of my life might get tedious.
+
+63
+00:06:20,080 --> 00:06:27,080
+In contrast, being a coder seemed like the exact opposite of glamorous.
+
+64
+00:06:27,080 --> 00:06:32,080
+You get to wear, these aren't jeans, but you get the idea, and t-shirts.
+
+65
+00:06:32,080 --> 00:06:38,080
+Fancy people tended to avoid coders. We were nerds.
+
+66
+00:06:38,080 --> 00:06:43,080
+Fundamentally exciting, though. What? Coding? What? What are you talking about?
+
+67
+00:06:43,080 --> 00:06:47,080
+At least to me. I thought coding was fundamentally exciting.
+
+68
+00:06:47,080 --> 00:06:51,080
+Why? Because languages, frameworks, problems, everything's always changing.
+
+69
+00:06:51,080 --> 00:06:56,080
+There's always something new to learn. And I love learning.
+
+70
+00:06:56,080 --> 00:07:03,080
+I love learning new things.
+
+71
+00:07:03,080 --> 00:07:10,080
+Okay, now, despite the fact that I actually like to dress up from time to time,
+
+72
+00:07:10,080 --> 00:07:17,080
+and I think it's really cool that I once talked to Yo-Yo Ma, who's a super famous cello player, and I talked to him in person,
+
+73
+00:07:17,080 --> 00:07:23,080
+and thus the superficial things about being an orchestral musician had some appeal.
+
+74
+00:07:23,080 --> 00:07:27,080
+I've never played orchestral with rock and roll. I was in a touring rock band.
+
+75
+00:07:27,080 --> 00:07:32,080
+I used to play the 40-watt back in the day. I've done the whole rock thing as well, okay?
+
+76
+00:07:32,080 --> 00:07:39,080
+And this applies. Beethoven's Fifth, obviously great, but if you're in a rock band and you have a hit song,
+
+77
+00:07:39,080 --> 00:07:42,080
+you have to play that hit song for the rest of your life until you die.
+
+78
+00:07:42,080 --> 00:07:47,080
+It gets boring. I mean, I know it's not supposed to because it looks romantic and awesome,
+
+79
+00:07:47,080 --> 00:07:52,080
+but after like 500 nights every night for the rest of your life, you're like, ah.
+
+80
+00:07:52,080 --> 00:08:01,080
+Anyways, it applies. Okay, so I focused on the fundamental difference between being an orchestral slash rock and roll musician and a coder.
+
+81
+00:08:01,080 --> 00:08:08,080
+Now, I had a few opportunities to talk with professional orchestral musicians, and they were a pretty sad group,
+
+82
+00:08:08,080 --> 00:08:15,080
+and this is the same with the rock people. They were all burned out, and they'd lost their passion for music.
+
+83
+00:08:15,080 --> 00:08:23,080
+Just as I expected, playing Beethoven's Fifth Symphony every year for your whole life gets boring.
+
+84
+00:08:23,080 --> 00:08:31,080
+So this thing about music being fundamentally boring was something I'd seen and experienced firsthand in real life.
+
+85
+00:08:31,080 --> 00:08:41,080
+So I ultimately picked coding over being a musician because I wanted a job that would always be exciting, at least to me.
+
+86
+00:08:41,080 --> 00:08:46,080
+Bam? Not yet.
+
+87
+00:08:46,080 --> 00:08:59,080
+Although I came to the conclusion that being a coder was fundamentally exciting, it was also fundamentally scary.
+
+88
+00:08:59,080 --> 00:09:04,080
+And it's scary for the exact same reasons that it seemed exciting.
+
+89
+00:09:04,080 --> 00:09:09,080
+In computing, everything changes all the time.
+
+90
+00:09:09,080 --> 00:09:14,080
+What that means is that a lot of the skills that I learned in college would be obsolete in a few years.
+
+91
+00:09:14,080 --> 00:09:20,080
+People no longer program in Perl. I'm a great Perl programmer.
+
+92
+00:09:20,080 --> 00:09:24,080
+That skill is not very useful anymore.
+
+93
+00:09:24,080 --> 00:09:28,080
+And at the same time, my skills became obsolete.
+
+94
+00:09:28,080 --> 00:09:35,080
+New people would graduate and enter the job market having mastered the latest, greatest new skills.
+
+95
+00:09:35,080 --> 00:09:39,080
+At the same time, I was like, I know Perl. They're all like, well, I know Python.
+
+96
+00:09:39,080 --> 00:09:44,080
+And I'm like, I got to learn Python.
+
+97
+00:09:44,080 --> 00:09:49,080
+So I imagine the life of a coder as being a life of always playing catch-up.
+
+98
+00:09:49,080 --> 00:09:52,080
+Python's awesome. It'll go away.
+
+99
+00:09:52,080 --> 00:09:55,080
+You know, when I was a kid, everyone was doing things in C.
+
+100
+00:09:55,080 --> 00:10:00,080
+C's still around, but it's not hot like it was back in the 80s.
+
+101
+00:10:00,080 --> 00:10:03,080
+And Python is hot now. It won't be hot.
+
+102
+00:10:03,080 --> 00:10:08,080
+We're not going to have to do it. Things are going to change.
+
+103
+00:10:08,080 --> 00:10:14,080
+You just have to know it. And whatever you're doing right now, if it's in tech, you won't be doing it in five to ten years.
+
+104
+00:10:14,080 --> 00:10:17,080
+You'll be doing something different. Okay.
+
+105
+00:10:17,080 --> 00:10:24,080
+So I imagine I'd always be playing catch up with younger people that had just learned the latest skills.
+
+106
+00:10:24,080 --> 00:10:29,080
+That's when I decided I needed to learn statistics.
+
+107
+00:10:29,080 --> 00:10:38,080
+At Beethoven's Fifth Symphony, the T-test that we use in statistics has not changed much in a long time.
+
+108
+00:10:38,080 --> 00:10:42,080
+So in some sense, T-tests will get boring sooner or later.
+
+109
+00:10:42,080 --> 00:10:48,080
+But with big data, I can combine T-tests with computing to keep things interesting.
+
+110
+00:10:48,080 --> 00:10:52,080
+So with statistics, I thought I would get the best of both worlds.
+
+111
+00:10:52,080 --> 00:10:57,080
+Something that doesn't change every three years combines with something that does.
+
+112
+00:10:57,080 --> 00:11:01,080
+And that's bioinformatics, right? You guys are in bioinformatics.
+
+113
+00:11:01,080 --> 00:11:06,080
+So you're in the sweet spot. Bam.
+
+114
+00:11:06,080 --> 00:11:11,080
+Okay. Anyways, I used to work in a lab helping these guys with their statistics.
+
+115
+00:11:11,080 --> 00:11:16,080
+And although I was doing all the math, I wanted them to understand what I was doing so that I could speak,
+
+116
+00:11:17,080 --> 00:11:24,080
+so that they could speak confidently and correctly about their results at conferences.
+
+117
+00:11:24,080 --> 00:11:33,080
+So I started to give little presentations on statistics for the lab every Friday morning.
+
+118
+00:11:33,080 --> 00:11:38,080
+But this was an academic lab and new people were coming and going all the time.
+
+119
+00:11:38,080 --> 00:11:45,080
+So I thought it might be better to put the presentations on YouTube.
+
+120
+00:11:45,080 --> 00:11:50,080
+Putting the presentations on YouTube solved two problems.
+
+121
+00:11:50,080 --> 00:11:55,080
+One, it spared me from having to give the same lecture every three to six months.
+
+122
+00:11:55,080 --> 00:11:59,080
+So it's a time saver for me.
+
+123
+00:11:59,080 --> 00:12:06,080
+And two, maybe even better and more important, it allowed people to get the information when they needed it,
+
+124
+00:12:06,080 --> 00:12:09,080
+rather than when I had time to teach it.
+
+125
+00:12:09,080 --> 00:12:17,080
+So I can teach R-squared, but they may not need to know R-squared for another six months or a year or who knows when they're going to need to know.
+
+126
+00:12:17,080 --> 00:12:21,080
+But when it's on YouTube, it's there when they need it. And they don't have to call me up in the middle of the night and go,
+
+127
+00:12:21,080 --> 00:12:26,080
+Hey, Starmer, what's R-squared again? I can't remember. You talked to me like a year ago.
+
+128
+00:12:26,080 --> 00:12:30,080
+Just watch the video. Go back to bed.
+
+129
+00:12:30,080 --> 00:12:37,080
+Okay. So now let's talk about some of the things that have helped my YouTube channel be successful.
+
+130
+00:12:37,080 --> 00:12:42,080
+So I've got these rules. Rule number one is focus on the main ideas.
+
+131
+00:12:42,080 --> 00:12:47,080
+So imagine we wanted to teach someone how to drive a car.
+
+132
+00:12:47,080 --> 00:12:52,080
+Should we start by teaching them about fuel injection?
+
+133
+00:12:52,080 --> 00:12:56,080
+Or should we start by describing the master cylinder?
+
+134
+00:12:56,080 --> 00:13:00,080
+And what about the head gasket?
+
+135
+00:13:00,080 --> 00:13:12,080
+Now, even though fuel injection, master cylinders, and head gaskets are critical parts of cars, they are not the main idea.
+
+136
+00:13:12,080 --> 00:13:18,080
+In other words, we don't need to know about these parts in order to drive.
+
+137
+00:13:18,080 --> 00:13:27,080
+In fact, even though I bet most of the people in the seminar know how to drive, I'd be surprised if you knew about these parts.
+
+138
+00:13:27,080 --> 00:13:33,080
+Now, if I wanted to teach someone how to drive, I would focus on the main ideas.
+
+139
+00:13:33,080 --> 00:13:38,080
+I would start by teaching them about the brake pedal so that they can stop the car.
+
+140
+00:13:38,080 --> 00:13:48,080
+Stopping the car is the most important thing to teach first so that we can avoid hurting other people.
+
+141
+00:13:48,080 --> 00:13:52,080
+Then I would teach about the steering wheel so that they can turn the car.
+
+142
+00:13:52,080 --> 00:13:56,080
+The steering wheel is the second most important thing because we can use it to avoid hurting people.
+
+143
+00:13:56,080 --> 00:14:01,080
+Again, we don't want to, you know, have a tragedy while we're learning how to drive.
+
+144
+00:14:01,080 --> 00:14:07,080
+Lastly, I would teach them about the gas pedal so that we can finally move the car.
+
+145
+00:14:07,080 --> 00:14:19,080
+The brake and gas pedals and the steering wheel are the main ideas of driving because you need all three to drive, but you don't need anything else.
+
+146
+00:14:19,080 --> 00:14:37,080
+Knowing about the brake and gas pedals and the steering wheel may not make someone a great driver or a very knowledgeable driver, but at least they know enough to practice and they can easily learn more.
+
+147
+00:14:37,080 --> 00:14:49,080
+Similarly, when I want to teach someone about a neural network, I would not start with some complicated looking equation.
+
+148
+00:14:49,080 --> 00:15:01,080
+Even though understanding this equation takes a lot of work and makes me all proud of myself, it's not the main idea of neural networks and it never will be.
+
+149
+00:15:01,080 --> 00:15:12,080
+Instead, all this is is a compact notation for describing what's going on. That's all it is. It's very different from the main idea.
+
+150
+00:15:12,080 --> 00:15:20,080
+It's important to never confuse a compact notation for the actual main ideas.
+
+151
+00:15:20,080 --> 00:15:32,080
+So instead of a complicated equation, I would start out with a super simple data set that showed whether or not different drug dosages were effective against a virus.
+
+152
+00:15:32,080 --> 00:15:41,080
+The low and high dosages were not effective, but the medium dosages were.
+
+153
+00:15:41,080 --> 00:15:47,080
+Then I would show that fitting a straight line to that data isn't very helpful.
+
+154
+00:15:47,080 --> 00:15:59,080
+Because no matter how we rotate this line, it can only be close to two of the three clusters of points.
+
+155
+00:15:59,080 --> 00:16:04,080
+So what we really need is to fit a squiggle to the data.
+
+156
+00:16:04,080 --> 00:16:18,080
+And the main idea behind neural networks is that no matter how fancy they look or sound, all they do is fit squiggles to data.
+
+157
+00:16:18,080 --> 00:16:25,080
+Now that we understand the main idea behind neural networks, we can dive into the details.
+
+158
+00:16:25,080 --> 00:16:30,080
+Like these nonlinear functions are called activation functions.
+
+159
+00:16:30,080 --> 00:16:41,080
+And because the activation functions are between the input and the output, we can say that the activation functions are in a hidden layer.
+
+160
+00:16:41,080 --> 00:16:50,080
+And there's lots of other details, but we'll save them for later, because right now we're focusing on the main idea.
+
+161
+00:16:50,080 --> 00:16:56,080
+And the main idea of neural networks is that they fit squiggles to your data.
+
+162
+00:16:56,080 --> 00:17:00,080
+So this is rule number one, and it's the most important rule of all.
+
+163
+00:17:00,080 --> 00:17:06,080
+It seems simple, but it's easy to be distracted by things that are not the main idea.
+
+164
+00:17:07,080 --> 00:17:17,080
+For example, when we were talking about cars, we were talking about the master cylinder and fuel injection and things like that.
+
+165
+00:17:17,080 --> 00:17:26,080
+If you watch a car commercial, if you're watching TV, they're not telling you, like, our car has a brake pedal and a steering wheel and a gas pedal.
+
+166
+00:17:26,080 --> 00:17:30,080
+No, they're talking about, we've got this kind of fancy fuel injection.
+
+167
+00:17:30,080 --> 00:17:34,080
+They're talking about all these things that are not the main idea.
+
+168
+00:17:34,080 --> 00:17:44,080
+So it's easy to get distracted and think, oh, there's other things that are really important, because I was watching TV and all they talked about was how important fuel injection was.
+
+169
+00:17:44,080 --> 00:17:51,080
+And that's not the main idea.
+
+170
+00:17:51,080 --> 00:18:02,080
+So it's hard to focus on the main idea, especially when there's a lot of hype, like there is around neural networks, and there's tons of hype on neural networks.
+
+171
+00:18:02,080 --> 00:18:04,080
+Okay.
+
+172
+00:18:04,080 --> 00:18:10,080
+So rule number two is know and have empathy for your audience.
+
+173
+00:18:10,080 --> 00:18:21,080
+Everyone has different experiences, backgrounds, and perspectives, and it is important to keep this in mind when explaining anything.
+
+174
+00:18:21,080 --> 00:18:28,080
+For example, if I'm going to teach someone how to drive, and they know how to ride a bike,
+
+175
+00:18:28,080 --> 00:18:34,080
+then I'll explain how to drive in terms of how to ride a bike.
+
+176
+00:18:34,080 --> 00:18:38,080
+And the handlebar is the steering wheel.
+
+177
+00:18:38,080 --> 00:18:43,080
+And the pedals are the gas, etc.
+
+178
+00:18:43,080 --> 00:18:55,080
+In contrast, if they knew how to ride a horse, then I'd explain how to drive in terms of how to ride a horse, which would be very hard because I don't know how to ride a horse, but I would try hard because I've seen it in movies.
+
+179
+00:18:55,080 --> 00:18:58,080
+And I'd say, it's kind of like getting on a horse, I guess.
+
+180
+00:18:58,080 --> 00:19:00,080
+Okay, so giddy up.
+
+181
+00:19:00,080 --> 00:19:10,080
+And if someone had piloted a boat before, then I would explain how to drive in terms of how to pilot a boat, and I do have a funny boat story, and I'll save that for bowling, okay?
+
+182
+00:19:10,080 --> 00:19:12,080
+So come bowling later.
+
+183
+00:19:12,080 --> 00:19:14,080
+Okay, anchors away.
+
+184
+00:19:14,080 --> 00:19:22,080
+Okay, when I make my videos, I specifically think of my old co-workers in Terry Magnuson's lab at UNC.
+
+185
+00:19:22,080 --> 00:19:31,080
+By making videos that communicated statistics to a bunch of geneticists, I ended up with videos that communicated statistics to people all over the world.
+
+186
+00:19:31,080 --> 00:19:35,080
+And this is another thing, you guys are bioinformatics people, right?
+
+187
+00:19:35,080 --> 00:19:49,080
+Yes, okay. So that means you have to talk to biologists, you have to talk to statistics people, you've got to talk to all these different people who have different backgrounds and different frameworks, and you have to be like chameleons in a way, or translators.
+
+188
+00:19:49,080 --> 00:19:55,080
+Because when you're talking to the statistics person, you've got to talk to them one way, and when you talk to the biologists, you've got to talk to them in another way.
+
+189
+00:19:55,080 --> 00:20:03,080
+So you always have to kind of know who you're talking to, and if you mix them up, and you talk to the biologists the way you talk to a statistician, they'll punch you in the face.
+
+190
+00:20:03,080 --> 00:20:06,080
+You don't want that to happen, right?
+
+191
+00:20:06,080 --> 00:20:10,080
+So it's good to know who you're talking to.
+
+192
+00:20:11,080 --> 00:20:27,080
+And so I specifically think of my old co-workers at UNC. And in fact, a week from today, I'm actually presenting for this old group of co-workers, my latest video to see if I can still convince them or teach them how things work.
+
+193
+00:20:27,080 --> 00:20:30,080
+And the goal is for them not to fall asleep while I'm talking.
+
+194
+00:20:30,080 --> 00:20:36,080
+And there's this one guy, he's not in that picture, his name's Dom, and he is a tough one.
+
+195
+00:20:36,080 --> 00:20:39,080
+So I've got my work cut out for me.
+
+196
+00:20:39,080 --> 00:20:47,080
+So lastly, when you don't know your audience, try your best to explain in a way that anyone could relate to, and that's tough.
+
+197
+00:20:47,080 --> 00:20:53,080
+And try to anticipate questions from people that have different backgrounds and experiences, and that's hard to do too.
+
+198
+00:20:53,080 --> 00:21:05,080
+But one way to explain things so that anyone can relate to the subject, and helps anticipate questions, is to use pictures.
+
+199
+00:21:05,080 --> 00:21:10,080
+So that leads us to rule number three, which is use pictures.
+
+200
+00:21:10,080 --> 00:21:13,080
+A lot of people are visual learners.
+
+201
+00:21:13,080 --> 00:21:29,080
+If you're not a visual learner, and it's easier to look at this equation than it is to look at this graph, then you need to make sure you understand rule number two, have empathy for your audience.
+
+202
+00:21:29,080 --> 00:21:33,080
+Because that's another punch in the nose you got to be watching out for.
+
+203
+00:21:33,080 --> 00:21:44,080
+These people are tough. Okay, regardless of whether or not you're a visual learner, visual cues often make things easier to remember.
+
+204
+00:21:44,080 --> 00:21:51,080
+Okay, here's an example of some unvisual directions to the grocery store.
+
+205
+00:21:51,080 --> 00:21:55,080
+Go straight ahead 731 meters.
+
+206
+00:21:55,080 --> 00:21:58,080
+Turn pi divided by two radians.
+
+207
+00:21:58,080 --> 00:22:03,080
+Go straight for 1196 meters.
+
+208
+00:22:03,080 --> 00:22:07,080
+Turn three pi divided by two radians.
+
+209
+00:22:07,080 --> 00:22:11,080
+And then go straight for 52 meters.
+
+210
+00:22:11,080 --> 00:22:13,080
+Bam.
+
+211
+00:22:13,080 --> 00:22:14,080
+Okay, you guys ready.
+
+212
+00:22:14,080 --> 00:22:18,080
+There's a pop quiz.
+
+213
+00:22:18,080 --> 00:22:25,080
+No one thought there was going to be a quiz. Okay. Can anyone remember the first step in the directions to the grocery store.
+
+214
+00:22:26,080 --> 00:22:37,080
+Are you kidding me.
+
+215
+00:22:37,080 --> 00:22:40,080
+We have a winner. Okay.
+
+216
+00:22:40,080 --> 00:22:42,080
+Did anyone else know that.
+
+217
+00:22:42,080 --> 00:22:43,080
+Okay.
+
+218
+00:22:43,080 --> 00:22:48,080
+And why right.
+
+219
+00:22:48,080 --> 00:22:49,080
+Yeah.
+
+220
+00:22:49,080 --> 00:22:52,080
+Okay, this may be precise and accurate.
+
+221
+00:22:52,080 --> 00:23:01,080
+But for some people, and I'm not going to name names, but I consider myself a member of this group.
+
+222
+00:23:01,080 --> 00:23:04,080
+It's hard to remember.
+
+223
+00:23:04,080 --> 00:23:08,080
+Here's an example of visual directions to the grocery store.
+
+224
+00:23:08,080 --> 00:23:11,080
+Go straight to get to the gas station.
+
+225
+00:23:11,080 --> 00:23:13,080
+Turn left.
+
+226
+00:23:13,080 --> 00:23:15,080
+Go straight to get to the playground.
+
+227
+00:23:15,080 --> 00:23:17,080
+Turn right.
+
+228
+00:23:17,080 --> 00:23:22,080
+Go straight to get to the grocery store.
+
+229
+00:23:22,080 --> 00:23:24,080
+Bam.
+
+230
+00:23:24,080 --> 00:23:26,080
+Okay, to summarize this rule.
+
+231
+00:23:26,080 --> 00:23:35,080
+We almost always have a true choice between not using pictures to explain something.
+
+232
+00:23:35,080 --> 00:23:40,080
+And using pictures to explain something.
+
+233
+00:23:40,080 --> 00:23:44,080
+Pictures are one easy to relate to.
+
+234
+00:23:44,080 --> 00:23:47,080
+We have a lot of questions.
+
+235
+00:23:47,080 --> 00:23:51,080
+And we often help people answer their own questions.
+
+236
+00:23:51,080 --> 00:23:57,080
+For example, we may not have anticipated that they don't actually know what grocery store they were just saying, these are directions to the grocery store.
+
+237
+00:23:57,080 --> 00:23:59,080
+And they're like, what kind of grocery store is it.
+
+238
+00:23:59,080 --> 00:24:01,080
+Well, it's a Whole Foods.
+
+239
+00:24:01,080 --> 00:24:03,080
+You can tell just by looking at the picture.
+
+240
+00:24:03,080 --> 00:24:05,080
+Or you could say, go straight to the gas station.
+
+241
+00:24:05,080 --> 00:24:07,080
+They're like, what gas station is it.
+
+242
+00:24:07,080 --> 00:24:09,080
+It looks like it's a BP station.
+
+243
+00:24:09,080 --> 00:24:12,080
+And you can tell just by looking at the picture.
+
+244
+00:24:12,080 --> 00:24:14,080
+You can tell just by looking at the picture.
+
+245
+00:24:14,080 --> 00:24:16,080
+Without having to do any extra work.
+
+246
+00:24:16,080 --> 00:24:18,080
+That's a bam.
+
+247
+00:24:18,080 --> 00:24:20,080
+And relatively easy to remember for people like me.
+
+248
+00:24:20,080 --> 00:24:22,080
+Not everybody.
+
+249
+00:24:22,080 --> 00:24:24,080
+Okay, bam.
+
+250
+00:24:24,080 --> 00:24:26,080
+Rules four and five.
+
+251
+00:24:26,080 --> 00:24:28,080
+Repetition is helpful and do the math.
+
+252
+00:24:28,080 --> 00:24:31,080
+This step is going to take a long time to get through.
+
+253
+00:24:31,080 --> 00:24:33,080
+Because we're going to do lots of repetition.
+
+254
+00:24:33,080 --> 00:24:35,080
+And we're going to do lots of math.
+
+255
+00:24:36,080 --> 00:24:38,080
+It's just going to be hard.
+
+256
+00:24:38,080 --> 00:24:39,080
+Okay.
+
+257
+00:24:39,080 --> 00:24:47,080
+So no matter how simple the equation, plugging in a few numbers makes it way easier to understand and explain.
+
+258
+00:24:47,080 --> 00:24:53,080
+And doing this more than once makes it way easier to remember.
+
+259
+00:24:53,080 --> 00:24:56,080
+However, complicated looking things.
+
+260
+00:24:56,080 --> 00:25:03,080
+Plugging in the numbers is crucial and can provide deeper and more memorable insights.
+
+261
+00:25:03,080 --> 00:25:05,080
+Okay.
+
+262
+00:25:05,080 --> 00:25:07,080
+So let's take an example.
+
+263
+00:25:07,080 --> 00:25:11,080
+Let's plug some data into this neural network.
+
+264
+00:25:11,080 --> 00:25:15,080
+However, first, let's remember the main idea.
+
+265
+00:25:15,080 --> 00:25:19,080
+Neural networks fit squiggles to your data.
+
+266
+00:25:19,080 --> 00:25:25,080
+So the goal is to figure out how this fits a squiggle to the data.
+
+267
+00:25:25,080 --> 00:25:27,080
+Okay.
+
+268
+00:25:27,080 --> 00:25:32,080
+So with that said, to keep the math simple, let's assume dosages go from zero for low to one for high.
+
+269
+00:25:32,080 --> 00:25:37,080
+The first thing we do is plug the lowest dosage of zero into the neural network.
+
+270
+00:25:37,080 --> 00:25:45,080
+Now to get from the input node to the top node in the hidden layer.
+
+271
+00:25:45,080 --> 00:25:50,080
+This connection multiplies the dosage by negative 34.4.
+
+272
+00:25:50,080 --> 00:25:55,080
+And then adds 2.14.
+
+273
+00:25:55,080 --> 00:26:01,080
+And the result is an x-axis coordinate for the activation function.
+
+274
+00:26:01,080 --> 00:26:07,080
+These values come from fitting the neural network to data with a method called back propagation.
+
+275
+00:26:07,080 --> 00:26:10,080
+And that method is beyond the scope of this seminar.
+
+276
+00:26:10,080 --> 00:26:12,080
+We'd have to sit here for another hour.
+
+277
+00:26:12,080 --> 00:26:16,080
+And we don't want to do that because we haven't had lunch yet.
+
+278
+00:26:16,080 --> 00:26:18,080
+But if you're interested, there's a video on it.
+
+279
+00:26:18,080 --> 00:26:20,080
+You can check out the quest.
+
+280
+00:26:20,080 --> 00:26:25,080
+But for now, you guys are familiar with linear regression, right?
+
+281
+00:26:25,080 --> 00:26:28,080
+And you have like these slope and intercept.
+
+282
+00:26:28,080 --> 00:26:31,080
+And you have to find the optimal values for those.
+
+283
+00:26:31,080 --> 00:26:35,080
+And you do that by fitting, you know, you can do it iteratively.
+
+284
+00:26:35,080 --> 00:26:38,080
+Or you can do it directly with the derivative.
+
+285
+00:26:38,080 --> 00:26:44,080
+So imagine these values in these boxes are like these.
+
+286
+00:26:44,080 --> 00:26:47,080
+These are the things that we solve for when you fit that line to the data.
+
+287
+00:26:47,080 --> 00:26:49,080
+We got our y-axis intercept.
+
+288
+00:26:49,080 --> 00:26:51,080
+And we got our slope.
+
+289
+00:26:51,080 --> 00:26:55,080
+And it's interesting that we also, you know, we've got a number we multiply the input.
+
+290
+00:26:55,080 --> 00:26:57,080
+And we've got a number we add.
+
+291
+00:26:57,080 --> 00:26:59,080
+And here we're multiplying the input.
+
+292
+00:26:59,080 --> 00:27:00,080
+And we're adding.
+
+293
+00:27:00,080 --> 00:27:01,080
+Okay.
+
+294
+00:27:01,080 --> 00:27:06,080
+So we're actually doing the same thing that this equation does, just with different numbers, right?
+
+295
+00:27:06,080 --> 00:27:13,080
+And earlier, behind the scenes, before you guys were watching, I fit this to our data.
+
+296
+00:27:13,080 --> 00:27:19,080
+It's because, and the reason why we have backpropagation, I'm just going to skip to this.
+
+297
+00:27:19,080 --> 00:27:26,080
+The reason why we have backpropagation is because we can, there's a closed form solution for just linear regression.
+
+298
+00:27:26,080 --> 00:27:28,080
+And you can solve for directly.
+
+299
+00:27:28,080 --> 00:27:32,080
+Unfortunately, for linear, for neural networks, there's no closed form solution.
+
+300
+00:27:32,080 --> 00:27:38,080
+So you've got to, we've got to do something that is iterative and approximates an optimal solution.
+
+301
+00:27:38,080 --> 00:27:40,080
+So, okay.
+
+302
+00:27:40,080 --> 00:27:44,080
+We're good that these are just values that we've just imagined we're solving.
+
+303
+00:27:44,080 --> 00:27:46,080
+We're just plugging into numbers like this.
+
+304
+00:27:46,080 --> 00:27:49,080
+And we're calculating y-axis coordinates, right?
+
+305
+00:27:49,080 --> 00:27:50,080
+No big deal.
+
+306
+00:27:50,080 --> 00:27:51,080
+Bam.
+
+307
+00:27:51,080 --> 00:27:52,080
+Yes.
+
+308
+00:27:52,080 --> 00:27:53,080
+Okay.
+
+309
+00:27:53,080 --> 00:27:54,080
+Okay.
+
+310
+00:27:54,080 --> 00:28:08,080
+Now, given that we have already estimated these parameters, the lowest dosage zero is multiplied by negative 34.4.
+
+311
+00:28:08,080 --> 00:28:12,080
+And then we add 2.14.
+
+312
+00:28:12,080 --> 00:28:21,080
+And that, and to get 2.14 as the x-axis coordinate for the activation function.
+
+313
+00:28:21,080 --> 00:28:33,080
+To get the corresponding y-axis value, we plug 2.14 into the activation function, which in this case is the soft plus function.
+
+314
+00:28:33,080 --> 00:28:43,080
+Note, if we had chosen the sigmoid curve for the activation function, then we would just plug 2.14 into the equation for the sigmoid curve.
+
+315
+00:28:43,080 --> 00:28:44,080
+It's no big deal.
+
+316
+00:28:44,080 --> 00:28:55,080
+But since we're using the soft plus for the activation function, we plug 2.14 into the soft plus equation.
+
+317
+00:28:55,080 --> 00:29:03,080
+And the log of 1 plus e raised to 2.14 is 2.25.
+
+318
+00:29:03,080 --> 00:29:13,080
+And just to be clear, in statistics, machine learning, and most programming languages, the log function implies the natural log or the log base e.
+
+319
+00:29:13,080 --> 00:29:17,080
+So if you're doing this math at home, that's why we got 2.25.
+
+320
+00:29:17,080 --> 00:29:21,080
+Anyway, the y-axis coordinate for the activation function is 2.25.
+
+321
+00:29:21,080 --> 00:29:24,080
+And it's right there, boom, right on the curve.
+
+322
+00:29:24,080 --> 00:29:25,080
+Right.
+
+323
+00:29:25,080 --> 00:29:30,080
+Okay, so let's extend this y-axis up a little bit.
+
+324
+00:29:30,080 --> 00:29:37,080
+And put a blue dot at 2.25 for when the dosage equals zero.
+
+325
+00:29:37,080 --> 00:29:50,080
+Now, if we increase the dosage a little bit and plug in 0.1 into the input, the x-axis coordinate for the activation function is negative 1.3.
+
+326
+00:29:50,080 --> 00:29:58,080
+And the corresponding y-axis coordinate is 0.24.
+
+327
+00:29:58,080 --> 00:30:05,080
+So let's put a blue dot at 0.24 for when dosage equals 0.1.
+
+328
+00:30:06,080 --> 00:30:18,080
+And if we continue to increase the dosage values all the way to one, the maximum dosage, we get this blue curve.
+
+329
+00:30:18,080 --> 00:30:20,080
+Bam.
+
+330
+00:30:20,080 --> 00:30:35,080
+Note, before we move on, I want to point out that the full range of dosage values from 0 to 1 corresponds to this relatively narrow range of values from the activation function.
+
+331
+00:30:35,080 --> 00:30:45,080
+In other words, when we plug dosage values from 0 to 1 into the neural network, and then multiply them by negative 34.4 and add 2.14,
+
+332
+00:30:45,080 --> 00:30:52,080
+then we only get x-axis coordinates that are within the red box. Does that make sense?
+
+333
+00:30:52,080 --> 00:31:04,080
+That any number between 0 and 1 is only going to give us a number in this range. It's not going to give us a number way out here, just in this little window.
+
+334
+00:31:04,080 --> 00:31:13,080
+And thus, only the corresponding y-axis values, only these things up here
+
+335
+00:31:13,080 --> 00:31:21,080
+in the red box are used to make this new curve. And we take this, basically we're taking this and we're flipping it because we've got a negative sign.
+
+336
+00:31:21,080 --> 00:31:25,080
+Flip it and bam.
+
+337
+00:31:25,080 --> 00:31:28,080
+Cool.
+
+338
+00:31:28,080 --> 00:31:35,080
+Now we scale the y-axis values on the blue curve by negative 1.3.
+
+339
+00:31:35,080 --> 00:31:42,080
+For example, when dosage equals 0, the current y-axis coordinate for the blue curve is 2.25.
+
+340
+00:31:42,080 --> 00:31:50,080
+So that's that point on the curve and that's that blue point over there. Now we're going to multiply it by that.
+
+341
+00:31:50,080 --> 00:31:58,080
+So we multiply 2.25 by negative 1.3 and we get negative 2.93.
+
+342
+00:31:58,080 --> 00:32:05,080
+Negative 2.93 corresponds to this position way down on the y-axis.
+
+343
+00:32:05,080 --> 00:32:12,080
+Likewise, we multiply all the other y-axis coordinates on the blue curve by negative 1.3.
+
+344
+00:32:12,080 --> 00:32:19,080
+And we end up with this new blue curve.
+
+345
+00:32:19,080 --> 00:32:21,080
+Bam.
+
+346
+00:32:21,080 --> 00:32:29,080
+Okay, now let's focus on the connection from the input node to the bottom node in the hidden layer.
+
+347
+00:32:29,080 --> 00:32:37,080
+However, this time we multiply the dosage by negative 2.52 instead of negative 34.4.
+
+348
+00:32:37,080 --> 00:32:49,080
+And we add 1.29 instead of 2.14 to get the x-axis coordinate for the activation function.
+
+349
+00:32:49,080 --> 00:33:01,080
+Now if we plug in the lowest dosage 0 into the neural network, the x-axis coordinate for the activation function is 1.29 right there.
+
+350
+00:33:01,080 --> 00:33:08,080
+And now we plug 1.29 into the activation function to get the corresponding y-axis value.
+
+351
+00:33:08,080 --> 00:33:13,080
+And we get 1.53 right there.
+
+352
+00:33:13,080 --> 00:33:20,080
+And that corresponds to this yellow dot. So that's 1.53 up on the y-axis.
+
+353
+00:33:20,080 --> 00:33:26,080
+Now we just plug in dosage values from 0 to 1 to get the corresponding y-axis values.
+
+354
+00:33:26,080 --> 00:33:32,080
+And we get this orange curve.
+
+355
+00:33:32,080 --> 00:33:38,080
+Note, just like before, I want to point out that the full range of dosage values from 0 to 1,
+
+356
+00:33:38,080 --> 00:33:42,080
+in this case, it only corresponds to this narrow range of values, right?
+
+357
+00:33:42,080 --> 00:33:52,080
+When we plug in values from 0 to 1 here, we only get x-axis coordinates in this little sliver, and we don't get values out here and out here.
+
+358
+00:33:52,080 --> 00:34:01,080
+So we're actually cutting a smaller slice of the activation function than we did before.
+
+359
+00:34:01,080 --> 00:34:08,080
+I might have gotten ahead of myself. So in other words, when we plug in dosage values from 0 to 1 in the neural network,
+
+360
+00:34:08,080 --> 00:34:13,080
+we only get x-axis coordinates that are within the red box.
+
+361
+00:34:13,080 --> 00:34:21,080
+And thus, only the corresponding y-axis values in the red box are used to make this new orange curve.
+
+362
+00:34:21,080 --> 00:34:27,080
+So we see that fitting a neural network to data gives us different parameter estimates on the connections.
+
+363
+00:34:27,080 --> 00:34:38,080
+And that results in each node in the hidden layer using different portions of the activation functions to create these new and exciting shapes.
+
+364
+00:34:38,080 --> 00:34:43,080
+Do you guys have that? Great. OK, double that then.
+
+365
+00:34:43,080 --> 00:34:49,080
+OK, OK. Now, just like before, we scale the y-axis coordinates on the orange curve.
+
+366
+00:34:49,080 --> 00:34:54,080
+Only this time, we scale by a positive number, 2.28.
+
+367
+00:34:54,080 --> 00:35:01,080
+Boop, boop, boop, boop, boop, boop. And that gives us this new orange curve.
+
+368
+00:35:01,080 --> 00:35:09,080
+Now the neural network tells us to add the y-axis coordinates from the blue curve to the orange curve.
+
+369
+00:35:09,080 --> 00:35:18,080
+For example, when dosage equals 0, the y-axis coordinate on the blue curve is negative 9.2, excuse me, negative 2.93.
+
+370
+00:35:18,080 --> 00:35:24,080
+And the y-axis coordinate on the orange curve is 3.49.
+
+371
+00:35:24,080 --> 00:35:33,080
+And we add negative 2.93 to 3.49, we get 0.56, that green dot.
+
+372
+00:35:33,080 --> 00:35:41,080
+Likewise, we just keep adding the y-axis coordinates from the blue curve to the orange curve.
+
+373
+00:35:41,080 --> 00:35:46,080
+And that gives us this green squiggle.
+
+374
+00:35:46,080 --> 00:35:53,080
+Then finally, we subtract 0.58 from the y-axis values on the green squiggle.
+
+375
+00:35:53,080 --> 00:35:59,080
+Boop. And we have this green squiggle that fits the data.
+
+376
+00:35:59,080 --> 00:36:02,080
+Triple bam.
+
+377
+00:36:02,080 --> 00:36:09,080
+To summarize, we started out with two identical activation functions.
+
+378
+00:36:09,080 --> 00:36:12,080
+But then we plugged in some values.
+
+379
+00:36:12,080 --> 00:36:23,080
+And we saw how using multiplication and addition slices, flips, and stretches the activation functions into new and exciting shapes.
+
+380
+00:36:23,080 --> 00:36:28,080
+Which are then added together to get a squiggle that is entirely new.
+
+381
+00:36:28,080 --> 00:36:37,080
+Bam. And the squiggle is then shifted to fit the data.
+
+382
+00:36:37,080 --> 00:36:40,080
+Now remember the rules we just illustrated here.
+
+383
+00:36:40,080 --> 00:36:44,080
+Repetition is helpful and do the math.
+
+384
+00:36:44,080 --> 00:36:55,080
+By plugging numbers into the neural network and doing the math, we have a better understanding of how this neural network fits the squiggle to the data.
+
+385
+00:36:55,080 --> 00:37:01,080
+Doing the math usually requires using relatively simple examples.
+
+386
+00:37:01,080 --> 00:37:06,080
+In this case, I created the simplest neural network that could illustrate the main idea.
+
+387
+00:37:06,080 --> 00:37:10,080
+That we're fitting a squiggle to data instead of a straight line.
+
+388
+00:37:10,080 --> 00:37:15,080
+For me, one of the hardest parts of my job is coming up with relatively simple examples.
+
+389
+00:37:15,080 --> 00:37:21,080
+If you look on the internet for like neural network examples, everyone uses this character recognition example.
+
+390
+00:37:21,080 --> 00:37:29,080
+Like how to translate numbers into, like, predict like, oh, that's a number three or something like character recognition.
+
+391
+00:37:29,080 --> 00:37:33,080
+Which is cool. Neural networks can do that, and that's amazing, right?
+
+392
+00:37:33,080 --> 00:37:42,080
+But the neural network required to do that is so complicated that you can't visualize what the shape of the data is and how it's fitting a squiggle to that data.
+
+393
+00:37:42,080 --> 00:37:47,080
+Right? Because ultimately, we've just got pixels, you know, and intensities.
+
+394
+00:37:47,080 --> 00:37:56,080
+And it ends up just being a big blob of data, of points, basically, in a high dimensional space that's too high dimensional for us to actually look at.
+
+395
+00:37:56,080 --> 00:37:59,080
+So we can't, even if we wanted to, we can't draw that picture.
+
+396
+00:37:59,080 --> 00:38:05,080
+So I had to come up with like a much, much simpler thing, because I wanted to see it.
+
+397
+00:38:05,080 --> 00:38:10,080
+Because it wasn't enough just to believe that it worked. I had to see it work.
+
+398
+00:38:10,080 --> 00:38:16,080
+And I had to understand why. And by doing that, I was able to see this insight.
+
+399
+00:38:16,080 --> 00:38:23,080
+That we're taking these little chunks of this thing, these activation functions, and we're twisting them, and we're flipping them, and we're stretching them.
+
+400
+00:38:23,080 --> 00:38:31,080
+And we add these different shapes together. And it's that adding of two weird looking shapes that gives us this squiggle.
+
+401
+00:38:31,080 --> 00:38:36,080
+And it's also interesting, if you notice that, it doesn't really fit. I mean, it fits the data perfectly.
+
+402
+00:38:36,080 --> 00:38:40,080
+But outside, in between the data, it doesn't fit it perfectly.
+
+403
+00:38:40,080 --> 00:38:45,080
+That's an interesting insight we would not have gotten if we couldn't see how this is working.
+
+404
+00:38:45,080 --> 00:38:50,080
+This is an interesting thing. Neural networks can fit the points perfectly, and it does.
+
+405
+00:38:50,080 --> 00:38:55,080
+But in between, the neural network can do what it wants. And we didn't. We wouldn't have known that.
+
+406
+00:38:55,080 --> 00:38:58,080
+We wouldn't have been able to see it if we couldn't draw it.
+
+407
+00:38:58,080 --> 00:39:01,080
+And so that was a big insight for me when I was teaching myself neural networks.
+
+408
+00:39:01,080 --> 00:39:10,080
+I was like, oh. So that means in between the data that the neural networks have seen, the output could be unpredictable.
+
+409
+00:39:10,080 --> 00:39:13,080
+Because it does not extrapolate the way you and me would do it.
+
+410
+00:39:13,080 --> 00:39:20,080
+The way you and I would do this, we would fit a nice bell-shaped curve to this data, like a normal curve or something.
+
+411
+00:39:20,080 --> 00:39:25,080
+And it'd be nice and awesome. But the neural network doesn't care about normal curves.
+
+412
+00:39:25,080 --> 00:39:28,080
+Neural network says, these are the data you gave me, and I'm going to fit them.
+
+413
+00:39:28,080 --> 00:39:32,080
+And that's all I'm going to worry about. And everything in between, who cares?
+
+414
+00:39:32,080 --> 00:39:38,080
+And so I think about that when people talk about getting neural networks to drive cars.
+
+415
+00:39:39,080 --> 00:39:48,080
+Anyways, once I have a relatively simple example, everything else becomes relatively easy.
+
+416
+00:39:48,080 --> 00:39:52,080
+OK, rule number six is always start with data.
+
+417
+00:39:52,080 --> 00:39:59,080
+And you may remember that when we started to talk about neural networks, we started out with this super simple data set.
+
+418
+00:39:59,080 --> 00:40:04,080
+It showed that a straight line would not fit the data well.
+
+419
+00:40:04,080 --> 00:40:14,080
+So we needed to fit a squiggle to the data. Knowing that we need to fit a squiggle to the data gives us a context from which we can understand neural networks.
+
+420
+00:40:14,080 --> 00:40:18,080
+Right. Why are we learning this thing? What's the big deal? Who cares?
+
+421
+00:40:18,080 --> 00:40:27,080
+Well, we're like, well, we've got problems. We've got data shapes that data can make that we may, you know, we may not have a good function that can fit.
+
+422
+00:40:27,080 --> 00:40:35,080
+And especially if that function or that data is really high dimensional and we can't see it, we we can't say that we can just fit a normal curve to that.
+
+423
+00:40:35,080 --> 00:40:40,080
+We have to come up with something that can automatically fit a shape to data. And that's what neural networks do.
+
+424
+00:40:40,080 --> 00:40:45,080
+They look at data and they go, I don't care if we can look at it or not. I'm going to fit a shape to you.
+
+425
+00:40:45,080 --> 00:40:53,080
+OK, in other words. We know that the goal of this fancy looking thing is to fit a squiggle to the data.
+
+426
+00:40:53,080 --> 00:41:03,080
+And in general, knowing what the problem is and why other methods fail to solve it helps us understand why we're doing all this math.
+
+427
+00:41:03,080 --> 00:41:10,080
+OK, rule number seven, limit to the presentation of three main ideas, which seems contradictory, but I didn't say these were main ideas.
+
+428
+00:41:10,080 --> 00:41:20,080
+I said these were rules. The difference. Anyways, for neural networks, main idea number one is that we start with identical nonlinear activation functions.
+
+429
+00:41:20,080 --> 00:41:30,080
+Nonlinear is key. I didn't I didn't harp on that. But if they were just linear, if this was just a straight line, then we'd add them together.
+
+430
+00:41:30,080 --> 00:41:40,080
+We just get another straight line. It's the fact that there's a curve or a bend or something weird going on that allows us to create more complicated shapes.
+
+431
+00:41:41,080 --> 00:41:48,080
+Main idea number two is the activation functions are sliced, flipped and stretched into new and exciting shapes.
+
+432
+00:41:48,080 --> 00:41:55,080
+And we say double bam. And the main idea, number three, is that the curves are added together in the end.
+
+433
+00:41:55,080 --> 00:42:04,080
+So we have the little pieces of curve and we and we add them together to make a squiggle that is entirely new.
+
+434
+00:42:05,080 --> 00:42:16,080
+Triple bam. Note, if you came to this seminar, not understanding how neural networks work is a good chance that you now know.
+
+435
+00:42:16,080 --> 00:42:29,080
+And you came to that understanding by looking at pictures and doing some basic math, just multiplication and addition with a little like log and exponential here, but we're not going to talk about that.
+
+436
+00:42:29,080 --> 00:42:35,080
+OK, and we completely ignored this equation.
+
+437
+00:42:35,080 --> 00:42:41,080
+Again, this is because the equation is not the main idea.
+
+438
+00:42:41,080 --> 00:42:46,080
+All it is is a compact notation.
+
+439
+00:42:46,080 --> 00:42:50,080
+I mentioned this because I did a little Twitter poll a few weeks ago.
+
+440
+00:42:50,080 --> 00:43:02,080
+Well, I guess a few months ago. OK. In order to understand neural networks, you need to first understand linear algebra.
+
+441
+00:43:02,080 --> 00:43:14,080
+Of the almost 4000 people that responded, 74 percent agreed that you needed to understand linear algebra before you can understand neural networks.
+
+442
+00:43:14,080 --> 00:43:20,080
+In other words, 74 percent think you need to understand this equation.
+
+443
+00:43:20,080 --> 00:43:27,080
+Before it's possible to understand this diagram of a neural network and how it makes predictions.
+
+444
+00:43:27,080 --> 00:43:31,080
+However, in my opinion, it is the exact opposite.
+
+445
+00:43:31,080 --> 00:43:37,080
+Instead, we need to start with this diagram and learn how it makes predictions first.
+
+446
+00:43:37,080 --> 00:43:41,080
+Before we learn about this equation.
+
+447
+00:43:41,080 --> 00:43:52,080
+In summary, I believe that StatQuest, my YouTube channel is successful because rule number one, I do the I try as hard as I can to focus on the main ideas.
+
+448
+00:43:52,080 --> 00:43:57,080
+I don't always succeed, but I try. Rule number two, I have empathy for the audience.
+
+449
+00:43:57,080 --> 00:44:01,080
+Again, I do not always succeed, but I try.
+
+450
+00:44:01,080 --> 00:44:07,080
+And I know and my secret to that is I specifically have a handful of people that are my audience.
+
+451
+00:44:08,080 --> 00:44:14,080
+You know, it's my former lab mates. I try to talk to them. Three, I use pictures.
+
+452
+00:44:14,080 --> 00:44:20,080
+Those are helpful for some, not all. Rules number four and five, repetition is helpful and do the math.
+
+453
+00:44:20,080 --> 00:44:27,080
+And rule number six, always start with data. And rule number seven, limit the presentation of three main ideas.
+
+454
+00:44:27,080 --> 00:44:34,080
+I've noticed that if I try to do more than three BAMs in a presentation, it's better just to split it into two presentations.
+
+455
+00:44:34,080 --> 00:44:38,080
+Too much. You know, it's like, oh, you go to for me.
+
+456
+00:44:38,080 --> 00:44:44,080
+I remember when I used to have to go to seminars and they it was like a I don't know how like an octave BAM presentation.
+
+457
+00:44:44,080 --> 00:44:49,080
+And I get to like the third or fourth BAM and I'd be like they weren't saying the BAM.
+
+458
+00:44:49,080 --> 00:44:53,080
+But, you know, there were there were all these things that you could tell they had so much they wanted to convey.
+
+459
+00:44:53,080 --> 00:45:00,080
+But I got saturated and I got frustrated because once I get saturated with information, I can't take more on.
+
+460
+00:45:00,080 --> 00:45:04,080
+I can only learn my brain can only learn so much in so much time.
+
+461
+00:45:04,080 --> 00:45:09,080
+And and I would just frustrate me when they were like, well, I'm just going to keep going.
+
+462
+00:45:09,080 --> 00:45:17,080
+And I'm like, but I'm tired. So I say limit the presentation to three main ideas.
+
+463
+00:45:17,080 --> 00:45:35,080
+And then I say the end. And I finished a little bit early so we can have questions or.
+
+464
+00:45:35,080 --> 00:45:40,080
+We need to leave this room by 1230 so we can have a short three session.
+
+465
+00:45:40,080 --> 00:45:47,080
+And if you are going to meet George later, I would suggest you save that for later.
+
+466
+00:45:47,080 --> 00:45:50,080
+And I see that. Yeah. Thanks for doing that.
+
+467
+00:45:50,080 --> 00:46:00,080
+So I'm just wondering if you have any thoughts on how to address people with sort of some disabilities like hearing and visual.
+
+468
+00:46:00,080 --> 00:46:09,080
+Yeah. So. In theory.
+
+469
+00:46:09,080 --> 00:46:14,080
+So I have there's a couple of issues that I come up against with colorblindness.
+
+470
+00:46:14,080 --> 00:46:19,080
+I try to use a lot of colors, as you saw, because to me, colors help differentiate things.
+
+471
+00:46:19,080 --> 00:46:26,080
+But I'm very bad with my palette, my color palette. But there are tools you can use to check colorblindness.
+
+472
+00:46:26,080 --> 00:46:29,080
+I need to use those. I don't do it enough.
+
+473
+00:46:29,080 --> 00:46:34,080
+And there's also blind people blind people like so there's people that listen to my videos.
+
+474
+00:46:34,080 --> 00:46:37,080
+And I don't do this perfectly.
+
+475
+00:46:37,080 --> 00:46:39,080
+But when I do the script.
+
+476
+00:46:39,080 --> 00:46:51,080
+I often will be like the script will be like, and the data point in the upper left hand corner, I tried to narrate everything so that blind people can even though it's all in their head.
+
+477
+00:46:52,080 --> 00:47:00,080
+I try to narrate all the details so that they can just by hearing my voice they can learn what's going on. I try to do that.
+
+478
+00:47:00,080 --> 00:47:12,080
+And you just have to be very aware that you can't just say there's data over there, you have to say there's a data and the way they're spread out means we can't fit a straight line to them.
+
+479
+00:47:12,080 --> 00:47:25,080
+And if we do try to fit a straight line we can only fit it to three or they're in a triangle form so you have to think about that so yeah if you're specifically trying to communicate to disabilities, you have to keep all that stuff in mind and I try.
+
+480
+00:47:25,080 --> 00:47:34,080
+I'm, I'm, I could do better.
+
+481
+00:47:35,080 --> 00:47:49,080
+Okay, my question is, so you're doing the stack quest YouTube you're explaining a lot of different things to people, how do you decide what topics, you want to prioritize and how do you like make sure you don't run out of things to explain.
+
+482
+00:47:49,080 --> 00:47:55,080
+Okay, yeah, that was a problem I had early on. Okay, so early on.
+
+483
+00:47:55,080 --> 00:48:01,080
+I was really just doing this for my coworkers, and I just was whatever they were doing.
+
+484
+00:48:02,080 --> 00:48:16,080
+I already talked to Chris about this earlier. So one thing that was cool about doing this for my coworkers, you know, it's all a couple problems they learned when they needed to learn and I taught when I wanted to basically, but, but it also meant that like my first
+
+485
+00:48:16,080 --> 00:48:19,080
+video got nine views in a year.
+
+486
+00:48:20,080 --> 00:48:31,080
+And that was success. Right, because I didn't make a video for the whole world. I made it just for my co workers, and I only had so many co workers, and they were watching my videos so it was a huge success.
+
+487
+00:48:31,080 --> 00:48:39,080
+And so I just let them decide, because that that was my audience, and in a way they're still my audience but things are a little different in that.
+
+488
+00:48:39,080 --> 00:48:48,080
+I know people post comments. Can you teach transformers Can you teach large language models, how's Jackie bt work, I get those questions.
+
+489
+00:48:48,080 --> 00:48:50,080
+20 times a day.
+
+490
+00:48:50,080 --> 00:49:06,080
+And so I started off like once I you know early on once I got past T tests and are squared linear regression, I was like, I don't know what I'm going to teach now, I was like, like, and so I actually, if you watch my early videos are like and if you have any
+
+491
+00:49:06,080 --> 00:49:10,080
+ideas posted in the comments below. I don't do that anymore.
+
+492
+00:49:10,080 --> 00:49:19,080
+I got a to do list that like goes it goes because the thing is is there's always, there's always new methods being created.
+
+493
+00:49:19,080 --> 00:49:28,080
+And so there's always good stuff, but it's, but it's also sort of responding to the people around me, and it used to be that there were a lot of people with problems and so I teach them what they needed to know.
+
+494
+00:49:28,080 --> 00:49:36,080
+And now it's the whole world is like hey, we don't understand large language models or how Jackie bt works, can you teach us.
+
+495
+00:49:36,080 --> 00:49:40,080
+And so that and that keeps me plenty busy.
+
+496
+00:49:40,080 --> 00:49:46,080
+But, yeah, just ask the people you want to teach.
+
+497
+00:49:46,080 --> 00:49:51,080
+There was an online question. And where did it go. I'm going to open the chat.
+
+498
+00:49:51,080 --> 00:49:55,080
+I got to hold on, I got to get the old main glasses.
+
+499
+00:49:55,080 --> 00:49:57,080
+What does this say.
+
+500
+00:49:57,080 --> 00:50:01,080
+Interesting modeling and machine learning.
+
+501
+00:50:01,080 --> 00:50:08,080
+It seems like clinical physicians do not believe any data for modeling or machine.
+
+502
+00:50:08,080 --> 00:50:10,080
+That's hilarious.
+
+503
+00:50:10,080 --> 00:50:14,080
+So,
+
+504
+00:50:14,080 --> 00:50:19,080
+is there modeling.
+
+505
+00:50:19,080 --> 00:50:22,080
+It's just some.
+
+506
+00:50:22,080 --> 00:50:29,080
+When I was a kid I used to build models like model planes, right, a model plane is not a real plane, it can't fly I can get on it.
+
+507
+00:50:29,080 --> 00:50:33,080
+It's a, it's an approximation now, it's much smaller approximation.
+
+508
+00:50:33,080 --> 00:50:47,080
+It has this general shape. And for the purposes of me being an eight year old kid. It was good enough. Right. It's all it solved the problem of me not having anything to do in the afternoon on a rainy day.
+
+509
+00:50:48,080 --> 00:50:54,080
+So, that's a model right and what we end up with these days we end up with.
+
+510
+00:50:54,080 --> 00:50:58,080
+Instead of like, you know, I'm a person and I'm a complicated thing.
+
+511
+00:50:58,080 --> 00:51:05,080
+And with a complicated brain, I guess. And so we can create a model of that that's a simplification, it's not the same as my brain.
+
+512
+00:51:06,080 --> 00:51:13,080
+It's a handful of equations. I mean you plug in inputs that might be simulating oral input.
+
+513
+00:51:13,080 --> 00:51:24,080
+And we can say, well, let's see what's just on how's he going to respond to this sound. Let me run it through the equations and we go, and we predict that I'll say, Pam, when I hear that sound.
+
+514
+00:51:24,080 --> 00:51:28,080
+That's a good prediction, because a good chance I will say that.
+
+515
+00:51:28,080 --> 00:51:44,080
+So models are just basically anything that's simpler than the actual thing. And we use the simple things, the models, because the actual thing maybe maybe it's illegal or unethical to use the actual thing or maybe it's too complicated to use the actual thing.
+
+516
+00:51:44,080 --> 00:52:01,080
+We don't have the computing power to use the actual thing. So we use a simplification. Models, there can be different types of models, some are statistical models and those give us sort of, it's like doing a statistical analysis, where we can have measures of variability.
+
+517
+00:52:01,080 --> 00:52:13,080
+Right, you can say, not only will Josh say bam, but we're 63% confident he'll say bam, and otherwise he'll say double bam.
+
+518
+00:52:13,080 --> 00:52:26,080
+Or something like that, right? We get measures of variation, and measures of variation are awesome, right, because it gives us a sense of what the range of applicability is and how much we can trust the models.
+
+519
+00:52:26,080 --> 00:52:39,080
+And these clinicians, apparently, that don't trust the models, that may be something that they need to understand is how to interpret the output of a more statistical analysis that gives us a sense of the variability.
+
+520
+00:52:40,080 --> 00:52:47,080
+Statistics is all about understanding and variation and using it to our advantage to make good decisions.
+
+521
+00:52:47,080 --> 00:52:58,080
+But there's also, you know, neural networks and machine learning type models, which are less statistical in nature and just tend to give you yes or no answers without a whole lot of bounds on the variation.
+
+522
+00:52:58,080 --> 00:53:10,080
+And those models can be very helpful and very good, but they're also sometimes difficult to interpret in terms of like, what's the variation on the output? How much faith can I put in it?
+
+523
+00:53:10,080 --> 00:53:27,080
+And there's ways around that, I was talking to Chris about this earlier too, in that we can test our model once we've trained it, once we've estimated all these values on this data set, we can throw new data at it that we know whether or not it was effective.
+
+524
+00:53:27,080 --> 00:53:42,080
+And we can see how well this model works with that data. And that would give us some sense of like, it works good for data that's like right close to the actual training data and it doesn't work so well for the in between.
+
+525
+00:53:42,080 --> 00:53:54,080
+You know, that would give us some sense of understanding the range of applicability of that model. These are all very important things that we have to do. Maybe we don't do them all well enough or thoroughly enough.
+
+526
+00:53:54,080 --> 00:54:07,080
+But it's, but it's stuff we can do. And so hopefully one day we'll teach the clinicians to have faith in science.
+
+527
+00:54:08,080 --> 00:54:22,080
+So, this kind of follows my other question. So, you're explaining things to a lot of people, a lot of people are watching these videos and getting good information from them, which is great, but how do you know that you're prepared enough to explain a new concept
+
+528
+00:54:22,080 --> 00:54:32,080
+and how do you make sure you've like taught yourself rigorously enough that you can explain to others and you feel confident that this is a good explanation that's going to help people?
+
+529
+00:54:32,080 --> 00:54:43,080
+Yeah. So, yeah, that's, I could do a whole talk on that. But the gist is I read everything I can. And then what I do is I try to, I do the math by hand.
+
+530
+00:54:43,080 --> 00:54:57,080
+And I also compare it to a real thing like when I did when I made this neural network, I created like a real neural network in like using a neural network framework and I trained it.
+
+531
+00:54:57,080 --> 00:55:00,080
+And I made it work and I didn't know how it worked.
+
+532
+00:55:01,080 --> 00:55:12,080
+So, I got these, I pulled out these values and I just did the math by hand and I made mistakes. And when I, and I had the thing printing out intermediate values and I had my intermediate math over here, and I could compare.
+
+533
+00:55:12,080 --> 00:55:25,080
+And I drew this picture and I made sure that ultimately everything matched from zero to one, I always got it. And then I took that program and I,
+
+534
+00:55:25,080 --> 00:55:38,080
+basically I tried a lot of programs that can validate that I've learned it correctly. I ended up writing this whole thing from scratch. And I ended up training it, I ended up writing my own back propagation algorithm to train it and I ended up with the same values.
+
+535
+00:55:38,080 --> 00:55:50,080
+And, and so I was just like, okay, and then I and then I was like well let's generalize let's try something else let's try a different model, different input data and see if I can figure it out, and I was able to figure it out.
+
+536
+00:55:50,080 --> 00:56:04,080
+And it was kind of funny in the end, it's kind of weird I got so good at these things where I could just look at the data I was trying to fit, and I could imagine what these values would be, and I could just come up with them off the top of my head.
+
+537
+00:56:04,080 --> 00:56:10,080
+And I'd be like oh that's probably this probably this, and they would be pretty close to the optimized model.
+
+538
+00:56:10,080 --> 00:56:14,080
+And I was like, I got this.
+
+539
+00:56:14,080 --> 00:56:27,080
+The other thing I do is I do drafts, I test them on people. Good way to understand that you don't understand is when you start teaching people, and they ask you a question and they go and what about this and you're like, I don't know.
+
+540
+00:56:27,080 --> 00:56:39,080
+That's a way, so I for this video, specifically, I tested it on like 10 different groups. There was like, like, it was on there was like COVID time. So it was like I was just zooming left and right there was like a group in Turkey they're like, teach about neural
+
+541
+00:56:40,080 --> 00:56:50,080
+because I said, I can't do that yet but I can show you what I'm working on, and they were like okay we'll do that instead. And so we did that instead I said any questions and they would shoot me with tons of questions, and they would and I'd be like, I can answer
+
+542
+00:56:50,080 --> 00:56:54,080
+some of those I can't answer all of them because I don't fully understand it yet.
+
+543
+00:56:54,080 --> 00:56:59,080
+And I got to where I can answer everybody's questions and I was like, I got this.
+
+544
+00:56:59,080 --> 00:57:09,080
+So it's a lot of work, especially because I'm not an expert. I'm, I'm, I'm a student. I have to learn this stuff from scratch, I didn't I wasn't born knowing this.
+
+545
+00:57:09,080 --> 00:57:17,080
+I didn't, I never took a class on neural networks I never took a class on machine learning no one's ever taught this stuff to me. It's all been learned.
+
+546
+00:57:18,080 --> 00:57:28,080
+I can make it work on my own corporate blah blah blah we have to go, I'm sorry but you get the idea right do lots of validation and lots of awesome convincing and I asked people questions.
+
+547
+00:57:28,080 --> 00:57:30,080
+Okay, great.
+
+548
+00:57:30,080 --> 00:57:40,080
+Thank you.
+
+549
+00:57:41,080 --> 00:58:04,080
+Yeah.
+
+550
+00:58:04,080 --> 00:58:07,080
+Oh, I feel like throughout the seminar I get colder and colder.
+
+551
+00:58:08,080 --> 00:58:12,080
+Like, overcompensate. Yeah.
+
+552
+00:58:12,080 --> 00:58:17,080
+I think, I think I'm generally more.
+
+553
+00:58:17,080 --> 00:58:21,080
+Actually I think I have a four.
+
+554
+00:58:21,080 --> 00:58:27,080
+I think that's my theory.
+
+555
+00:58:27,080 --> 00:58:31,080
+Because I'm always really hot or really cold.
+
+556
+00:58:31,080 --> 00:58:36,080
+Yeah.
+
+557
+00:58:36,080 --> 00:58:39,080
+Yeah, never satisfied.
+
+558
+00:58:39,080 --> 00:58:41,080
+Cool.
+
+559
+00:58:41,080 --> 00:58:46,080
+Yeah.
+

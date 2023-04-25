@@ -1,0 +1,376 @@
+start	end	text
+0	12240	It's my pleasure to introduce Dr. Jafet Gado.
+12240	18500	He is currently a postdoctoral researcher at the National Renewable Energy Laboratory
+18500	24600	working as part of the Bio-Optimized Technologies for Keeping Thermoplastics Out of Landfills
+24600	30280	and the Environment, or BOTTLE for short, project, working on using machine learning
+30280	36440	to identify and engineer plastic degrading enzymes.
+36440	40800	And as part of that, he's currently a visiting researcher at Harvard Medical School working
+40800	43440	on part of the same project.
+43440	49080	Before this, he got his PhD at the University of Kentucky working on cellulose degrading
+49080	54360	enzymes and using machine learning to figure out those enzymes.
+54360	60360	And before that, he did his bachelor's degree in chemical engineering at Amadou Fellow University.
+60360	65360	So if everyone can welcome Dr. Gado, we'll get started.
+65360	72400	Hi, good to see everyone's faces.
+72400	80720	And yeah, I remember not too many days ago, I was a graduate student sitting and then
+80880	82640	listening to presentations like this.
+82640	88720	And I would say, oh, I'll never understand, you know, they look so strange.
+88720	92280	So while I was preparing this, I had that in mind.
+92280	96400	I was like, I hope I will I will present in a way that everyone can understand.
+96400	98400	Yeah. But thank you for having me.
+98400	104640	I am I'm excited to be here and just to talk about my work with you.
+104640	111400	So let's get into machine learning for discovery and engineering of plastic degrading enzymes.
+114480	123880	Everyone here, I believe, is familiar with the problem with plastics and the global crisis of plastic pollution.
+123880	132480	We've seen images like this where you have plastics and oceans and landfills and all that.
+132480	140280	And it's even beyond just plastics polluting our environment to plastics getting into places where we don't even think they would get into
+142040	144040	protected areas in the United States.
+144840	154000	National forests and wilderness are contaminated with plastics because microplastics are taken there by wind and rain.
+154440	166360	Deep in the ocean, we see plastics in coral reefs and this has been associated with disease so that there's a higher likelihood of disease where you have coral reefs with
+167040	174640	plastic contamination. And we have microplastics in the human body as well and the bloodstream and so on. And this leads to all kinds of disease.
+174960	181000	And we know that there is a need to redefine how we use plastics and how we work with them.
+181120	187360	Also, very importantly, the life cycle of a plastic item like this bottle
+188280	200240	is quite long. It's about 500 to 700 years to begin degrading it. So every time I order Chinese, I like to think of the fact that my great, great grandchildren, actually my great, great, great, great, great grandchildren
+200560	203920	will be going to school, assuming that the world, hopefully, is
+203920	210520	the way it is today, and they will still have these plastic waste in the environment. So it's
+211240	220040	important that we redefine how we use plastics. So a concept that we think about is what's called a circular plastics economy.
+220680	226200	And the plot on the top left, you see that plastic use has been going up as
+226200	228360	human population has been increasing, and as
+229400	236240	globalization is becoming a stronger phenomenon, we see plastic use exponentially going up. And
+237120	245920	a lot of what we do is a linear economy, where we take plastics from petroleum and the ground, and then we make the plastics. And when we're done with it,
+246240	252640	we eat one meal, 15 minutes, and then we throw it into the environment. And that is, that's a really awful way to
+252640	263080	work with plastics. Doing that, we're only going to accumulate the waste in the environment until we kill ourselves, or something like that. But a better idea is a circular economy, where we
+263440	274600	don't get any more plastics from petroleum, but we only use what's available now. And then we regenerate the waste in a way that's circular, so that we make new plastics from
+274600	284000	the waste. Current recycling methods enable what is only a pseudo-circular economy, because with each recycling
+284920	287920	process that you go through, the plastics
+289120	294600	have much lower quality, so the mechanical structure is compromised. And what that
+294600	303200	results in is that after several iterations of recycling, you end up with plastic that's virtually worthless, and it goes back into the environment. So it's just a delay in
+303840	319840	the linear process. And the key to a circular economy is to break the plastics into the monomeric forms, rather than mechanical recycling. And then we can use this monomeric forms of the plastic polymer to generate new plastics, like
+320120	320800	virgin material.
+322320	337240	And to solve this problem of plastic deconstruction into monomeric forms, a very productive or promising way is to use enzymes. One, we know that enzymes can break down polymers. We see this in nature.
+337240	341560	We see biomass, skutin, polysaccharides, and so on, broken down by
+343760	349000	enzymes. And plastic polymers resemble chemically, they resemble
+350080	359600	biomass polymers or polymers in nature. It's not surprising, it's not too surprising that the enzymatic machinery that can break down or deconstruct
+359720	377200	biological polymers can also break down synthetic man-made polymers. And so the idea is to, you know, find enzymes that are able to carry out the ester, to break the ester bonds and other similar bonds in plastic waste.
+377320	385720	So for the plastic that makes plastic bottles, it's used to make plastic bottles, polyethylene terephthalate or PET as it's called.
+387520	396400	There is a bacterium that was found in 2016 called Adrenalis hackeansis. And this bacterium surprisingly grows purely on
+396400	409760	PET as its sole carbon source. And it does this by utilizing two enzymes, PETase and METase. PET breaks down the PET polymer structure into the
+409760	425680	bi and mono forms, BHET and MHET as they're called for short. And then METase breaks down MHET or hydrolyzes MHET into TPA and ethylene glycol. And then terephthalic acid and ethylene glycol are simulated in the organism, in the organism's retinobolic pathway for energy.
+425680	451720	And then these, if you can see from the plot, the right there, the PETase enzyme led to a greater release of aromatic products as TPA and ethylene glycol compared to other similar hydrolyses.
+452440	462640	And this sort of opened the door for very exciting research on how can we find PET hydrolysis like PETase that can carry out this reaction.
+465280	469960	We also see that this PET hydrolase enzymes are found in
+470960	485960	the super family of alpha beta hydrolases. And they are similar to some of these well-known and well-studied alpha beta hydrolases like carboxyl esterases, cutanases, lipases, and so on. And this phylogenetic tree shows
+487800	495840	you can see a cluster of where most of the PETases are found at the top. And there are also several sort of evolutionarily distant but still related
+496160	500480	PETases or PET hydrolyses that are similar.
+502440	508760	Interestingly, we realized that sequence identity is not a good predictor of activity.
+509440	518200	So you could have enzymes that are very similar to known PETases that do not retain activity. For example, the two enzymes on the right, you have
+519080	526720	611, the name of the enzyme, and 610. One is active, one is inactive, and they're 85% identity. Their structures virtually overlay
+527320	535720	practically on one another. You have similarly 601 and 604. One is active, one is not, 74% identity. And on the other hand, you have
+536360	545120	enzymes that are very different structurally and otherwise, as low as 14% identity and one retains activity and the other does not.
+545600	562920	So the simplest approach, which would be to just take the known PETases and do a BLAST search and pull up sequences and then go test the similar enzymes, would not be a good approach because sequence similarity or sequence identity is not a good prediction method.
+563640	574080	And so researchers have looked at other methods that can help identify what active PETases are. And
+574880	582440	the current state of the art is to use profile of hidden Markov models. So hidden Markov model, if you're familiar with such models, they are, they describe
+582960	589200	a protein sequence or protein sequence alignment as a Markov process and their associated
+589720	604800	emission probabilities with each state of the amino acids and insertions and deletions. So that, in essence, what you're asking in a rather simplistic way is, how does a sequence compared to the overall distribution of
+605640	612080	the profile, giving the amino acids that occur at each position, as well as insertions and deletions. And
+613000	621240	this paper published in 2018, they took, I think, eight known PETases at the time and they aligned them and then they showed the
+621680	626160	profile. And you can see that there are some positions where you have strong conservation
+626560	644760	of specific residues. And the hypothesis was that profile HMMs will capture these important positions and a search of sequence databases with profile HMM will identify, at the very least, proteins that are similar to known PETases, particularly at conserved positions.
+645560	665560	And we have used this hidden Markov model method, as well as with machine learning, to identify novel thermostable PET hydrolysis. And this paper was recently published in Nature Communications. So I will talk about some of the work that we've done here, as well as ongoing work that's not yet published.
+665560	693560	Our search methodology was to take the vast sequence database. We used NCBI non-redundant database and select thermal metagenomes from JGI. And we had about 220 million proteins that we're searching. And to search using hidden Markov models, as well as a support vector regression, a support vector classification model to predict thermostable PET hydrolysis.
+693560	718560	And then to screen those and select for, or to screen those for PET hydrolysis activity. And we're particularly interested in high temperature proteins, because at higher temperature, closer to the glass transition temperature of PET, you have increased accessibility of the enzyme to the substrate.
+719560	728560	So hypothetically, you would have improved performance or improved catalytic performance. So we wanted to identify proteins or enzymes that could withstand higher temperatures.
+728560	744560	So at the time I did this work, and I was a graduate student at the time, there were 17 known PET excesses. So I just called them PET 1 to 17, because I like life and I want to be organized.
+745560	758560	And here you see an alignment of these 17. There are some of them, I'm just showing regions of an alignment. And there's some regions where you have either insertions, lots of insertions, because you have a loop somewhere in that region.
+758560	775560	But overall, despite the fact that you have evolutionary distance sequences, some regions align specifically well. And we took special time in curating the alignment. So we used, I tried different alignment methods, and I picked the alignment methods that I thought had the best,
+778560	785560	the best performance in aligning, particularly the conserved residue. So the active site triad of the ion and holes and things like that.
+786560	799560	And we took this heated molecule model and then searched the sequence databases, about 250 million of them. And we returned, at the threshold that we set, we had about 3,500 hits.
+800560	809560	So the next thing was we wanted to select a smaller size of this hits that were predicted to be thermostable. And to predict thermostability,
+810560	818560	we're looking at how active is the enzyme at higher temperatures. A good measurement of that is the optimum temperature of activity.
+819560	830560	That's you evaluate activity at different temperatures and at the temperature at which you have maximum activities, the optimum temperature of activity. And from the literature, we see that the optimum temperature of activity correlates with
+832560	844560	the organism growth temperature. So organisms that are thermophiles or grow in high temperature environments tend to have proteins that are thermostable and their enzymes have optimum activity at higher temperatures.
+844560	855560	And the absence of optimum temperature data, we decided to use optimal growth temperature of the organism as a proxy to predict thermostability of the proteins.
+859560	863560	And for sequence features, we decided to use
+864560	874560	the sequence rather than the structure to predict thermostability because we wanted to do this in a high throughput fashion. And I first did a sample screen of
+876560	885560	different features to see what features correlate with the activity or with the thermostability. And I'm showing here just a few
+886560	896560	sequence features. And interestingly, we found that the composition of the amino acids, particularly relative composition, so aspartate relative to glutamate and so on,
+897560	909560	predicts the thermostability and every additional feature beyond the composition only provides marginal improvement in the performance. For our data set, we retrieved
+910560	926560	proteins based on the environment of the organism. So we had 8,000 sacrophilic, mesophilic, thermophilic and hypothermophilic. And it's 8,000 because we wanted to have a balanced class. So we just took the smallest class and then discarded the proteins from the other class.
+927560	942560	And we looked at different methods for predicting thermostability, different classification methods. Is this a binary classifier? Is giving a protein, is this thermophilic or hypothermophilic or is it mesophilic?
+943560	963560	And then we found that the support vector classifier compared to other methods, including k-nearest neighbor and random forest and so on, performed best. This is on GitHub currently. So it's a simple, easy to use code that can be applied to screening protein sequences.
+964560	984560	And you also notice that the accuracy of the methods, since these are based on amino acid features, the accuracy sort of correlates with the length of the sequence. Because as the sequence length increases, you have more confidence in the dipeptide composition and so on, and the amino acid features.
+985560	1003560	This is the performance on a separate test data set, which the model did not see in training and validation. And overall, you see that there's about an 80% accuracy in predicting whether it's in one thermostability class or the other.
+1004560	1023560	And going forward, we took the thermo approach of the thermostability prediction model and apply that to the 3,500 hits that we had. And most, as you'd expect, would be mesostable. There are only a few thermostable proteins in the databases.
+1024560	1042560	We narrowed this down to about 74. And then we screened the 74 in vitro for activity on PET. And we looked at different temperature and different pH to understand the diversity of the variability of the activity as a function of the experimental conditions.
+1043560	1056560	And the darker colors indicates greater activity, the lighter colors indicate low activity. And there's some enzymes like LCCI-CCG that were previously described that retained, that demonstrated really high activity.
+1057560	1082560	And the enzymes that we found, we named them according to the phylogenetic clades that they fall into. There's 101 belonging in clade 1 and 2, 1 in clade 2, and so on. And you see that most of these are of low activity than the canonical LCCI-CCG, but some of them, particularly those in group 7, at specific temperature regions demonstrate similar activity.
+1083560	1098560	On the top left, I show a phylogenetic tree of these 74 enzymes. And we started with 220 million, of course. I say 250 million before, and I was rounding up.
+1098560	1104560	It's nice to say quarter of a billion instead of 220 million.
+1105560	1121560	So with the HMM, we narrowed that down to 3,500 PET hydrolases. The thermostability filter, we found 74 that were predicted to become a stable, we expressed 52 of them could be expressed and that we assayed them.
+1122560	1136560	And 38 of them were active on PET. Interestingly, 24 of these were novel, never presented before. Some of these were in completely different clusters from what's mostly known to be PET-exists.
+1136560	1148560	Most PET-exists fall in this group as polyesterase liposcutinase, according to the ESTA database classification. And we've obtained a patent for these 24 PET hydrolases as well.
+1149560	1167560	I wanted to also look at how the hidden Markov model alignment scores correlate with activity. And to discover the PET-exists, we were aligning unknown sequences or sequences with unknown function to the PET hydrolase HMM, and we select those with high HMM scores.
+1168560	1180560	And you see that there is generally some weak correlation between the hidden Markov model scores and measured activity. On the left, I'm just showing the specific hidden Markov model score.
+1180560	1198560	On the right, the golden scatter plots are the difference between an alignment with a hidden Markov model of known PET-exists versus a hidden Markov model of enzymes that are of similar sequence homology, but are validated to not be PET-exists.
+1199560	1220560	And you also see that on a classification framework, discriminating between active PET-exists and inactive sequence homologues, the model does not do really well. If you're familiar with receiver operating characteristic curves, you know that curves that are closer to the dashed line indicate perfect performance.
+1220560	1233560	The straight line is sort of random performance. And then we get AUCs of about 0.58 versus random scores of 0.5. So that's almost only slightly better than random, if you think of that.
+1234560	1253560	And so the question going forward was, can we use deep learning or machine learning? Because the hidden Markov model does not predict in a supervised way, it doesn't learn what activity is or how the activity relates to between one sequence and the other. It's just looking at the alignment.
+1254560	1272560	I wanted to see if we could predict the specific activity or the relative activity of a protein sequence with deep learning. And the beautiful thing of deep learning, or machine learning in general, is you can learn, giving the right set of features, you can learn to predict specifically attributes of proteins.
+1272560	1294560	For data sets, I began with going through the literature and pulling out data of experimentally measured PET hydrolysis. And this went from 28 studies, totaling about 449 PET hydrolysis.
+1295560	1314560	I should point out that these are both from naturals, where you have just wild type enzymes from the natural sequence landscape, as well as singles. So you take a particular enzyme and then make a single mutation. So maybe I position 100 mutated adenine to glycine or something like that.
+1314560	1329560	And then multiples, where you have multiple mutations, ranging from 2 to 21 mutations. And this, there are about 514 activity measurements for this 449 proteins. So you have multiple measurements for some proteins.
+1329560	1347560	And I wanted to see how machine learning can sort of learn from this data set to predict PET activity. The natural proteins shown here, you have sequence identity ranging from somewhere about 10% to 99% as well.
+1348560	1363560	And I should also point out that the conditions at which these data were generated vary. The PET substrate that was used varies, the temperature on the page varies, and you would expect that this will affect the measurements.
+1364560	1378560	And so that would prevent comparison between one data set and the other. So if you do direct regression, so you take the first data set and you train a model on that, you predict the exact PET hydrolysis activity that's measured at that conditions.
+1379560	1382560	Moving to another data set, you have a different condition, so you can't do direct regression.
+1383560	1398560	To overcome this limitation, the limitation that the disparate activity measurements and disparate conditions present, we introduced a strategy which learns to rank pairs from each data set.
+1399560	1409560	So I'm showing a practical example. So you have a study with different sequences, X1 to X4, and the measured activity at specific conditions of that study.
+1410560	1418560	And then you have another study that takes another group of PETIs and measures activity, and the activity values are different because of different conditions.
+1418560	1425560	What we do instead is we generate pairs. So from the first study, we generate all possible binary pairs.
+1426560	1433560	And then we predict the class, convert the regression raw values to classification tasks.
+1434560	1441560	And we ask the question, giving a pair of sequences, is the first sequence of better activity than the second?
+1441560	1445560	And this way we do away with trying to predict the exact activity.
+1446560	1458560	And also the model learning across all data sets, because we combine all of these data sets together, the model learns features that generally relate to PET hydrolysis activity across all the data sets.
+1458560	1471560	Going back, we see the different conditions, and we really can't predict PET hydrolysis activity on powder versus PET hydrolysis activity on, say, nanoparticles versus the activity at a specific pH.
+1472560	1482560	It will be nice to do that. Ideally, if you had a model that could tell you this is how PETases will work at a specific condition, but we can't do that because we're limited by the data.
+1483560	1495560	But by combining the data together and learning to rank across the data sets, we can learn potentially features that generally correlate with PET hydrolysis activity.
+1496560	1506560	And then for the prediction, what we do is we take each sequence in the pair, and then we generate features for that sequence.
+1506560	1517560	So the sequence represented as X, the features as Z, and your features can come from an unsupervised model, which I'll show in the next slide, or it can just be a simple one-hot encoding of the sequence.
+1518560	1525560	And then we take the difference vector of the two representations, and then we fit a simple logistic regression to that difference vector to predict the rank.
+1526560	1532560	And to evaluate this method, I used leave one group out cross-validation.
+1533560	1539560	So we took the 28 studies, and then we would train on all but one study and then test on another study.
+1540560	1552560	And since there are duplicates as well as high similarity between some of the sequences, we applied an 80% threshold and removed all sequences in the training set that share identity of up to 80%.
+1553560	1556560	80% or more with sequences in the test set.
+1557560	1566560	And then we repeat this for every study until we've trained and tested on every single pair in the data set.
+1567560	1574560	And for features, because if you think about it, you want to have a way to represent your protein sequence.
+1575560	1581560	And that is representation learning or how you represent your sequence is very important.
+1582560	1594560	And one promising approach, at least in the literature, is to use semi-supervised methods to take unsupervised models that were trained to learn the language of proteins across the protein universe.
+1595560	1599560	And then use the embeddings from these models.
+1600560	1609560	One example is you have autoregressive models which take a protein sequence and learn from all amino acids up to a point and predict the next amino acid.
+1610560	1618560	Then you have math language models that mask out an amino acid and learn the context of that mass amino acid and predict what should be there.
+1618560	1634560	You also have models like directional autoencoders that are a bottleneck that take the input sequence and then compress them into a bottleneck latent space, represented as Z, and then learns to reconstruct the original input.
+1635560	1643560	And models like these have been shown to capture both structural as well as functional representations of proteins.
+1643560	1657560	This is from a paper in 2019 where they trained LSTMs on the protein universe, and they show that structural information as well as phylogenetic and even functional information is contained in their embeddings.
+1658560	1677560	And so to predict perihydrase activity, I retrieved embeddings from several of these models, particularly using some of these models that have been demonstrated to have state-of-the-art performance in downstream tasks.
+1678560	1705560	So we've got Unirep, an autoregressive LSTM, transformer models like Transception, autoregressive transformer, ASM, a convolution masked model called CARB, a mass model transformer, ProT5, ProGen2, and a variational autoencoder that learns from the multiple sequence alignments
+1706560	1708560	to predict the effect of mutations.
+1709560	1715560	As well, I also trained a variational autoencoder only on 18,000 proteins that are similar to perihydrases.
+1716560	1720560	So this we retrieved from a jackhammer search with perihydrase sequences.
+1720560	1725560	As you point out that all of these models except this two were trained on the protein universe.
+1726560	1739560	So somewhere between 25 million to a billion proteins in the protein databases, whereas these two models were trained only on the protein homologues of perihydrases, about 18,000 of them.
+1740560	1749560	And very interestingly, comparing the performance, on the left plot, I show the AUC distribution across the 28 studies.
+1750560	1766560	And you see that the one-hot representation of the multiple sequence alignment performs better than all but one of these models, which you would expect that language models should learn much richer representations of the proteins.
+1766560	1770560	But we see that one-hot encoding of the multiple sequence alignment is better.
+1771560	1780560	And particularly when you split the data into singles, multiples, and naturals, you see that the performance varies across different methods for these.
+1781560	1787560	We're mostly interested in naturals because we're going to be screening wild type sequences in the databases.
+1787560	1796560	And so the one-hot encoding has the best performance for naturals, which I think is interesting.
+1797560	1804560	So it means that, or it indicates that the information from the multiple sequence alignment is particularly important.
+1805560	1812560	And then encoding that and learning to predict Pettis activity directly from this one-hot encoding.
+1812560	1817560	So the model literally asks the question, what residue is at this position?
+1818560	1822560	And it assigns weights to specific residues at each position.
+1825560	1828560	I also looked at zero-shot prediction methods.
+1829560	1833560	And if you're familiar with zero-shot, it's where you have no training data at all.
+1834560	1841560	And you're just taking a model and predicting the fitness or so of your protein sequence.
+1842560	1855560	And on the machine learning side or deep learning side, these models usually will assign a probability to a sequence given what the model has seen in the training set.
+1856560	1860560	So think of it as you have an unsupervised method.
+1861560	1863560	Your input is the protein sequence from the protein universe.
+1864560	1865560	Your output is the protein sequence as well.
+1866560	1873560	And the model is either learning to reconstruct the inputs through a bottleneck or in another regressive fashion or a masked fashion.
+1874560	1882560	And the probability that that protein is similar to anything it's seen in the training set is an indication of its fitness.
+1883560	1889560	And you can also use zero-shot methods that are more based on just bioinformatics methods.
+1890560	1895560	So sequence similarity, for example, with the BLOSUM matrix or Healy-Markov models.
+1896560	1910560	And interestingly, you see that when you compare the BLOSUM similarity with one-pedis, IS-pedis or the canonical pedis, versus a BLOSUM similarity with a consensus sequence from the alignment, you get much better performance with consensus.
+1911560	1920560	Indicating that learning from the alignment, what positions are important and what residues are particularly conserved in the alignment is important.
+1921560	1933560	But generally, I know there's a lot of information here, but comparing the unsupervised methods, zero-shot, to the supervised or semi-supervised methods,
+1934560	1942560	we see that the one-hot encoding still outperforms virtually all methods, particularly for predicting naturals.
+1943560	1958560	The Healy-Markov model, although I previously showed that the correlation was weak with our data sets, compared to the entire data sets of the 20 data sets that we pulled out, the Healy-Markov model still shows particularly reasonable performance.
+1959560	1965560	And so we've made a model to predict pedis activity, which we call rank-pedis.
+1966560	1969560	And it takes as input the protein sequence.
+1970560	1976560	And instead of an unsupervised model, we just align that sequence to a pedis alignment.
+1977560	1985560	And we take the positions in that alignment and then one-hot encode that and take the difference of the one-hot encoding.
+1985560	1991560	So if there's a residue at a position, it gets a one. If there's not a residue, it's a zero.
+1992560	1998560	And when we take the difference, you have negative one or one, depending on where the position is.
+1999560	2004560	And we can predict the rank. Is this sequence a better pedis than some reference, say, IS pedis?
+2005560	2010560	We can also screen with the profile Healy-Markov model and get a score for that.
+2011560	2015560	And then we average the scores and use that to screen the sequence database.
+2016560	2028560	And so currently what we're working on is to use these methods for improved screening and improved mining of pet hydrolysis from the sequence databases.
+2028560	2034560	And it's amazing how fast these databases grow. There are currently about 3 billion proteins in the databases.
+2035560	2040560	And we want to screen these and rank these, and then we'll iteratively search to identify pedis.
+2043560	2057560	I will acknowledge my supervisor, principal investigator Greg Beckham, as well as collaborators at Harvard, Deborah Marks and Chris Sander, and postdocs and graduate students who have collaborated with me.
+2058560	2060560	Erica Erickson, Courtney, Nikki, and Ada.
+2061560	2064560	Thank you for listening, and I'll take questions.
+2088560	2101560	One thing we could do is to test different alignments and see which alignments give the best performance.
+2102560	2105560	But I think a structure-based alignment should work well.
+2106560	2115560	And what we're doing is to take alpha-4 structures of all the proteins we want to align, and then align the structure first, and then use that to guide the alignment as well.
+2115560	2127560	And the alignment will be wrong in some places, but what matters most is that it gets the most important positions correctly, the active site triad and conserved positions as well.
+2146560	2147560	Yeah.
+2167560	2170560	Local alignment versus global alignment.
+2171560	2173560	I think you're referring to...
+2176560	2177560	This.
+2177560	2178560	Yep.
+2179560	2185560	I'm showing positions that align well, but this is just a segment of the alignment.
+2186560	2191560	There are some positions or some regions that don't align well at all in this.
+2192560	2195560	And this is the 17 pedis at the time.
+2196560	2198560	The alignments get the most important positions.
+2199560	2201560	And I think that you need a multiple sequence alignment.
+2202560	2208560	In this case, the sequence alignment that's fed into the HMM to capture the sequence that's not aligned well.
+2209560	2211560	And I think that's what we're trying to do.
+2211560	2213560	Currently, there are about 75 pedis.
+2214560	2218560	So aligning those, you have even greater regions that don't align well.
+2219560	2222560	And I think that you need a multiple sequence alignment.
+2223560	2233560	In this case, the sequence alignment that's fed into the HMM to capture these conserved positions globally across all of the proteins that you're feeding in.
+2234560	2236560	A local alignment will miss that.
+2242560	2243560	Yeah.
+2252560	2256560	Most language models take unaligned sequences.
+2257560	2260560	Some language models take aligned sequences.
+2263560	2266560	I was using the unaligned sequence for all but one.
+2267560	2269560	The ESMMSA, yes.
+2271560	2272560	I have a question.
+2273560	2275560	I was wondering what's the size of your...
+2277560	2281560	As compared to the input in your variational monitor.
+2284560	2285560	For...
+2286560	2287560	Yeah. For the...
+2291560	2293560	Yes. So I did a...
+2294560	2298560	For EAVE, EAVE is a pre-trained or a proposed model from a different paper.
+2299560	2304560	And they used a specific architecture with a latent dimension of 50.
+2305560	2317560	Yeah. For this bespoke variational monitor that I trained, I optimized the latent space and found that 64 was optimum.
+2318560	2319560	And then I used 64 for that.
+2320560	2327560	The input is 400 and something positions by 21. So it's about 9,800, about 10,000.
+2328560	2339560	Yeah. And for comparison, all of the language models have latent dimensions of about 768 for ESMMSA, 1,284 for ESM1B and the others.
+2341560	2343560	And I think 1,500 for PUGIN2. Yeah.
+2349560	2350560	I have a question.
+2352560	2353560	So I...
+2360560	2361560	Yes, there were...
+2364560	2372560	The overall super family sort of classification, they're all alpha beta hydrolysis, but they're in different families.
+2373560	2374560	Yeah.
+2376560	2381560	As particularly as a function of the phylogenetic similarity.
+2383560	2396560	If you look at the tree, those ones with short branches or short leaves, particularly in groups four, five, six and seven, all fall in this polyesterase liposketenase group.
+2397560	2401560	And they overall have more greater similarity structure.
+2402560	2410560	And then in groups one, two and three, where you have more divergence, you have even greater conflicts in the structure.
+2411560	2424560	I was just wondering, the other question I had was, when you were doing the acid, you had some tips, you might have some tips, but was there a reason that people kind of folded on it?
+2425560	2430560	Most serine hydrolysis have a basic pH range.
+2431560	2434560	And most of them are either inactive at neutral pH or lower.
+2435560	2439560	And all of the pedases we've screened lose all activity at 4.5.
+2440560	2441560	So, yeah.
+2441560	2442560	Yes, yes.
+2443560	2444560	Oh, yes, yes, yes.
+2444560	2446560	We're looking at pet hydrolase activity.
+2447560	2455560	And so activity here is specifically, of course, these are enzymes, so they do something, probably in cutanases, lipases, yes.
+2456560	2457560	Not really.
+2457560	2464560	The original hypothesis, the first pedase that was found was in a bacterium in a plastic dump.
+2464560	2466560	You generally don't find it in a plastic dump.
+2466560	2467560	So, yeah.
+2467560	2468560	So, yeah.
+2468560	2469560	So, yeah.
+2469560	2470560	So, yeah.
+2470560	2471560	So, yeah.
+2471560	2472560	So, yeah.
+2472560	2473560	So, yeah.
+2473560	2474560	So, yeah.
+2475560	2477560	Not really.
+2477560	2485560	The original hypothesis, the first pedase that was found was in a bacterium in a plastic dump.
+2486560	2491560	But as we've moved further from that, we're finding pedases in different organisms.
+2491560	2498560	It was a pedase that was found in a human microbiome.
+2499560	2506560	So people were asking, was the person just eating a lot of plastics?
+2506560	2520560	The most likely explanation is that these did not evolve to be pedases because they were exposed to plastics, but they have alternative activities that are similar to pet hydrolase activity.
+2520560	2522560	And just because of the similarity in the structure.
+2522560	2531560	So, most esterases in the Syrian hydrolase family will possibly be pedases.
+2531560	2550560	Given the similarity.
+2551560	2558560	So, the nature communications paper we have published, Erickson, is one of the 28 data sets.
+2558560	2561560	When you hold out that data set, I think you get ABCs of 0.7.
+2561560	2564560	So, it does rank that data set well.
+2564560	2568560	And it does rank it better than the HMM, which was 0.58.
+2568560	2576560	And across all of the data sets, we have 0.79, I think, on average for natural.
+2576560	2580560	So, it does a good job of ranking the activity.
+2580560	2589560	So, we want to use this to, or we are currently using this to rank pet hydrolase activities across the entire sequence of space.
+2590560	2597560	So, I noticed in most of your screens, you're really focused on predicting thermostability and activity.
+2597560	2610560	But I know that from screening these enzymes, that if something has a really low expression, we're going to eliminate it very fast because it's impossible to reduce even if it's really thermostable and has a high activity.
+2610560	2613560	If there's just not enough of it, we're not going to really be able to use it.
+2614560	2618560	So, I'm wondering, like, where are you getting the expression data from?
+2618560	2622560	Do you have to actually express it in E. coli to get that data?
+2622560	2628560	Or is there any information from your models that could be used to sort of ensure its expression as well?
+2628560	2630560	That's a very good question.
+2630560	2637560	We did not include expression data in the training data at all, because that is sort of biased.
+2638560	2645560	If we're testing, if we're predicting the activity of an enzyme, it most likely expressed for that for it to be tested.
+2645560	2651560	It may not have been E. coli and may have been a different, even if it were E. coli, it would be a different expression system.
+2651560	2657560	I tried predicting expression, and there are machine learning methods that do this.
+2657560	2662560	They take language model embeddings, and then they try to predict solubility and expression in E. coli.
+2663560	2667560	I find that these methods, I found that these methods did not do very well on our data.
+2667560	2676560	In fact, the heat and marker model alignment score outperformed all of these in predicting expression for E. coli.
+2676560	2684560	And we also found that from our data sets that the sequences that had higher heat and marker model scores, alignment scores, expressed better.
+2684560	2692560	So we think that if we're selecting for things that align well with the PETAS HMM, we'll see better expression.
+2692560	2695560	But it's one of the problems that we were faced with.
+2695560	2698560	And I think we can only predict one thing at a time.
+2698560	2700560	Another thing we care about is pH.
+2700560	2708560	We're interested in lower pH because the product of PET degradation is terephthalic acid, which is acidic.
+2708560	2711560	And these enzymes don't work well at acidic conditions.
+2711560	2717560	So we want to find enzymes that are as acidic, acid tolerant as possible.
+2717560	2732560	So in a different project, I'm training deep models, deep learning models to predict acid tolerance and pH optimum.
+2732560	2734560	Currently, no. The most acidic.
+2734560	2737560	So we've tested these at different pH.
+2737560	2741560	And then most of them have optimal pH of 8, 9.
+2741560	2745560	If you lower it down to 6, below 6, most of them lose their activity.
+2745560	2748560	We took a few of them that retain activity at 6.
+2748560	2750560	And then we tested at 5 and 4.
+2750560	2753560	And only one of them had activity at 4.5.
+2753560	2757560	And if you go below 4.5, it loses activity.
+2757560	2758560	Oh, yes, we can.
+2758560	2761560	And we're doing that currently.
+2761560	2770560	It's not part of my talk, but I trained a deep learning model to predict the pH optimum from about 2 million proteins using the pH of the environment.
+2770560	2777560	So I took secreted enzymes and took the pH of the environment and then tried to train a model in that.
+2777560	2785560	And we're using deep learning methods as well as zero-shot predictions to engineer that, as well as search.
+2785560	2796560	So in addition to this model, we will use these pH prediction models to sort of rank the sequences that we pull out from the databases.
+2796560	2803560	Hopefully, we'll find things that are functional at low pH.
+2803560	2805560	Yes, yes.
+2805560	2812560	Hopefully, acidophiles should have lower pH optimum compared to other organisms.
+2812560	2816560	And so if a pedis is from an acidophile, then it's likely to have that.
+2816560	2819560	But see, now you're trying to work with four things.
+2819560	2821560	You're trying to predict expression.
+2821560	2822560	You're trying to predict activity.
+2822560	2824560	You're trying to predict thermostability.
+2824560	2826560	And you're trying to predict pH tolerance.
+2826560	2831560	And also, you're trying to predict substrate specificity.
+2831560	2837560	Does it function better on crystalline substrate versus amorphous substrate?
+2838560	2849560	Because if it does better on crystalline substrate, you can reduce the amount of mechanical preprocessing that goes into preparing the plastic waste.
+2849560	2857560	And so it's sort of an orthogonal prediction approach where these two things don't necessarily correlate.
+2857560	2862560	And if something is very acid tolerant, it doesn't mean it has activity.
+2862560	2883560	And the question of how do we combine all of these to search the sequence space is something that I'm interested in looking at.
+2883560	2891560	Yes, we're working on nylonases, polyurethanases, two enzymes I know that I'm working on.
+2891560	2896560	And there are other groups that are looking at different proteins, different enzymes, plastic enzymes as well.
+2896560	2906560	Pertosis seems to be the most interesting and has received the most attention in the literature.
+2906560	2914560	Probably because plastic bottles are polyethylene terephthalate is the most abundant man-made polymer.
+2914560	2918560	And so it's gotten a lot of attention.
+2918560	2927560	And I believe that similar approaches will yield successes in other plastic enzymes as well.
+2927560	2932560	So you're talking about, you know, there's a lot of different factors that need to be predicted here.
+2932560	2935560	There's different heights of the head.
+2936560	2942560	And from my experience, an enzyme that works really well on the endocrine axis doesn't necessarily work very well on crystalline heads.
+2942560	2949560	So we sort of talked about the idea of an enzyme cocktail where we're using a bunch of different head phases.
+2949560	2954560	There's just one plastic bottle because the plastic bottle doesn't have much.
+2954560	2965560	So I have a question about like how your approach is ideally would be applied to sort of creating an enzyme cocktail that could actually be used in similar ways.
+2965560	2973560	We don't have sufficient data to discriminate amorphous selecting or amorphous preferring pedases from crystalline.
+2973560	2977560	And I recognize that that would be a bias in the data set.
+2978560	2985560	If you have a lot of the different 28 studies, if you have most of them are amorphous pedase conditions were used in the screening.
+2985560	2990560	And so that would probably bias the models learning to amorphous conditions.
+2990560	2996560	But the hypothesis is that the model learns generally what makes a better pedase across conditions.
+2996560	3010560	But as we as we go forward, as we generate data, it will be interesting to start to play around with modeling approaches to see how that how we can discriminate these enzymes.
+3010560	3020560	Yeah.
+3020560	3023560	Oh, another question I have is just.
+3023560	3036560	So, now that you're sort of identifying all these novel cases, let's say, say, so can you just describe like what are the next steps in that process you've identified a novel headaches.
+3037560	3041560	Yeah.
+3041560	3052560	That's a, that's a good question on the public on the scientist side. We published a paper. Well, it's now on Google Scholar. Most scientists, that's what they care about and they're like we're done, we can move on.
+3052560	3075560	There's a patent for it, and companies are interested in these are using it in in their processes, but it most importantly forms a bedrock for further engineering, because as we see the different pedases have different performance and different
+3076560	3092560	So we could start to think about cocktails and then synthetic variants of these enzymes to improve performance we could start with. So you want to improve crystalline performance and crystalline substrate, the enzyme one of the enzymes that should really good performance
+3092560	3116560	611. We could take 611 and start to do enzyme engineering on it and I know that there are groups that are working on that as well.
+3117560	3125560	That's a really good point. I, we have not done that. We have not fine tune language models on the pair of these data sets.
+3126560	3141560	That is because in the literature, sometimes that actually makes things worse, and you lose, instead of you, making it better you start to lose the global unsupervised features that we learned.
+3142560	3158560	And so, some other people suggest fine tuning the embedding so you have frozen embeddings and then you train a model fine tuned on that. But we're treading on, we're treading on very dangerous territory here since we have very small data as well.
+3158560	3172560	The risk of overfitting is large as well. Another thing is I could take the language embeddings and train the frozen language embeddings and train on an even more expansive model. Why did we use logistic regression, we could train, I have 449 sequences.
+3173560	3186560	Right, with the pairwise approach you can explode that and we have 18,000 pairs, but these are from 449 sequences. I think that, yeah, it's, it's important to not shoot yourself in the foot with overfitting.
+3187560	3205560	I did that, I did that, I did that on 200,000 hydrolases. And guess what, it made it worse.
+3206560	3222560	I did, I did so many things. I did, I worked on this, I played with so many iterations. The conclusion after one year of fine tuning and model architecture training and all of that was you're just overfitting Jaffa, stop shooting yourself in the foot, you're overfitting.
+3222560	3237560	It works, and especially if you, if you're honest with yourself and you do proper cross validation, you hold out some data set and you optimize, you find out it does well on 0.9 correlation on this data set. When you move to another data set, bang, it fails.
+3237560	3258560	So, looking at performance overall, it's important to not, to use the right set of models with your data. 449 proteins, you should be limiting yourself to maybe one layer, two layers max and not very deep models and things like that, yeah.
+3258560	3261560	Okay, thank you very much.
+3288560	3289560	Thank you.
+3318560	3319560	Thank you.
+3348560	3349560	Thank you.
+3378560	3379560	Thank you.
+3408560	3410560	Thank you.

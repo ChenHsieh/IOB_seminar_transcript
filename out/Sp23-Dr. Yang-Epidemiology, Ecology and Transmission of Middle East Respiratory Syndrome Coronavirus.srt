@@ -1,0 +1,1940 @@
+1
+00:00:00,000 --> 00:00:29,120
+My pleasure to introduce Professor Yang, who joined UGA last semester and as a class chair
+
+2
+00:00:29,360 --> 00:00:34,960
+of ecology, mathematics, and statistics, but he doesn't have any commitment to
+
+3
+00:00:35,920 --> 00:00:45,120
+or ecology. So this seminar also serves for his application for the adjunct position with IOB.
+
+4
+00:00:45,120 --> 00:00:53,760
+So if you're a student and looking for lab, you may want to talk to him. His major research area
+
+5
+00:00:53,760 --> 00:01:00,960
+is infectious disease, and he is a statistician modeling for infectious disease. As you know,
+
+6
+00:01:00,960 --> 00:01:08,000
+to understand infectious disease, we need the knowledge in ecology, population genetics,
+
+7
+00:01:08,000 --> 00:01:15,600
+molecular genetics, to understand evolution of pathogens, and mathematics, you know,
+
+8
+00:01:15,600 --> 00:01:21,520
+as well as statistics. So it's very hard to find an expert in all of those areas,
+
+9
+00:01:21,520 --> 00:01:27,840
+and here we go. Professor Yang, so if you're interested in doing research in infectious
+
+10
+00:01:27,840 --> 00:01:38,160
+disease, you probably want to talk to him. He has a lot of grants. He's already published over 100
+
+11
+00:01:38,160 --> 00:01:46,400
+papers, and this is, believe me, this is just the first page of his CV. So I cannot read out
+
+12
+00:01:46,480 --> 00:01:57,200
+all the CVs. It's 19 pages. So he, let's see. Sorry, I'm aging, so I cannot see that. So he
+
+13
+00:01:57,200 --> 00:02:10,240
+got his PhD in 2004 from Emory, and he did his postdoc at Howard, right, so for the following
+
+14
+00:02:10,240 --> 00:02:20,560
+year, and then he worked at Brad Hutchinson Cancer Center, and then he moved to University
+
+15
+00:02:20,560 --> 00:02:27,600
+of Florida, and last semester, he joined again. So today, he's going to talk about epidemiology
+
+16
+00:02:27,680 --> 00:02:35,520
+and ecology of Middle East Respiratory Syndrome coronavirus.
+
+17
+00:02:42,160 --> 00:02:46,480
+Okay, good. Thank you, Liang, for this nice introduction and over compliment.
+
+18
+00:02:47,040 --> 00:02:56,160
+I'm not expert in everything, and I mainly specialize in modeling of infectious disease
+
+19
+00:02:56,160 --> 00:03:03,280
+transmission, and just started working with Dr. Liu on how to combine the epidemiological part
+
+20
+00:03:03,280 --> 00:03:10,000
+and the physiological part into the same model so that we can better model the dynamics of
+
+21
+00:03:10,000 --> 00:03:17,200
+transmission. Today, I'm going to talk about epidemiology and the ecology of MERS-CoV.
+
+22
+00:03:19,440 --> 00:03:24,560
+If you read the flyer before, I changed my title a little bit. I used to have
+
+23
+00:03:24,560 --> 00:03:31,360
+transmission as well, but I found myself too many. I had to cut some, so I moved that one out.
+
+24
+00:03:32,000 --> 00:03:34,960
+So today, we'll only be talking about epidemiology and the ecology.
+
+25
+00:03:36,080 --> 00:03:43,280
+Hopefully, you will be interested in these topics. So this is during the work with Dr.
+
+26
+00:03:43,280 --> 00:03:50,720
+Yichun Fang and Wenqiang Shi at Beijing Institute of Microbiology and Epidemiology, as well as Dr.
+
+27
+00:03:50,800 --> 00:03:56,240
+Anna Zhang at Shandong University. Anna was a business student in my lab at UF.
+
+28
+00:03:57,360 --> 00:04:02,400
+That's when she was leading this project, part of this project.
+
+29
+00:04:03,920 --> 00:04:06,720
+Please feel free to stop me anytime if you have any questions.
+
+30
+00:04:07,360 --> 00:04:11,360
+So some background about the disease and the pathogen as well.
+
+31
+00:04:13,040 --> 00:04:17,120
+You're probably quite familiar with this disease because of the pandemic of SARS-CoV-2.
+
+32
+00:04:19,120 --> 00:04:26,400
+MERS is a respiratory infection disease first found in the kingdom of Saudi Arabia.
+
+33
+00:04:27,200 --> 00:04:36,640
+As of January this year, there were a total of 27 countries that have reported about 2,600
+
+34
+00:04:36,640 --> 00:04:44,880
+lab-confirmed cases, together with 935 deaths. So that's a pretty good number.
+
+35
+00:04:45,840 --> 00:04:56,240
+That has reported about 2,600 lab-confirmed cases, together with 935 deaths. So that's a
+
+36
+00:04:56,240 --> 00:05:00,960
+pretty high case fatality rate. We use the CMR of about 36%.
+
+37
+00:05:03,440 --> 00:05:09,440
+Luckily, human-to-human transmission is pretty rare, and many occurred in healthcare settings
+
+38
+00:05:09,440 --> 00:05:17,360
+and households. And in healthcare settings, it's pretty much patients who are immune-compromised.
+
+39
+00:05:17,360 --> 00:05:20,720
+So that's why they are at high risk of transmission.
+
+40
+00:05:22,160 --> 00:05:27,280
+And the zoonotic infection is mainly driven by exposure to the dummy debris,
+
+41
+00:05:27,920 --> 00:05:35,600
+wire droplets, fomites, and consumption of some raw products of this animal, such as milk.
+
+42
+00:05:36,320 --> 00:05:41,280
+And people also suspect the use of chemical urine as a traditional medicine is another
+
+43
+00:05:41,280 --> 00:05:51,280
+transmission route. And given that there has been no effective treatment or vaccine yet,
+
+44
+00:05:51,280 --> 00:05:56,880
+so people are very concerned about the potential of this virus causing another global pandemic
+
+45
+00:05:56,880 --> 00:06:04,720
+if it's fully adapted itself to the human population. And in 2018, WHO incorporated MERS
+
+46
+00:06:04,720 --> 00:06:12,480
+into its research and development blueprint, which lists a variety of disease pathogens
+
+47
+00:06:12,480 --> 00:06:18,080
+that people will spend more time developing vaccines toward those pathogens.
+
+48
+00:06:25,280 --> 00:06:33,120
+And about the virus itself, it's an RNA virus with a genome about 30 kb long.
+
+49
+00:06:35,520 --> 00:06:46,480
+And MERS-CoV belongs to the lineage C of the genus beta coronavirus. The famous or infamous
+
+50
+00:06:46,480 --> 00:06:53,440
+SARS-CoV and SARS-CoV-2, they belong to the lineage B. And the common code coronaviruses,
+
+51
+00:06:53,440 --> 00:07:00,800
+OC43 and HKU1, they belong to the lineage K. So they're related, but a little bit distant
+
+52
+00:07:00,800 --> 00:07:10,400
+from each other. MERS-CoV was phylogenetically classified into clade A and clade B. A includes
+
+53
+00:07:10,960 --> 00:07:17,920
+the early detected human cases, viruses, and B includes the more contemporary viruses.
+
+54
+00:07:17,920 --> 00:07:25,440
+But however, this classification was based on a pretty few number of sequences. So we've done
+
+55
+00:07:25,440 --> 00:07:29,280
+a much more comprehensive work on this, and we'll show that later.
+
+56
+00:07:32,960 --> 00:07:39,600
+Although the disease was quite new, but circulation of MERS-like coronaviruses
+
+57
+00:07:43,280 --> 00:07:50,080
+in Africa and the Arabian Peninsula occurred well before 2012.
+
+58
+00:07:51,040 --> 00:07:58,640
+And a little bit about the immunity background of this virus. The virus used the S1 protein
+
+59
+00:07:58,640 --> 00:08:07,360
+to bind to two types of host cell surface molecules. One is called the DPP4, and the other
+
+60
+00:08:07,360 --> 00:08:15,280
+is the well-known alpha-2 or alpha-3 astatic acids. And it replicates mainly in the nasal
+
+61
+00:08:15,840 --> 00:08:25,680
+epithelium of dromedaries, but only in the lower respiratory tract of humans. So that's probably
+
+62
+00:08:25,680 --> 00:08:33,360
+why it's so highly transmissible among the dromedaries, but not so much among human beings.
+
+63
+00:08:36,320 --> 00:08:40,480
+All right, so that's enough for the background. Let me get into the needs.
+
+64
+00:08:40,800 --> 00:08:48,480
+We'll try to identify determinants for case fatality rate and also characterize the spatial
+
+65
+00:08:48,480 --> 00:08:54,480
+division pattern of the disease. And we want to also look at evolution and migration history
+
+66
+00:08:54,480 --> 00:09:01,840
+of the virus. Finally, we'll provide some more comprehensive picture about the ecology of the
+
+67
+00:09:01,840 --> 00:09:08,000
+virus. And we'll also look at the evolution and migration history of the virus, and we'll also
+
+68
+00:09:08,000 --> 00:09:13,920
+picture about the ecology of the virus and associated socio-environmental drivers.
+
+69
+00:09:14,960 --> 00:09:19,440
+But this talk has two parts. The first two are part one, and this is part two.
+
+70
+00:09:30,720 --> 00:09:34,160
+So in this slide, I talk about the data sources.
+
+71
+00:09:34,960 --> 00:09:41,760
+We first collected data on all confirmed human cases, and there are three major sources for that.
+
+72
+00:09:43,040 --> 00:09:52,080
+We looked at the official reports of WHO. Now, WHO does not provide the line list it used to.
+
+73
+00:09:52,080 --> 00:09:59,120
+So we were lucky. At that time, we got a line list. And the Food and Agriculture Organization
+
+74
+00:09:59,680 --> 00:10:06,000
+of the United Nations, as well as the health departments of affected countries.
+
+75
+00:10:07,600 --> 00:10:13,680
+So we collected demographic data whenever it's available, and the dates of
+
+76
+00:10:15,600 --> 00:10:22,000
+critical events, like the onset, hospitalization, and the lab confirmation.
+
+77
+00:10:23,360 --> 00:10:28,160
+The most important one is to explore your history, but it's very simple. It's just whether
+
+78
+00:10:28,160 --> 00:10:38,880
+the case has had a history of exposure to animal production or other confirmed patient.
+
+79
+00:10:39,600 --> 00:10:48,960
+And we validate this data via literature research. We also collected a bunch of socio-environmental
+
+80
+00:10:48,960 --> 00:10:56,480
+variables, which are listed here, and we'll utilize them, especially using, for example,
+
+81
+00:10:56,480 --> 00:11:04,720
+meteorological data and land cover data for ecology study. The gene sequence data were
+
+82
+00:11:04,720 --> 00:11:12,720
+downloaded from our gene bank, and we used data up to the June of 2020, and that's also
+
+83
+00:11:13,280 --> 00:11:18,880
+the time upper limit for the case data we downloaded.
+
+84
+00:11:27,360 --> 00:11:33,360
+This is an epidemic curve actually provided in the WHO report, and it only listed cases
+
+85
+00:11:34,240 --> 00:11:43,200
+in the eastern Mediterranean region. It's not for the whole world, but because we want to
+
+86
+00:11:43,200 --> 00:11:51,520
+check the seasonality, so we decided to focus on the endemic in the zoonotic region instead of the
+
+87
+00:11:51,520 --> 00:12:00,640
+local region. And it covers from June 2012 to January 2023. This is more comprehensive than
+
+88
+00:12:00,640 --> 00:12:08,000
+the data that we used. We used up to June of 2020, but luckily there weren't many cases after that.
+
+89
+00:12:09,920 --> 00:12:15,040
+I mentioned it was first discovered in September 2012, but you can see here,
+
+90
+00:12:15,040 --> 00:12:18,960
+actually the earliest case shown here can be traced back to early
+
+91
+00:12:18,960 --> 00:12:23,440
+2012, so there could be some cases retrospectively identified.
+
+92
+00:12:25,360 --> 00:12:31,360
+All right. Majority of these cases from Saudi Arabia. That's understandable. Everyone knows that.
+
+93
+00:12:32,640 --> 00:12:41,520
+And we see a huge peak in 2014 and some subsequent large outbreaks in 2015.
+
+94
+00:12:41,520 --> 00:12:47,680
+And you can also see there were about two peaks per year and sometimes three peaks
+
+95
+00:12:49,440 --> 00:12:58,480
+right. One in the early spring and the other one probably in the late summer or early fall.
+
+96
+00:12:59,600 --> 00:13:08,000
+And the early ones in the spring, it's more like an animal exposure in a triggered spinoma.
+
+97
+00:13:08,000 --> 00:13:22,320
+So here is a summary table of the kind of baseline characteristics of all the
+
+98
+00:13:22,960 --> 00:13:27,040
+worst cases we included in our study covering this period.
+
+99
+00:13:27,760 --> 00:13:34,240
+Right. And I colored some of these interesting results.
+
+100
+00:13:37,200 --> 00:13:43,120
+In Saudi Arabia, it has far more number of cases as well as number of deaths
+
+101
+00:13:43,120 --> 00:13:49,920
+compared to other countries. And if you look at the CFR, it's also much higher than other regions.
+
+102
+00:13:50,720 --> 00:13:54,240
+In South Korea, I should say South Korea, sorry for that,
+
+103
+00:13:55,840 --> 00:14:05,280
+the number of female patients were much higher than other countries.
+
+104
+00:14:07,040 --> 00:14:11,840
+That's possibly due to, because in Korea, if you know the history of MERS,
+
+105
+00:14:11,840 --> 00:14:17,040
+there was a big outbreak in, if I remember correctly, it was in 2015.
+
+106
+00:14:18,000 --> 00:14:26,400
+It's kind of driven by one single imported case. And that patient kind of stimulated large outbreaks
+
+107
+00:14:26,400 --> 00:14:32,480
+in several hospitals. So it's purely kind of a person-to-person transmission. And in that case,
+
+108
+00:14:33,040 --> 00:14:38,960
+it doesn't really distinguish between different sexes, right? But for animal exposure, we'll see
+
+109
+00:14:39,440 --> 00:14:47,920
+later, most of the patients with animal exposure are men. And so that will make some difference.
+
+110
+00:14:48,720 --> 00:14:58,720
+And in these countries, KSA, UAE, and some other countries, the majority of patients are male.
+
+111
+00:14:59,600 --> 00:15:05,600
+And South Korea also has a very large percent of hospital-related
+
+112
+00:15:06,720 --> 00:15:12,080
+patients. And that's exactly because we only had hospital outbreaks in that country.
+
+113
+00:15:14,480 --> 00:15:22,320
+And the time from disease onset to diagnosis was shortest in South Korea. And that's also
+
+114
+00:15:22,320 --> 00:15:27,280
+understandable because those were hospital-triggered investigations. They are very efficient, right?
+
+115
+00:15:28,240 --> 00:15:41,600
+In the United Arab Emirates, we noticed that the age was, the patients were much younger
+
+116
+00:15:41,600 --> 00:15:47,920
+compared to other countries. And that is probably because of the high proportion of healthcare
+
+117
+00:15:47,920 --> 00:15:55,040
+workers compared to other countries. And this country also has the highest proportion of
+
+118
+00:15:55,040 --> 00:16:06,320
+asymptomatic infection. How you identify asymptomatic infection is a very tricky question.
+
+119
+00:16:06,960 --> 00:16:16,800
+Usually, for syndrome-based surveillance, you only can find symptomatic cases. Because of
+
+120
+00:16:16,800 --> 00:16:22,640
+this high proportion of healthcare workers, probably they did some regular monitoring
+
+121
+00:16:22,720 --> 00:16:27,280
+for infection status. And that's how they identified asymptomatic infections.
+
+122
+00:16:29,840 --> 00:16:36,640
+And this country also has a very long time from disease onset to death. The reason for that
+
+123
+00:16:36,640 --> 00:16:46,080
+is unknown, but probably related to the management of patient or facility in the hospitals.
+
+124
+00:16:48,720 --> 00:16:51,280
+So that's for the summary table. Any questions?
+
+125
+00:16:53,440 --> 00:17:01,200
+Okay. So that's the basic epidemiology. Let's go to more interesting materials.
+
+126
+00:17:02,960 --> 00:17:11,360
+In this table, we compare the characteristics between cases with animal contact and those without.
+
+127
+00:17:12,240 --> 00:17:18,880
+About one-fourth of patients were reported animal contact.
+
+128
+00:17:20,800 --> 00:17:27,200
+So we can see patients with animal contact were much less likely to be female
+
+129
+00:17:28,720 --> 00:17:39,920
+compared to this proportion. And they were older. And the case fatality rate was much higher.
+
+130
+00:17:41,840 --> 00:17:48,400
+But we need to be very careful for interpreting this much higher case fatality rate. Because
+
+131
+00:17:48,400 --> 00:17:53,680
+this animal contact, we'll see later, it's confounded with other factors like age,
+
+132
+00:17:53,680 --> 00:18:00,960
+like baseline chronic conditions. If we really want to assess animal contact
+
+133
+00:18:01,600 --> 00:18:05,840
+effect on case fatality rate, we need to adjust for those confounders.
+
+134
+00:18:06,800 --> 00:18:15,120
+It's also less likely to be asymptomatic. But that, again, is a question mark. That probably
+
+135
+00:18:15,120 --> 00:18:26,400
+does not give you any epidemiological... It doesn't describe epidemiology in that regard
+
+136
+00:18:26,400 --> 00:18:32,160
+faithfully. Because for people with animal contact, many of them probably asymptomatic,
+
+137
+00:18:32,480 --> 00:18:35,520
+asymptomatic, and they were not captured by this learning system.
+
+138
+00:18:38,640 --> 00:18:43,280
+And they had much higher proportion of underlying conditions, as I mentioned before.
+
+139
+00:18:44,480 --> 00:18:50,240
+So they're probably at higher risk to death. And they generally had a much longer time from
+
+140
+00:18:50,240 --> 00:18:57,120
+the disease onset to diagnosis. So we'll find later. So that will also probably increase the
+
+141
+00:18:57,120 --> 00:19:05,280
+fatality rate. But for some reason, a slightly longer time from disease onset to death,
+
+142
+00:19:05,280 --> 00:19:12,240
+which we don't quite understand, probably related to some immunology issues.
+
+143
+00:19:13,120 --> 00:19:18,560
+If we look at the proportion of animal contact, a patient with animal contact,
+
+144
+00:19:18,560 --> 00:19:22,160
+across the years, now these proportions are the low proportions.
+
+145
+00:19:22,720 --> 00:19:29,360
+Even though we had fewer and fewer cases over the years, we actually see a different story
+
+146
+00:19:29,360 --> 00:19:35,440
+for this proportion of animal contact. It increases up to 2018, and then they kind of
+
+147
+00:19:35,440 --> 00:19:40,400
+plateaued. And it's not decreasing yet. I'm not sure about the most recent years.
+
+148
+00:19:40,400 --> 00:19:43,760
+The data is not available yet.
+
+149
+00:19:56,240 --> 00:20:03,680
+So this figure shows the spatial distribution of human MERS cases in the whole globe.
+
+150
+00:20:04,080 --> 00:20:12,640
+We categorize the countries into four categories. The first two categories
+
+151
+00:20:13,760 --> 00:20:23,520
+corresponds to the colors of, I would say, maybe I can call that pink, and a little bit of purple.
+
+152
+00:20:24,080 --> 00:20:32,880
+Those countries had zoonotic transmissions, basically animal exposure. The pink ones
+
+153
+00:20:33,040 --> 00:20:39,200
+reported a human-to-human transmission, and the purple one did not report,
+
+154
+00:20:39,200 --> 00:20:44,240
+or at least did not find concrete evidence for human-to-human transmission.
+
+155
+00:20:44,880 --> 00:20:50,080
+And if you look at this map, only Kuwait is the country colored with purple.
+
+156
+00:20:51,520 --> 00:20:56,640
+And it doesn't really mean it did not have human-to-human transmission. I'll explain why.
+
+157
+00:20:57,600 --> 00:21:03,120
+The other two categories are the countries with many important infections,
+
+158
+00:21:03,760 --> 00:21:11,280
+so they're colored with yellow or brown. The yellow indicates there was human-to-human
+
+159
+00:21:11,280 --> 00:21:18,640
+transmission following the importation. And the brown ones, I believe,
+
+160
+00:21:20,480 --> 00:21:26,160
+are the ones without subsequent human-to-human. Oh no, sorry, it's reversed. The yellow ones,
+
+161
+00:21:26,480 --> 00:21:32,240
+did not have human-to-human transmission, but the brown ones had this type of incidence.
+
+162
+00:21:34,720 --> 00:21:41,680
+All right, and for each country with reported cases, we impose a bar chart like this,
+
+163
+00:21:42,320 --> 00:21:48,160
+and the size of the bar indicates number of cases, and then the colors indicate
+
+164
+00:21:49,280 --> 00:21:55,520
+animal contact history. The red indicates the proportion of patients with animal contact.
+
+165
+00:21:56,160 --> 00:22:04,400
+And if you look at Kuwait, it's basically red and green. Green simply means unknown,
+
+166
+00:22:05,200 --> 00:22:10,960
+right? So whether there were human-to-human transmission, we don't know, just not confirmed.
+
+167
+00:22:13,200 --> 00:22:19,360
+And interestingly, Qatar is the country with the highest proportion of animal contact,
+
+168
+00:22:20,160 --> 00:22:30,240
+followed by ASA, UAE, and Oman. Some small countries like these,
+
+169
+00:22:31,520 --> 00:22:38,560
+Bahrain has too few cases, so I wouldn't make any conclusion for that.
+
+170
+00:22:38,560 --> 00:22:58,000
+Some European countries also reported patients with animal contact, as well as here in Southeast
+
+171
+00:22:58,000 --> 00:23:08,080
+Asia. But these people most likely already had animal contact before they entered
+
+172
+00:23:08,560 --> 00:23:20,320
+those countries. So to look at what factors contributed to the risk of death,
+
+173
+00:23:20,320 --> 00:23:30,480
+so we performed a standard logistic regression. For all the variables that we have that we think
+
+174
+00:23:30,480 --> 00:23:35,200
+are related, we throw them into the model, we perform the univariable analysis and the
+
+175
+00:23:35,200 --> 00:23:41,840
+multivariable analysis, and all these factors we throw in are significant in both univariable and
+
+176
+00:23:41,840 --> 00:23:51,840
+multivariable analysis. These are strong predictors for case fatality. Let's just go ahead with the
+
+177
+00:23:51,840 --> 00:24:03,280
+multivariable analysis. Don't look at the age, sex, and animal contact yet, because we have
+
+178
+00:24:03,280 --> 00:24:11,120
+interaction terms in the model. And these numbers, like this high number, 10.52, does not represent a
+
+179
+00:24:11,120 --> 00:24:16,560
+marginal effect of age group. It does not. It's just specific to one particular subgroup, and I'll talk
+
+180
+00:24:16,560 --> 00:24:25,520
+about that later. So let's just look at the effects of, say, a healthcare worker, as much lower risk
+
+181
+00:24:25,520 --> 00:24:35,680
+of death. And underlying condition, well, that's a more than three-fold increase in the risk of death.
+
+182
+00:24:37,520 --> 00:24:46,160
+OTC stands for the time from onset to confirmation, it's basically diagnosis, right? Then
+
+183
+00:24:46,560 --> 00:24:55,200
+this has also a significant result. A longer time from onset to confirmation
+
+184
+00:24:55,200 --> 00:25:02,800
+increases the risk of death. And if we compare the years, we divide the time into three segments,
+
+185
+00:25:02,800 --> 00:25:08,880
+and this early phase, this middle phase with large outbreaks, and this later phase with very few cases.
+
+186
+00:25:09,440 --> 00:25:16,640
+And all compared to the early years, we can see a jump in the risk of death. That's probably,
+
+187
+00:25:17,360 --> 00:25:24,160
+at least partly due to the constrained, exhausted healthcare facilities, because the large number
+
+188
+00:25:24,160 --> 00:25:30,720
+of patients. And in the later years, we see a slightly decrease in the risk of death,
+
+189
+00:25:31,280 --> 00:25:39,600
+possibly related to improved patient management, and also the much fewer number of patients.
+
+190
+00:25:41,440 --> 00:25:50,080
+So we left out the most three interesting factors, age, sex, and animal contact. So let's get into those.
+
+191
+00:25:50,640 --> 00:25:59,440
+In this table, we look at age effect, conditioning on sex and animal contact.
+
+192
+00:26:02,640 --> 00:26:11,040
+Let's focus on the adjusted odd ratio directly. These are all pretty big numbers,
+
+193
+00:26:11,600 --> 00:26:19,120
+these are all pretty big numbers, all significant. But let's do some comparison.
+
+194
+00:26:19,760 --> 00:26:29,120
+Let's first compare the results between female and male, right?
+
+195
+00:26:29,120 --> 00:26:33,760
+But you have to condition on the same contact history, right? So with contact history, with
+
+196
+00:26:33,760 --> 00:26:42,640
+animal contact history, if you compare female with male, and then without contact history, female with
+
+197
+00:26:49,120 --> 00:26:53,680
+female with male, right? Without actually comparing this guy, this guy with that guy.
+
+198
+00:26:54,560 --> 00:27:01,440
+So basically, this is bigger than that, and this is bigger than that. So within females,
+
+199
+00:27:02,080 --> 00:27:07,440
+age effect is more prominent, regardless of animal contact history.
+
+200
+00:27:10,880 --> 00:27:17,200
+Age effect is basically comparing the older age to the younger age.
+
+201
+00:27:18,480 --> 00:27:24,160
+And this number shows in the previous table, it's just for this particular subset of population.
+
+202
+00:27:24,880 --> 00:27:33,600
+So age is the most prominent driver for the risk of death. And that's not affected by
+
+203
+00:27:35,440 --> 00:27:43,120
+by either sex or, no, it is affected by sex, right? In female, it's more prominent.
+
+204
+00:27:43,680 --> 00:27:50,080
+And it's not that affected, it is also affected by animal contact. Let's compare the animal contact history.
+
+205
+00:27:50,240 --> 00:28:02,880
+So if you look at, just compare with to without, with to without, and with to without,
+
+206
+00:28:04,400 --> 00:28:12,160
+you can see without animal contact, age effect is more prominent, regardless of the underlying sex.
+
+207
+00:28:12,160 --> 00:28:19,760
+So that's quite interesting. Why is that? Why is that?
+
+208
+00:28:23,120 --> 00:28:31,200
+Remember, males, many of them were actually farm workers, they had animal exposure. So
+
+209
+00:28:33,280 --> 00:28:40,800
+we can reasonably speculate that these patients were constantly challenged by the virus.
+
+210
+00:28:42,960 --> 00:28:48,800
+Okay, probably that's a buildup of immunity towards this virus.
+
+211
+00:28:50,080 --> 00:28:56,640
+So after adjusting for the underlying conditions, and adjusted for the
+
+212
+00:29:00,560 --> 00:29:04,000
+yeah, adjusted for underlying conditions and some other risk factors,
+
+213
+00:29:04,960 --> 00:29:14,320
+we can see the difference in the age group between people with, without animal contact.
+
+214
+00:29:14,320 --> 00:29:20,320
+With animal contact, the age effect is not that prominent, but without, it is very prominent.
+
+215
+00:29:23,040 --> 00:29:32,400
+And most of the animal workers, they were older than younger. So that's for age effect.
+
+216
+00:29:32,480 --> 00:29:36,480
+Let's look at the effect of gender.
+
+217
+00:29:45,440 --> 00:29:54,160
+We don't see many strong signals. The only statistically significant result is within
+
+218
+00:29:54,160 --> 00:30:02,240
+the subgroup of male, the older patients without animal contact.
+
+219
+00:30:04,000 --> 00:30:08,000
+And male has a much higher risk of death than female.
+
+220
+00:30:10,560 --> 00:30:19,600
+However, we also noticed that this effect is, you know, has some kind of a marginal signal here.
+
+221
+00:30:19,600 --> 00:30:23,600
+And it is in the opposite direction compared to what we see here.
+
+222
+00:30:23,600 --> 00:30:30,080
+And this subgroup is for the younger, no, for the older patients with animal contact.
+
+223
+00:30:34,320 --> 00:30:39,360
+So that's, that's also quite interesting. For younger patients without animal contact,
+
+224
+00:30:40,000 --> 00:30:46,160
+male has much higher risk of death. But within older patients with animal contact,
+
+225
+00:30:46,560 --> 00:30:52,960
+male has actually lower risk of death.
+
+226
+00:30:55,520 --> 00:30:59,680
+And that again, give us a difficult question to answer, why is that?
+
+227
+00:31:00,880 --> 00:31:08,800
+However, we should also notice that within the category of older patients with animal contact
+
+228
+00:31:08,800 --> 00:31:15,200
+and female, we have small number. So that's why this is not statistically significant.
+
+229
+00:31:16,160 --> 00:31:24,480
+So that could be just due to random noise. So maybe we should not over-interpret this 0.45.
+
+230
+00:31:27,680 --> 00:31:34,080
+You actually use a mouse because I don't think, and this is my laser point, that means online.
+
+231
+00:31:35,840 --> 00:31:38,320
+You cannot see that? You actually use mouse.
+
+232
+00:31:38,320 --> 00:31:45,760
+Yeah, let me use mouse. I apologize to the online audience.
+
+233
+00:31:48,240 --> 00:31:55,680
+All right, now finally, let's look at the effect of animal contact conditioning on sex and age group.
+
+234
+00:31:56,640 --> 00:32:11,120
+Now, here, let's just focus on the significant results. The most significant result is this guy.
+
+235
+00:32:11,120 --> 00:32:16,640
+That's ignored, unknown category, just to focus on what we've done.
+
+236
+00:32:16,960 --> 00:32:23,440
+Right, so within the subgroup of female patients and younger female patients,
+
+237
+00:32:24,080 --> 00:32:33,520
+we see a huge increased risk of death for patients with animal contact.
+
+238
+00:32:35,200 --> 00:32:42,240
+Remember, these are female patients. Most animal workers were males.
+
+239
+00:32:42,240 --> 00:32:52,080
+So females, if they had animal contact, it's probably more likely to be a vocational contact,
+
+240
+00:32:52,080 --> 00:32:59,680
+not a professional contact. So that means you may not have to build up immunity against this virus.
+
+241
+00:33:00,880 --> 00:33:07,600
+Right, so once you had contact with animal and got infected, then it's probably a high risk of
+
+242
+00:33:07,600 --> 00:33:14,960
+death. And this virus just jumped from animal to human, has not been adapted much to the human
+
+243
+00:33:15,520 --> 00:33:23,200
+immune system. But if you look at the subgroup of male patients, the older male patients,
+
+244
+00:33:24,160 --> 00:33:29,920
+if you look at with, without animal contact, you see a huge reduction in the risk of death.
+
+245
+00:33:30,160 --> 00:33:34,720
+And most of these male patients with animal contact, especially the older ones,
+
+246
+00:33:35,440 --> 00:33:43,280
+they were actually animal workers. They had probably long exposure to the virus.
+
+247
+00:33:50,080 --> 00:33:57,280
+Any questions? A lot of information here, difficult to digest in such a short time.
+
+248
+00:33:59,920 --> 00:34:20,000
+Oh, I already see people have put in chat. Okay, let's move on. So those were for the
+
+249
+00:34:20,560 --> 00:34:26,560
+risk factors for death. Now let's look at the spatial diffusion pattern.
+
+250
+00:34:30,080 --> 00:34:42,160
+So what we did here is we look at the time from the first case overall to the first case
+
+251
+00:34:42,160 --> 00:34:49,920
+in each local district. That's the first time the local district was invaded by this virus.
+
+252
+00:34:50,560 --> 00:35:00,320
+With this time as my outcome, I did some, you know, spatial smoothing to construct this contour
+
+253
+00:35:00,320 --> 00:35:13,760
+plot. And this contour plot can tell me the diffusion pattern. And the wider gap between the
+
+254
+00:35:14,720 --> 00:35:30,880
+two contours indicates, let me put it this way, because the gap between each contour plot is
+
+255
+00:35:31,680 --> 00:35:40,320
+kind of fixed for the time interval, 200 days. And a wider gap means a longer spatial distance.
+
+256
+00:35:41,120 --> 00:35:54,320
+So that means a faster spread, right? The first case, first case was here in a city
+
+257
+00:35:54,320 --> 00:36:04,800
+called Bisho, somewhere in south, in western KSA. And this star marks the first patient that
+
+258
+00:36:04,800 --> 00:36:14,480
+sparked a outbreak, human patient cluster. So this Bisho is kind of in the central
+
+259
+00:36:16,240 --> 00:36:26,000
+point of these contour plots. And in the more recent times, we can see actually faster spreading
+
+260
+00:36:26,000 --> 00:36:33,600
+and the direction was towards Oman and somewhere of UAE.
+
+261
+00:36:36,560 --> 00:36:44,560
+Right. But that's a characteristic of this plot. We did not show the uncertainty, right?
+
+262
+00:36:44,560 --> 00:36:52,160
+So probably here you have fewer data, then uncertainty could be high. And whether the
+
+263
+00:36:52,160 --> 00:36:59,200
+conclusion that they have fastest spreading, maybe just a noise. But however, if you look
+
+264
+00:36:59,200 --> 00:37:07,200
+at this figure, this map here, let me use mouse again. If you look at the map in the right panel,
+
+265
+00:37:07,920 --> 00:37:14,880
+you can see in this corner, we still have a bunch of cases. So those cases will inform
+
+266
+00:37:14,880 --> 00:37:21,120
+the construction of this contour plot. So the signal here in this corner should be reliable.
+
+267
+00:37:23,120 --> 00:37:30,880
+Right. And you can also notice that we overlay this map with the transportation network.
+
+268
+00:37:31,440 --> 00:37:40,320
+The white, black lines indicate railway and these gray lines indicate the major roads.
+
+269
+00:37:42,000 --> 00:37:48,080
+And you can see a pretty good overlap of the cases with this transportation network.
+
+270
+00:37:48,080 --> 00:37:52,400
+And that's what we're going to show in another model fitting.
+
+271
+00:37:59,520 --> 00:38:06,560
+So here we perform the survival analysis. Again, the outcome is a time from the first
+
+272
+00:38:06,560 --> 00:38:16,640
+ever reported worst case to the first importation of case into each district.
+
+273
+00:38:17,200 --> 00:38:25,680
+The so-called district here, it is a second level administrative unit in most countries,
+
+274
+00:38:25,680 --> 00:38:33,200
+except for KSA. Because KSA is relatively big. So in case A, we use county, which is a third level
+
+275
+00:38:33,200 --> 00:38:42,240
+administrative area. And we fit this survival model, trying to look at, this is not an
+
+276
+00:38:42,240 --> 00:38:46,560
+ecological model. It's just to try to look at what might have contributed to
+
+277
+00:38:47,360 --> 00:38:52,400
+the invasion of the virus into these different spatial units. Right. Again,
+
+278
+00:38:52,400 --> 00:38:58,160
+that's just a look at the multivariable analysis. And here we are estimating hazard ratio.
+
+279
+00:39:03,040 --> 00:39:09,440
+The most prominent hazard ratio is related to the intersection with the main road.
+
+280
+00:39:09,760 --> 00:39:20,320
+So after that, it was elevation, the higher elevation, the higher hazard ratio.
+
+281
+00:39:21,520 --> 00:39:28,000
+And also intersection with railway, it more than doubled the hazard of invasion.
+
+282
+00:39:30,080 --> 00:39:37,040
+And interestingly, the coverage of cropland, it seems to deter the spread, which is also
+
+283
+00:39:37,040 --> 00:39:53,600
+understandable. These bio variables, they are meteorological variables. And I listed the
+
+284
+00:39:53,600 --> 00:40:01,040
+interpretations here. Bio one is simply the annual average temperature. And the bio two is the
+
+285
+00:40:01,040 --> 00:40:05,760
+average diurnal range of temperature, which is simply is kind of the average.
+
+286
+00:40:08,160 --> 00:40:13,040
+The difference between the maximum temperature and a minimum temperature within each month,
+
+287
+00:40:13,040 --> 00:40:21,440
+then you take an average. It reflects the variation over time, but within each month.
+
+288
+00:40:22,080 --> 00:40:29,600
+So these two had shown some significant results, increasing the higher temperature or the higher
+
+289
+00:40:30,400 --> 00:40:34,480
+mortality, increase the hazard of invasion.
+
+290
+00:40:45,280 --> 00:40:49,360
+Finally, comes down to the something that may be interesting.
+
+291
+00:40:49,840 --> 00:40:59,120
+So we collected the whole genome sequence from GenBank. And we analyzed these sequences using
+
+292
+00:40:59,120 --> 00:41:08,960
+the toolkits provided by Nextstrain. The sequences were aligned using MAFFT, what do you call it?
+
+293
+00:41:09,760 --> 00:41:24,080
+MAFFT? MAFFT. And the alignment was trained to a reference genome in GenBank. And we constructed
+
+294
+00:41:24,080 --> 00:41:32,400
+the phylogenetic tree using the maximum likelihood approach implemented in the IQ tree software.
+
+295
+00:41:33,200 --> 00:41:42,320
+And for the final geographic analysis, we use the tree time to estimate, you know,
+
+296
+00:41:42,320 --> 00:41:50,240
+the location and host time of those internal nerves. And initial analysis shown on the left
+
+297
+00:41:50,880 --> 00:41:54,240
+panel suggested that
+
+298
+00:41:56,480 --> 00:42:05,120
+the sequences from bats, I think by these pink leaf nodes, and hedgehog,
+
+299
+00:42:05,680 --> 00:42:14,640
+not by the yellow leaf nodes, they separated kind of distant from the main clades of sequences
+
+300
+00:42:14,640 --> 00:42:24,080
+formed by humans and camels, as well as a single strain from a llama, I think, the animal.
+
+301
+00:42:25,200 --> 00:42:27,440
+It is hiding here.
+
+302
+00:42:32,880 --> 00:42:43,200
+And we, so then we just exclude all the sequences of bats and hedgehogs and only focus on the
+
+303
+00:42:44,960 --> 00:42:47,840
+human and the camel genes.
+
+304
+00:42:54,160 --> 00:43:01,760
+So on the right hand panel, you can see we had several clusters for human and camel genes.
+
+305
+00:43:01,760 --> 00:43:10,400
+We have five clusters. The largest cluster is called C5, which contains majority of the sequences.
+
+306
+00:43:11,280 --> 00:43:20,480
+And you can see the mixture of human and camel sequences throughout the tree, except for the
+
+307
+00:43:20,480 --> 00:43:26,880
+most recent ones, where I think this was more like a sampling using, rather than a
+
+308
+00:43:29,920 --> 00:43:37,840
+systematic pattern. So this mixture of human-camel sequences
+
+309
+00:43:38,320 --> 00:43:45,920
+suggests that there were probably constant importation of sphere number from camel to human.
+
+310
+00:43:54,000 --> 00:44:00,000
+Now, this figure shows the phylogeny in a much better way because we can we can
+
+311
+00:44:00,400 --> 00:44:09,040
+time here, right? So although the human and camel sequences are mixed together,
+
+312
+00:44:09,040 --> 00:44:13,680
+but if you look at the samples collected after 2016,
+
+313
+00:44:15,520 --> 00:44:21,520
+the human genes are quite distant from the camel genes, right?
+
+314
+00:44:22,080 --> 00:44:31,520
+And the common ancestor was dated around 2007, and the posterior probability for the host being
+
+315
+00:44:31,520 --> 00:44:37,520
+camel, human, kind of 50-50. We later did a sensitivity analysis. We downsampled the human
+
+316
+00:44:38,320 --> 00:44:45,040
+sequences because there's just too many of them. And then the camel will have a 99%
+
+317
+00:44:45,040 --> 00:44:53,120
+for the posterior probability being the common ancestor.
+
+318
+00:44:55,920 --> 00:45:00,240
+We also tried to associate case fatality rate with sequences.
+
+319
+00:45:00,240 --> 00:45:05,520
+So what we did is we look at, we kind of divide the spatial temporal
+
+320
+00:45:07,760 --> 00:45:13,760
+range into several chunks and calculate the case fatality rate within each chunk.
+
+321
+00:45:13,760 --> 00:45:20,720
+And then we look at the individual sequences and associate them with the case fatality rate
+
+322
+00:45:21,680 --> 00:45:31,600
+in that chunk, the location and the time. And then we, for each sequence, we have a bar
+
+323
+00:45:31,600 --> 00:45:37,440
+with a color indicating the underlying case fatality rate in that space time chunk.
+
+324
+00:45:38,160 --> 00:45:45,120
+And then we average for each cluster to compare the potential difference in case fatality rate
+
+325
+00:45:46,240 --> 00:45:57,040
+between clusters. If you compare C5 to other clusters, C1 to C4, you cannot really see much
+
+326
+00:45:57,040 --> 00:46:03,280
+difference between the two. Actually, there's only 1% difference in case fatality rate there,
+
+327
+00:46:03,280 --> 00:46:09,920
+only 1%. But it is significant, probably because of the sample size, but we cannot
+
+328
+00:46:09,920 --> 00:46:20,960
+fully interpret that. If you compare only the sub-clade C5.1 with C1 to C4, we actually see
+
+329
+00:46:20,960 --> 00:46:30,640
+a 4% difference, which is not true. So that means the more recent clade is probably more lethal.
+
+330
+00:46:34,240 --> 00:46:42,560
+We also associated the incidence rate with sequences, but we cannot see much signal there,
+
+331
+00:46:42,560 --> 00:46:56,560
+so I'm going to ignore that. Oh, there's another thing I want to share. Okay, so we,
+
+332
+00:46:57,280 --> 00:47:02,560
+remember, we performed some phylogeographic analysis. So let's take a look at a movie.
+
+333
+00:47:03,360 --> 00:47:06,160
+Hopefully, this movie will show. Let's see.
+
+334
+00:47:12,800 --> 00:47:14,160
+Just a copy-paste.
+
+335
+00:47:14,160 --> 00:47:37,520
+Oh, we're not. We should go back to the window mode, and just copy-paste this one.
+
+336
+00:47:44,160 --> 00:47:51,520
+Let's see if we can do it.
+
+337
+00:47:51,520 --> 00:48:16,880
+Let's see if it works or not.
+
+338
+00:48:17,840 --> 00:48:32,240
+Oh, I have to move it to...
+
+339
+00:48:39,440 --> 00:48:42,240
+Oh, I have to stop sharing.
+
+340
+00:48:42,320 --> 00:48:45,600
+Oh, I see, I see. Yeah, okay.
+
+341
+00:48:53,600 --> 00:48:59,600
+Let me click on it here.
+
+342
+00:48:59,600 --> 00:49:14,400
+I want to see that geographic location.
+
+343
+00:49:18,240 --> 00:49:19,920
+I'm scrolling down, maybe.
+
+344
+00:49:20,320 --> 00:49:21,040
+Scrolling down.
+
+345
+00:49:25,920 --> 00:49:29,280
+All right, yes, and then replay.
+
+346
+00:49:31,280 --> 00:49:36,320
+I'm sorry for this problem, but it's kind of out of my control.
+
+347
+00:49:39,040 --> 00:49:40,000
+Where is play?
+
+348
+00:49:40,000 --> 00:49:41,040
+Just click play.
+
+349
+00:49:41,440 --> 00:49:46,400
+Okay, yeah, now let's take a look.
+
+350
+00:49:46,400 --> 00:50:11,360
+Yeah, it's almost finished. All right, good.
+
+351
+00:50:11,360 --> 00:50:12,960
+Good, okay.
+
+352
+00:50:16,080 --> 00:50:20,160
+Now, let me... Oh, still, that's correct to share a screen, right?
+
+353
+00:50:26,720 --> 00:50:29,840
+Right, okay.
+
+354
+00:50:29,840 --> 00:50:33,280
+Now, some highlights for that movie, right?
+
+355
+00:50:33,600 --> 00:50:54,640
+The top three most likely locations for the common access route were three cities, Riyadh of KSA and now Delta region, which is in Egypt and Jordan.
+
+356
+00:50:55,360 --> 00:51:02,480
+The possibilities are 31%, 17% and 12% respectively.
+
+357
+00:51:03,040 --> 00:51:11,760
+And Riyadh appears to be the major source of exporting infections, both locally and internationally.
+
+358
+00:51:12,960 --> 00:51:22,720
+And it is the common ancestor node of subclades C3, C4 and C5 for 99% of time.
+
+359
+00:51:25,600 --> 00:51:35,120
+Okay, and the early exportation to Egypt and Jordan occurred well before 2010.
+
+360
+00:51:35,680 --> 00:51:44,080
+And the circulation of the MERS-CoV among camels in East Africa possibly started also before 2010.
+
+361
+00:51:45,040 --> 00:51:56,960
+The virus migrated from Egypt to Ethiopia during 2011-2013, and subsequently to Kenya during 2014-2017.
+
+362
+00:51:57,840 --> 00:52:08,560
+And that's partially supported by a zoological study conducted in Egypt in 2013, where they also sampled animals from Kenya and found nothing.
+
+363
+00:52:09,520 --> 00:52:26,800
+The intense migration from Riyadh towards local cities in KSA, as well as Abu Dhabi in UAE, started around the 1970s, which matches our knowledge.
+
+364
+00:52:26,800 --> 00:52:36,080
+And Abu Dhabi joined Riyadh as the second home for exporting the virus, both locally and internationally. So that's quite early.
+
+365
+00:52:36,160 --> 00:52:45,120
+And the model also captures the opportunistic exportation to the US as well as to the US.
+
+366
+00:52:50,960 --> 00:52:57,280
+So we also did some kind of detection of
+
+367
+00:52:57,840 --> 00:53:10,640
+positive selection across proteins and the sites. Remember in the previous slide, see here.
+
+368
+00:53:11,280 --> 00:53:19,600
+Now I'm notating here branch A and branch B. Branch A is kind of separating
+
+369
+00:53:19,840 --> 00:53:27,040
+the hedgehog sequences from the rest, and branch B is separating hedgehog and
+
+370
+00:53:28,240 --> 00:53:33,840
+bat sequences from human and camel sequences. So we performed the
+
+371
+00:53:35,760 --> 00:53:39,200
+positive selection analysis along these two branches.
+
+372
+00:53:39,760 --> 00:53:58,480
+Okay, the first three rows of branch A, we identified three proteins, the non-structural three, nucleoprotein, and this 1AB polyprotein is, I believe, it's from the open reading form 1.
+
+373
+00:53:58,480 --> 00:54:03,920
+I may be wrong, but that's my impression. And we identified the signs
+
+374
+00:54:04,080 --> 00:54:14,320
+with positive selection. Only in this 1AB polyprotein, not in the other two. Along the branch B, we identified these two proteins, including the spike protein.
+
+375
+00:54:15,120 --> 00:54:21,840
+For the branch A, we did not detect the spike protein for any positive selection.
+
+376
+00:54:22,560 --> 00:54:28,800
+And also for the spike protein, we identified these sides to be under high
+
+377
+00:54:29,280 --> 00:54:40,480
+pressure for positive selection. And the three ones marked by red, those are newly found. They did not appear in the literature.
+
+378
+00:54:44,480 --> 00:54:53,120
+And we all know spike protein is the one that most interacts with animal cells.
+
+379
+00:54:54,080 --> 00:54:55,280
+How much time do I have?
+
+380
+00:54:57,680 --> 00:54:58,240
+It's already...
+
+381
+00:54:58,240 --> 00:54:59,680
+Yeah, already 10 seconds.
+
+382
+00:54:59,680 --> 00:55:08,880
+Okay, okay. Then I'll probably ignore the ecology part. For the ecology part, I can just mention some main findings.
+
+383
+00:55:09,440 --> 00:55:17,520
+What we did here is we used several machine learning approaches like post-signal regression tree,
+
+384
+00:55:18,240 --> 00:55:26,720
+supported by commission, and random forest to learn the ecology of the spike protein.
+
+385
+00:55:27,280 --> 00:55:42,880
+And then we build a meta-learner on top of this. It will give us another round of prediction, and it turns out that the ensemble machine, which is a meta-learner,
+
+386
+00:55:42,880 --> 00:55:59,440
+outperforms the three base models. Not by much, but a little bit. If you look at the AUC, if you look at the accuracy, as well as F1 score and compound,
+
+387
+00:55:59,920 --> 00:56:23,600
+not really a good performance in terms of sensitivity, but sensitivity here is a little bit deceptive because we have very few positive cases.
+
+388
+00:56:24,160 --> 00:56:34,160
+This model is based on about 100 positive districts with confirmed cases, and about 400
+
+389
+00:56:37,360 --> 00:56:39,200
+districts without any detection.
+
+390
+00:56:39,280 --> 00:56:52,560
+And we did identify... Let me see. We did identify the most prominent risk driver for ecology of MERS-CoV. It's actually something called the coverage of bare land.
+
+391
+00:56:52,560 --> 00:57:01,520
+Bare land, that's very, very difficult to define. Basically, a land without many, you know, vegetation, trees, like that, right?
+
+392
+00:57:03,280 --> 00:57:07,760
+But we also adjusted for camel density here. Camel density is picked up by the model,
+
+393
+00:57:09,120 --> 00:57:15,600
+but not as a very prominent driver. So we want to control the camel density. Then it's bare land,
+
+394
+00:57:16,160 --> 00:57:22,160
+in addition to camel, it may also contain other animal hosts that we have not discovered yet.
+
+395
+00:57:30,160 --> 00:57:37,360
+Okay, so let me just draw some conclusions on the epithelium model.
+
+396
+00:57:38,080 --> 00:57:41,120
+So we observed that the cases with animal contact
+
+397
+00:57:42,320 --> 00:57:50,560
+tend to be older, more likely to be male, symptomatic, and also having underlying conditions. Even though by our
+
+398
+00:57:51,440 --> 00:57:57,040
+logistic model with interactions, we kind of see that once you adjust your model,
+
+399
+00:57:57,520 --> 00:58:07,280
+underlying conditions, adjusting for age and gender, animal contact actually does not always increase the risk of death.
+
+400
+00:58:08,160 --> 00:58:15,440
+Remember, in the older population, and male, it actually decreases the risk of death.
+
+401
+00:58:16,240 --> 00:58:19,600
+But overall, for those older males who are farm workers, animal workers, because they had underlying conditions, and they were old,
+
+402
+00:58:20,800 --> 00:58:28,880
+overall, they do have a higher risk of death.
+
+403
+00:58:29,520 --> 00:58:32,720
+So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+
+404
+00:58:34,320 --> 00:58:42,160
+But overall, for those older males who are farm workers, animal workers, because they had underlying conditions, and they were old,
+
+405
+00:58:42,160 --> 00:58:47,840
+overall, they do have a higher risk of death. And we need to pay attention to that.
+
+406
+00:58:49,360 --> 00:58:56,320
+So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+
+407
+00:58:57,280 --> 00:59:05,760
+And animal-to-human transmission events mainly occurred between January and March,
+
+408
+00:59:06,800 --> 00:59:11,680
+and human-to-human transmission occurred later in summer.
+
+409
+00:59:11,680 --> 00:59:18,240
+So that suggests the importance of blocking the spillover from animal to human in the early spring.
+
+410
+00:59:18,880 --> 00:59:29,920
+And also mentioning, we found sample sequences after 2014, many human sequences, and then camel becomes the host for the root ancestor with a very high possibility.
+
+411
+00:59:29,920 --> 00:59:37,920
+And we also found Abu Dhabi of UAE is a hub for international exportation of this virus.
+
+412
+00:59:38,000 --> 00:59:44,000
+So this virus, probably, we should recommend some kind of screening procedure for infected travelers.
+
+413
+00:59:44,000 --> 00:59:50,480
+And the novel amino acids positions that we found on spike protein associated with public selection,
+
+414
+00:59:50,480 --> 00:59:56,640
+those can be potential pockets for the spread of this virus.
+
+415
+00:59:56,640 --> 01:00:02,640
+So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+
+416
+01:00:02,800 --> 01:00:04,800
+And the novel amino acids positions that we found on spike protein associated with public selection,
+
+417
+01:00:04,800 --> 01:00:11,520
+those can be potential pockets for development of future antiviral vaccines against this virus.
+
+418
+01:00:12,560 --> 01:00:17,600
+So that's all for that material.
+
+419
+01:00:19,760 --> 01:00:26,240
+And the NP paper is published in this journal, and the ecology paper is published in this journal.
+
+420
+01:00:26,240 --> 01:00:28,800
+Thank you very much. Any questions, you're welcome.
+
+421
+01:00:32,640 --> 01:00:49,120
+Yes, please. I'm really interested about the phylogeny. Can you go back to the figure four or five?
+
+422
+01:00:49,520 --> 01:01:07,680
+Yeah, that's the one. So, since after 2016, it's really interesting, like, human birds and
+
+423
+01:01:07,680 --> 01:01:13,760
+camels are pretty much distinct. Do you think it's because the sampling bios of the camel,
+
+424
+01:01:13,760 --> 01:01:21,280
+or do you believe there's somehow a low level circulation of human population?
+
+425
+01:01:21,280 --> 01:01:29,120
+That's a good question. I don't have the answer. My intuition is sampling virus is at least a contributing factor.
+
+426
+01:01:30,480 --> 01:01:36,800
+It's hard to imagine, because this virus is endemic in camels. It's hard to imagine it's gone. I don't think it's gone.
+
+427
+01:01:36,800 --> 01:01:45,920
+So, Ryan in the chat would like to know what type of models make up your own sample.
+
+428
+01:01:45,920 --> 01:01:52,960
+Oh, so the base models are a random forest, boosted regression tree, and
+
+429
+01:01:53,760 --> 01:02:00,160
+support vector machine. And then on top of that, the meta-learner is actually XGBoost.
+
+430
+01:02:00,160 --> 01:02:08,160
+Does that answer your question?
+
+431
+01:02:08,160 --> 01:02:09,200
+Yes, thank you.
+
+432
+01:02:14,880 --> 01:02:20,400
+Yes, so it seems like this is a fairly small tree. Why did you end up choosing
+
+433
+01:02:21,440 --> 01:02:27,760
+using the Nextstrain pipeline as opposed to a different tree building pipeline?
+
+434
+01:02:28,640 --> 01:02:36,880
+It was not my decision. My intuition would always try maybe like a beast first.
+
+435
+01:02:38,880 --> 01:02:45,360
+However, I wouldn't say it's a small data set either, because we have, I think, about 500 sequences together.
+
+436
+01:02:46,320 --> 01:02:52,640
+A beast may need some time to run. And another nice thing about the Nextstrain is that it provides
+
+437
+01:02:53,040 --> 01:03:00,320
+all sorts of tools together for you to use, and with this nice movie. So I think that's
+
+438
+01:03:00,320 --> 01:03:06,080
+probably the only reason why we chose Nextstrain. But I think definitely you can try a beast as well,
+
+439
+01:03:06,880 --> 01:03:11,280
+especially for the geographic analysis.
+
+440
+01:03:12,960 --> 01:03:20,240
+Could you tell us more about surveillance or genome sequencing of camel or
+
+441
+01:03:20,240 --> 01:03:25,520
+reservoir species? I think that's really important because it can give us a
+
+442
+01:03:26,080 --> 01:03:32,640
+good background about circulation in these reservoirs and spillover between them.
+
+443
+01:03:34,080 --> 01:03:39,600
+I'm not quite sure whether there is a systematic surveillance system for animals.
+
+444
+01:03:41,200 --> 01:03:49,520
+Actually, in terms of animal hosts, although at least the bats and hedgehogs here
+
+445
+01:03:51,200 --> 01:03:57,840
+if you look into the literature, it's still kind of debatable, right? We all have common sense.
+
+446
+01:03:57,840 --> 01:04:03,760
+Bats is the natural reservoir for all types of coronaviruses, including MERS,
+
+447
+01:04:04,400 --> 01:04:10,320
+MERS-CoV. But as a matter of fact, so far people have only found, to my knowledge,
+
+448
+01:04:11,280 --> 01:04:16,080
+kind of similar gene segments in the virus as in the form of bats.
+
+449
+01:04:16,720 --> 01:04:22,320
+That's not considered some very solid evidence by many of our biologists and immunologists.
+
+450
+01:04:24,560 --> 01:04:30,320
+Yeah, I know less about the hedgehogs, so I cannot say much about that.
+
+451
+01:04:31,200 --> 01:04:37,760
+So the primary animal host that's solidly convincing people is camels,
+
+452
+01:04:38,240 --> 01:04:42,960
+scum, gondolins. And we should do surveillance.
+
+453
+01:04:45,840 --> 01:04:50,160
+I have a question about student training because you're applying for adjunct
+
+454
+01:04:51,760 --> 01:04:57,680
+faculty position here. So what kind, what type of students would you expect working in your lab,
+
+455
+01:04:57,680 --> 01:05:04,480
+or how would you train bioinformatics students? In terms of bioinformatics itself,
+
+456
+01:05:05,440 --> 01:05:14,480
+I need a partner like Dr. Liu. Myself, no, I cannot train you. I'm very interested in this
+
+457
+01:05:15,040 --> 01:05:22,400
+field, but myself, I need to be trained as well. But my vision is that, you know,
+
+458
+01:05:22,400 --> 01:05:29,600
+we don't have this vision. We want to combine biological data, gene sequence data. So far,
+
+459
+01:05:29,600 --> 01:05:33,440
+we're only talking about the pathogen sequence, right? It could be human sequence as well,
+
+460
+01:05:33,440 --> 01:05:39,760
+but that's a long shot. And also like human movement data, all together to inform us about
+
+461
+01:05:39,760 --> 01:05:45,680
+the transmission dynamics. And that's also very important to understand how the virus is going to
+
+462
+01:05:46,720 --> 01:05:51,440
+evolve in terms of its transmissibility, pathogenicity, and so on.
+
+463
+01:05:54,000 --> 01:06:01,920
+So far, there have been some efforts in this kind of joint modeling in the past 10 years, but
+
+464
+01:06:03,440 --> 01:06:11,440
+it's still under investigated. It's still a very promising direction. So anybody with interest in
+
+465
+01:06:11,440 --> 01:06:20,160
+both bioinformatics and statistics and computational methods are welcome to join this effort.
+
+466
+01:06:24,480 --> 01:06:30,400
+Yeah, sure. It says elevation was insignificant in the univariable analysis. Why was it included
+
+467
+01:06:30,400 --> 01:06:34,800
+in the multivariable and into that mix? Good question. Let me check.
+
+468
+01:06:36,640 --> 01:06:45,920
+Elevation. That's for the survival analysis, is that? Yes.
+
+469
+01:06:45,920 --> 01:06:51,040
+Yeah.
+
+470
+01:06:59,600 --> 01:07:06,560
+Oh, this is kind of more like a statistical philosophy question,
+
+471
+01:07:07,520 --> 01:07:14,640
+right? Because here, we did not explore the potential interactions explicitly.
+
+472
+01:07:15,440 --> 01:07:22,160
+So there could be interactions among these factors. And in the univariable analysis,
+
+473
+01:07:22,160 --> 01:07:27,440
+it's not significant. Actually, the p-value is very close to one, but that does not mean
+
+474
+01:07:28,480 --> 01:07:34,480
+it's not having an interaction. Or it could be a confounder. Because if you look at the
+
+475
+01:07:34,480 --> 01:07:41,760
+coverage of a bare land with elevation, there is some correlation there.
+
+476
+01:07:42,720 --> 01:07:46,880
+Right? Not very high, not super high, but there is some substantial correlation there.
+
+477
+01:07:46,880 --> 01:07:52,240
+So we cannot just rule it out. In the multivariable model, we did not just leave
+
+478
+01:07:52,240 --> 01:08:00,320
+out those non-significant in the multivariate model. We actually add them back one by one
+
+479
+01:08:00,320 --> 01:08:04,960
+to check whether they're going to become significant after adjusting for other factors.
+
+480
+01:08:05,600 --> 01:08:06,480
+So that's the reason.
+
+481
+01:08:11,120 --> 01:08:16,240
+Thank you. All right. If there's no questions, let's send Professor Gao.
+
+482
+01:08:29,200 --> 01:08:32,800
+Yeah, I think I set it up. I know I have to clean up, so I won't be there.
+
+483
+01:08:35,600 --> 01:08:38,080
+All right. I think that's something else.
+
+484
+01:08:38,960 --> 01:08:41,680
+Yeah. Should I go?
+
+485
+01:08:41,680 --> 01:08:47,200
+You can just show up. I'll show up at the booth, I guess.
+

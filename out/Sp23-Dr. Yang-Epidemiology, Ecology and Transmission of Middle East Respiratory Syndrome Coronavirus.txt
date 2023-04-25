@@ -1,0 +1,485 @@
+My pleasure to introduce Professor Yang, who joined UGA last semester and as a class chair
+of ecology, mathematics, and statistics, but he doesn't have any commitment to
+or ecology. So this seminar also serves for his application for the adjunct position with IOB.
+So if you're a student and looking for lab, you may want to talk to him. His major research area
+is infectious disease, and he is a statistician modeling for infectious disease. As you know,
+to understand infectious disease, we need the knowledge in ecology, population genetics,
+molecular genetics, to understand evolution of pathogens, and mathematics, you know,
+as well as statistics. So it's very hard to find an expert in all of those areas,
+and here we go. Professor Yang, so if you're interested in doing research in infectious
+disease, you probably want to talk to him. He has a lot of grants. He's already published over 100
+papers, and this is, believe me, this is just the first page of his CV. So I cannot read out
+all the CVs. It's 19 pages. So he, let's see. Sorry, I'm aging, so I cannot see that. So he
+got his PhD in 2004 from Emory, and he did his postdoc at Howard, right, so for the following
+year, and then he worked at Brad Hutchinson Cancer Center, and then he moved to University
+of Florida, and last semester, he joined again. So today, he's going to talk about epidemiology
+and ecology of Middle East Respiratory Syndrome coronavirus.
+Okay, good. Thank you, Liang, for this nice introduction and over compliment.
+I'm not expert in everything, and I mainly specialize in modeling of infectious disease
+transmission, and just started working with Dr. Liu on how to combine the epidemiological part
+and the physiological part into the same model so that we can better model the dynamics of
+transmission. Today, I'm going to talk about epidemiology and the ecology of MERS-CoV.
+If you read the flyer before, I changed my title a little bit. I used to have
+transmission as well, but I found myself too many. I had to cut some, so I moved that one out.
+So today, we'll only be talking about epidemiology and the ecology.
+Hopefully, you will be interested in these topics. So this is during the work with Dr.
+Yichun Fang and Wenqiang Shi at Beijing Institute of Microbiology and Epidemiology, as well as Dr.
+Anna Zhang at Shandong University. Anna was a business student in my lab at UF.
+That's when she was leading this project, part of this project.
+Please feel free to stop me anytime if you have any questions.
+So some background about the disease and the pathogen as well.
+You're probably quite familiar with this disease because of the pandemic of SARS-CoV-2.
+MERS is a respiratory infection disease first found in the kingdom of Saudi Arabia.
+As of January this year, there were a total of 27 countries that have reported about 2,600
+lab-confirmed cases, together with 935 deaths. So that's a pretty good number.
+That has reported about 2,600 lab-confirmed cases, together with 935 deaths. So that's a
+pretty high case fatality rate. We use the CMR of about 36%.
+Luckily, human-to-human transmission is pretty rare, and many occurred in healthcare settings
+and households. And in healthcare settings, it's pretty much patients who are immune-compromised.
+So that's why they are at high risk of transmission.
+And the zoonotic infection is mainly driven by exposure to the dummy debris,
+wire droplets, fomites, and consumption of some raw products of this animal, such as milk.
+And people also suspect the use of chemical urine as a traditional medicine is another
+transmission route. And given that there has been no effective treatment or vaccine yet,
+so people are very concerned about the potential of this virus causing another global pandemic
+if it's fully adapted itself to the human population. And in 2018, WHO incorporated MERS
+into its research and development blueprint, which lists a variety of disease pathogens
+that people will spend more time developing vaccines toward those pathogens.
+And about the virus itself, it's an RNA virus with a genome about 30 kb long.
+And MERS-CoV belongs to the lineage C of the genus beta coronavirus. The famous or infamous
+SARS-CoV and SARS-CoV-2, they belong to the lineage B. And the common code coronaviruses,
+OC43 and HKU1, they belong to the lineage K. So they're related, but a little bit distant
+from each other. MERS-CoV was phylogenetically classified into clade A and clade B. A includes
+the early detected human cases, viruses, and B includes the more contemporary viruses.
+But however, this classification was based on a pretty few number of sequences. So we've done
+a much more comprehensive work on this, and we'll show that later.
+Although the disease was quite new, but circulation of MERS-like coronaviruses
+in Africa and the Arabian Peninsula occurred well before 2012.
+And a little bit about the immunity background of this virus. The virus used the S1 protein
+to bind to two types of host cell surface molecules. One is called the DPP4, and the other
+is the well-known alpha-2 or alpha-3 astatic acids. And it replicates mainly in the nasal
+epithelium of dromedaries, but only in the lower respiratory tract of humans. So that's probably
+why it's so highly transmissible among the dromedaries, but not so much among human beings.
+All right, so that's enough for the background. Let me get into the needs.
+We'll try to identify determinants for case fatality rate and also characterize the spatial
+division pattern of the disease. And we want to also look at evolution and migration history
+of the virus. Finally, we'll provide some more comprehensive picture about the ecology of the
+virus. And we'll also look at the evolution and migration history of the virus, and we'll also
+picture about the ecology of the virus and associated socio-environmental drivers.
+But this talk has two parts. The first two are part one, and this is part two.
+So in this slide, I talk about the data sources.
+We first collected data on all confirmed human cases, and there are three major sources for that.
+We looked at the official reports of WHO. Now, WHO does not provide the line list it used to.
+So we were lucky. At that time, we got a line list. And the Food and Agriculture Organization
+of the United Nations, as well as the health departments of affected countries.
+So we collected demographic data whenever it's available, and the dates of
+critical events, like the onset, hospitalization, and the lab confirmation.
+The most important one is to explore your history, but it's very simple. It's just whether
+the case has had a history of exposure to animal production or other confirmed patient.
+And we validate this data via literature research. We also collected a bunch of socio-environmental
+variables, which are listed here, and we'll utilize them, especially using, for example,
+meteorological data and land cover data for ecology study. The gene sequence data were
+downloaded from our gene bank, and we used data up to the June of 2020, and that's also
+the time upper limit for the case data we downloaded.
+This is an epidemic curve actually provided in the WHO report, and it only listed cases
+in the eastern Mediterranean region. It's not for the whole world, but because we want to
+check the seasonality, so we decided to focus on the endemic in the zoonotic region instead of the
+local region. And it covers from June 2012 to January 2023. This is more comprehensive than
+the data that we used. We used up to June of 2020, but luckily there weren't many cases after that.
+I mentioned it was first discovered in September 2012, but you can see here,
+actually the earliest case shown here can be traced back to early
+2012, so there could be some cases retrospectively identified.
+All right. Majority of these cases from Saudi Arabia. That's understandable. Everyone knows that.
+And we see a huge peak in 2014 and some subsequent large outbreaks in 2015.
+And you can also see there were about two peaks per year and sometimes three peaks
+right. One in the early spring and the other one probably in the late summer or early fall.
+And the early ones in the spring, it's more like an animal exposure in a triggered spinoma.
+So here is a summary table of the kind of baseline characteristics of all the
+worst cases we included in our study covering this period.
+Right. And I colored some of these interesting results.
+In Saudi Arabia, it has far more number of cases as well as number of deaths
+compared to other countries. And if you look at the CFR, it's also much higher than other regions.
+In South Korea, I should say South Korea, sorry for that,
+the number of female patients were much higher than other countries.
+That's possibly due to, because in Korea, if you know the history of MERS,
+there was a big outbreak in, if I remember correctly, it was in 2015.
+It's kind of driven by one single imported case. And that patient kind of stimulated large outbreaks
+in several hospitals. So it's purely kind of a person-to-person transmission. And in that case,
+it doesn't really distinguish between different sexes, right? But for animal exposure, we'll see
+later, most of the patients with animal exposure are men. And so that will make some difference.
+And in these countries, KSA, UAE, and some other countries, the majority of patients are male.
+And South Korea also has a very large percent of hospital-related
+patients. And that's exactly because we only had hospital outbreaks in that country.
+And the time from disease onset to diagnosis was shortest in South Korea. And that's also
+understandable because those were hospital-triggered investigations. They are very efficient, right?
+In the United Arab Emirates, we noticed that the age was, the patients were much younger
+compared to other countries. And that is probably because of the high proportion of healthcare
+workers compared to other countries. And this country also has the highest proportion of
+asymptomatic infection. How you identify asymptomatic infection is a very tricky question.
+Usually, for syndrome-based surveillance, you only can find symptomatic cases. Because of
+this high proportion of healthcare workers, probably they did some regular monitoring
+for infection status. And that's how they identified asymptomatic infections.
+And this country also has a very long time from disease onset to death. The reason for that
+is unknown, but probably related to the management of patient or facility in the hospitals.
+So that's for the summary table. Any questions?
+Okay. So that's the basic epidemiology. Let's go to more interesting materials.
+In this table, we compare the characteristics between cases with animal contact and those without.
+About one-fourth of patients were reported animal contact.
+So we can see patients with animal contact were much less likely to be female
+compared to this proportion. And they were older. And the case fatality rate was much higher.
+But we need to be very careful for interpreting this much higher case fatality rate. Because
+this animal contact, we'll see later, it's confounded with other factors like age,
+like baseline chronic conditions. If we really want to assess animal contact
+effect on case fatality rate, we need to adjust for those confounders.
+It's also less likely to be asymptomatic. But that, again, is a question mark. That probably
+does not give you any epidemiological... It doesn't describe epidemiology in that regard
+faithfully. Because for people with animal contact, many of them probably asymptomatic,
+asymptomatic, and they were not captured by this learning system.
+And they had much higher proportion of underlying conditions, as I mentioned before.
+So they're probably at higher risk to death. And they generally had a much longer time from
+the disease onset to diagnosis. So we'll find later. So that will also probably increase the
+fatality rate. But for some reason, a slightly longer time from disease onset to death,
+which we don't quite understand, probably related to some immunology issues.
+If we look at the proportion of animal contact, a patient with animal contact,
+across the years, now these proportions are the low proportions.
+Even though we had fewer and fewer cases over the years, we actually see a different story
+for this proportion of animal contact. It increases up to 2018, and then they kind of
+plateaued. And it's not decreasing yet. I'm not sure about the most recent years.
+The data is not available yet.
+So this figure shows the spatial distribution of human MERS cases in the whole globe.
+We categorize the countries into four categories. The first two categories
+corresponds to the colors of, I would say, maybe I can call that pink, and a little bit of purple.
+Those countries had zoonotic transmissions, basically animal exposure. The pink ones
+reported a human-to-human transmission, and the purple one did not report,
+or at least did not find concrete evidence for human-to-human transmission.
+And if you look at this map, only Kuwait is the country colored with purple.
+And it doesn't really mean it did not have human-to-human transmission. I'll explain why.
+The other two categories are the countries with many important infections,
+so they're colored with yellow or brown. The yellow indicates there was human-to-human
+transmission following the importation. And the brown ones, I believe,
+are the ones without subsequent human-to-human. Oh no, sorry, it's reversed. The yellow ones,
+did not have human-to-human transmission, but the brown ones had this type of incidence.
+All right, and for each country with reported cases, we impose a bar chart like this,
+and the size of the bar indicates number of cases, and then the colors indicate
+animal contact history. The red indicates the proportion of patients with animal contact.
+And if you look at Kuwait, it's basically red and green. Green simply means unknown,
+right? So whether there were human-to-human transmission, we don't know, just not confirmed.
+And interestingly, Qatar is the country with the highest proportion of animal contact,
+followed by ASA, UAE, and Oman. Some small countries like these,
+Bahrain has too few cases, so I wouldn't make any conclusion for that.
+Some European countries also reported patients with animal contact, as well as here in Southeast
+Asia. But these people most likely already had animal contact before they entered
+those countries. So to look at what factors contributed to the risk of death,
+so we performed a standard logistic regression. For all the variables that we have that we think
+are related, we throw them into the model, we perform the univariable analysis and the
+multivariable analysis, and all these factors we throw in are significant in both univariable and
+multivariable analysis. These are strong predictors for case fatality. Let's just go ahead with the
+multivariable analysis. Don't look at the age, sex, and animal contact yet, because we have
+interaction terms in the model. And these numbers, like this high number, 10.52, does not represent a
+marginal effect of age group. It does not. It's just specific to one particular subgroup, and I'll talk
+about that later. So let's just look at the effects of, say, a healthcare worker, as much lower risk
+of death. And underlying condition, well, that's a more than three-fold increase in the risk of death.
+OTC stands for the time from onset to confirmation, it's basically diagnosis, right? Then
+this has also a significant result. A longer time from onset to confirmation
+increases the risk of death. And if we compare the years, we divide the time into three segments,
+and this early phase, this middle phase with large outbreaks, and this later phase with very few cases.
+And all compared to the early years, we can see a jump in the risk of death. That's probably,
+at least partly due to the constrained, exhausted healthcare facilities, because the large number
+of patients. And in the later years, we see a slightly decrease in the risk of death,
+possibly related to improved patient management, and also the much fewer number of patients.
+So we left out the most three interesting factors, age, sex, and animal contact. So let's get into those.
+In this table, we look at age effect, conditioning on sex and animal contact.
+Let's focus on the adjusted odd ratio directly. These are all pretty big numbers,
+these are all pretty big numbers, all significant. But let's do some comparison.
+Let's first compare the results between female and male, right?
+But you have to condition on the same contact history, right? So with contact history, with
+animal contact history, if you compare female with male, and then without contact history, female with
+female with male, right? Without actually comparing this guy, this guy with that guy.
+So basically, this is bigger than that, and this is bigger than that. So within females,
+age effect is more prominent, regardless of animal contact history.
+Age effect is basically comparing the older age to the younger age.
+And this number shows in the previous table, it's just for this particular subset of population.
+So age is the most prominent driver for the risk of death. And that's not affected by
+by either sex or, no, it is affected by sex, right? In female, it's more prominent.
+And it's not that affected, it is also affected by animal contact. Let's compare the animal contact history.
+So if you look at, just compare with to without, with to without, and with to without,
+you can see without animal contact, age effect is more prominent, regardless of the underlying sex.
+So that's quite interesting. Why is that? Why is that?
+Remember, males, many of them were actually farm workers, they had animal exposure. So
+we can reasonably speculate that these patients were constantly challenged by the virus.
+Okay, probably that's a buildup of immunity towards this virus.
+So after adjusting for the underlying conditions, and adjusted for the
+yeah, adjusted for underlying conditions and some other risk factors,
+we can see the difference in the age group between people with, without animal contact.
+With animal contact, the age effect is not that prominent, but without, it is very prominent.
+And most of the animal workers, they were older than younger. So that's for age effect.
+Let's look at the effect of gender.
+We don't see many strong signals. The only statistically significant result is within
+the subgroup of male, the older patients without animal contact.
+And male has a much higher risk of death than female.
+However, we also noticed that this effect is, you know, has some kind of a marginal signal here.
+And it is in the opposite direction compared to what we see here.
+And this subgroup is for the younger, no, for the older patients with animal contact.
+So that's, that's also quite interesting. For younger patients without animal contact,
+male has much higher risk of death. But within older patients with animal contact,
+male has actually lower risk of death.
+And that again, give us a difficult question to answer, why is that?
+However, we should also notice that within the category of older patients with animal contact
+and female, we have small number. So that's why this is not statistically significant.
+So that could be just due to random noise. So maybe we should not over-interpret this 0.45.
+You actually use a mouse because I don't think, and this is my laser point, that means online.
+You cannot see that? You actually use mouse.
+Yeah, let me use mouse. I apologize to the online audience.
+All right, now finally, let's look at the effect of animal contact conditioning on sex and age group.
+Now, here, let's just focus on the significant results. The most significant result is this guy.
+That's ignored, unknown category, just to focus on what we've done.
+Right, so within the subgroup of female patients and younger female patients,
+we see a huge increased risk of death for patients with animal contact.
+Remember, these are female patients. Most animal workers were males.
+So females, if they had animal contact, it's probably more likely to be a vocational contact,
+not a professional contact. So that means you may not have to build up immunity against this virus.
+Right, so once you had contact with animal and got infected, then it's probably a high risk of
+death. And this virus just jumped from animal to human, has not been adapted much to the human
+immune system. But if you look at the subgroup of male patients, the older male patients,
+if you look at with, without animal contact, you see a huge reduction in the risk of death.
+And most of these male patients with animal contact, especially the older ones,
+they were actually animal workers. They had probably long exposure to the virus.
+Any questions? A lot of information here, difficult to digest in such a short time.
+Oh, I already see people have put in chat. Okay, let's move on. So those were for the
+risk factors for death. Now let's look at the spatial diffusion pattern.
+So what we did here is we look at the time from the first case overall to the first case
+in each local district. That's the first time the local district was invaded by this virus.
+With this time as my outcome, I did some, you know, spatial smoothing to construct this contour
+plot. And this contour plot can tell me the diffusion pattern. And the wider gap between the
+two contours indicates, let me put it this way, because the gap between each contour plot is
+kind of fixed for the time interval, 200 days. And a wider gap means a longer spatial distance.
+So that means a faster spread, right? The first case, first case was here in a city
+called Bisho, somewhere in south, in western KSA. And this star marks the first patient that
+sparked a outbreak, human patient cluster. So this Bisho is kind of in the central
+point of these contour plots. And in the more recent times, we can see actually faster spreading
+and the direction was towards Oman and somewhere of UAE.
+Right. But that's a characteristic of this plot. We did not show the uncertainty, right?
+So probably here you have fewer data, then uncertainty could be high. And whether the
+conclusion that they have fastest spreading, maybe just a noise. But however, if you look
+at this figure, this map here, let me use mouse again. If you look at the map in the right panel,
+you can see in this corner, we still have a bunch of cases. So those cases will inform
+the construction of this contour plot. So the signal here in this corner should be reliable.
+Right. And you can also notice that we overlay this map with the transportation network.
+The white, black lines indicate railway and these gray lines indicate the major roads.
+And you can see a pretty good overlap of the cases with this transportation network.
+And that's what we're going to show in another model fitting.
+So here we perform the survival analysis. Again, the outcome is a time from the first
+ever reported worst case to the first importation of case into each district.
+The so-called district here, it is a second level administrative unit in most countries,
+except for KSA. Because KSA is relatively big. So in case A, we use county, which is a third level
+administrative area. And we fit this survival model, trying to look at, this is not an
+ecological model. It's just to try to look at what might have contributed to
+the invasion of the virus into these different spatial units. Right. Again,
+that's just a look at the multivariable analysis. And here we are estimating hazard ratio.
+The most prominent hazard ratio is related to the intersection with the main road.
+So after that, it was elevation, the higher elevation, the higher hazard ratio.
+And also intersection with railway, it more than doubled the hazard of invasion.
+And interestingly, the coverage of cropland, it seems to deter the spread, which is also
+understandable. These bio variables, they are meteorological variables. And I listed the
+interpretations here. Bio one is simply the annual average temperature. And the bio two is the
+average diurnal range of temperature, which is simply is kind of the average.
+The difference between the maximum temperature and a minimum temperature within each month,
+then you take an average. It reflects the variation over time, but within each month.
+So these two had shown some significant results, increasing the higher temperature or the higher
+mortality, increase the hazard of invasion.
+Finally, comes down to the something that may be interesting.
+So we collected the whole genome sequence from GenBank. And we analyzed these sequences using
+the toolkits provided by Nextstrain. The sequences were aligned using MAFFT, what do you call it?
+MAFFT? MAFFT. And the alignment was trained to a reference genome in GenBank. And we constructed
+the phylogenetic tree using the maximum likelihood approach implemented in the IQ tree software.
+And for the final geographic analysis, we use the tree time to estimate, you know,
+the location and host time of those internal nerves. And initial analysis shown on the left
+panel suggested that
+the sequences from bats, I think by these pink leaf nodes, and hedgehog,
+not by the yellow leaf nodes, they separated kind of distant from the main clades of sequences
+formed by humans and camels, as well as a single strain from a llama, I think, the animal.
+It is hiding here.
+And we, so then we just exclude all the sequences of bats and hedgehogs and only focus on the
+human and the camel genes.
+So on the right hand panel, you can see we had several clusters for human and camel genes.
+We have five clusters. The largest cluster is called C5, which contains majority of the sequences.
+And you can see the mixture of human and camel sequences throughout the tree, except for the
+most recent ones, where I think this was more like a sampling using, rather than a
+systematic pattern. So this mixture of human-camel sequences
+suggests that there were probably constant importation of sphere number from camel to human.
+Now, this figure shows the phylogeny in a much better way because we can we can
+time here, right? So although the human and camel sequences are mixed together,
+but if you look at the samples collected after 2016,
+the human genes are quite distant from the camel genes, right?
+And the common ancestor was dated around 2007, and the posterior probability for the host being
+camel, human, kind of 50-50. We later did a sensitivity analysis. We downsampled the human
+sequences because there's just too many of them. And then the camel will have a 99%
+for the posterior probability being the common ancestor.
+We also tried to associate case fatality rate with sequences.
+So what we did is we look at, we kind of divide the spatial temporal
+range into several chunks and calculate the case fatality rate within each chunk.
+And then we look at the individual sequences and associate them with the case fatality rate
+in that chunk, the location and the time. And then we, for each sequence, we have a bar
+with a color indicating the underlying case fatality rate in that space time chunk.
+And then we average for each cluster to compare the potential difference in case fatality rate
+between clusters. If you compare C5 to other clusters, C1 to C4, you cannot really see much
+difference between the two. Actually, there's only 1% difference in case fatality rate there,
+only 1%. But it is significant, probably because of the sample size, but we cannot
+fully interpret that. If you compare only the sub-clade C5.1 with C1 to C4, we actually see
+a 4% difference, which is not true. So that means the more recent clade is probably more lethal.
+We also associated the incidence rate with sequences, but we cannot see much signal there,
+so I'm going to ignore that. Oh, there's another thing I want to share. Okay, so we,
+remember, we performed some phylogeographic analysis. So let's take a look at a movie.
+Hopefully, this movie will show. Let's see.
+Just a copy-paste.
+Oh, we're not. We should go back to the window mode, and just copy-paste this one.
+Let's see if we can do it.
+Let's see if it works or not.
+Oh, I have to move it to...
+Oh, I have to stop sharing.
+Oh, I see, I see. Yeah, okay.
+Let me click on it here.
+I want to see that geographic location.
+I'm scrolling down, maybe.
+Scrolling down.
+All right, yes, and then replay.
+I'm sorry for this problem, but it's kind of out of my control.
+Where is play?
+Just click play.
+Okay, yeah, now let's take a look.
+Yeah, it's almost finished. All right, good.
+Good, okay.
+Now, let me... Oh, still, that's correct to share a screen, right?
+Right, okay.
+Now, some highlights for that movie, right?
+The top three most likely locations for the common access route were three cities, Riyadh of KSA and now Delta region, which is in Egypt and Jordan.
+The possibilities are 31%, 17% and 12% respectively.
+And Riyadh appears to be the major source of exporting infections, both locally and internationally.
+And it is the common ancestor node of subclades C3, C4 and C5 for 99% of time.
+Okay, and the early exportation to Egypt and Jordan occurred well before 2010.
+And the circulation of the MERS-CoV among camels in East Africa possibly started also before 2010.
+The virus migrated from Egypt to Ethiopia during 2011-2013, and subsequently to Kenya during 2014-2017.
+And that's partially supported by a zoological study conducted in Egypt in 2013, where they also sampled animals from Kenya and found nothing.
+The intense migration from Riyadh towards local cities in KSA, as well as Abu Dhabi in UAE, started around the 1970s, which matches our knowledge.
+And Abu Dhabi joined Riyadh as the second home for exporting the virus, both locally and internationally. So that's quite early.
+And the model also captures the opportunistic exportation to the US as well as to the US.
+So we also did some kind of detection of
+positive selection across proteins and the sites. Remember in the previous slide, see here.
+Now I'm notating here branch A and branch B. Branch A is kind of separating
+the hedgehog sequences from the rest, and branch B is separating hedgehog and
+bat sequences from human and camel sequences. So we performed the
+positive selection analysis along these two branches.
+Okay, the first three rows of branch A, we identified three proteins, the non-structural three, nucleoprotein, and this 1AB polyprotein is, I believe, it's from the open reading form 1.
+I may be wrong, but that's my impression. And we identified the signs
+with positive selection. Only in this 1AB polyprotein, not in the other two. Along the branch B, we identified these two proteins, including the spike protein.
+For the branch A, we did not detect the spike protein for any positive selection.
+And also for the spike protein, we identified these sides to be under high
+pressure for positive selection. And the three ones marked by red, those are newly found. They did not appear in the literature.
+And we all know spike protein is the one that most interacts with animal cells.
+How much time do I have?
+It's already...
+Yeah, already 10 seconds.
+Okay, okay. Then I'll probably ignore the ecology part. For the ecology part, I can just mention some main findings.
+What we did here is we used several machine learning approaches like post-signal regression tree,
+supported by commission, and random forest to learn the ecology of the spike protein.
+And then we build a meta-learner on top of this. It will give us another round of prediction, and it turns out that the ensemble machine, which is a meta-learner,
+outperforms the three base models. Not by much, but a little bit. If you look at the AUC, if you look at the accuracy, as well as F1 score and compound,
+not really a good performance in terms of sensitivity, but sensitivity here is a little bit deceptive because we have very few positive cases.
+This model is based on about 100 positive districts with confirmed cases, and about 400
+districts without any detection.
+And we did identify... Let me see. We did identify the most prominent risk driver for ecology of MERS-CoV. It's actually something called the coverage of bare land.
+Bare land, that's very, very difficult to define. Basically, a land without many, you know, vegetation, trees, like that, right?
+But we also adjusted for camel density here. Camel density is picked up by the model,
+but not as a very prominent driver. So we want to control the camel density. Then it's bare land,
+in addition to camel, it may also contain other animal hosts that we have not discovered yet.
+Okay, so let me just draw some conclusions on the epithelium model.
+So we observed that the cases with animal contact
+tend to be older, more likely to be male, symptomatic, and also having underlying conditions. Even though by our
+logistic model with interactions, we kind of see that once you adjust your model,
+underlying conditions, adjusting for age and gender, animal contact actually does not always increase the risk of death.
+Remember, in the older population, and male, it actually decreases the risk of death.
+But overall, for those older males who are farm workers, animal workers, because they had underlying conditions, and they were old,
+overall, they do have a higher risk of death.
+So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+But overall, for those older males who are farm workers, animal workers, because they had underlying conditions, and they were old,
+overall, they do have a higher risk of death. And we need to pay attention to that.
+So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+And animal-to-human transmission events mainly occurred between January and March,
+and human-to-human transmission occurred later in summer.
+So that suggests the importance of blocking the spillover from animal to human in the early spring.
+And also mentioning, we found sample sequences after 2014, many human sequences, and then camel becomes the host for the root ancestor with a very high possibility.
+And we also found Abu Dhabi of UAE is a hub for international exportation of this virus.
+So this virus, probably, we should recommend some kind of screening procedure for infected travelers.
+And the novel amino acids positions that we found on spike protein associated with public selection,
+those can be potential pockets for the spread of this virus.
+So we should consider promoting some preventive measures, like an educational campaign or personal protection equipment for those workers.
+And the novel amino acids positions that we found on spike protein associated with public selection,
+those can be potential pockets for development of future antiviral vaccines against this virus.
+So that's all for that material.
+And the NP paper is published in this journal, and the ecology paper is published in this journal.
+Thank you very much. Any questions, you're welcome.
+Yes, please. I'm really interested about the phylogeny. Can you go back to the figure four or five?
+Yeah, that's the one. So, since after 2016, it's really interesting, like, human birds and
+camels are pretty much distinct. Do you think it's because the sampling bios of the camel,
+or do you believe there's somehow a low level circulation of human population?
+That's a good question. I don't have the answer. My intuition is sampling virus is at least a contributing factor.
+It's hard to imagine, because this virus is endemic in camels. It's hard to imagine it's gone. I don't think it's gone.
+So, Ryan in the chat would like to know what type of models make up your own sample.
+Oh, so the base models are a random forest, boosted regression tree, and
+support vector machine. And then on top of that, the meta-learner is actually XGBoost.
+Does that answer your question?
+Yes, thank you.
+Yes, so it seems like this is a fairly small tree. Why did you end up choosing
+using the Nextstrain pipeline as opposed to a different tree building pipeline?
+It was not my decision. My intuition would always try maybe like a beast first.
+However, I wouldn't say it's a small data set either, because we have, I think, about 500 sequences together.
+A beast may need some time to run. And another nice thing about the Nextstrain is that it provides
+all sorts of tools together for you to use, and with this nice movie. So I think that's
+probably the only reason why we chose Nextstrain. But I think definitely you can try a beast as well,
+especially for the geographic analysis.
+Could you tell us more about surveillance or genome sequencing of camel or
+reservoir species? I think that's really important because it can give us a
+good background about circulation in these reservoirs and spillover between them.
+I'm not quite sure whether there is a systematic surveillance system for animals.
+Actually, in terms of animal hosts, although at least the bats and hedgehogs here
+if you look into the literature, it's still kind of debatable, right? We all have common sense.
+Bats is the natural reservoir for all types of coronaviruses, including MERS,
+MERS-CoV. But as a matter of fact, so far people have only found, to my knowledge,
+kind of similar gene segments in the virus as in the form of bats.
+That's not considered some very solid evidence by many of our biologists and immunologists.
+Yeah, I know less about the hedgehogs, so I cannot say much about that.
+So the primary animal host that's solidly convincing people is camels,
+scum, gondolins. And we should do surveillance.
+I have a question about student training because you're applying for adjunct
+faculty position here. So what kind, what type of students would you expect working in your lab,
+or how would you train bioinformatics students? In terms of bioinformatics itself,
+I need a partner like Dr. Liu. Myself, no, I cannot train you. I'm very interested in this
+field, but myself, I need to be trained as well. But my vision is that, you know,
+we don't have this vision. We want to combine biological data, gene sequence data. So far,
+we're only talking about the pathogen sequence, right? It could be human sequence as well,
+but that's a long shot. And also like human movement data, all together to inform us about
+the transmission dynamics. And that's also very important to understand how the virus is going to
+evolve in terms of its transmissibility, pathogenicity, and so on.
+So far, there have been some efforts in this kind of joint modeling in the past 10 years, but
+it's still under investigated. It's still a very promising direction. So anybody with interest in
+both bioinformatics and statistics and computational methods are welcome to join this effort.
+Yeah, sure. It says elevation was insignificant in the univariable analysis. Why was it included
+in the multivariable and into that mix? Good question. Let me check.
+Elevation. That's for the survival analysis, is that? Yes.
+Yeah.
+Oh, this is kind of more like a statistical philosophy question,
+right? Because here, we did not explore the potential interactions explicitly.
+So there could be interactions among these factors. And in the univariable analysis,
+it's not significant. Actually, the p-value is very close to one, but that does not mean
+it's not having an interaction. Or it could be a confounder. Because if you look at the
+coverage of a bare land with elevation, there is some correlation there.
+Right? Not very high, not super high, but there is some substantial correlation there.
+So we cannot just rule it out. In the multivariable model, we did not just leave
+out those non-significant in the multivariate model. We actually add them back one by one
+to check whether they're going to become significant after adjusting for other factors.
+So that's the reason.
+Thank you. All right. If there's no questions, let's send Professor Gao.
+Yeah, I think I set it up. I know I have to clean up, so I won't be there.
+All right. I think that's something else.
+Yeah. Should I go?
+You can just show up. I'll show up at the booth, I guess.

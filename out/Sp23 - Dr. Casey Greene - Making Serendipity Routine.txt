@@ -1,0 +1,922 @@
+leading to his first paper, which is affiliated with the Department of Genetics here at UGA.
+The Green Lab develops machine learning methods to integrate disparate large-scale datasets,
+develops deep learning methods for extracting contacts from these datasets, and then brings
+these capabilities to molecular biologists through open and transparent science.
+Of particular note to folks interested in large language models, like CHAT-GPT, Dr.
+Green and others recently posted a preprint on how AI might be able to help us write and
+revise our academic manuscripts.
+Please join me in welcoming Dr. Casey Green to UGA.
+Okay, thank you, yeah, it's good to be back.
+I actually spent a summer working in this building in the Department of Genetics.
+Everything around this building looks different now, but somehow the building still looks
+the same.
+I'm excited to get a chance to share some of what we've been doing in our group and
+then to share some of what's going on at the University of Colorado and sort of give you
+an idea of what the ecosystem is like where we are.
+I think it's always important to think about kind of what our role as informaticists in
+science is, like what do we bring to the ecosystem, and I like to think of what we contribute
+as essentially serendipity, right?
+If we do our jobs well, people will see something in their data that they hadn't seen before,
+and they will make a different decision based on that.
+So I like to, you know, think about how we can make more kind of serendipitous moments.
+I'll start with a brief vignette of a project that we started quite a few years ago now
+trying to understand rare diseases.
+And in particular, what factors might drive a rare, what systemic factors might drive
+a rare disease.
+The world when we started this project was one where looking across multiple data sets
+remained somewhat challenging.
+It's time consuming, you have to deal with batch and technical artifacts.
+And so our question when we started, a postdoc joined the lab and the idea was, well, you
+know, here's the gap that we're facing.
+If you want to analyze multiple data sets at the same time, to identify systemic factors,
+that means you're looking at different tissues, probably looking at different cohorts, there's
+potentially different disease contexts, might be different controls.
+All of this makes your life a lot harder, you can't just kind of make an assumption
+that you're going to do three different t tests and be done with it.
+And so what this postdoc wanted to do was say, okay, can I find these commonalities
+without it taking an inordinately large amount of time.
+And she was very interested in not taking an inordinately large amount of time because
+the strategy that she used in her PhD, before she joined the group, was developed, she developed
+this approach using a modular framework to analyze these data sets, where you essentially
+take different data sets, decompose them into modules, and then try to map a module in one
+data set to a module in another data set to a module in another data set.
+This is possible, if you're an expert in the disease, and you're an expert in all the tissues
+that sort of are affected, you can do this, you can say, okay, this is this pathway response
+in this tissue, and this is this other pathway response in this other tissue, but it's really
+time consuming.
+And the complexity grows essentially, with at least the square of the number of modules
+that you want to look at.
+So you sort of restrict yourself to a modest number of modules if you want to do this in
+any practical amount of time.
+There are potentially ways to automate this, you know, using over representation analysis
+or other strategies to try to, you know, make life easier on the mapping stage, so you don't
+spend a lot of time looking at stuff that's unlikely to be fruitful.
+But either way, it's challenging, it takes a bunch of time and it requires a lot of expertise.
+So what Dr. Jacqueline Tironi did was say, well, what I really want is a module library,
+like how could this process or cell type be represented in any data set that I look at,
+I'd like to be able to pull that off the shelf, and then take that module library to different
+data sets, and then look at each of those data sets in terms of those modules and just
+look directly across those modules.
+I don't have to now sort of do the module connection after the fact, I can do it upfront.
+This would be great, wouldn't it be great if.
+And so her hypothesis was that, you know, these modules don't just exist in one data
+set, they exist across human biology.
+So could she, so her hypothesis was that she would be able to learn these reusable modules
+by taking many, many, many different data sets, decomposing those different data sets
+into modules, and then sort of learning which modules were necessary to reconstruct the
+original data.
+And then once she did that, she could do that on a generic collection of data, and then
+hopefully be able to use that on her data sets of interest.
+And in this case, we're interested in studying a disease called Enka-associated vasculitis,
+which is rare enough that if you look at large collections of public RNA-seq data, you don't
+find it.
+So it's quite a rare disease.
+So the idea here was, if she took a whole bunch of generic samples, essentially random
+human data that she downloaded from the internet, transcriptomic data, she decomposed that,
+she could decompose that into patterns, and then she could take those patterns and we
+could apply those to the rare disease data sets of interest, and potentially do sort
+of standard statistics with that.
+We, just to give you an idea of the data set that we started with, so this is a data set
+ReCount 2, I think there's now a ReCount 3.
+This is produced by Jeff Leak's group at Hopkins.
+And if you wanted 70,000 RNA-seq samples, you can just get 70,000 uniformly processed
+RNA-seq samples.
+What I like to tell Jackie is that her project had to be successful, because if you think
+about the resources we were giving her to start it, if you just benchmark that those
+samples probably cost about $1,000 to generate, you know, I like to tell her, look, we gave
+you $70 million to start your project, you have to do something with $70 million, right?
+So, this was the data that we used, and then we tried quite a few different methods to
+extract patterns, including some that we developed in our group, but we ended up coming to this
+method called PLYR, which is from Maria Shakina's group at Pitt.
+And PLYR is the Pathway-Level Information Extractor, and it does a couple things that
+are really nice.
+So, it's essentially doing this matrix decomposition, but as you do the matrix decomposition, there's
+a couple sort of regularization factors and some penalties in it, and essentially, it
+has some sparsity properties that we really like, so the idea is that you want to be able
+to explain a dataset with relatively few latent variables.
+Also, you want your latent variables to have only a modest number of genes in them.
+And finally, if those latent variables can align with a pathway, you'd really prefer
+that the latent variable align with a pathway, because anytime you're doing this decomposition,
+you're essentially doing some arbitrary rotation, right?
+PCA is essentially learning an arbitrary, it's learning a rotation of your data, a reduced
+dimension space rotation of your data.
+The rotation in PCA is essentially arbitrary, I mean, you've chosen that you want to maximize
+the variance on the first axis, but you could have chosen anything else, like ICA, you're
+just like, I don't care, just make it small.
+So in this case, what it's doing is it's essentially saying, if a pathway can line up with an axis,
+let's do that.
+And so it's a little bit less, that's the intuition for what it's doing, it's actually
+a little bit, the regularization is a little bit different than that.
+And what that gives you is a really nice level of interpretability.
+So instead of having to think about a module as, like, instead of saying, okay, this cell
+type is, these three different axes of variability added in some fraction, usually those cell
+types are going to come out as a single axis in your data.
+So it makes it much more easy to think through and reason about the solutions.
+And so what we essentially did is say, okay, well, we have this enormous collection of
+generic human data from the internet, ReCount2, and we have a plier, and we'd like that to
+be a machine learning model that we could use in many different biological contexts.
+So we named it multi-dataset plier, but because in bioinformatics, everything has to have
+a name, we just shortened that to multiplier.
+And so this is kind of a multiplier idea.
+I'm just going to give you a couple highlight results from the paper that I think help to
+kind of give an idea of why you might want to do this.
+The paper is pretty exhaustive.
+It has a significant deep dive into sort of exactly what's happening in this stuff, but
+I'll just give you kind of the high points.
+Essentially what we wanted to understand is, does this model learn something we didn't
+already know?
+And is it better than if you just took data from the disease of interest?
+We couldn't get enough data from the disease of interest, which is psychosociative vasculitis.
+So we did that analysis in the paper, and we just didn't learn many axes of variability
+because there's too little data.
+So what we wanted to do is say, well, let's pick something where we could actually learn
+something.
+Let's sort of give this idea a chance.
+And then we said, well, let's imagine we're studying a different autoimmune disease, lupus.
+So that's what's here, where it says SLE, this box plot.
+What we've done is we've collected all the whole blood data that we could get from individuals
+with lupus that was publicly available to create one collection of data.
+Then what we've done with RECOUNT2, which is the generic human data from the internet,
+is we've taken RECOUNT2 and we've subsampled it to be the same size as the lupus set.
+So that's the box plot.
+The box plot is RECOUNT2 subsampled.
+And then where you see the diamond, that's what happens if you just take the complete
+collection of data from RECOUNT2.
+Okay, so let's label our X.
+Oh, so yeah, so these data sets, if you think about the science behind this, this experiment
+has these two data sets of the same size, but different composition.
+These two are the same composition of the data, but they're quite different sizes.
+I think 70 times larger for the diamond than the other.
+And so then we can ask, okay, so how many patterns are we learning from our data?
+So this method uses the latent variable decomposition, so the number of latent variables, which are
+essentially patterns.
+You can see that if you want to learn more patterns, there's sort of more, and there's
+a heuristic and plier for sort of selecting the optimal number of latent variables, and
+we use that heuristic here, it seems like a pretty reasonable heuristic.
+It uses cross-validation to essentially ask how frequently you're rediscovering the same
+latent variables.
+So if you do that, you find that you can learn more latent variables or recurrent patterns
+in the data if you have less heterogeneity in your data given a fixed sample size.
+I don't think this is going to shock anyone, right?
+If I give you a limited amount of data, you would like that data to be as consistent as
+possible except for the thing you'd like to vary, right?
+That's usually a good place to live.
+So that's what we see here, right?
+You get more latent variables out of the lupus data than the subsampled recount2 data, but
+if I told you, well, you can have really messy data, but you can have a lot of it, now you
+can learn a lot more patterns.
+So you end up with many fold more patterns that you can learn, the kind of recurrent
+patterns across the data set if you have more data.
+So you'd rather have less heterogeneity, but sometimes having more samples can overcome
+the heterogeneity issue.
+So that's the first thing we ask.
+So you get kind of more total patterns.
+The next thing we can ask is, okay, well, we don't know what complete collection of
+processes are transcriptionally co-regulated, right?
+This is not something we know a priori.
+We can get a collection of processes if we go to Gene Ontology or KEGG or other databases,
+but some of those may not be transcriptionally co-regulated.
+However, if we're seeing a process that's coming out as transcriptionally co-regulated,
+that's probably a positive hit.
+And so that's kind of the assumption we're making here.
+So this is looking at both the SLE and the ReCount2 data again.
+This axis is what fraction of the pathways that we know about are coming back as sort
+of aligned with one or more axes in the data.
+And so you can see this actually wasn't driven by composition of the data, this was driven
+by sample size.
+So if you put in more data, you can learn kind of more transcriptional co-regulation.
+This obscures a little bit of what's going on here because the processes are a little
+bit different.
+If you look at what happens in the ReCount2 data, you end up learning, as you get to the
+large sample size, you end up learning more granular processes.
+So it seems like it's probably that you're covering the same things that are transcriptionally
+co-regulated, you just get a higher level of resolution.
+And then, so you kind of learn more of the stuff we know we should know about.
+So at this point, anything I'm showing you, you could also do with GSEA or any of these
+other methods, gene set enrichment analysis, or those types of methods.
+But we can also ask, can we learn anything we didn't already know going in?
+So this is asking what fraction of the latent variables that are coming back are not associated
+with the pathway.
+And what you can see is, when you have the sort of more modest sample sizes, about half
+of the latent variables that come back were associated with the pathway, and the other
+half are potentially novel.
+Could be novel biology, it could be a technical artifact.
+What you see when you get the large collection of ReCount2 data is, you know, that number
+drops to about 20%.
+So 80% of the latent variables that are coming back didn't exist in the databases that we
+had available to us going into it.
+So that's a really nice thing to have in your back pocket if you want to say, well, look,
+I want to explore the biology of what's going on in this disease, but I don't want to limit
+myself to what people have curated into a database.
+So this is kind of a data-driven way to figure out what those modules could be.
+And you might also say, well, there's probably just an enormous amount of technical artifacts.
+You just told me you gathered a whole bunch of random human data from the internet.
+One of the positive things that we saw that was kind of suggestive that this is not driven
+exclusively by technical artifacts is actually this proportion bumps up a little bit when
+you look at the ReCount2 data, as opposed to the SLE data.
+If it was entirely driven by technical artifacts, you'd actually expect this to have fewer latent
+variables that were associated only with a known process.
+So this was also encouraging.
+So this gives us the idea that we kind of learn more unknown unknowns.
+And then there's quite a bit more of a deep dive in the paper, like looking at sort of
+one of the things that we see is instead of having a cell cycle latent variable, you end
+up with different phases of the cell cycle partitioned into latent variables.
+But the sort of takeaway was that if you do these machine learning analyses while reusing
+data from other contexts, you can get this level of detail that you couldn't get just
+analyzing your data alone.
+So starting with a whole bunch of other data, learning the pathways and processes there,
+and then applying it to your data gives you this higher level of resolution.
+There is a bit of an implicit assumption here, which is if the process that you were looking
+at is truly unique and only occurs in your setting and no other settings, you can't find
+it because it's not going to be present in the variability from other people's data.
+I think this is probably rare.
+I don't think it's terribly common that there are processes that are so exclusive that they're
+only used in one and only one biological context and nowhere else.
+But if you believe that to be the case, you should know you will not find it with this
+method.
+And so then just kind of recapitulating.
+So in the past, when Jackie joined the group, she had this modular framework approach, which
+is actually really nice and is now used, it's been used in scleroderma and other contexts
+to connect pathways across tissues and studies.
+But the multiplier approach she developed has some nice advantages.
+So she takes this generic human data, recount two, she can train a model, then transfer
+it to the datasets of interest, and then just look across those datasets with standard statistics.
+So this is an example of one of the things we can do with this.
+So this was actually the thing we wanted to do when we started the study.
+So these are three different datasets from individuals with ANCA-associated vasculitis.
+One of the challenges here is that all of these datasets are microarray-based.
+All of our training data is RNA-seq.
+A different student in the lab developed a technique to do, if you're interested in taking
+sort of machine learning methods and applying them to gene expression data across these
+contexts, for many methods, there's reasonable ways to do that transformation that is not
+completely horrendous, which is the best advertisement I can get for a method.
+But there's quite a few different methods.
+And actually, quantile normalization is not bad in this context.
+The zeros kind of give you a bit of trouble, but it's not horrendous.
+And so this is what we're doing here.
+So we're actually asking, can the multiplier model actually apply to array datasets, even
+though it's trained exclusively in RNA-seq data?
+We would have done this in RNA-seq data, but it turned out there wasn't RNA-seq data for
+this that was available yet.
+So now we've gotten to the point where the datasets for this disease are large enough
+that they actually do exist in RNA-seq as well.
+So what's going on here?
+So we've got three different datasets, airway epithelial cells, renal glomeruli, and PPMCs.
+They're collected in three different studies, so there's no matched people.
+And also the conditions are brutally different.
+So what's going to happen is from the left side to the right side of each of these plots,
+we're going to go from the least, from the most severe form of the disease to sort of
+the least severe form of the disease for healthy controls.
+So this dataset for the airway epithelial cells has, these are the vasculitis data,
+but then it's got things like pancreatic rhinitis, healthy.
+And so we're basically saying, okay, what is associated with severity across these three
+different cohorts?
+And so one of the latent variables that comes up as a severity associated is this M0 macrophage
+signature.
+And you can see the same thing where in each group you look in, the least severe form of
+the disease is on the right, the more severe form of the disease is on the left.
+So you can see this latent variable severity associated due to the bizarre sort of path
+of academic publishing.
+So our guess was that M0 macrophages could be involved here.
+Well, before this actually was published, but after the preprint came out, we had some
+follow-up work.
+And I have to break all the chronology of science.
+Our follow-up work came out first demonstrating that it looked like there was a change in
+macrophage metabolism in the disease that could be sort of influencing severity in a
+systemic way.
+You can also use this type of analysis to say what's particular to a tissue, right?
+So you could say what latent variables are associated with severity in this tissue, but
+not other tissues.
+So it gives you the ability to start doing those analyses in a way that it's pretty darn
+difficult to do with just the modular framework alone.
+And then I have an almost five-year-old, she turns five in three weeks, and she's been
+watching Zootopia.
+And there's a line in a song in Zootopia where I was listening, I'm like, oh my gosh, this
+is science.
+So the line is, I'll keep on making those new mistakes.
+I'll keep on making them every day, those new mistakes.
+And so we're really big on this in the lab, right?
+But what I tell people is, it's not going to work, just make it not work differently
+each time.
+If it's not working the same way each time, that's not good, but if it's not working for
+different reasons, that's perfect.
+And so we do this in our own work.
+So this is the first part of the GitHub that's rate me that's associated with this paper.
+So if you want to know sort of, these are all notebooks, if you want to follow along
+with the work that we did for this multiplier paper.
+The first part of this is kind of our proof of concept exploration to just understand
+how the method worked.
+Then you get to the stuff that's in the paper, then you get to the stuff that's in the supplement,
+then you get to the stuff that's neither in the paper nor the supplement, because it turned
+out the paper was too long.
+And so this gives you a way to see like, okay, here's all the stuff we did.
+So there was one experiment that we did where we wanted to say, can you predict outcome
+in clinical trials from these latent variables?
+And so we got this Rituximab data set from the NIH that was testing this.
+It turned out that the data set structure was, let's say, suboptimal, in that some of
+it was paired end and some of it was not paired end sequencing.
+And this was confounded with the endpoint.
+So it turned out to be extremely difficult to analyze, and we couldn't really learn anything
+from it.
+But if you're interested in using that for your own work, probably not that data set,
+that idea.
+You know, we've got a notebook here that's like, okay, here was our attempt to build
+a model to predict response.
+So you can start from that.
+So if you're interested in this, we try to do this for each of our papers.
+So this is available.
+The GitHub is here.
+If you search for Taroni and multiplier, you'll probably find it.
+But I thought this was a nice example of kind of how we've taken a project from inception
+through execution through kind of deliverables.
+This method, we've seen some other uses now.
+So someone used the same thing to study neurofibromatosis.
+That came out relatively recently.
+I can't remember, there's a few other sort of rare disease analyses that people have
+started using this for.
+But we really like seeing that, right?
+Because it demonstrates uptake that is in a, I mean, rare disease transcriptomics is
+a relatively small community.
+So it's nice to see this stuff beginning to catch on.
+I would also say, you know, we started with about $70 million worth of data.
+If you are Lego Grace Hopper and you happen to have an internet connection, you can have
+about $4 billion worth of data at your fingertips.
+So if you're interested, there's a few more resources that have come online.
+I think Arches 4 now has like 650,000 samples.
+So that's about, you know, if you want to estimate $650 million of preprocessed data
+at your fingertips.
+In a previous position, we built something called Refined Bio that's about a million
+samples.
+So these types of resources are available, which is great, because then you don't have
+to go back and rebuild this.
+You don't have to do all the software engineering to reprocess the data in a uniform way.
+You just kind of start from the processed data.
+And I think this opens up a lot of avenues of exploration.
+I like to, you know, one of the things that I say about what our lab works on is machine
+learning, public data, and the transcriptome.
+Pick two of three, and we're probably interested.
+One of our Bush essentially wrote and designed the way that we fund science in this country.
+So this idea that most science is going to happen outside of government research labs,
+it's mostly going to happen at universities, it's mostly going to be grant funded.
+He wrote this letter to FDR that says, the pioneer spirit is still vigorous within this
+nation science offers a largely unexplored hinterland for the pioneer who has the tools
+for his task.
+Well, I would say, I think open data is like the opportunities here are remarkable, like
+the ability to, you can take these data sets off the shelf and learn how something works
+at a scale that's very difficult to do from the data generated in only one lab.
+And once you do that, you can then test it.
+And I think I really think using other people's data as sort of the starting point to generate
+hypotheses that you then go test.
+There's an enormous amount of unexplored opportunity here.
+We also think sometimes about other data types instead of just gene expression.
+So this is work from David Nicholson, who was a PhD student in the lab who just graduated
+last year, who was like, well, let's do that.
+I just want to understand what's on bioRxiv anyway.
+So at this point, I probably don't have to introduce it, bioRxiv is a preprint server.
+And so this gives us the ability to also study the peer review process in some ways.
+So we can see what gets posted to bioRxiv, and then we can look at the sort of what the
+final paper looks like.
+We started this project just around the time that bioRxiv released an XML repository of
+their complete collection of data.
+So if you're interested in not just having a complete collection of transcriptomic data,
+you can also go get a complete collection of XML preprints, which I think is really
+exciting and a lot of fun.
+You learn some things if you start looking at just the metadata associated with this.
+So this is one of the simple questions that David asked was just, well, if there are preprints
+with multiple versions, are people sort of adjusting their preprint in response to peer
+review?
+So if someone submits their paper, they get comments back, do they generally repost it?
+We can't directly answer that question, we don't have access to the journal system.
+But we could say as well, if that were happening, probably what would happen is that at each,
+you know, as you saw in each version, you'd see an extension in the time to publish.
+Sure enough, you see that.
+And actually, the coefficient on the X here is about 50, which is in days.
+So it suggests that adding a version means sort of 50 days longer in the publication
+process, which is kind of aligned with what you'd expect to see if people are putting
+up papers and revising them in response to peer review.
+Another thing we can ask, so this is getting into the text itself, is if the text changes,
+do more changes in text between the preprint and the published version result in, does
+that come with a longer time to publish?
+And the answer to that is kind of yes-ish.
+If a preprint changes more from the, if a published version changes more from the preprint,
+it does take a bit longer to publish.
+But it's not an incredibly substantial change.
+And actually, the other thing that we did, so as we were doing this project, there was
+another group that did a completely different project, where they took a set of COVID papers
+that were published first as preprints and followed them through.
+Their scientific question was different.
+They wanted to say, for COVID-related papers, does the message of the paper change as it
+goes through the publication process?
+And they found that only in one case did that happen out of the 300-odd papers that they
+examined.
+But what that gave us was an annotated list of COVID papers.
+So we could then take that and ask if it had the same relationship, and it actually didn't
+have the same relationship.
+So for the subset of the literature in early 2020, COVID papers were being published quickly
+regardless of how much text changed between the preprint and published version.
+So this was kind of an interesting way to explore how publishing was happening.
+So for those of you who have had the opportunity to have papers go through peer review, can
+you guess what the most common linguistic change is, if we just look at word-level linguistic
+change during the publishing process?
+Has anyone ever had to add supplementary or additional data?
+It's not the most common.
+The most common is actually, oh, no, it is the most common, yeah.
+So additional and file.
+So on the right here is what's enriched in the published literature, and the left is
+what's enriched in preprints.
+So file and additional and supplementary are all pretty high at the top.
+So when people are changing their papers, we can infer that probably they're often changing
+the, you know, they're adding stuff to the supplement, but maybe they're not adding that
+much to the main paper.
+The other stuff that's in there is kind of interesting, like fig and figure.
+So because journals have different styles, the plus-minus symbol and the em dash.
+So you can see the artifacts of typesetting, but this gives a way to kind of understand
+what's on each side.
+And this, I should say, we've done this, so this analysis is using only preprint published
+pairs.
+If you do the same thing with all of BioRxiv and all of PubMed, you essentially find field
+differences.
+So some fields use BioRxiv more than others.
+So this is the more carefully controlled than that.
+The other thing that we've done, just if you happen to have a preprint yourself, we have
+this web server that does a linguistic comparison between a selected preprint and all of PubMed
+and says, okay, well, here's journals that publish linguistically similar papers.
+Here's papers that are linguistically similar to yours, and this has a secret feature.
+So what we encourage people to do, and we designed it to try to get people to upload
+their preprint, but then people are like, well, I have a preprint, but it's on archive
+and you don't support archive.
+So the secret feature, which you can also drag a PDF over the search box if you want
+to, but we don't generally advertise that because the goal was to get people to post
+preprints so they could use the service, but we don't support archive.
+So if you have an archive preprint, we'll allow you to put, to drag it over the search
+box, but no other PDFs.
+So this came out last year, and there's, again, a GitHub associated with it if you want to
+see all the kind of exploration that we did on the way.
+David had a follow-up paper that I'm really excited about where he looked at, he looked
+at the, what words change their meaning over time, and in the last 20 years of scientific
+publishing.
+So there's an application associated with that as well that I should have put the link
+on here, but didn't, that we call WordLabs.
+So if you go to our lab and look for WordLabs, you'll find that, and it's really interesting.
+So we see things like hallmarks of new technologies, like, you know, CRISPR has a linguistic shift.
+We also see a lot of pandemic-associated words have linguistic shifts.
+So if you're interested in understanding how our language changes, that's also something
+that David did.
+Okay, and then I know this is a less medically-related audience than most of the places that I speak,
+but one of the things that I thought I wanted to share was sort of how some of this basic
+science or sort of the techniques that we develop in this basic science can contribute
+to changes in how healthcare gets delivered.
+And so this is also something that we think about, right?
+Remember our business is serendipity.
+Yes, sometimes that's in research, right?
+Whether that's sort of me telling you how papers change, so that you can think about
+how you would change your paper in response to peer review, just add more additional files.
+But sometimes that's, you know, in care, in clinical care, right?
+So that someone, you know, you can imagine a patient comes in, there might be reasons
+that that patient might need to receive a different treatment.
+Could we provide that kind of information at the point of care?
+So this is a big focus at our med school and our health system that's associated with our
+med school, University of Colorado Health, has an entire program in clinical intelligence.
+This is sort of the idea that I like to highlight as sort of serendipity is like the right moment
+at the right time to make the right decision.
+In most health systems, if someone is going to get something called pharmacogenomic genetic
+testing.
+So the idea here is people have different variants in their genome.
+Some of those variants can affect how you metabolize drugs, how you respond to different
+drugs.
+It's not terribly common that people get tested for pharmacogenomic variants, because if you
+go get, if you are going to a hospital and, you know, you need to have a stent inserted,
+one of the common treatments is Plavix, well, there's a, there's an interaction between
+Plavix and a certain genetic variant, a set of genetic variants where you metabolize the
+drug differently, and it doesn't work for you, which means you're not getting the benefit
+of reducing your heart attack risk, or your clot risk.
+And so, but most people don't get this testing, because if a physician orders the testing,
+they get a 70 page PDF back, then they have to take that 70 page PDF and go to a table
+like this, read everything related to the drug they're about to prescribe, to prescribe
+on the table, and then understand if it applies, right?
+That is not a common thing for a physician to do.
+Providers don't get reimbursed for that type of type of work.
+What's happening at the University of Colorado and UC Health is we've got clinical decision
+support built into the electronic health record around this stuff.
+So this is the same thing, except instead of a 70 page PDF, plus having to look at this
+table, if a provider were to go in and order Plavix for an individual who's not going to
+benefit from it, it pops up an alert that says, look, we recommend you remove this because
+it's not going to work, and read about why it's not going to work if you want to, but
+we recommend you apply one of these alternatives that will work for this patient.
+And so this is serendipity, but not just in research, in clinical care.
+And this is, if you're interested in this kind of story, this is another one.
+This was an individual, different condition, where there was a question about drug efficacy.
+This is a story from UC Health.
+And in this case, the provider keyed in an order, and an alert popped up that says, oh,
+this person's going to need a different dose.
+And that was helpful to the provider to make that decision.
+One of the things I've had the privilege of doing over the last couple of years is focusing
+on this program.
+So a lot of faculty in our department work in this program, and about a year and a half
+ago, I guess two years ago, the previous director left, and so I ended up as the interim director.
+So I've gotten to know this program pretty well.
+So this is our Colorado Center for Personalized Medicine.
+We have a biobank study that this is all tied to.
+So if someone comes in, they can consent to have their sample collected for the biobank.
+We have a robust return of results pipeline built on that.
+So our biobank is growing pretty rapidly.
+Our sample increase is picking up a lot.
+But then the other thing we ask is, how is this making a difference in care?
+So essentially, how many of these alerts are actually firing?
+So over the last year, we've had about 1,000 patients who've had an alert fire at some
+point in clinical care.
+That's a tenfold increase over our entire previous history.
+And that's been powered because we've recently focused on getting these results back into
+the EHR in a structured way.
+So we've seen almost 100-fold growth, actually more than 100-fold growth year over year.
+We'll probably have 210,000 results in the electronic health record at sort of the two-year
+mark.
+And what this means is that if you're interested in studying this type of process in terms
+of care delivery, if you're interested in studying how physicians respond, if you're
+interested in looking for new cases where there are these sort of drug-gene interactions,
+we have the ingredients to do that at Colorado in a way that no one else that I'm aware of
+does.
+And so this program continues to grow.
+I'll just give you one.
+This is actually a real story that happened over the last few months.
+So this is a stock photo.
+I cannot show you a picture of the patient, but a patient came in to a community oncology
+clinic.
+And this works across the entire UC health system.
+So it's not just an academic hospital.
+This is a major health system that serves the Mountain West.
+So this patient came into a community oncology clinic.
+They were prescribed a drug that based on their genetic variants would have created
+a significant risk of life-threatening complications.
+Our team noticed this, sent a message to the provider, and then the patient alert actually
+fired and recommended a reduced dosage of the drug.
+The oncologist actually did proactively reduce the dose.
+So the person started at a different dose than would traditionally be used.
+Even at that dose, they didn't tolerate it very well.
+So they had to further reduce the dose.
+In these types of cases, you can imagine what happens if you start at the highest sort of
+the traditional dose at which these drugs can be for individuals with this particular
+variant can be lethal.
+And so this is a case where, you know, yes, I told you there's 1,000 alerts, but each
+of those 1,000 alerts is some story like this, right?
+And so it's nice to see this actually being used to deliver care at scale.
+And so we're doing this, this is all informatics, right?
+You can get all of this serendipity with sort of none of this here has machine learning
+built into it, but it's going to.
+And as we think about that, I think it's really important not just to sort of think
+from the machine learning point of view, but to really think about practical clinical care
+pathways.
+So this is a piece from Siddhartha Mukherjee that sort of, if you're interested in AI and
+medicine, I realize this is dated now, but it's still worth reading.
+And it's also weird that five years is old, but it's still worth reading.
+It has a quote from Geoffrey Hinton, sort of says they should stop training radiologists
+right now.
+And why would someone say this, right?
+Well, so Geoff Hinton's looking at the literature, right?
+So they're just trying to collect some literature from around the same time.
+So this is sort of saying, look, deep learning is going to completely transform healthcare.
+It's going to change how we care as we know it.
+Another sort of similar example, more examples, everything you read in the literature, deep
+learning.
+Like, I mean, now we're all into large language models, but at the time these image models
+were going to completely transform healthcare.
+Well, you might ask, is there anything they're not good at?
+Like they're good at everything, right?
+Chihuahuas and blueberry muffins, not terribly good here.
+This one's kind of wild.
+So I perceive the thing on the left as a panda.
+It looks like a picture of a panda.
+I don't really perceive this as much of anything.
+We're going to add, you know, this plus seven thousandths of this.
+What do you think the output is going to look like?
+A sloth.
+A sloth?
+Any Gibbons?
+Anyone for Gibbon?
+A bear.
+A bear?
+Okay.
+So this is what it looks like.
+It's a Gibbon.
+Clearly a Gibbon.
+No question.
+That's a Gibbon.
+A monkey.
+Okay.
+So it doesn't look like a Gibbon to me, but our neural network is exceedingly convinced.
+And the reason this works, right, is because the decision boundaries in these neural networks
+are sort of nonlinear, and you can end up pretty close to a decision boundary without
+really knowing it.
+This is another example, which I think is just a lot of fun, so I have to throw it in.
+So this is someone who was like, well, can I just make adversarial, like, sticker?
+Like, can I have a sticker that I can put on something and have a deep neural network
+perceive it as something, even if it's not?
+So this is the toaster sticker.
+And so you can give, you can put the toaster sticker on a table next to what I perceive
+to be a, I perceive this to be a toaster sticker on a table next to a banana.
+I perceive this to be a banana on a table.
+Neural network classifier, banana on a table.
+It's good.
+Stick the toaster sticker next to it?
+Absolutely a toaster.
+You can imagine doing the same things with stop signs, you can imagine doing the same
+things with other fun technologies in the world of self-driving cars or deep neural
+networks or vision.
+Okay, so let's go back to the automated radiologist finding pneumonia.
+This was one of the examples I showed you before.
+There's a, John Zek is a guy who writes blog posts that are really good and then converts
+them into papers.
+So this was a blog post from John Zek, which then became a paper that sort of said, okay,
+why is the system actually working?
+Like what's happening here?
+So he went to the, to the images and tried to understand, you know, what part of the
+image is contributing to the prediction of pneumonia?
+Well in this case, a positive, and this should probably find pneumonia.
+There's high density in the lung here.
+You can say, well, okay.
+Oh, and I should say a positive number is suggestive of pneumonia, a negative number
+is not.
+Okay.
+So what are the positive numbers?
+The most positive numbers, bottom, yeah, where there's this interesting stripe, the interesting
+stripe that's kind of unique characteristic of the scanner, the one that you might see
+if you were in a department, if the scanner was placed proximal to sort of where pneumonia
+diagnoses were usually occurring.
+Yeah.
+So, so, so that's interesting.
+Here's another one.
+I should say these probabilities are low, but the previous one was in the 99th percentile
+for pneumonia.
+This one's in the 95th percentile.
+Yeah.
+Portable?
+Portable.
+Someone's not well enough to go to the scanner.
+Not a good sign for their health, could indicate pneumonia.
+Probably not the part of the image you want to be looking at.
+And so, you know, I think this to me, I was also reading this every once in a while, I
+read the comment section of blog posts on the internet, which I do not recommend, but
+there was one on big data.
+You know, there was this blog post on big data and I'm like, well, it was like why statistics
+don't matter in the era of big data or something like that.
+And I'm like, okay, I'll, you know, and then I'm like, I have some disagreements with this.
+Then I go to the comment section, I find this one, which I really agree with.
+On big data, data collection biases are always larger than statistical uncertainty.
+And I think this is why I sort of, you know, you can have these models that perform robustly
+around a lot of these comparisons that still struggle.
+And then I read, who made the post, and it's this guy named Daniel Himmelstein, which probably
+doesn't mean anything to you, but he happened to be a postdoc in my lab.
+And I'm like, dude, put this in the comment section of the internet, people should actually
+read it.
+So now I put it on slides, so at least someone can see it.
+Okay, so how do we design systems that work?
+So you know, for AI and medicine, regardless of what we're using, I think we need to have
+some principles that we think about.
+We just did something that sort of tries to go on this path.
+So this is a little bit different.
+So this is a piece from Nature, but it talks about a preprint that we put up earlier this
+year, where we were trying to use GPT-based models, so in this case, GPT-3, to revise
+academic manuscripts.
+One of the things that we see all the time is, well, now it's really common, right?
+People are developing services that can use GPT-3 or ChatGPT, or GPT-4 through ChatGPT
+to revise your manuscript.
+Well, what are the issues with those?
+So our experience putting this together and running a bunch of test manuscripts through
+it is that, yes, it is good at clarifying language.
+There's a lot of things it can help you with.
+It actually caught an error in an equation, which I was pretty darn impressed with.
+On the other hand, it also makes stuff up.
+And so a bit of a challenge if your idea is that you're just going to use this.
+And I think, you know, I use this as an example because it's really trivial.
+You can try it out yourself and see how it works, and you can get these examples yourself.
+The same things are going to be true when we use this in medical context, so we need
+to think about them.
+I think thinking about them and trying them and experimenting in a low-risk environment
+before we move to a high-risk environment is usually a good idea.
+So what are the principles that we've kind of come up with as we think about this?
+So first, we really do aim for kind of an augmentation, not replacement.
+And what that means is, you know, when we apply this to manuscripts and we try to get
+it to improve it, you know, we actually applied it to the manuscript about the tool.
+And when we did that, it made up this thing that we had done that we had fine-tuned the
+model on manuscripts of a similar type.
+Yeah, you should absolutely fine-tune the model on manuscripts of a similar type.
+Makes a ton of sense.
+We didn't do it.
+You probably shouldn't report that you did it in the manuscript.
+So we're really thinking like, you know, okay, this is not like you're going to plug it in,
+you're going to be done.
+It's really, you need to design it around kind of an augmentation capability.
+You've got to carefully consider your use cases.
+You know, if it's easy to take the output, it's hard to compare.
+It's probably not good, right?
+Because you're creating the opportunity for a mistake that you don't need to create.
+We really like to start with these kind of simple solutions and approaches and layer
+complexity only as needed.
+So in this case, you know, we start with some pretty simple prompts and then have the ability
+to add complexity.
+But usually we just kind of try to keep it relatively basic and simple.
+The workflow is simple.
+You can proof of concept it out really quickly.
+And the most important thing is preserving attribution.
+Like where did the content come from?
+If you're thinking about this in a clinical setting, you know, what was provided and when?
+And you know, did it come from an AI or a human first?
+Because that's really going to matter as you're thinking about evaluating these workflows.
+In academic writing, I think it's going to, you're going to want to keep track of whether
+something came from an AI based system or if you wrote it.
+I think this is, more and more journals are starting to require this.
+It's going to be important.
+But I just think like these are key principles that I would recommend keeping in mind.
+And then finally, I just want to give you an idea of what the environment is like about
+at Colorado.
+Because some of you may one day look for future jobs and I figure you should know something
+about us.
+We're not at Boulder.
+We're at the Anschutz Medical Campus, which is kind of between the airport and the Denver
+airport and Denver itself.
+We are a major academic medical center.
+And like I said, we're not at Boulder, which is the thing that people most frequently get
+confused about.
+On July 1st of last year, we actually launched a new department of biomedical informatics.
+And you know, we're trying to hire and put together a faculty that are focused on this
+idea of kind of making serendipity routine, like how do you surface the right information
+at the right time.
+Our 30, we're now at 31 faculty, we have a new person starting in May, that will get
+us to 32 faculty, have about $65 million in extramural research, just for faculty who
+are PIs, on which faculty in the department are PIs, there's a lot of additional collaborative
+funding that's not included in this.
+We have expertise kind of across the spectrum from precision medicine, through kind of physiological
+modeling, we have folks who think about human computer interaction, because if you want
+to deploy this stuff in the clinic, you should really think about how humans are going to
+interact with it through kind of electrical engineering, medical imaging and AI.
+So there's a lot of faculty working in this area.
+This I just collected some stuff from early last year.
+And that just sort of like, okay, when our faculty mentioned in the press, so there's
+stuff in MIT technology review nature, LeMond, Deutschland, I can't remember whatever the
+German public radio station is.
+So you know, you have a bunch of internationally renowned experts who are at Anschutz, we don't
+happen to be at Boulder.
+You know, to me, it's like the difference between Georgia Tech and Georgia, I feel like
+they're different institutions, we should probably occasionally recognize that.
+The other thing that sort of we focused on when we were creating the department, if you
+read the sociology literature from the 80s, which I suspect all of you do on a regular
+basis, there's this article that I actually think you should read from the sociology literature
+from the 80s called the mundanity of excellence.
+So this is someone who essentially studied swimmers at many different levels and asked
+what differentiates swimmers at one level from another level.
+There's a few different principles that come out, but one of the key ones is that excellence
+requires qualitative differentiation.
+And what I mean by that is, you know, you're not going to move up a level in swimming competitions
+by swimming to extra labs.
+That's not how it works.
+What you're going to do is you're going to focus on your form, you're going to, you know,
+you're going to approach the sport differently, you're going to focus on getting rest the
+night before the meet, like that's the stuff that people do at higher levels that they
+don't do at lower levels.
+And as we think about a department, we had to ask like, what's our, okay, what's our
+qualitative differentiator?
+How are we not just like another biomedical informatics department that just happens to
+have more money or something, right?
+Like that's not, that's not a real differentiator.
+And so what we thought about was creating promotion and tenure guidelines that have,
+that are focused on real world impact.
+So one of our bullet points in our departmental sort of idea of impact, there is a bullet
+point that includes publication.
+It's possible, you can do it, we can care about it.
+But there's also technology development that gets deployed locally, nationally or internationally.
+Software shows up, changes in policy because of your work.
+All of that is included in and counts for impact.
+Now, probably not all of you will look for tenure track faculty positions in our department.
+But if you were to come train or send folks to train with us, I think it's important to
+know like that filters down, right?
+If that's how faculty are evaluated, that filters all the way down.
+So there's an emphasis on real world impact that we have that I think can be our kind
+of qualitative differentiator.
+And I'll just say, we have a really good training environment.
+So we have strong connections with UC Health.
+So I told you earlier about one of the UC Health programs that we work closely with
+them on.
+And Children's Colorado, which is a nationally renowned pediatric cancer hospital, not pediatric
+hospital.
+I know the pediatric cancer people work in that space.
+So we have those tight connections.
+If you're interested in seeing your work translate to care, we have, if you're interested in
+using genetics to guide care, I think we have one of the best programs in the country
+through CCPM.
+We have a diverse and internationally recognized faculty.
+One of the things that's sometimes a little bit odd for folks at, you know, our tenure
+track faculty in DBMI are actually majority women, which I think is uncommon at, in, in
+our field.
+And then if you like the climate and you, it's a little bit humid here.
+We don't have that level of humidity, but we do have more hours of sun per year than
+Miami and San Diego.
+So if you're interested in the environment around you, we've got that.
+And then we've got abundant outdoor activities.
+This is one example of the programs that we have.
+So this is our computational science PhD program.
+There's also a postdoc training grant associated with the same thing.
+So if you're interested in this type of thing, feel free to look us up.
+You can always drop me an email and I can try to connect you with folks too.
+And then with that, I just want to thank the people who make this possible.
+So the members of the lab, we really have a kind of robust culture in the lab of sort
+of sharing the work that's happening and kind of thinking through each other's projects
+in ways that are really helpful.
+We also do code review.
+So people really pitch out, pitch in together, the department of biomedical informatics and
+my leadership team, and then the folks in CCPM, since I shared some of that work, and
+then the folks who give us money, I'd be happy to take whatever questions you have.
+For the radiology, XAI explainability, did they end up using my grad cam as like how
+they liberated the convolutional layer for the confluence?
+Yeah.
+I don't remember what strategy they used.
+And I also don't remember, you know, the saliency map.
+I think it's a saliency map, but I'm not 100% sure.
+Yeah, there's a, so John posted that first as a blog post, there's now like a PLOS medicine
+paper, I think.
+Yeah.
+I think I probably, yeah.
+Yeah.
+And I wrote this when it was the blog post and not when it was PLOS medicine paper, which
+is what I'd look at.
+Yeah.
+Yeah.
+So with the strange like explainability maps, did that happen even with like augmentations
+that would rotate or like zoom in, zoom out?
+Like was that with that, it still happened or with a train without that?
+Because like, I was thinking like assume in augmentation might solve that bottom band
+problem.
+Yeah.
+So I was wondering if that still.
+I'm guessing, so this is Andrew Ng's stuff.
+This was the one that he was criticizing.
+I think this was just chest x-rays and I don't think they, I don't remember them doing at
+least like a patch-based augmentation or anything like that.
+Yeah.
+And I would say now some of the techniques that are more sophisticated are likely to
+control for some of that.
+I mean, the other thing you could do is you can also just like do some adversarial training
+around the location of the scanner.
+The challenge with that is you need to know to do it and to know to do it, you have to
+like have someone who's an expert probe your data.
+And I think sometimes when we come to things from a computer science perspective, I do
+think sometimes we get really excited that something is working and especially if it's
+working as well as a human and maybe we get a little bit ahead of ourselves and aren't
+skeptical enough about our own results.
+So with the pharmacogenomics, the alert system that you pointed out.
+So how often do you get sort of false alerts, right?
+So because sometimes you can get an alert that a physician may not be really interested
+in or think is valid, right?
+Yeah.
+So we designed this pretty carefully.
+So we could bump up our alert number by just whether or not someone's getting a relevant
+prescription, fire the alert.
+That'd be great for our metrics.
+On the other hand, not terribly useful for care and people would learn to ignore it.
+So we're pretty focused.
+So most of the alerts are non-interruptive.
+So the idea is an 80-20 rule.
+So only 20% of the alerts should be interruptive, 80% should be non-interruptive.
+And because this isn't based on a predictive model, it's pretty straightforward to make
+sure it fires largely at times when it's relevant.
+So restricting kind of the clinic in which you can fire and that sort of stuff.
+However, one of the really nice things about UCHealth, so I'll go back on my advertising
+pitch for why you should come to Colorado and work at Colorado if this is something
+you're interested in, UCHealth thought about this in advance.
+So years ago, they built a virtual health center.
+And if you want to look it up, you can look up the UCHealth virtual health center.
+The guy who, to my understanding, put this together and sort of was visionary behind
+it is a guy named Rich Zane, who's our chief innovation officer through the hospital.
+And what they did there is they have nurses and clinicians who work offsite, but who are
+available to look at these types of systems before they flow to people who are onsite
+providing care.
+And where this became really useful, so is anyone aware of kind of the EPIC sepsis model
+thing that blew up maybe a year or two ago?
+No.
+So EPIC is one of the major providers of electronic health record systems.
+They have a sepsis model, and that sepsis model is pretty noisy.
+It likes to, it alerts probably more frequently than it should, and it misses cases it shouldn't
+miss.
+So there was a team at CU before my time, led by Tal Bennett, that had evaluated this
+model and found that it had some predictive quality, but maybe it wasn't ready.
+I want to be careful what I assert here.
+It had some predictive quality, but deployed in practice at scale could have created a
+lot of unnecessary burden on providers.
+Well, what they did, because they have the virtual health center, is they're able to
+deploy that model plus others in the virtual health center, have it alert nurses and clinicians
+there, and then have them look at it carefully in the virtual health center and only send
+the notice over to the folks who are working at the bedside if it's actually going to be
+useful.
+So a reason that could be good to work at Colorado, if you're interested in kind of
+predictive analytics and deploying this stuff in practice, is you can have a model that's
+not perfect, right?
+It doesn't have to be good enough to hand to a provider at the bedside.
+Because of the virtual health center, you can really proof of concept it out there,
+improve it, understand how you can improve its predictive quality, and then deploy it
+when it's ready.
+But you can still get the benefit in the meantime.
+So I guess I'd say, yeah, I think our noise level is pretty low on these alerts, but we
+do have a system in place for noisier stuff if people want to deploy it.
+It's fun to be back in Athens.
+Time to go dogs.
+I don't know what else I should say, but I'm just excited to be back.
+I was really tickled when I got the invite, it was wonderful.

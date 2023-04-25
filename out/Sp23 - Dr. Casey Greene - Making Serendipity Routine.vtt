@@ -1,0 +1,2768 @@
+WEBVTT
+
+00:00.000 --> 00:15.100
+leading to his first paper, which is affiliated with the Department of Genetics here at UGA.
+
+00:15.100 --> 00:21.300
+The Green Lab develops machine learning methods to integrate disparate large-scale datasets,
+
+00:21.300 --> 00:26.020
+develops deep learning methods for extracting contacts from these datasets, and then brings
+
+00:26.020 --> 00:32.140
+these capabilities to molecular biologists through open and transparent science.
+
+00:32.140 --> 00:38.580
+Of particular note to folks interested in large language models, like CHAT-GPT, Dr.
+
+00:38.580 --> 00:44.260
+Green and others recently posted a preprint on how AI might be able to help us write and
+
+00:44.260 --> 00:47.420
+revise our academic manuscripts.
+
+00:47.420 --> 00:54.420
+Please join me in welcoming Dr. Casey Green to UGA.
+
+00:54.420 --> 01:04.700
+Okay, thank you, yeah, it's good to be back.
+
+01:04.700 --> 01:09.380
+I actually spent a summer working in this building in the Department of Genetics.
+
+01:09.380 --> 01:11.860
+Everything around this building looks different now, but somehow the building still looks
+
+01:11.860 --> 01:14.500
+the same.
+
+01:14.500 --> 01:19.980
+I'm excited to get a chance to share some of what we've been doing in our group and
+
+01:19.980 --> 01:23.140
+then to share some of what's going on at the University of Colorado and sort of give you
+
+01:23.140 --> 01:27.980
+an idea of what the ecosystem is like where we are.
+
+01:27.980 --> 01:34.180
+I think it's always important to think about kind of what our role as informaticists in
+
+01:34.180 --> 01:40.140
+science is, like what do we bring to the ecosystem, and I like to think of what we contribute
+
+01:40.140 --> 01:42.900
+as essentially serendipity, right?
+
+01:42.900 --> 01:46.580
+If we do our jobs well, people will see something in their data that they hadn't seen before,
+
+01:46.580 --> 01:49.020
+and they will make a different decision based on that.
+
+01:49.020 --> 01:55.540
+So I like to, you know, think about how we can make more kind of serendipitous moments.
+
+01:55.540 --> 02:02.940
+I'll start with a brief vignette of a project that we started quite a few years ago now
+
+02:02.940 --> 02:07.860
+trying to understand rare diseases.
+
+02:07.860 --> 02:13.500
+And in particular, what factors might drive a rare, what systemic factors might drive
+
+02:13.500 --> 02:16.340
+a rare disease.
+
+02:16.340 --> 02:22.260
+The world when we started this project was one where looking across multiple data sets
+
+02:22.260 --> 02:24.460
+remained somewhat challenging.
+
+02:24.460 --> 02:28.980
+It's time consuming, you have to deal with batch and technical artifacts.
+
+02:28.980 --> 02:33.380
+And so our question when we started, a postdoc joined the lab and the idea was, well, you
+
+02:33.380 --> 02:35.180
+know, here's the gap that we're facing.
+
+02:35.180 --> 02:40.060
+If you want to analyze multiple data sets at the same time, to identify systemic factors,
+
+02:40.060 --> 02:44.180
+that means you're looking at different tissues, probably looking at different cohorts, there's
+
+02:44.180 --> 02:48.060
+potentially different disease contexts, might be different controls.
+
+02:48.060 --> 02:50.900
+All of this makes your life a lot harder, you can't just kind of make an assumption
+
+02:50.900 --> 02:55.100
+that you're going to do three different t tests and be done with it.
+
+02:55.100 --> 02:59.980
+And so what this postdoc wanted to do was say, okay, can I find these commonalities
+
+02:59.980 --> 03:03.180
+without it taking an inordinately large amount of time.
+
+03:03.180 --> 03:07.780
+And she was very interested in not taking an inordinately large amount of time because
+
+03:07.780 --> 03:14.300
+the strategy that she used in her PhD, before she joined the group, was developed, she developed
+
+03:14.300 --> 03:17.740
+this approach using a modular framework to analyze these data sets, where you essentially
+
+03:17.740 --> 03:23.220
+take different data sets, decompose them into modules, and then try to map a module in one
+
+03:23.220 --> 03:27.100
+data set to a module in another data set to a module in another data set.
+
+03:27.100 --> 03:31.220
+This is possible, if you're an expert in the disease, and you're an expert in all the tissues
+
+03:31.340 --> 03:36.340
+that sort of are affected, you can do this, you can say, okay, this is this pathway response
+
+03:36.340 --> 03:39.740
+in this tissue, and this is this other pathway response in this other tissue, but it's really
+
+03:39.740 --> 03:40.740
+time consuming.
+
+03:40.740 --> 03:47.460
+And the complexity grows essentially, with at least the square of the number of modules
+
+03:47.460 --> 03:48.460
+that you want to look at.
+
+03:48.460 --> 03:51.380
+So you sort of restrict yourself to a modest number of modules if you want to do this in
+
+03:51.380 --> 03:53.580
+any practical amount of time.
+
+03:53.580 --> 03:57.060
+There are potentially ways to automate this, you know, using over representation analysis
+
+03:57.060 --> 04:00.940
+or other strategies to try to, you know, make life easier on the mapping stage, so you don't
+
+04:00.940 --> 04:04.220
+spend a lot of time looking at stuff that's unlikely to be fruitful.
+
+04:04.220 --> 04:10.100
+But either way, it's challenging, it takes a bunch of time and it requires a lot of expertise.
+
+04:10.100 --> 04:15.980
+So what Dr. Jacqueline Tironi did was say, well, what I really want is a module library,
+
+04:15.980 --> 04:21.220
+like how could this process or cell type be represented in any data set that I look at,
+
+04:21.220 --> 04:26.100
+I'd like to be able to pull that off the shelf, and then take that module library to different
+
+04:26.100 --> 04:30.180
+data sets, and then look at each of those data sets in terms of those modules and just
+
+04:30.420 --> 04:31.580
+look directly across those modules.
+
+04:31.580 --> 04:37.500
+I don't have to now sort of do the module connection after the fact, I can do it upfront.
+
+04:37.500 --> 04:41.460
+This would be great, wouldn't it be great if.
+
+04:41.460 --> 04:46.220
+And so her hypothesis was that, you know, these modules don't just exist in one data
+
+04:46.220 --> 04:48.180
+set, they exist across human biology.
+
+04:48.180 --> 04:54.540
+So could she, so her hypothesis was that she would be able to learn these reusable modules
+
+04:54.540 --> 04:58.700
+by taking many, many, many different data sets, decomposing those different data sets
+
+04:58.700 --> 05:04.260
+into modules, and then sort of learning which modules were necessary to reconstruct the
+
+05:04.260 --> 05:06.180
+original data.
+
+05:06.180 --> 05:10.180
+And then once she did that, she could do that on a generic collection of data, and then
+
+05:10.180 --> 05:12.860
+hopefully be able to use that on her data sets of interest.
+
+05:12.860 --> 05:17.580
+And in this case, we're interested in studying a disease called Enka-associated vasculitis,
+
+05:17.580 --> 05:22.060
+which is rare enough that if you look at large collections of public RNA-seq data, you don't
+
+05:22.060 --> 05:23.680
+find it.
+
+05:23.680 --> 05:28.100
+So it's quite a rare disease.
+
+05:28.500 --> 05:31.700
+So the idea here was, if she took a whole bunch of generic samples, essentially random
+
+05:31.700 --> 05:35.900
+human data that she downloaded from the internet, transcriptomic data, she decomposed that,
+
+05:35.900 --> 05:39.620
+she could decompose that into patterns, and then she could take those patterns and we
+
+05:39.620 --> 05:42.980
+could apply those to the rare disease data sets of interest, and potentially do sort
+
+05:42.980 --> 05:45.940
+of standard statistics with that.
+
+05:45.940 --> 05:52.500
+We, just to give you an idea of the data set that we started with, so this is a data set
+
+05:52.500 --> 05:56.100
+ReCount 2, I think there's now a ReCount 3.
+
+05:56.100 --> 05:59.220
+This is produced by Jeff Leak's group at Hopkins.
+
+05:59.220 --> 06:04.660
+And if you wanted 70,000 RNA-seq samples, you can just get 70,000 uniformly processed
+
+06:04.660 --> 06:05.660
+RNA-seq samples.
+
+06:05.660 --> 06:11.140
+What I like to tell Jackie is that her project had to be successful, because if you think
+
+06:11.140 --> 06:14.260
+about the resources we were giving her to start it, if you just benchmark that those
+
+06:14.260 --> 06:18.780
+samples probably cost about $1,000 to generate, you know, I like to tell her, look, we gave
+
+06:18.780 --> 06:22.460
+you $70 million to start your project, you have to do something with $70 million, right?
+
+06:23.460 --> 06:29.300
+So, this was the data that we used, and then we tried quite a few different methods to
+
+06:29.300 --> 06:34.300
+extract patterns, including some that we developed in our group, but we ended up coming to this
+
+06:34.300 --> 06:39.260
+method called PLYR, which is from Maria Shakina's group at Pitt.
+
+06:39.260 --> 06:44.340
+And PLYR is the Pathway-Level Information Extractor, and it does a couple things that
+
+06:44.340 --> 06:45.340
+are really nice.
+
+06:45.340 --> 06:50.500
+So, it's essentially doing this matrix decomposition, but as you do the matrix decomposition, there's
+
+06:50.540 --> 06:55.580
+a couple sort of regularization factors and some penalties in it, and essentially, it
+
+06:55.580 --> 06:59.420
+has some sparsity properties that we really like, so the idea is that you want to be able
+
+06:59.420 --> 07:02.740
+to explain a dataset with relatively few latent variables.
+
+07:02.740 --> 07:07.300
+Also, you want your latent variables to have only a modest number of genes in them.
+
+07:07.300 --> 07:12.740
+And finally, if those latent variables can align with a pathway, you'd really prefer
+
+07:12.740 --> 07:16.220
+that the latent variable align with a pathway, because anytime you're doing this decomposition,
+
+07:16.220 --> 07:18.940
+you're essentially doing some arbitrary rotation, right?
+
+07:19.180 --> 07:25.380
+PCA is essentially learning an arbitrary, it's learning a rotation of your data, a reduced
+
+07:25.380 --> 07:28.380
+dimension space rotation of your data.
+
+07:28.380 --> 07:33.340
+The rotation in PCA is essentially arbitrary, I mean, you've chosen that you want to maximize
+
+07:33.340 --> 07:37.740
+the variance on the first axis, but you could have chosen anything else, like ICA, you're
+
+07:37.740 --> 07:41.020
+just like, I don't care, just make it small.
+
+07:41.020 --> 07:46.100
+So in this case, what it's doing is it's essentially saying, if a pathway can line up with an axis,
+
+07:46.100 --> 07:47.260
+let's do that.
+
+07:47.260 --> 07:52.620
+And so it's a little bit less, that's the intuition for what it's doing, it's actually
+
+07:52.620 --> 07:56.700
+a little bit, the regularization is a little bit different than that.
+
+07:56.700 --> 07:59.340
+And what that gives you is a really nice level of interpretability.
+
+07:59.340 --> 08:03.700
+So instead of having to think about a module as, like, instead of saying, okay, this cell
+
+08:03.700 --> 08:08.980
+type is, these three different axes of variability added in some fraction, usually those cell
+
+08:08.980 --> 08:11.060
+types are going to come out as a single axis in your data.
+
+08:11.060 --> 08:17.180
+So it makes it much more easy to think through and reason about the solutions.
+
+08:18.100 --> 08:22.260
+And so what we essentially did is say, okay, well, we have this enormous collection of
+
+08:22.260 --> 08:26.940
+generic human data from the internet, ReCount2, and we have a plier, and we'd like that to
+
+08:26.940 --> 08:30.380
+be a machine learning model that we could use in many different biological contexts.
+
+08:30.380 --> 08:34.900
+So we named it multi-dataset plier, but because in bioinformatics, everything has to have
+
+08:34.900 --> 08:38.780
+a name, we just shortened that to multiplier.
+
+08:38.780 --> 08:41.380
+And so this is kind of a multiplier idea.
+
+08:41.380 --> 08:46.860
+I'm just going to give you a couple highlight results from the paper that I think help to
+
+08:47.540 --> 08:49.820
+kind of give an idea of why you might want to do this.
+
+08:49.820 --> 08:51.500
+The paper is pretty exhaustive.
+
+08:51.500 --> 08:55.340
+It has a significant deep dive into sort of exactly what's happening in this stuff, but
+
+08:55.340 --> 08:59.580
+I'll just give you kind of the high points.
+
+08:59.580 --> 09:03.660
+Essentially what we wanted to understand is, does this model learn something we didn't
+
+09:03.660 --> 09:05.740
+already know?
+
+09:05.740 --> 09:10.180
+And is it better than if you just took data from the disease of interest?
+
+09:10.180 --> 09:13.700
+We couldn't get enough data from the disease of interest, which is psychosociative vasculitis.
+
+09:13.700 --> 09:19.540
+So we did that analysis in the paper, and we just didn't learn many axes of variability
+
+09:19.540 --> 09:21.020
+because there's too little data.
+
+09:21.020 --> 09:24.460
+So what we wanted to do is say, well, let's pick something where we could actually learn
+
+09:24.460 --> 09:25.460
+something.
+
+09:25.460 --> 09:27.220
+Let's sort of give this idea a chance.
+
+09:27.220 --> 09:31.220
+And then we said, well, let's imagine we're studying a different autoimmune disease, lupus.
+
+09:31.220 --> 09:35.660
+So that's what's here, where it says SLE, this box plot.
+
+09:35.660 --> 09:39.940
+What we've done is we've collected all the whole blood data that we could get from individuals
+
+09:39.940 --> 09:45.260
+with lupus that was publicly available to create one collection of data.
+
+09:45.260 --> 09:48.780
+Then what we've done with RECOUNT2, which is the generic human data from the internet,
+
+09:48.780 --> 09:53.820
+is we've taken RECOUNT2 and we've subsampled it to be the same size as the lupus set.
+
+09:53.820 --> 09:54.940
+So that's the box plot.
+
+09:54.940 --> 09:57.420
+The box plot is RECOUNT2 subsampled.
+
+09:57.420 --> 10:00.460
+And then where you see the diamond, that's what happens if you just take the complete
+
+10:00.460 --> 10:02.460
+collection of data from RECOUNT2.
+
+10:02.460 --> 10:04.300
+Okay, so let's label our X.
+
+10:04.300 --> 10:08.220
+Oh, so yeah, so these data sets, if you think about the science behind this, this experiment
+
+10:08.220 --> 10:12.300
+has these two data sets of the same size, but different composition.
+
+10:12.300 --> 10:16.140
+These two are the same composition of the data, but they're quite different sizes.
+
+10:16.140 --> 10:20.780
+I think 70 times larger for the diamond than the other.
+
+10:20.780 --> 10:23.580
+And so then we can ask, okay, so how many patterns are we learning from our data?
+
+10:23.580 --> 10:27.660
+So this method uses the latent variable decomposition, so the number of latent variables, which are
+
+10:27.660 --> 10:29.340
+essentially patterns.
+
+10:29.340 --> 10:32.860
+You can see that if you want to learn more patterns, there's sort of more, and there's
+
+10:32.860 --> 10:37.140
+a heuristic and plier for sort of selecting the optimal number of latent variables, and
+
+10:37.140 --> 10:40.260
+we use that heuristic here, it seems like a pretty reasonable heuristic.
+
+10:40.260 --> 10:45.140
+It uses cross-validation to essentially ask how frequently you're rediscovering the same
+
+10:45.140 --> 10:47.860
+latent variables.
+
+10:47.860 --> 10:52.900
+So if you do that, you find that you can learn more latent variables or recurrent patterns
+
+10:52.900 --> 10:56.900
+in the data if you have less heterogeneity in your data given a fixed sample size.
+
+10:56.900 --> 11:00.420
+I don't think this is going to shock anyone, right?
+
+11:00.420 --> 11:03.900
+If I give you a limited amount of data, you would like that data to be as consistent as
+
+11:03.900 --> 11:06.620
+possible except for the thing you'd like to vary, right?
+
+11:06.620 --> 11:10.060
+That's usually a good place to live.
+
+11:10.060 --> 11:11.340
+So that's what we see here, right?
+
+11:11.340 --> 11:15.740
+You get more latent variables out of the lupus data than the subsampled recount2 data, but
+
+11:15.740 --> 11:19.460
+if I told you, well, you can have really messy data, but you can have a lot of it, now you
+
+11:19.460 --> 11:21.080
+can learn a lot more patterns.
+
+11:21.080 --> 11:25.500
+So you end up with many fold more patterns that you can learn, the kind of recurrent
+
+11:25.500 --> 11:27.620
+patterns across the data set if you have more data.
+
+11:27.620 --> 11:32.780
+So you'd rather have less heterogeneity, but sometimes having more samples can overcome
+
+11:32.780 --> 11:36.460
+the heterogeneity issue.
+
+11:37.300 --> 11:38.300
+So that's the first thing we ask.
+
+11:38.300 --> 11:40.060
+So you get kind of more total patterns.
+
+11:40.060 --> 11:47.440
+The next thing we can ask is, okay, well, we don't know what complete collection of
+
+11:47.440 --> 11:50.060
+processes are transcriptionally co-regulated, right?
+
+11:50.060 --> 11:51.460
+This is not something we know a priori.
+
+11:51.460 --> 11:55.940
+We can get a collection of processes if we go to Gene Ontology or KEGG or other databases,
+
+11:55.940 --> 11:58.060
+but some of those may not be transcriptionally co-regulated.
+
+11:58.060 --> 12:02.620
+However, if we're seeing a process that's coming out as transcriptionally co-regulated,
+
+12:02.620 --> 12:04.860
+that's probably a positive hit.
+
+12:04.860 --> 12:06.700
+And so that's kind of the assumption we're making here.
+
+12:06.700 --> 12:10.820
+So this is looking at both the SLE and the ReCount2 data again.
+
+12:10.820 --> 12:16.580
+This axis is what fraction of the pathways that we know about are coming back as sort
+
+12:16.580 --> 12:20.580
+of aligned with one or more axes in the data.
+
+12:20.580 --> 12:24.660
+And so you can see this actually wasn't driven by composition of the data, this was driven
+
+12:24.660 --> 12:25.660
+by sample size.
+
+12:25.660 --> 12:30.580
+So if you put in more data, you can learn kind of more transcriptional co-regulation.
+
+12:30.580 --> 12:34.060
+This obscures a little bit of what's going on here because the processes are a little
+
+12:34.060 --> 12:36.460
+bit different.
+
+12:36.460 --> 12:41.740
+If you look at what happens in the ReCount2 data, you end up learning, as you get to the
+
+12:41.740 --> 12:45.020
+large sample size, you end up learning more granular processes.
+
+12:45.020 --> 12:48.780
+So it seems like it's probably that you're covering the same things that are transcriptionally
+
+12:48.780 --> 12:52.740
+co-regulated, you just get a higher level of resolution.
+
+12:52.740 --> 12:56.780
+And then, so you kind of learn more of the stuff we know we should know about.
+
+12:56.780 --> 13:00.500
+So at this point, anything I'm showing you, you could also do with GSEA or any of these
+
+13:00.580 --> 13:03.820
+other methods, gene set enrichment analysis, or those types of methods.
+
+13:03.820 --> 13:07.620
+But we can also ask, can we learn anything we didn't already know going in?
+
+13:07.620 --> 13:14.620
+So this is asking what fraction of the latent variables that are coming back are not associated
+
+13:14.620 --> 13:17.100
+with the pathway.
+
+13:17.100 --> 13:23.140
+And what you can see is, when you have the sort of more modest sample sizes, about half
+
+13:23.140 --> 13:25.700
+of the latent variables that come back were associated with the pathway, and the other
+
+13:25.700 --> 13:27.180
+half are potentially novel.
+
+13:27.580 --> 13:31.460
+Could be novel biology, it could be a technical artifact.
+
+13:31.460 --> 13:35.420
+What you see when you get the large collection of ReCount2 data is, you know, that number
+
+13:35.420 --> 13:36.420
+drops to about 20%.
+
+13:36.420 --> 13:40.300
+So 80% of the latent variables that are coming back didn't exist in the databases that we
+
+13:40.300 --> 13:42.100
+had available to us going into it.
+
+13:42.100 --> 13:46.780
+So that's a really nice thing to have in your back pocket if you want to say, well, look,
+
+13:46.780 --> 13:50.580
+I want to explore the biology of what's going on in this disease, but I don't want to limit
+
+13:50.580 --> 13:53.020
+myself to what people have curated into a database.
+
+13:53.020 --> 13:58.380
+So this is kind of a data-driven way to figure out what those modules could be.
+
+13:58.380 --> 14:01.700
+And you might also say, well, there's probably just an enormous amount of technical artifacts.
+
+14:01.700 --> 14:05.360
+You just told me you gathered a whole bunch of random human data from the internet.
+
+14:05.360 --> 14:09.140
+One of the positive things that we saw that was kind of suggestive that this is not driven
+
+14:09.140 --> 14:13.900
+exclusively by technical artifacts is actually this proportion bumps up a little bit when
+
+14:13.900 --> 14:17.140
+you look at the ReCount2 data, as opposed to the SLE data.
+
+14:17.140 --> 14:21.460
+If it was entirely driven by technical artifacts, you'd actually expect this to have fewer latent
+
+14:21.460 --> 14:25.420
+variables that were associated only with a known process.
+
+14:25.420 --> 14:28.300
+So this was also encouraging.
+
+14:28.300 --> 14:31.980
+So this gives us the idea that we kind of learn more unknown unknowns.
+
+14:31.980 --> 14:36.380
+And then there's quite a bit more of a deep dive in the paper, like looking at sort of
+
+14:36.380 --> 14:39.540
+one of the things that we see is instead of having a cell cycle latent variable, you end
+
+14:39.540 --> 14:43.660
+up with different phases of the cell cycle partitioned into latent variables.
+
+14:43.660 --> 14:49.600
+But the sort of takeaway was that if you do these machine learning analyses while reusing
+
+14:49.640 --> 14:54.040
+data from other contexts, you can get this level of detail that you couldn't get just
+
+14:54.040 --> 14:55.840
+analyzing your data alone.
+
+14:55.840 --> 14:59.520
+So starting with a whole bunch of other data, learning the pathways and processes there,
+
+14:59.520 --> 15:02.800
+and then applying it to your data gives you this higher level of resolution.
+
+15:02.800 --> 15:07.040
+There is a bit of an implicit assumption here, which is if the process that you were looking
+
+15:07.040 --> 15:12.240
+at is truly unique and only occurs in your setting and no other settings, you can't find
+
+15:12.240 --> 15:16.920
+it because it's not going to be present in the variability from other people's data.
+
+15:16.920 --> 15:19.080
+I think this is probably rare.
+
+15:19.560 --> 15:23.400
+I don't think it's terribly common that there are processes that are so exclusive that they're
+
+15:23.400 --> 15:27.120
+only used in one and only one biological context and nowhere else.
+
+15:27.120 --> 15:29.800
+But if you believe that to be the case, you should know you will not find it with this
+
+15:29.800 --> 15:32.800
+method.
+
+15:32.800 --> 15:34.480
+And so then just kind of recapitulating.
+
+15:34.480 --> 15:39.680
+So in the past, when Jackie joined the group, she had this modular framework approach, which
+
+15:39.680 --> 15:46.280
+is actually really nice and is now used, it's been used in scleroderma and other contexts
+
+15:46.280 --> 15:50.240
+to connect pathways across tissues and studies.
+
+15:50.240 --> 15:53.480
+But the multiplier approach she developed has some nice advantages.
+
+15:53.480 --> 15:57.520
+So she takes this generic human data, recount two, she can train a model, then transfer
+
+15:57.520 --> 16:02.320
+it to the datasets of interest, and then just look across those datasets with standard statistics.
+
+16:02.320 --> 16:06.080
+So this is an example of one of the things we can do with this.
+
+16:06.080 --> 16:10.040
+So this was actually the thing we wanted to do when we started the study.
+
+16:10.040 --> 16:15.200
+So these are three different datasets from individuals with ANCA-associated vasculitis.
+
+16:15.200 --> 16:19.840
+One of the challenges here is that all of these datasets are microarray-based.
+
+16:19.840 --> 16:22.560
+All of our training data is RNA-seq.
+
+16:22.560 --> 16:27.240
+A different student in the lab developed a technique to do, if you're interested in taking
+
+16:27.240 --> 16:33.920
+sort of machine learning methods and applying them to gene expression data across these
+
+16:33.920 --> 16:41.040
+contexts, for many methods, there's reasonable ways to do that transformation that is not
+
+16:41.040 --> 16:47.280
+completely horrendous, which is the best advertisement I can get for a method.
+
+16:47.280 --> 16:48.280
+But there's quite a few different methods.
+
+16:48.280 --> 16:51.760
+And actually, quantile normalization is not bad in this context.
+
+16:51.760 --> 16:55.400
+The zeros kind of give you a bit of trouble, but it's not horrendous.
+
+16:55.400 --> 16:57.680
+And so this is what we're doing here.
+
+16:57.680 --> 17:03.200
+So we're actually asking, can the multiplier model actually apply to array datasets, even
+
+17:03.200 --> 17:05.000
+though it's trained exclusively in RNA-seq data?
+
+17:05.000 --> 17:08.920
+We would have done this in RNA-seq data, but it turned out there wasn't RNA-seq data for
+
+17:08.920 --> 17:10.440
+this that was available yet.
+
+17:10.840 --> 17:13.040
+So now we've gotten to the point where the datasets for this disease are large enough
+
+17:13.040 --> 17:16.440
+that they actually do exist in RNA-seq as well.
+
+17:16.440 --> 17:18.080
+So what's going on here?
+
+17:18.080 --> 17:23.160
+So we've got three different datasets, airway epithelial cells, renal glomeruli, and PPMCs.
+
+17:23.160 --> 17:26.800
+They're collected in three different studies, so there's no matched people.
+
+17:26.800 --> 17:28.960
+And also the conditions are brutally different.
+
+17:28.960 --> 17:32.640
+So what's going to happen is from the left side to the right side of each of these plots,
+
+17:32.640 --> 17:36.360
+we're going to go from the least, from the most severe form of the disease to sort of
+
+17:36.360 --> 17:39.360
+the least severe form of the disease for healthy controls.
+
+17:39.360 --> 17:45.320
+So this dataset for the airway epithelial cells has, these are the vasculitis data,
+
+17:45.320 --> 17:49.280
+but then it's got things like pancreatic rhinitis, healthy.
+
+17:49.280 --> 17:55.640
+And so we're basically saying, okay, what is associated with severity across these three
+
+17:55.640 --> 17:58.160
+different cohorts?
+
+17:58.160 --> 18:03.040
+And so one of the latent variables that comes up as a severity associated is this M0 macrophage
+
+18:03.040 --> 18:04.040
+signature.
+
+18:04.360 --> 18:09.640
+And you can see the same thing where in each group you look in, the least severe form of
+
+18:09.640 --> 18:12.280
+the disease is on the right, the more severe form of the disease is on the left.
+
+18:12.280 --> 18:17.440
+So you can see this latent variable severity associated due to the bizarre sort of path
+
+18:17.440 --> 18:20.040
+of academic publishing.
+
+18:20.040 --> 18:24.280
+So our guess was that M0 macrophages could be involved here.
+
+18:24.280 --> 18:29.000
+Well, before this actually was published, but after the preprint came out, we had some
+
+18:29.000 --> 18:31.640
+follow-up work.
+
+18:31.640 --> 18:34.280
+And I have to break all the chronology of science.
+
+18:34.280 --> 18:38.400
+Our follow-up work came out first demonstrating that it looked like there was a change in
+
+18:38.400 --> 18:43.240
+macrophage metabolism in the disease that could be sort of influencing severity in a
+
+18:43.240 --> 18:44.880
+systemic way.
+
+18:44.880 --> 18:48.400
+You can also use this type of analysis to say what's particular to a tissue, right?
+
+18:48.400 --> 18:52.560
+So you could say what latent variables are associated with severity in this tissue, but
+
+18:52.560 --> 18:53.720
+not other tissues.
+
+18:53.720 --> 18:56.920
+So it gives you the ability to start doing those analyses in a way that it's pretty darn
+
+18:56.920 --> 19:03.760
+difficult to do with just the modular framework alone.
+
+19:03.760 --> 19:08.560
+And then I have an almost five-year-old, she turns five in three weeks, and she's been
+
+19:08.560 --> 19:10.680
+watching Zootopia.
+
+19:10.680 --> 19:15.040
+And there's a line in a song in Zootopia where I was listening, I'm like, oh my gosh, this
+
+19:15.040 --> 19:18.760
+is science.
+
+19:18.760 --> 19:21.680
+So the line is, I'll keep on making those new mistakes.
+
+19:21.680 --> 19:25.120
+I'll keep on making them every day, those new mistakes.
+
+19:25.120 --> 19:26.880
+And so we're really big on this in the lab, right?
+
+19:27.840 --> 19:33.160
+But what I tell people is, it's not going to work, just make it not work differently
+
+19:33.160 --> 19:34.160
+each time.
+
+19:34.160 --> 19:37.240
+If it's not working the same way each time, that's not good, but if it's not working for
+
+19:37.240 --> 19:40.080
+different reasons, that's perfect.
+
+19:40.080 --> 19:41.700
+And so we do this in our own work.
+
+19:41.700 --> 19:47.660
+So this is the first part of the GitHub that's rate me that's associated with this paper.
+
+19:47.660 --> 19:51.480
+So if you want to know sort of, these are all notebooks, if you want to follow along
+
+19:51.480 --> 19:54.360
+with the work that we did for this multiplier paper.
+
+19:54.360 --> 19:57.720
+The first part of this is kind of our proof of concept exploration to just understand
+
+19:57.720 --> 19:58.720
+how the method worked.
+
+19:58.720 --> 20:03.280
+Then you get to the stuff that's in the paper, then you get to the stuff that's in the supplement,
+
+20:03.280 --> 20:06.080
+then you get to the stuff that's neither in the paper nor the supplement, because it turned
+
+20:06.080 --> 20:08.080
+out the paper was too long.
+
+20:08.080 --> 20:12.480
+And so this gives you a way to see like, okay, here's all the stuff we did.
+
+20:12.480 --> 20:15.640
+So there was one experiment that we did where we wanted to say, can you predict outcome
+
+20:15.640 --> 20:18.220
+in clinical trials from these latent variables?
+
+20:18.220 --> 20:23.000
+And so we got this Rituximab data set from the NIH that was testing this.
+
+20:23.000 --> 20:27.800
+It turned out that the data set structure was, let's say, suboptimal, in that some of
+
+20:27.800 --> 20:31.320
+it was paired end and some of it was not paired end sequencing.
+
+20:31.320 --> 20:33.880
+And this was confounded with the endpoint.
+
+20:33.880 --> 20:37.800
+So it turned out to be extremely difficult to analyze, and we couldn't really learn anything
+
+20:37.800 --> 20:38.800
+from it.
+
+20:38.800 --> 20:43.160
+But if you're interested in using that for your own work, probably not that data set,
+
+20:43.160 --> 20:44.160
+that idea.
+
+20:44.160 --> 20:48.040
+You know, we've got a notebook here that's like, okay, here was our attempt to build
+
+20:48.040 --> 20:49.240
+a model to predict response.
+
+20:49.240 --> 20:50.240
+So you can start from that.
+
+20:50.480 --> 20:55.840
+So if you're interested in this, we try to do this for each of our papers.
+
+20:55.840 --> 20:56.840
+So this is available.
+
+20:56.840 --> 20:58.400
+The GitHub is here.
+
+20:58.400 --> 21:03.080
+If you search for Taroni and multiplier, you'll probably find it.
+
+21:03.080 --> 21:07.960
+But I thought this was a nice example of kind of how we've taken a project from inception
+
+21:07.960 --> 21:11.000
+through execution through kind of deliverables.
+
+21:11.000 --> 21:13.640
+This method, we've seen some other uses now.
+
+21:13.640 --> 21:17.600
+So someone used the same thing to study neurofibromatosis.
+
+21:17.600 --> 21:19.120
+That came out relatively recently.
+
+21:19.120 --> 21:23.120
+I can't remember, there's a few other sort of rare disease analyses that people have
+
+21:23.120 --> 21:24.120
+started using this for.
+
+21:24.120 --> 21:25.120
+But we really like seeing that, right?
+
+21:25.120 --> 21:31.120
+Because it demonstrates uptake that is in a, I mean, rare disease transcriptomics is
+
+21:31.120 --> 21:33.800
+a relatively small community.
+
+21:33.800 --> 21:37.880
+So it's nice to see this stuff beginning to catch on.
+
+21:37.880 --> 21:44.240
+I would also say, you know, we started with about $70 million worth of data.
+
+21:44.240 --> 21:48.280
+If you are Lego Grace Hopper and you happen to have an internet connection, you can have
+
+21:48.280 --> 21:51.600
+about $4 billion worth of data at your fingertips.
+
+21:51.600 --> 21:55.800
+So if you're interested, there's a few more resources that have come online.
+
+21:55.800 --> 22:00.040
+I think Arches 4 now has like 650,000 samples.
+
+22:00.040 --> 22:04.120
+So that's about, you know, if you want to estimate $650 million of preprocessed data
+
+22:04.120 --> 22:05.960
+at your fingertips.
+
+22:05.960 --> 22:08.920
+In a previous position, we built something called Refined Bio that's about a million
+
+22:08.920 --> 22:11.240
+samples.
+
+22:11.240 --> 22:14.120
+So these types of resources are available, which is great, because then you don't have
+
+22:14.120 --> 22:15.680
+to go back and rebuild this.
+
+22:15.680 --> 22:18.960
+You don't have to do all the software engineering to reprocess the data in a uniform way.
+
+22:18.960 --> 22:21.560
+You just kind of start from the processed data.
+
+22:21.560 --> 22:26.600
+And I think this opens up a lot of avenues of exploration.
+
+22:26.600 --> 22:31.880
+I like to, you know, one of the things that I say about what our lab works on is machine
+
+22:31.880 --> 22:33.680
+learning, public data, and the transcriptome.
+
+22:33.680 --> 22:37.040
+Pick two of three, and we're probably interested.
+
+22:37.040 --> 22:42.840
+One of our Bush essentially wrote and designed the way that we fund science in this country.
+
+22:42.840 --> 22:46.280
+So this idea that most science is going to happen outside of government research labs,
+
+22:46.280 --> 22:49.800
+it's mostly going to happen at universities, it's mostly going to be grant funded.
+
+22:49.800 --> 22:54.080
+He wrote this letter to FDR that says, the pioneer spirit is still vigorous within this
+
+22:54.080 --> 22:58.080
+nation science offers a largely unexplored hinterland for the pioneer who has the tools
+
+22:58.080 --> 22:59.080
+for his task.
+
+22:59.080 --> 23:05.840
+Well, I would say, I think open data is like the opportunities here are remarkable, like
+
+23:05.840 --> 23:11.520
+the ability to, you can take these data sets off the shelf and learn how something works
+
+23:11.520 --> 23:15.760
+at a scale that's very difficult to do from the data generated in only one lab.
+
+23:15.760 --> 23:17.360
+And once you do that, you can then test it.
+
+23:17.360 --> 23:20.920
+And I think I really think using other people's data as sort of the starting point to generate
+
+23:20.920 --> 23:24.080
+hypotheses that you then go test.
+
+23:24.080 --> 23:28.080
+There's an enormous amount of unexplored opportunity here.
+
+23:28.080 --> 23:31.640
+We also think sometimes about other data types instead of just gene expression.
+
+23:31.640 --> 23:35.840
+So this is work from David Nicholson, who was a PhD student in the lab who just graduated
+
+23:35.840 --> 23:38.120
+last year, who was like, well, let's do that.
+
+23:38.120 --> 23:41.960
+I just want to understand what's on bioRxiv anyway.
+
+23:41.960 --> 23:46.760
+So at this point, I probably don't have to introduce it, bioRxiv is a preprint server.
+
+23:46.760 --> 23:50.560
+And so this gives us the ability to also study the peer review process in some ways.
+
+23:50.560 --> 23:54.040
+So we can see what gets posted to bioRxiv, and then we can look at the sort of what the
+
+23:54.040 --> 23:56.160
+final paper looks like.
+
+23:56.160 --> 24:03.240
+We started this project just around the time that bioRxiv released an XML repository of
+
+24:03.240 --> 24:04.920
+their complete collection of data.
+
+24:04.920 --> 24:08.120
+So if you're interested in not just having a complete collection of transcriptomic data,
+
+24:08.120 --> 24:11.640
+you can also go get a complete collection of XML preprints, which I think is really
+
+24:11.640 --> 24:15.240
+exciting and a lot of fun.
+
+24:15.240 --> 24:18.800
+You learn some things if you start looking at just the metadata associated with this.
+
+24:18.800 --> 24:25.160
+So this is one of the simple questions that David asked was just, well, if there are preprints
+
+24:25.160 --> 24:29.160
+with multiple versions, are people sort of adjusting their preprint in response to peer
+
+24:29.160 --> 24:30.280
+review?
+
+24:30.280 --> 24:34.040
+So if someone submits their paper, they get comments back, do they generally repost it?
+
+24:34.040 --> 24:36.920
+We can't directly answer that question, we don't have access to the journal system.
+
+24:36.920 --> 24:41.520
+But we could say as well, if that were happening, probably what would happen is that at each,
+
+24:41.520 --> 24:45.120
+you know, as you saw in each version, you'd see an extension in the time to publish.
+
+24:45.120 --> 24:46.120
+Sure enough, you see that.
+
+24:46.120 --> 24:53.080
+And actually, the coefficient on the X here is about 50, which is in days.
+
+24:53.080 --> 24:57.000
+So it suggests that adding a version means sort of 50 days longer in the publication
+
+24:57.000 --> 25:00.560
+process, which is kind of aligned with what you'd expect to see if people are putting
+
+25:00.560 --> 25:06.520
+up papers and revising them in response to peer review.
+
+25:06.520 --> 25:13.480
+Another thing we can ask, so this is getting into the text itself, is if the text changes,
+
+25:13.480 --> 25:18.320
+do more changes in text between the preprint and the published version result in, does
+
+25:18.320 --> 25:20.640
+that come with a longer time to publish?
+
+25:20.640 --> 25:23.400
+And the answer to that is kind of yes-ish.
+
+25:23.400 --> 25:28.560
+If a preprint changes more from the, if a published version changes more from the preprint,
+
+25:28.560 --> 25:31.000
+it does take a bit longer to publish.
+
+25:31.000 --> 25:33.840
+But it's not an incredibly substantial change.
+
+25:33.840 --> 25:36.560
+And actually, the other thing that we did, so as we were doing this project, there was
+
+25:36.560 --> 25:42.420
+another group that did a completely different project, where they took a set of COVID papers
+
+25:42.420 --> 25:45.480
+that were published first as preprints and followed them through.
+
+25:45.480 --> 25:46.800
+Their scientific question was different.
+
+25:46.800 --> 25:52.080
+They wanted to say, for COVID-related papers, does the message of the paper change as it
+
+25:52.080 --> 25:53.080
+goes through the publication process?
+
+25:53.080 --> 25:56.480
+And they found that only in one case did that happen out of the 300-odd papers that they
+
+25:56.480 --> 25:57.480
+examined.
+
+25:57.480 --> 26:00.100
+But what that gave us was an annotated list of COVID papers.
+
+26:00.100 --> 26:03.280
+So we could then take that and ask if it had the same relationship, and it actually didn't
+
+26:03.280 --> 26:04.800
+have the same relationship.
+
+26:04.800 --> 26:10.460
+So for the subset of the literature in early 2020, COVID papers were being published quickly
+
+26:10.460 --> 26:14.400
+regardless of how much text changed between the preprint and published version.
+
+26:14.400 --> 26:18.280
+So this was kind of an interesting way to explore how publishing was happening.
+
+26:18.280 --> 26:24.080
+So for those of you who have had the opportunity to have papers go through peer review, can
+
+26:24.080 --> 26:28.800
+you guess what the most common linguistic change is, if we just look at word-level linguistic
+
+26:28.800 --> 26:31.200
+change during the publishing process?
+
+26:39.200 --> 26:42.200
+Has anyone ever had to add supplementary or additional data?
+
+26:43.000 --> 26:44.480
+It's not the most common.
+
+26:44.480 --> 26:48.280
+The most common is actually, oh, no, it is the most common, yeah.
+
+26:48.280 --> 26:49.280
+So additional and file.
+
+26:49.280 --> 26:53.320
+So on the right here is what's enriched in the published literature, and the left is
+
+26:53.320 --> 26:55.280
+what's enriched in preprints.
+
+26:55.280 --> 26:58.800
+So file and additional and supplementary are all pretty high at the top.
+
+26:58.800 --> 27:04.280
+So when people are changing their papers, we can infer that probably they're often changing
+
+27:04.280 --> 27:08.040
+the, you know, they're adding stuff to the supplement, but maybe they're not adding that
+
+27:08.040 --> 27:09.640
+much to the main paper.
+
+27:09.640 --> 27:12.560
+The other stuff that's in there is kind of interesting, like fig and figure.
+
+27:12.560 --> 27:16.640
+So because journals have different styles, the plus-minus symbol and the em dash.
+
+27:16.640 --> 27:22.960
+So you can see the artifacts of typesetting, but this gives a way to kind of understand
+
+27:22.960 --> 27:23.960
+what's on each side.
+
+27:23.960 --> 27:28.360
+And this, I should say, we've done this, so this analysis is using only preprint published
+
+27:28.360 --> 27:29.360
+pairs.
+
+27:29.360 --> 27:32.760
+If you do the same thing with all of BioRxiv and all of PubMed, you essentially find field
+
+27:32.760 --> 27:33.760
+differences.
+
+27:33.760 --> 27:35.400
+So some fields use BioRxiv more than others.
+
+27:35.400 --> 27:38.840
+So this is the more carefully controlled than that.
+
+27:39.040 --> 27:42.960
+The other thing that we've done, just if you happen to have a preprint yourself, we have
+
+27:42.960 --> 27:51.720
+this web server that does a linguistic comparison between a selected preprint and all of PubMed
+
+27:51.720 --> 27:57.320
+and says, okay, well, here's journals that publish linguistically similar papers.
+
+27:57.320 --> 28:01.640
+Here's papers that are linguistically similar to yours, and this has a secret feature.
+
+28:01.640 --> 28:04.400
+So what we encourage people to do, and we designed it to try to get people to upload
+
+28:04.400 --> 28:06.920
+their preprint, but then people are like, well, I have a preprint, but it's on archive
+
+28:06.920 --> 28:08.360
+and you don't support archive.
+
+28:08.880 --> 28:11.720
+So the secret feature, which you can also drag a PDF over the search box if you want
+
+28:11.720 --> 28:18.880
+to, but we don't generally advertise that because the goal was to get people to post
+
+28:18.880 --> 28:21.560
+preprints so they could use the service, but we don't support archive.
+
+28:21.560 --> 28:25.760
+So if you have an archive preprint, we'll allow you to put, to drag it over the search
+
+28:25.760 --> 28:30.520
+box, but no other PDFs.
+
+28:30.520 --> 28:34.800
+So this came out last year, and there's, again, a GitHub associated with it if you want to
+
+28:34.800 --> 28:38.480
+see all the kind of exploration that we did on the way.
+
+28:38.480 --> 28:44.480
+David had a follow-up paper that I'm really excited about where he looked at, he looked
+
+28:44.480 --> 28:51.200
+at the, what words change their meaning over time, and in the last 20 years of scientific
+
+28:51.200 --> 28:52.200
+publishing.
+
+28:52.200 --> 28:55.520
+So there's an application associated with that as well that I should have put the link
+
+28:55.520 --> 28:57.800
+on here, but didn't, that we call WordLabs.
+
+28:57.800 --> 29:02.640
+So if you go to our lab and look for WordLabs, you'll find that, and it's really interesting.
+
+29:02.640 --> 29:07.520
+So we see things like hallmarks of new technologies, like, you know, CRISPR has a linguistic shift.
+
+29:07.520 --> 29:13.080
+We also see a lot of pandemic-associated words have linguistic shifts.
+
+29:13.080 --> 29:16.760
+So if you're interested in understanding how our language changes, that's also something
+
+29:16.760 --> 29:19.040
+that David did.
+
+29:19.040 --> 29:28.200
+Okay, and then I know this is a less medically-related audience than most of the places that I speak,
+
+29:28.360 --> 29:34.000
+but one of the things that I thought I wanted to share was sort of how some of this basic
+
+29:34.000 --> 29:37.120
+science or sort of the techniques that we develop in this basic science can contribute
+
+29:37.120 --> 29:40.040
+to changes in how healthcare gets delivered.
+
+29:40.040 --> 29:43.480
+And so this is also something that we think about, right?
+
+29:43.480 --> 29:44.960
+Remember our business is serendipity.
+
+29:44.960 --> 29:47.080
+Yes, sometimes that's in research, right?
+
+29:47.080 --> 29:50.560
+Whether that's sort of me telling you how papers change, so that you can think about
+
+29:50.560 --> 29:55.160
+how you would change your paper in response to peer review, just add more additional files.
+
+29:55.160 --> 29:59.200
+But sometimes that's, you know, in care, in clinical care, right?
+
+29:59.200 --> 30:02.720
+So that someone, you know, you can imagine a patient comes in, there might be reasons
+
+30:02.720 --> 30:04.720
+that that patient might need to receive a different treatment.
+
+30:04.720 --> 30:07.920
+Could we provide that kind of information at the point of care?
+
+30:07.920 --> 30:15.000
+So this is a big focus at our med school and our health system that's associated with our
+
+30:15.000 --> 30:21.440
+med school, University of Colorado Health, has an entire program in clinical intelligence.
+
+30:21.440 --> 30:27.000
+This is sort of the idea that I like to highlight as sort of serendipity is like the right moment
+
+30:27.000 --> 30:30.440
+at the right time to make the right decision.
+
+30:30.440 --> 30:35.600
+In most health systems, if someone is going to get something called pharmacogenomic genetic
+
+30:35.600 --> 30:36.600
+testing.
+
+30:36.600 --> 30:39.580
+So the idea here is people have different variants in their genome.
+
+30:39.580 --> 30:42.640
+Some of those variants can affect how you metabolize drugs, how you respond to different
+
+30:42.640 --> 30:44.280
+drugs.
+
+30:44.280 --> 30:49.520
+It's not terribly common that people get tested for pharmacogenomic variants, because if you
+
+30:49.600 --> 30:54.800
+go get, if you are going to a hospital and, you know, you need to have a stent inserted,
+
+30:54.800 --> 30:59.080
+one of the common treatments is Plavix, well, there's a, there's an interaction between
+
+30:59.080 --> 31:02.760
+Plavix and a certain genetic variant, a set of genetic variants where you metabolize the
+
+31:02.760 --> 31:05.680
+drug differently, and it doesn't work for you, which means you're not getting the benefit
+
+31:05.680 --> 31:09.800
+of reducing your heart attack risk, or your clot risk.
+
+31:09.800 --> 31:14.560
+And so, but most people don't get this testing, because if a physician orders the testing,
+
+31:14.560 --> 31:18.840
+they get a 70 page PDF back, then they have to take that 70 page PDF and go to a table
+
+31:18.840 --> 31:22.560
+like this, read everything related to the drug they're about to prescribe, to prescribe
+
+31:22.560 --> 31:25.360
+on the table, and then understand if it applies, right?
+
+31:25.360 --> 31:28.160
+That is not a common thing for a physician to do.
+
+31:28.160 --> 31:31.480
+Providers don't get reimbursed for that type of type of work.
+
+31:31.480 --> 31:35.320
+What's happening at the University of Colorado and UC Health is we've got clinical decision
+
+31:35.320 --> 31:38.280
+support built into the electronic health record around this stuff.
+
+31:38.280 --> 31:42.640
+So this is the same thing, except instead of a 70 page PDF, plus having to look at this
+
+31:42.640 --> 31:48.240
+table, if a provider were to go in and order Plavix for an individual who's not going to
+
+31:48.640 --> 31:52.160
+benefit from it, it pops up an alert that says, look, we recommend you remove this because
+
+31:52.160 --> 31:56.000
+it's not going to work, and read about why it's not going to work if you want to, but
+
+31:56.000 --> 31:59.200
+we recommend you apply one of these alternatives that will work for this patient.
+
+31:59.200 --> 32:04.520
+And so this is serendipity, but not just in research, in clinical care.
+
+32:04.520 --> 32:08.400
+And this is, if you're interested in this kind of story, this is another one.
+
+32:08.400 --> 32:12.920
+This was an individual, different condition, where there was a question about drug efficacy.
+
+32:12.920 --> 32:16.120
+This is a story from UC Health.
+
+32:16.120 --> 32:20.480
+And in this case, the provider keyed in an order, and an alert popped up that says, oh,
+
+32:20.480 --> 32:23.280
+this person's going to need a different dose.
+
+32:23.280 --> 32:26.640
+And that was helpful to the provider to make that decision.
+
+32:26.640 --> 32:31.400
+One of the things I've had the privilege of doing over the last couple of years is focusing
+
+32:31.400 --> 32:32.400
+on this program.
+
+32:32.400 --> 32:37.000
+So a lot of faculty in our department work in this program, and about a year and a half
+
+32:37.000 --> 32:42.480
+ago, I guess two years ago, the previous director left, and so I ended up as the interim director.
+
+32:42.480 --> 32:44.920
+So I've gotten to know this program pretty well.
+
+32:44.920 --> 32:48.080
+So this is our Colorado Center for Personalized Medicine.
+
+32:48.080 --> 32:50.800
+We have a biobank study that this is all tied to.
+
+32:50.800 --> 32:55.080
+So if someone comes in, they can consent to have their sample collected for the biobank.
+
+32:55.080 --> 32:57.920
+We have a robust return of results pipeline built on that.
+
+32:57.920 --> 33:00.600
+So our biobank is growing pretty rapidly.
+
+33:00.600 --> 33:02.720
+Our sample increase is picking up a lot.
+
+33:02.720 --> 33:05.800
+But then the other thing we ask is, how is this making a difference in care?
+
+33:05.800 --> 33:08.560
+So essentially, how many of these alerts are actually firing?
+
+33:08.560 --> 33:14.120
+So over the last year, we've had about 1,000 patients who've had an alert fire at some
+
+33:14.320 --> 33:16.360
+point in clinical care.
+
+33:16.360 --> 33:20.200
+That's a tenfold increase over our entire previous history.
+
+33:20.200 --> 33:26.280
+And that's been powered because we've recently focused on getting these results back into
+
+33:26.280 --> 33:27.560
+the EHR in a structured way.
+
+33:27.560 --> 33:31.800
+So we've seen almost 100-fold growth, actually more than 100-fold growth year over year.
+
+33:31.800 --> 33:35.800
+We'll probably have 210,000 results in the electronic health record at sort of the two-year
+
+33:35.800 --> 33:37.080
+mark.
+
+33:37.080 --> 33:42.080
+And what this means is that if you're interested in studying this type of process in terms
+
+33:42.080 --> 33:45.600
+of care delivery, if you're interested in studying how physicians respond, if you're
+
+33:45.600 --> 33:50.560
+interested in looking for new cases where there are these sort of drug-gene interactions,
+
+33:50.560 --> 33:54.240
+we have the ingredients to do that at Colorado in a way that no one else that I'm aware of
+
+33:54.240 --> 33:55.720
+does.
+
+33:55.720 --> 33:58.200
+And so this program continues to grow.
+
+33:58.200 --> 33:59.240
+I'll just give you one.
+
+33:59.240 --> 34:03.320
+This is actually a real story that happened over the last few months.
+
+34:03.320 --> 34:04.320
+So this is a stock photo.
+
+34:04.320 --> 34:09.280
+I cannot show you a picture of the patient, but a patient came in to a community oncology
+
+34:09.280 --> 34:10.280
+clinic.
+
+34:10.480 --> 34:12.160
+And this works across the entire UC health system.
+
+34:12.160 --> 34:13.680
+So it's not just an academic hospital.
+
+34:13.680 --> 34:17.360
+This is a major health system that serves the Mountain West.
+
+34:17.360 --> 34:20.280
+So this patient came into a community oncology clinic.
+
+34:20.280 --> 34:27.480
+They were prescribed a drug that based on their genetic variants would have created
+
+34:27.480 --> 34:33.520
+a significant risk of life-threatening complications.
+
+34:33.520 --> 34:41.400
+Our team noticed this, sent a message to the provider, and then the patient alert actually
+
+34:41.400 --> 34:45.000
+fired and recommended a reduced dosage of the drug.
+
+34:45.000 --> 34:48.000
+The oncologist actually did proactively reduce the dose.
+
+34:48.000 --> 34:53.680
+So the person started at a different dose than would traditionally be used.
+
+34:53.680 --> 34:55.600
+Even at that dose, they didn't tolerate it very well.
+
+34:55.600 --> 34:57.840
+So they had to further reduce the dose.
+
+34:57.840 --> 35:01.200
+In these types of cases, you can imagine what happens if you start at the highest sort of
+
+35:01.200 --> 35:05.920
+the traditional dose at which these drugs can be for individuals with this particular
+
+35:05.920 --> 35:07.720
+variant can be lethal.
+
+35:07.720 --> 35:11.680
+And so this is a case where, you know, yes, I told you there's 1,000 alerts, but each
+
+35:11.680 --> 35:14.360
+of those 1,000 alerts is some story like this, right?
+
+35:14.360 --> 35:19.640
+And so it's nice to see this actually being used to deliver care at scale.
+
+35:19.640 --> 35:23.040
+And so we're doing this, this is all informatics, right?
+
+35:23.040 --> 35:27.160
+You can get all of this serendipity with sort of none of this here has machine learning
+
+35:27.160 --> 35:30.480
+built into it, but it's going to.
+
+35:30.480 --> 35:33.920
+And as we think about that, I think it's really important not just to sort of think
+
+35:33.920 --> 35:37.360
+from the machine learning point of view, but to really think about practical clinical care
+
+35:37.360 --> 35:38.360
+pathways.
+
+35:38.360 --> 35:44.160
+So this is a piece from Siddhartha Mukherjee that sort of, if you're interested in AI and
+
+35:44.160 --> 35:49.040
+medicine, I realize this is dated now, but it's still worth reading.
+
+35:49.040 --> 35:54.320
+And it's also weird that five years is old, but it's still worth reading.
+
+35:54.320 --> 35:57.800
+It has a quote from Geoffrey Hinton, sort of says they should stop training radiologists
+
+35:57.800 --> 36:00.440
+right now.
+
+36:00.440 --> 36:03.280
+And why would someone say this, right?
+
+36:03.280 --> 36:05.480
+Well, so Geoff Hinton's looking at the literature, right?
+
+36:05.480 --> 36:08.760
+So they're just trying to collect some literature from around the same time.
+
+36:08.760 --> 36:11.680
+So this is sort of saying, look, deep learning is going to completely transform healthcare.
+
+36:11.680 --> 36:14.840
+It's going to change how we care as we know it.
+
+36:14.840 --> 36:20.000
+Another sort of similar example, more examples, everything you read in the literature, deep
+
+36:20.000 --> 36:21.000
+learning.
+
+36:21.000 --> 36:23.760
+Like, I mean, now we're all into large language models, but at the time these image models
+
+36:23.760 --> 36:25.600
+were going to completely transform healthcare.
+
+36:25.600 --> 36:28.760
+Well, you might ask, is there anything they're not good at?
+
+36:29.080 --> 36:31.440
+Like they're good at everything, right?
+
+36:31.440 --> 36:37.000
+Chihuahuas and blueberry muffins, not terribly good here.
+
+36:37.000 --> 36:42.520
+This one's kind of wild.
+
+36:42.520 --> 36:44.840
+So I perceive the thing on the left as a panda.
+
+36:44.840 --> 36:48.160
+It looks like a picture of a panda.
+
+36:48.160 --> 36:51.640
+I don't really perceive this as much of anything.
+
+36:51.640 --> 36:56.520
+We're going to add, you know, this plus seven thousandths of this.
+
+36:56.520 --> 37:02.120
+What do you think the output is going to look like?
+
+37:02.120 --> 37:03.120
+A sloth.
+
+37:03.120 --> 37:04.120
+A sloth?
+
+37:04.120 --> 37:05.120
+Any Gibbons?
+
+37:05.120 --> 37:06.120
+Anyone for Gibbon?
+
+37:06.120 --> 37:07.120
+A bear.
+
+37:07.120 --> 37:08.120
+A bear?
+
+37:08.120 --> 37:09.120
+Okay.
+
+37:09.120 --> 37:10.120
+So this is what it looks like.
+
+37:10.120 --> 37:11.120
+It's a Gibbon.
+
+37:11.120 --> 37:12.120
+Clearly a Gibbon.
+
+37:12.120 --> 37:13.120
+No question.
+
+37:13.120 --> 37:14.120
+That's a Gibbon.
+
+37:14.120 --> 37:15.120
+A monkey.
+
+37:15.120 --> 37:16.120
+Okay.
+
+37:16.120 --> 37:26.080
+So it doesn't look like a Gibbon to me, but our neural network is exceedingly convinced.
+
+37:26.080 --> 37:29.200
+And the reason this works, right, is because the decision boundaries in these neural networks
+
+37:29.200 --> 37:32.360
+are sort of nonlinear, and you can end up pretty close to a decision boundary without
+
+37:32.360 --> 37:34.200
+really knowing it.
+
+37:34.200 --> 37:38.160
+This is another example, which I think is just a lot of fun, so I have to throw it in.
+
+37:38.160 --> 37:43.040
+So this is someone who was like, well, can I just make adversarial, like, sticker?
+
+37:43.040 --> 37:46.960
+Like, can I have a sticker that I can put on something and have a deep neural network
+
+37:46.960 --> 37:49.360
+perceive it as something, even if it's not?
+
+37:49.360 --> 37:52.600
+So this is the toaster sticker.
+
+37:52.600 --> 37:56.960
+And so you can give, you can put the toaster sticker on a table next to what I perceive
+
+37:56.960 --> 38:01.480
+to be a, I perceive this to be a toaster sticker on a table next to a banana.
+
+38:01.480 --> 38:05.320
+I perceive this to be a banana on a table.
+
+38:05.320 --> 38:07.240
+Neural network classifier, banana on a table.
+
+38:07.240 --> 38:08.240
+It's good.
+
+38:08.240 --> 38:09.960
+Stick the toaster sticker next to it?
+
+38:09.960 --> 38:10.960
+Absolutely a toaster.
+
+38:10.960 --> 38:15.520
+You can imagine doing the same things with stop signs, you can imagine doing the same
+
+38:15.520 --> 38:20.960
+things with other fun technologies in the world of self-driving cars or deep neural
+
+38:21.120 --> 38:22.120
+networks or vision.
+
+38:22.120 --> 38:26.200
+Okay, so let's go back to the automated radiologist finding pneumonia.
+
+38:26.200 --> 38:29.200
+This was one of the examples I showed you before.
+
+38:29.200 --> 38:34.720
+There's a, John Zek is a guy who writes blog posts that are really good and then converts
+
+38:34.720 --> 38:36.600
+them into papers.
+
+38:36.600 --> 38:41.480
+So this was a blog post from John Zek, which then became a paper that sort of said, okay,
+
+38:41.480 --> 38:43.120
+why is the system actually working?
+
+38:43.120 --> 38:45.200
+Like what's happening here?
+
+38:45.200 --> 38:51.080
+So he went to the, to the images and tried to understand, you know, what part of the
+
+38:51.080 --> 38:53.920
+image is contributing to the prediction of pneumonia?
+
+38:53.920 --> 38:58.480
+Well in this case, a positive, and this should probably find pneumonia.
+
+38:58.480 --> 39:01.760
+There's high density in the lung here.
+
+39:01.760 --> 39:02.760
+You can say, well, okay.
+
+39:02.760 --> 39:09.240
+Oh, and I should say a positive number is suggestive of pneumonia, a negative number
+
+39:09.240 --> 39:10.240
+is not.
+
+39:10.240 --> 39:11.240
+Okay.
+
+39:11.240 --> 39:15.360
+So what are the positive numbers?
+
+39:15.360 --> 39:22.720
+The most positive numbers, bottom, yeah, where there's this interesting stripe, the interesting
+
+39:22.720 --> 39:26.800
+stripe that's kind of unique characteristic of the scanner, the one that you might see
+
+39:26.800 --> 39:31.440
+if you were in a department, if the scanner was placed proximal to sort of where pneumonia
+
+39:31.440 --> 39:33.840
+diagnoses were usually occurring.
+
+39:33.840 --> 39:34.840
+Yeah.
+
+39:34.840 --> 39:38.240
+So, so, so that's interesting.
+
+39:38.240 --> 39:40.520
+Here's another one.
+
+39:40.800 --> 39:44.320
+I should say these probabilities are low, but the previous one was in the 99th percentile
+
+39:44.320 --> 39:45.320
+for pneumonia.
+
+39:45.320 --> 39:47.320
+This one's in the 95th percentile.
+
+39:47.320 --> 39:48.320
+Yeah.
+
+39:48.320 --> 39:49.320
+Portable?
+
+39:49.320 --> 39:50.320
+Portable.
+
+39:50.320 --> 39:52.600
+Someone's not well enough to go to the scanner.
+
+39:52.600 --> 39:55.860
+Not a good sign for their health, could indicate pneumonia.
+
+39:55.860 --> 39:59.320
+Probably not the part of the image you want to be looking at.
+
+39:59.320 --> 40:05.200
+And so, you know, I think this to me, I was also reading this every once in a while, I
+
+40:05.200 --> 40:08.960
+read the comment section of blog posts on the internet, which I do not recommend, but
+
+40:08.960 --> 40:09.960
+there was one on big data.
+
+40:09.960 --> 40:14.320
+You know, there was this blog post on big data and I'm like, well, it was like why statistics
+
+40:14.320 --> 40:16.800
+don't matter in the era of big data or something like that.
+
+40:16.800 --> 40:21.040
+And I'm like, okay, I'll, you know, and then I'm like, I have some disagreements with this.
+
+40:21.040 --> 40:25.720
+Then I go to the comment section, I find this one, which I really agree with.
+
+40:25.720 --> 40:29.680
+On big data, data collection biases are always larger than statistical uncertainty.
+
+40:29.680 --> 40:33.560
+And I think this is why I sort of, you know, you can have these models that perform robustly
+
+40:33.560 --> 40:36.080
+around a lot of these comparisons that still struggle.
+
+40:36.200 --> 40:39.240
+And then I read, who made the post, and it's this guy named Daniel Himmelstein, which probably
+
+40:39.240 --> 40:42.160
+doesn't mean anything to you, but he happened to be a postdoc in my lab.
+
+40:42.160 --> 40:46.440
+And I'm like, dude, put this in the comment section of the internet, people should actually
+
+40:46.440 --> 40:47.440
+read it.
+
+40:47.440 --> 40:51.120
+So now I put it on slides, so at least someone can see it.
+
+40:51.120 --> 40:54.600
+Okay, so how do we design systems that work?
+
+40:54.600 --> 40:59.080
+So you know, for AI and medicine, regardless of what we're using, I think we need to have
+
+40:59.080 --> 41:01.520
+some principles that we think about.
+
+41:01.520 --> 41:05.240
+We just did something that sort of tries to go on this path.
+
+41:05.400 --> 41:06.960
+So this is a little bit different.
+
+41:06.960 --> 41:11.800
+So this is a piece from Nature, but it talks about a preprint that we put up earlier this
+
+41:11.800 --> 41:17.600
+year, where we were trying to use GPT-based models, so in this case, GPT-3, to revise
+
+41:17.600 --> 41:19.280
+academic manuscripts.
+
+41:19.280 --> 41:23.440
+One of the things that we see all the time is, well, now it's really common, right?
+
+41:23.440 --> 41:30.240
+People are developing services that can use GPT-3 or ChatGPT, or GPT-4 through ChatGPT
+
+41:30.240 --> 41:31.240
+to revise your manuscript.
+
+41:31.240 --> 41:33.400
+Well, what are the issues with those?
+
+41:33.560 --> 41:36.360
+So our experience putting this together and running a bunch of test manuscripts through
+
+41:36.360 --> 41:40.280
+it is that, yes, it is good at clarifying language.
+
+41:40.280 --> 41:42.800
+There's a lot of things it can help you with.
+
+41:42.800 --> 41:47.480
+It actually caught an error in an equation, which I was pretty darn impressed with.
+
+41:47.480 --> 41:50.640
+On the other hand, it also makes stuff up.
+
+41:50.640 --> 41:54.480
+And so a bit of a challenge if your idea is that you're just going to use this.
+
+41:54.480 --> 41:59.240
+And I think, you know, I use this as an example because it's really trivial.
+
+41:59.240 --> 42:03.360
+You can try it out yourself and see how it works, and you can get these examples yourself.
+
+42:03.360 --> 42:06.840
+The same things are going to be true when we use this in medical context, so we need
+
+42:06.840 --> 42:07.840
+to think about them.
+
+42:07.840 --> 42:11.440
+I think thinking about them and trying them and experimenting in a low-risk environment
+
+42:11.440 --> 42:14.440
+before we move to a high-risk environment is usually a good idea.
+
+42:14.440 --> 42:17.440
+So what are the principles that we've kind of come up with as we think about this?
+
+42:17.440 --> 42:22.440
+So first, we really do aim for kind of an augmentation, not replacement.
+
+42:22.440 --> 42:27.760
+And what that means is, you know, when we apply this to manuscripts and we try to get
+
+42:27.760 --> 42:32.520
+it to improve it, you know, we actually applied it to the manuscript about the tool.
+
+42:32.520 --> 42:36.200
+And when we did that, it made up this thing that we had done that we had fine-tuned the
+
+42:36.200 --> 42:38.240
+model on manuscripts of a similar type.
+
+42:38.240 --> 42:41.920
+Yeah, you should absolutely fine-tune the model on manuscripts of a similar type.
+
+42:41.920 --> 42:43.200
+Makes a ton of sense.
+
+42:43.200 --> 42:44.200
+We didn't do it.
+
+42:44.200 --> 42:48.360
+You probably shouldn't report that you did it in the manuscript.
+
+42:48.360 --> 42:52.280
+So we're really thinking like, you know, okay, this is not like you're going to plug it in,
+
+42:52.280 --> 42:53.280
+you're going to be done.
+
+42:53.280 --> 42:56.760
+It's really, you need to design it around kind of an augmentation capability.
+
+42:56.760 --> 43:00.000
+You've got to carefully consider your use cases.
+
+43:00.000 --> 43:03.280
+You know, if it's easy to take the output, it's hard to compare.
+
+43:03.280 --> 43:04.800
+It's probably not good, right?
+
+43:04.800 --> 43:09.240
+Because you're creating the opportunity for a mistake that you don't need to create.
+
+43:09.240 --> 43:11.960
+We really like to start with these kind of simple solutions and approaches and layer
+
+43:11.960 --> 43:13.320
+complexity only as needed.
+
+43:13.320 --> 43:20.080
+So in this case, you know, we start with some pretty simple prompts and then have the ability
+
+43:20.080 --> 43:21.280
+to add complexity.
+
+43:21.280 --> 43:25.200
+But usually we just kind of try to keep it relatively basic and simple.
+
+43:25.200 --> 43:26.200
+The workflow is simple.
+
+43:26.640 --> 43:28.360
+You can proof of concept it out really quickly.
+
+43:28.360 --> 43:30.440
+And the most important thing is preserving attribution.
+
+43:30.440 --> 43:31.680
+Like where did the content come from?
+
+43:31.680 --> 43:35.760
+If you're thinking about this in a clinical setting, you know, what was provided and when?
+
+43:35.760 --> 43:38.000
+And you know, did it come from an AI or a human first?
+
+43:38.000 --> 43:41.520
+Because that's really going to matter as you're thinking about evaluating these workflows.
+
+43:41.520 --> 43:45.200
+In academic writing, I think it's going to, you're going to want to keep track of whether
+
+43:45.200 --> 43:48.960
+something came from an AI based system or if you wrote it.
+
+43:48.960 --> 43:51.600
+I think this is, more and more journals are starting to require this.
+
+43:51.600 --> 43:53.520
+It's going to be important.
+
+43:53.520 --> 43:59.160
+But I just think like these are key principles that I would recommend keeping in mind.
+
+43:59.160 --> 44:01.680
+And then finally, I just want to give you an idea of what the environment is like about
+
+44:01.680 --> 44:02.680
+at Colorado.
+
+44:02.680 --> 44:05.840
+Because some of you may one day look for future jobs and I figure you should know something
+
+44:05.840 --> 44:06.840
+about us.
+
+44:06.840 --> 44:07.840
+We're not at Boulder.
+
+44:07.840 --> 44:13.040
+We're at the Anschutz Medical Campus, which is kind of between the airport and the Denver
+
+44:13.040 --> 44:16.360
+airport and Denver itself.
+
+44:16.360 --> 44:19.240
+We are a major academic medical center.
+
+44:19.240 --> 44:23.500
+And like I said, we're not at Boulder, which is the thing that people most frequently get
+
+44:24.480 --> 44:25.780
+confused about.
+
+44:25.780 --> 44:30.980
+On July 1st of last year, we actually launched a new department of biomedical informatics.
+
+44:30.980 --> 44:34.020
+And you know, we're trying to hire and put together a faculty that are focused on this
+
+44:34.020 --> 44:37.940
+idea of kind of making serendipity routine, like how do you surface the right information
+
+44:37.940 --> 44:40.220
+at the right time.
+
+44:40.220 --> 44:45.260
+Our 30, we're now at 31 faculty, we have a new person starting in May, that will get
+
+44:45.260 --> 44:50.340
+us to 32 faculty, have about $65 million in extramural research, just for faculty who
+
+44:50.340 --> 44:55.340
+are PIs, on which faculty in the department are PIs, there's a lot of additional collaborative
+
+44:55.340 --> 44:57.620
+funding that's not included in this.
+
+44:57.620 --> 45:03.380
+We have expertise kind of across the spectrum from precision medicine, through kind of physiological
+
+45:03.380 --> 45:06.060
+modeling, we have folks who think about human computer interaction, because if you want
+
+45:06.060 --> 45:08.740
+to deploy this stuff in the clinic, you should really think about how humans are going to
+
+45:08.740 --> 45:13.580
+interact with it through kind of electrical engineering, medical imaging and AI.
+
+45:13.580 --> 45:16.940
+So there's a lot of faculty working in this area.
+
+45:16.940 --> 45:21.100
+This I just collected some stuff from early last year.
+
+45:21.100 --> 45:24.660
+And that just sort of like, okay, when our faculty mentioned in the press, so there's
+
+45:24.660 --> 45:32.540
+stuff in MIT technology review nature, LeMond, Deutschland, I can't remember whatever the
+
+45:32.540 --> 45:35.500
+German public radio station is.
+
+45:35.500 --> 45:38.700
+So you know, you have a bunch of internationally renowned experts who are at Anschutz, we don't
+
+45:38.700 --> 45:39.700
+happen to be at Boulder.
+
+45:39.700 --> 45:44.740
+You know, to me, it's like the difference between Georgia Tech and Georgia, I feel like
+
+45:44.740 --> 45:49.660
+they're different institutions, we should probably occasionally recognize that.
+
+45:49.660 --> 45:53.460
+The other thing that sort of we focused on when we were creating the department, if you
+
+45:53.460 --> 45:57.060
+read the sociology literature from the 80s, which I suspect all of you do on a regular
+
+45:57.060 --> 46:02.020
+basis, there's this article that I actually think you should read from the sociology literature
+
+46:02.020 --> 46:04.740
+from the 80s called the mundanity of excellence.
+
+46:04.740 --> 46:08.260
+So this is someone who essentially studied swimmers at many different levels and asked
+
+46:08.260 --> 46:12.580
+what differentiates swimmers at one level from another level.
+
+46:12.700 --> 46:16.260
+There's a few different principles that come out, but one of the key ones is that excellence
+
+46:16.260 --> 46:18.620
+requires qualitative differentiation.
+
+46:18.620 --> 46:22.180
+And what I mean by that is, you know, you're not going to move up a level in swimming competitions
+
+46:22.180 --> 46:24.020
+by swimming to extra labs.
+
+46:24.020 --> 46:25.020
+That's not how it works.
+
+46:25.020 --> 46:28.020
+What you're going to do is you're going to focus on your form, you're going to, you know,
+
+46:28.020 --> 46:30.920
+you're going to approach the sport differently, you're going to focus on getting rest the
+
+46:30.920 --> 46:34.340
+night before the meet, like that's the stuff that people do at higher levels that they
+
+46:34.340 --> 46:36.660
+don't do at lower levels.
+
+46:36.660 --> 46:39.380
+And as we think about a department, we had to ask like, what's our, okay, what's our
+
+46:39.380 --> 46:40.380
+qualitative differentiator?
+
+46:40.380 --> 46:44.220
+How are we not just like another biomedical informatics department that just happens to
+
+46:44.220 --> 46:45.580
+have more money or something, right?
+
+46:45.580 --> 46:48.460
+Like that's not, that's not a real differentiator.
+
+46:48.460 --> 46:53.580
+And so what we thought about was creating promotion and tenure guidelines that have,
+
+46:53.580 --> 46:55.720
+that are focused on real world impact.
+
+46:55.720 --> 47:00.700
+So one of our bullet points in our departmental sort of idea of impact, there is a bullet
+
+47:00.700 --> 47:02.220
+point that includes publication.
+
+47:02.220 --> 47:05.460
+It's possible, you can do it, we can care about it.
+
+47:05.540 --> 47:10.780
+But there's also technology development that gets deployed locally, nationally or internationally.
+
+47:10.780 --> 47:14.100
+Software shows up, changes in policy because of your work.
+
+47:14.100 --> 47:17.100
+All of that is included in and counts for impact.
+
+47:17.100 --> 47:21.340
+Now, probably not all of you will look for tenure track faculty positions in our department.
+
+47:21.340 --> 47:26.660
+But if you were to come train or send folks to train with us, I think it's important to
+
+47:26.660 --> 47:28.340
+know like that filters down, right?
+
+47:28.340 --> 47:30.940
+If that's how faculty are evaluated, that filters all the way down.
+
+47:30.940 --> 47:34.340
+So there's an emphasis on real world impact that we have that I think can be our kind
+
+47:34.340 --> 47:35.340
+of qualitative differentiator.
+
+47:35.340 --> 47:39.620
+And I'll just say, we have a really good training environment.
+
+47:39.620 --> 47:41.100
+So we have strong connections with UC Health.
+
+47:41.100 --> 47:44.660
+So I told you earlier about one of the UC Health programs that we work closely with
+
+47:44.660 --> 47:45.660
+them on.
+
+47:45.660 --> 47:51.220
+And Children's Colorado, which is a nationally renowned pediatric cancer hospital, not pediatric
+
+47:51.220 --> 47:52.220
+hospital.
+
+47:52.220 --> 47:55.940
+I know the pediatric cancer people work in that space.
+
+47:55.940 --> 47:56.940
+So we have those tight connections.
+
+47:56.940 --> 48:01.140
+If you're interested in seeing your work translate to care, we have, if you're interested in
+
+48:01.140 --> 48:03.620
+using genetics to guide care, I think we have one of the best programs in the country
+
+48:03.620 --> 48:05.340
+through CCPM.
+
+48:05.340 --> 48:08.740
+We have a diverse and internationally recognized faculty.
+
+48:08.740 --> 48:12.680
+One of the things that's sometimes a little bit odd for folks at, you know, our tenure
+
+48:12.680 --> 48:19.620
+track faculty in DBMI are actually majority women, which I think is uncommon at, in, in
+
+48:19.620 --> 48:21.380
+our field.
+
+48:21.380 --> 48:24.900
+And then if you like the climate and you, it's a little bit humid here.
+
+48:24.900 --> 48:28.340
+We don't have that level of humidity, but we do have more hours of sun per year than
+
+48:28.340 --> 48:29.340
+Miami and San Diego.
+
+48:29.340 --> 48:31.860
+So if you're interested in the environment around you, we've got that.
+
+48:31.860 --> 48:34.780
+And then we've got abundant outdoor activities.
+
+48:34.780 --> 48:36.580
+This is one example of the programs that we have.
+
+48:36.580 --> 48:39.020
+So this is our computational science PhD program.
+
+48:39.020 --> 48:44.740
+There's also a postdoc training grant associated with the same thing.
+
+48:44.740 --> 48:47.780
+So if you're interested in this type of thing, feel free to look us up.
+
+48:47.780 --> 48:51.580
+You can always drop me an email and I can try to connect you with folks too.
+
+48:51.580 --> 48:55.860
+And then with that, I just want to thank the people who make this possible.
+
+48:55.860 --> 49:00.140
+So the members of the lab, we really have a kind of robust culture in the lab of sort
+
+49:00.140 --> 49:04.700
+of sharing the work that's happening and kind of thinking through each other's projects
+
+49:04.700 --> 49:06.420
+in ways that are really helpful.
+
+49:06.420 --> 49:07.420
+We also do code review.
+
+49:07.420 --> 49:12.060
+So people really pitch out, pitch in together, the department of biomedical informatics and
+
+49:12.060 --> 49:15.660
+my leadership team, and then the folks in CCPM, since I shared some of that work, and
+
+49:15.660 --> 49:18.900
+then the folks who give us money, I'd be happy to take whatever questions you have.
+
+49:25.860 --> 49:35.340
+For the radiology, XAI explainability, did they end up using my grad cam as like how
+
+49:35.340 --> 49:41.380
+they liberated the convolutional layer for the confluence?
+
+49:41.380 --> 49:42.380
+Yeah.
+
+49:42.380 --> 49:45.580
+I don't remember what strategy they used.
+
+49:45.580 --> 49:51.220
+And I also don't remember, you know, the saliency map.
+
+49:51.220 --> 49:54.580
+I think it's a saliency map, but I'm not 100% sure.
+
+49:55.580 --> 50:00.300
+Yeah, there's a, so John posted that first as a blog post, there's now like a PLOS medicine
+
+50:00.300 --> 50:01.300
+paper, I think.
+
+50:01.300 --> 50:02.300
+Yeah.
+
+50:02.300 --> 50:03.300
+I think I probably, yeah.
+
+50:03.300 --> 50:04.300
+Yeah.
+
+50:04.300 --> 50:07.020
+And I wrote this when it was the blog post and not when it was PLOS medicine paper, which
+
+50:07.020 --> 50:09.020
+is what I'd look at.
+
+50:09.020 --> 50:10.020
+Yeah.
+
+50:10.020 --> 50:11.020
+Yeah.
+
+50:11.020 --> 50:19.540
+So with the strange like explainability maps, did that happen even with like augmentations
+
+50:19.540 --> 50:22.100
+that would rotate or like zoom in, zoom out?
+
+50:22.100 --> 50:26.300
+Like was that with that, it still happened or with a train without that?
+
+50:26.300 --> 50:32.540
+Because like, I was thinking like assume in augmentation might solve that bottom band
+
+50:32.540 --> 50:33.540
+problem.
+
+50:33.540 --> 50:34.540
+Yeah.
+
+50:34.540 --> 50:36.780
+So I was wondering if that still.
+
+50:36.780 --> 50:39.180
+I'm guessing, so this is Andrew Ng's stuff.
+
+50:39.180 --> 50:40.980
+This was the one that he was criticizing.
+
+50:40.980 --> 50:48.820
+I think this was just chest x-rays and I don't think they, I don't remember them doing at
+
+50:48.820 --> 50:52.020
+least like a patch-based augmentation or anything like that.
+
+50:52.020 --> 50:53.020
+Yeah.
+
+50:53.020 --> 50:57.100
+And I would say now some of the techniques that are more sophisticated are likely to
+
+50:57.100 --> 50:58.100
+control for some of that.
+
+50:58.100 --> 51:01.540
+I mean, the other thing you could do is you can also just like do some adversarial training
+
+51:01.540 --> 51:04.500
+around the location of the scanner.
+
+51:04.500 --> 51:07.940
+The challenge with that is you need to know to do it and to know to do it, you have to
+
+51:07.940 --> 51:10.220
+like have someone who's an expert probe your data.
+
+51:10.220 --> 51:16.300
+And I think sometimes when we come to things from a computer science perspective, I do
+
+51:16.300 --> 51:22.340
+think sometimes we get really excited that something is working and especially if it's
+
+51:22.340 --> 51:31.780
+working as well as a human and maybe we get a little bit ahead of ourselves and aren't
+
+51:31.780 --> 51:36.660
+skeptical enough about our own results.
+
+51:36.660 --> 51:41.020
+So with the pharmacogenomics, the alert system that you pointed out.
+
+51:41.020 --> 51:44.100
+So how often do you get sort of false alerts, right?
+
+51:44.100 --> 51:52.580
+So because sometimes you can get an alert that a physician may not be really interested
+
+51:52.580 --> 51:54.940
+in or think is valid, right?
+
+51:54.940 --> 51:55.940
+Yeah.
+
+51:55.940 --> 51:59.940
+So we designed this pretty carefully.
+
+51:59.940 --> 52:05.580
+So we could bump up our alert number by just whether or not someone's getting a relevant
+
+52:05.580 --> 52:08.380
+prescription, fire the alert.
+
+52:08.380 --> 52:09.620
+That'd be great for our metrics.
+
+52:09.620 --> 52:13.620
+On the other hand, not terribly useful for care and people would learn to ignore it.
+
+52:13.660 --> 52:15.060
+So we're pretty focused.
+
+52:15.060 --> 52:17.260
+So most of the alerts are non-interruptive.
+
+52:17.260 --> 52:19.500
+So the idea is an 80-20 rule.
+
+52:19.500 --> 52:24.140
+So only 20% of the alerts should be interruptive, 80% should be non-interruptive.
+
+52:24.140 --> 52:29.660
+And because this isn't based on a predictive model, it's pretty straightforward to make
+
+52:29.660 --> 52:32.220
+sure it fires largely at times when it's relevant.
+
+52:32.220 --> 52:36.180
+So restricting kind of the clinic in which you can fire and that sort of stuff.
+
+52:36.180 --> 52:39.780
+However, one of the really nice things about UCHealth, so I'll go back on my advertising
+
+52:39.780 --> 52:42.500
+pitch for why you should come to Colorado and work at Colorado if this is something
+
+52:42.500 --> 52:46.660
+you're interested in, UCHealth thought about this in advance.
+
+52:46.660 --> 52:49.620
+So years ago, they built a virtual health center.
+
+52:49.620 --> 52:53.500
+And if you want to look it up, you can look up the UCHealth virtual health center.
+
+52:53.500 --> 52:58.060
+The guy who, to my understanding, put this together and sort of was visionary behind
+
+52:58.060 --> 53:03.060
+it is a guy named Rich Zane, who's our chief innovation officer through the hospital.
+
+53:03.060 --> 53:07.780
+And what they did there is they have nurses and clinicians who work offsite, but who are
+
+53:07.780 --> 53:12.900
+available to look at these types of systems before they flow to people who are onsite
+
+53:12.900 --> 53:14.260
+providing care.
+
+53:14.260 --> 53:19.260
+And where this became really useful, so is anyone aware of kind of the EPIC sepsis model
+
+53:19.260 --> 53:22.820
+thing that blew up maybe a year or two ago?
+
+53:22.820 --> 53:23.820
+No.
+
+53:23.820 --> 53:26.860
+So EPIC is one of the major providers of electronic health record systems.
+
+53:26.860 --> 53:31.300
+They have a sepsis model, and that sepsis model is pretty noisy.
+
+53:31.300 --> 53:36.380
+It likes to, it alerts probably more frequently than it should, and it misses cases it shouldn't
+
+53:36.380 --> 53:37.420
+miss.
+
+53:37.420 --> 53:43.020
+So there was a team at CU before my time, led by Tal Bennett, that had evaluated this
+
+53:43.020 --> 53:50.180
+model and found that it had some predictive quality, but maybe it wasn't ready.
+
+53:50.180 --> 53:52.460
+I want to be careful what I assert here.
+
+53:52.460 --> 53:57.940
+It had some predictive quality, but deployed in practice at scale could have created a
+
+53:57.940 --> 54:00.620
+lot of unnecessary burden on providers.
+
+54:00.620 --> 54:03.620
+Well, what they did, because they have the virtual health center, is they're able to
+
+54:03.620 --> 54:11.060
+deploy that model plus others in the virtual health center, have it alert nurses and clinicians
+
+54:11.060 --> 54:16.260
+there, and then have them look at it carefully in the virtual health center and only send
+
+54:16.260 --> 54:20.100
+the notice over to the folks who are working at the bedside if it's actually going to be
+
+54:20.100 --> 54:21.100
+useful.
+
+54:21.100 --> 54:23.620
+So a reason that could be good to work at Colorado, if you're interested in kind of
+
+54:23.620 --> 54:27.460
+predictive analytics and deploying this stuff in practice, is you can have a model that's
+
+54:27.460 --> 54:28.620
+not perfect, right?
+
+54:28.620 --> 54:33.820
+It doesn't have to be good enough to hand to a provider at the bedside.
+
+54:33.820 --> 54:37.460
+Because of the virtual health center, you can really proof of concept it out there,
+
+54:37.460 --> 54:40.060
+improve it, understand how you can improve its predictive quality, and then deploy it
+
+54:40.060 --> 54:41.060
+when it's ready.
+
+54:41.060 --> 54:42.660
+But you can still get the benefit in the meantime.
+
+54:42.660 --> 54:49.220
+So I guess I'd say, yeah, I think our noise level is pretty low on these alerts, but we
+
+54:49.220 --> 54:57.900
+do have a system in place for noisier stuff if people want to deploy it.
+
+54:57.900 --> 54:58.900
+It's fun to be back in Athens.
+
+54:58.900 --> 54:59.900
+Time to go dogs.
+
+54:59.900 --> 55:04.220
+I don't know what else I should say, but I'm just excited to be back.
+
+55:04.220 --> 55:26.100
+I was really tickled when I got the invite, it was wonderful.
+

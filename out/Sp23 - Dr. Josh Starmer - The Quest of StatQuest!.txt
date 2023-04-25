@@ -1,0 +1,559 @@
+Yeah, okay.
+Yeah, yeah.
+Yeah.
+Yeah.
+Yeah.
+Yeah.
+That's really interesting. Yeah.
+Welcome to our seminar.
+Just summary is a data scientist, educator and musician is the founder and CEO of stat quest online educational platform that teaches data science machine learning and statistics is also the AI educator at lightning AI, and the member of the
+Board of Directors for the Society for Scientific Advancement.
+Prior to this.
+He was an assistant professor at the University of North Carolina at Chapel Hill, where he developed statistics and visualization methods for high throughput sequencing technologies.
+Please give him a round of applause.
+This is my quest to stack list, and it's gonna be clearly explained.
+Right.
+Hey, can the people online can they hear how do we can we, we know that they're hearing things.
+Yes, affirmative. Hooray. Okay.
+So, um, note this seminar will probably be a little different from what you're used to.
+The big difference is that I'm going to read everything right off the slide, like I'm doing right now.
+I do this for two reasons.
+One, often for people that speak English as a second language, reading can be easier than listening.
+So if you're familiar with a sing along. Think of this as a readable.
+And also generally speaking, when I script every single word, the stuff that comes out of my mouth makes more sense.
+In other words, I'm just not good at telling a story without writing it down.
+Also, and I don't actually know if this is true, it may be purely anecdotal, but I've read a few places online which is very reputable, because it's just online, that if you read, and you hear the exact same things at the same time, it helps with retention.
+I don't know that actually true it's just something I saw on the internet, and I believe it.
+I want to see some data.
+I'd like to believe it. Okay, so with that said, let's get started. All right. If you don't already know, my name is Josh Starmer and I run a YouTube channel called StatQuest.
+I'll tell you more about this picture later.
+Every day, people around the world watch StatQuest to learn statistics, machine learning, and other data science subjects.
+Okay, more importantly, people say StatQuest helped them win data science competitions, pass exams, graduate, and get jobs and promotions. Hooray!
+So far, no one has told me that StatQuest helped them get married, but maybe one day it'll happen.
+That'd be cool, right? Who knows?
+People watch StatQuest because it makes complicated sounding things easy to understand.
+And here's some nice comments that people said about me and my channel.
+They said, awesome!
+Anyway, believe it or not, creating a YouTube channel was never the plan.
+Instead, when I was in high school, I wanted to become a classical cello player.
+And that's a picture of me in high school with my string quartet.
+I got the cello, obviously. That's me again, back in the day.
+I used to dream about playing the Elgar cello concerto like Jacqueline Dupre.
+If you're not familiar with the Elgar cello concerto, I'd highly recommend checking it out. It's awesome.
+And she played it great.
+Anyways, I ended up going to Oberlin, which is a school up in Ohio. It's a tiny school.
+But they have a music conservatory, so I got a degree in music from them.
+So I got a Bachelor in Music Composition.
+And just to be safe, my parents made me.
+I got a Bachelor of Arts in Computer Science.
+So I ended up with two possible career paths.
+And this is one of those things where I hate to say that my parents were right, but they were.
+It's embarrassing.
+When I was 19 years old, I was so certain. I had it all figured out.
+Okay, anyways, on the one hand, I could potentially become a professional orchestral musician.
+Or I could become a professional coder.
+On the surface, being a musician seemed glamorous.
+You get to wear fancy clothes. Look at me now.
+You spend time with fancy people.
+But it's fundamentally boring.
+At least to me. And here's why.
+Beethoven wrote his Fifth Symphony in 1808, over 200 years ago, and it has not changed much since.
+Don't get me wrong, Beethoven's Fifth Symphony is awesome.
+But playing it every year for the rest of my life might get tedious.
+In contrast, being a coder seemed like the exact opposite of glamorous.
+You get to wear, these aren't jeans, but you get the idea, and t-shirts.
+Fancy people tended to avoid coders. We were nerds.
+Fundamentally exciting, though. What? Coding? What? What are you talking about?
+At least to me. I thought coding was fundamentally exciting.
+Why? Because languages, frameworks, problems, everything's always changing.
+There's always something new to learn. And I love learning.
+I love learning new things.
+Okay, now, despite the fact that I actually like to dress up from time to time,
+and I think it's really cool that I once talked to Yo-Yo Ma, who's a super famous cello player, and I talked to him in person,
+and thus the superficial things about being an orchestral musician had some appeal.
+I've never played orchestral with rock and roll. I was in a touring rock band.
+I used to play the 40-watt back in the day. I've done the whole rock thing as well, okay?
+And this applies. Beethoven's Fifth, obviously great, but if you're in a rock band and you have a hit song,
+you have to play that hit song for the rest of your life until you die.
+It gets boring. I mean, I know it's not supposed to because it looks romantic and awesome,
+but after like 500 nights every night for the rest of your life, you're like, ah.
+Anyways, it applies. Okay, so I focused on the fundamental difference between being an orchestral slash rock and roll musician and a coder.
+Now, I had a few opportunities to talk with professional orchestral musicians, and they were a pretty sad group,
+and this is the same with the rock people. They were all burned out, and they'd lost their passion for music.
+Just as I expected, playing Beethoven's Fifth Symphony every year for your whole life gets boring.
+So this thing about music being fundamentally boring was something I'd seen and experienced firsthand in real life.
+So I ultimately picked coding over being a musician because I wanted a job that would always be exciting, at least to me.
+Bam? Not yet.
+Although I came to the conclusion that being a coder was fundamentally exciting, it was also fundamentally scary.
+And it's scary for the exact same reasons that it seemed exciting.
+In computing, everything changes all the time.
+What that means is that a lot of the skills that I learned in college would be obsolete in a few years.
+People no longer program in Perl. I'm a great Perl programmer.
+That skill is not very useful anymore.
+And at the same time, my skills became obsolete.
+New people would graduate and enter the job market having mastered the latest, greatest new skills.
+At the same time, I was like, I know Perl. They're all like, well, I know Python.
+And I'm like, I got to learn Python.
+So I imagine the life of a coder as being a life of always playing catch-up.
+Python's awesome. It'll go away.
+You know, when I was a kid, everyone was doing things in C.
+C's still around, but it's not hot like it was back in the 80s.
+And Python is hot now. It won't be hot.
+We're not going to have to do it. Things are going to change.
+You just have to know it. And whatever you're doing right now, if it's in tech, you won't be doing it in five to ten years.
+You'll be doing something different. Okay.
+So I imagine I'd always be playing catch up with younger people that had just learned the latest skills.
+That's when I decided I needed to learn statistics.
+At Beethoven's Fifth Symphony, the T-test that we use in statistics has not changed much in a long time.
+So in some sense, T-tests will get boring sooner or later.
+But with big data, I can combine T-tests with computing to keep things interesting.
+So with statistics, I thought I would get the best of both worlds.
+Something that doesn't change every three years combines with something that does.
+And that's bioinformatics, right? You guys are in bioinformatics.
+So you're in the sweet spot. Bam.
+Okay. Anyways, I used to work in a lab helping these guys with their statistics.
+And although I was doing all the math, I wanted them to understand what I was doing so that I could speak,
+so that they could speak confidently and correctly about their results at conferences.
+So I started to give little presentations on statistics for the lab every Friday morning.
+But this was an academic lab and new people were coming and going all the time.
+So I thought it might be better to put the presentations on YouTube.
+Putting the presentations on YouTube solved two problems.
+One, it spared me from having to give the same lecture every three to six months.
+So it's a time saver for me.
+And two, maybe even better and more important, it allowed people to get the information when they needed it,
+rather than when I had time to teach it.
+So I can teach R-squared, but they may not need to know R-squared for another six months or a year or who knows when they're going to need to know.
+But when it's on YouTube, it's there when they need it. And they don't have to call me up in the middle of the night and go,
+Hey, Starmer, what's R-squared again? I can't remember. You talked to me like a year ago.
+Just watch the video. Go back to bed.
+Okay. So now let's talk about some of the things that have helped my YouTube channel be successful.
+So I've got these rules. Rule number one is focus on the main ideas.
+So imagine we wanted to teach someone how to drive a car.
+Should we start by teaching them about fuel injection?
+Or should we start by describing the master cylinder?
+And what about the head gasket?
+Now, even though fuel injection, master cylinders, and head gaskets are critical parts of cars, they are not the main idea.
+In other words, we don't need to know about these parts in order to drive.
+In fact, even though I bet most of the people in the seminar know how to drive, I'd be surprised if you knew about these parts.
+Now, if I wanted to teach someone how to drive, I would focus on the main ideas.
+I would start by teaching them about the brake pedal so that they can stop the car.
+Stopping the car is the most important thing to teach first so that we can avoid hurting other people.
+Then I would teach about the steering wheel so that they can turn the car.
+The steering wheel is the second most important thing because we can use it to avoid hurting people.
+Again, we don't want to, you know, have a tragedy while we're learning how to drive.
+Lastly, I would teach them about the gas pedal so that we can finally move the car.
+The brake and gas pedals and the steering wheel are the main ideas of driving because you need all three to drive, but you don't need anything else.
+Knowing about the brake and gas pedals and the steering wheel may not make someone a great driver or a very knowledgeable driver, but at least they know enough to practice and they can easily learn more.
+Similarly, when I want to teach someone about a neural network, I would not start with some complicated looking equation.
+Even though understanding this equation takes a lot of work and makes me all proud of myself, it's not the main idea of neural networks and it never will be.
+Instead, all this is is a compact notation for describing what's going on. That's all it is. It's very different from the main idea.
+It's important to never confuse a compact notation for the actual main ideas.
+So instead of a complicated equation, I would start out with a super simple data set that showed whether or not different drug dosages were effective against a virus.
+The low and high dosages were not effective, but the medium dosages were.
+Then I would show that fitting a straight line to that data isn't very helpful.
+Because no matter how we rotate this line, it can only be close to two of the three clusters of points.
+So what we really need is to fit a squiggle to the data.
+And the main idea behind neural networks is that no matter how fancy they look or sound, all they do is fit squiggles to data.
+Now that we understand the main idea behind neural networks, we can dive into the details.
+Like these nonlinear functions are called activation functions.
+And because the activation functions are between the input and the output, we can say that the activation functions are in a hidden layer.
+And there's lots of other details, but we'll save them for later, because right now we're focusing on the main idea.
+And the main idea of neural networks is that they fit squiggles to your data.
+So this is rule number one, and it's the most important rule of all.
+It seems simple, but it's easy to be distracted by things that are not the main idea.
+For example, when we were talking about cars, we were talking about the master cylinder and fuel injection and things like that.
+If you watch a car commercial, if you're watching TV, they're not telling you, like, our car has a brake pedal and a steering wheel and a gas pedal.
+No, they're talking about, we've got this kind of fancy fuel injection.
+They're talking about all these things that are not the main idea.
+So it's easy to get distracted and think, oh, there's other things that are really important, because I was watching TV and all they talked about was how important fuel injection was.
+And that's not the main idea.
+So it's hard to focus on the main idea, especially when there's a lot of hype, like there is around neural networks, and there's tons of hype on neural networks.
+Okay.
+So rule number two is know and have empathy for your audience.
+Everyone has different experiences, backgrounds, and perspectives, and it is important to keep this in mind when explaining anything.
+For example, if I'm going to teach someone how to drive, and they know how to ride a bike,
+then I'll explain how to drive in terms of how to ride a bike.
+And the handlebar is the steering wheel.
+And the pedals are the gas, etc.
+In contrast, if they knew how to ride a horse, then I'd explain how to drive in terms of how to ride a horse, which would be very hard because I don't know how to ride a horse, but I would try hard because I've seen it in movies.
+And I'd say, it's kind of like getting on a horse, I guess.
+Okay, so giddy up.
+And if someone had piloted a boat before, then I would explain how to drive in terms of how to pilot a boat, and I do have a funny boat story, and I'll save that for bowling, okay?
+So come bowling later.
+Okay, anchors away.
+Okay, when I make my videos, I specifically think of my old co-workers in Terry Magnuson's lab at UNC.
+By making videos that communicated statistics to a bunch of geneticists, I ended up with videos that communicated statistics to people all over the world.
+And this is another thing, you guys are bioinformatics people, right?
+Yes, okay. So that means you have to talk to biologists, you have to talk to statistics people, you've got to talk to all these different people who have different backgrounds and different frameworks, and you have to be like chameleons in a way, or translators.
+Because when you're talking to the statistics person, you've got to talk to them one way, and when you talk to the biologists, you've got to talk to them in another way.
+So you always have to kind of know who you're talking to, and if you mix them up, and you talk to the biologists the way you talk to a statistician, they'll punch you in the face.
+You don't want that to happen, right?
+So it's good to know who you're talking to.
+And so I specifically think of my old co-workers at UNC. And in fact, a week from today, I'm actually presenting for this old group of co-workers, my latest video to see if I can still convince them or teach them how things work.
+And the goal is for them not to fall asleep while I'm talking.
+And there's this one guy, he's not in that picture, his name's Dom, and he is a tough one.
+So I've got my work cut out for me.
+So lastly, when you don't know your audience, try your best to explain in a way that anyone could relate to, and that's tough.
+And try to anticipate questions from people that have different backgrounds and experiences, and that's hard to do too.
+But one way to explain things so that anyone can relate to the subject, and helps anticipate questions, is to use pictures.
+So that leads us to rule number three, which is use pictures.
+A lot of people are visual learners.
+If you're not a visual learner, and it's easier to look at this equation than it is to look at this graph, then you need to make sure you understand rule number two, have empathy for your audience.
+Because that's another punch in the nose you got to be watching out for.
+These people are tough. Okay, regardless of whether or not you're a visual learner, visual cues often make things easier to remember.
+Okay, here's an example of some unvisual directions to the grocery store.
+Go straight ahead 731 meters.
+Turn pi divided by two radians.
+Go straight for 1196 meters.
+Turn three pi divided by two radians.
+And then go straight for 52 meters.
+Bam.
+Okay, you guys ready.
+There's a pop quiz.
+No one thought there was going to be a quiz. Okay. Can anyone remember the first step in the directions to the grocery store.
+Are you kidding me.
+We have a winner. Okay.
+Did anyone else know that.
+Okay.
+And why right.
+Yeah.
+Okay, this may be precise and accurate.
+But for some people, and I'm not going to name names, but I consider myself a member of this group.
+It's hard to remember.
+Here's an example of visual directions to the grocery store.
+Go straight to get to the gas station.
+Turn left.
+Go straight to get to the playground.
+Turn right.
+Go straight to get to the grocery store.
+Bam.
+Okay, to summarize this rule.
+We almost always have a true choice between not using pictures to explain something.
+And using pictures to explain something.
+Pictures are one easy to relate to.
+We have a lot of questions.
+And we often help people answer their own questions.
+For example, we may not have anticipated that they don't actually know what grocery store they were just saying, these are directions to the grocery store.
+And they're like, what kind of grocery store is it.
+Well, it's a Whole Foods.
+You can tell just by looking at the picture.
+Or you could say, go straight to the gas station.
+They're like, what gas station is it.
+It looks like it's a BP station.
+And you can tell just by looking at the picture.
+You can tell just by looking at the picture.
+Without having to do any extra work.
+That's a bam.
+And relatively easy to remember for people like me.
+Not everybody.
+Okay, bam.
+Rules four and five.
+Repetition is helpful and do the math.
+This step is going to take a long time to get through.
+Because we're going to do lots of repetition.
+And we're going to do lots of math.
+It's just going to be hard.
+Okay.
+So no matter how simple the equation, plugging in a few numbers makes it way easier to understand and explain.
+And doing this more than once makes it way easier to remember.
+However, complicated looking things.
+Plugging in the numbers is crucial and can provide deeper and more memorable insights.
+Okay.
+So let's take an example.
+Let's plug some data into this neural network.
+However, first, let's remember the main idea.
+Neural networks fit squiggles to your data.
+So the goal is to figure out how this fits a squiggle to the data.
+Okay.
+So with that said, to keep the math simple, let's assume dosages go from zero for low to one for high.
+The first thing we do is plug the lowest dosage of zero into the neural network.
+Now to get from the input node to the top node in the hidden layer.
+This connection multiplies the dosage by negative 34.4.
+And then adds 2.14.
+And the result is an x-axis coordinate for the activation function.
+These values come from fitting the neural network to data with a method called back propagation.
+And that method is beyond the scope of this seminar.
+We'd have to sit here for another hour.
+And we don't want to do that because we haven't had lunch yet.
+But if you're interested, there's a video on it.
+You can check out the quest.
+But for now, you guys are familiar with linear regression, right?
+And you have like these slope and intercept.
+And you have to find the optimal values for those.
+And you do that by fitting, you know, you can do it iteratively.
+Or you can do it directly with the derivative.
+So imagine these values in these boxes are like these.
+These are the things that we solve for when you fit that line to the data.
+We got our y-axis intercept.
+And we got our slope.
+And it's interesting that we also, you know, we've got a number we multiply the input.
+And we've got a number we add.
+And here we're multiplying the input.
+And we're adding.
+Okay.
+So we're actually doing the same thing that this equation does, just with different numbers, right?
+And earlier, behind the scenes, before you guys were watching, I fit this to our data.
+It's because, and the reason why we have backpropagation, I'm just going to skip to this.
+The reason why we have backpropagation is because we can, there's a closed form solution for just linear regression.
+And you can solve for directly.
+Unfortunately, for linear, for neural networks, there's no closed form solution.
+So you've got to, we've got to do something that is iterative and approximates an optimal solution.
+So, okay.
+We're good that these are just values that we've just imagined we're solving.
+We're just plugging into numbers like this.
+And we're calculating y-axis coordinates, right?
+No big deal.
+Bam.
+Yes.
+Okay.
+Okay.
+Now, given that we have already estimated these parameters, the lowest dosage zero is multiplied by negative 34.4.
+And then we add 2.14.
+And that, and to get 2.14 as the x-axis coordinate for the activation function.
+To get the corresponding y-axis value, we plug 2.14 into the activation function, which in this case is the soft plus function.
+Note, if we had chosen the sigmoid curve for the activation function, then we would just plug 2.14 into the equation for the sigmoid curve.
+It's no big deal.
+But since we're using the soft plus for the activation function, we plug 2.14 into the soft plus equation.
+And the log of 1 plus e raised to 2.14 is 2.25.
+And just to be clear, in statistics, machine learning, and most programming languages, the log function implies the natural log or the log base e.
+So if you're doing this math at home, that's why we got 2.25.
+Anyway, the y-axis coordinate for the activation function is 2.25.
+And it's right there, boom, right on the curve.
+Right.
+Okay, so let's extend this y-axis up a little bit.
+And put a blue dot at 2.25 for when the dosage equals zero.
+Now, if we increase the dosage a little bit and plug in 0.1 into the input, the x-axis coordinate for the activation function is negative 1.3.
+And the corresponding y-axis coordinate is 0.24.
+So let's put a blue dot at 0.24 for when dosage equals 0.1.
+And if we continue to increase the dosage values all the way to one, the maximum dosage, we get this blue curve.
+Bam.
+Note, before we move on, I want to point out that the full range of dosage values from 0 to 1 corresponds to this relatively narrow range of values from the activation function.
+In other words, when we plug dosage values from 0 to 1 into the neural network, and then multiply them by negative 34.4 and add 2.14,
+then we only get x-axis coordinates that are within the red box. Does that make sense?
+That any number between 0 and 1 is only going to give us a number in this range. It's not going to give us a number way out here, just in this little window.
+And thus, only the corresponding y-axis values, only these things up here
+in the red box are used to make this new curve. And we take this, basically we're taking this and we're flipping it because we've got a negative sign.
+Flip it and bam.
+Cool.
+Now we scale the y-axis values on the blue curve by negative 1.3.
+For example, when dosage equals 0, the current y-axis coordinate for the blue curve is 2.25.
+So that's that point on the curve and that's that blue point over there. Now we're going to multiply it by that.
+So we multiply 2.25 by negative 1.3 and we get negative 2.93.
+Negative 2.93 corresponds to this position way down on the y-axis.
+Likewise, we multiply all the other y-axis coordinates on the blue curve by negative 1.3.
+And we end up with this new blue curve.
+Bam.
+Okay, now let's focus on the connection from the input node to the bottom node in the hidden layer.
+However, this time we multiply the dosage by negative 2.52 instead of negative 34.4.
+And we add 1.29 instead of 2.14 to get the x-axis coordinate for the activation function.
+Now if we plug in the lowest dosage 0 into the neural network, the x-axis coordinate for the activation function is 1.29 right there.
+And now we plug 1.29 into the activation function to get the corresponding y-axis value.
+And we get 1.53 right there.
+And that corresponds to this yellow dot. So that's 1.53 up on the y-axis.
+Now we just plug in dosage values from 0 to 1 to get the corresponding y-axis values.
+And we get this orange curve.
+Note, just like before, I want to point out that the full range of dosage values from 0 to 1,
+in this case, it only corresponds to this narrow range of values, right?
+When we plug in values from 0 to 1 here, we only get x-axis coordinates in this little sliver, and we don't get values out here and out here.
+So we're actually cutting a smaller slice of the activation function than we did before.
+I might have gotten ahead of myself. So in other words, when we plug in dosage values from 0 to 1 in the neural network,
+we only get x-axis coordinates that are within the red box.
+And thus, only the corresponding y-axis values in the red box are used to make this new orange curve.
+So we see that fitting a neural network to data gives us different parameter estimates on the connections.
+And that results in each node in the hidden layer using different portions of the activation functions to create these new and exciting shapes.
+Do you guys have that? Great. OK, double that then.
+OK, OK. Now, just like before, we scale the y-axis coordinates on the orange curve.
+Only this time, we scale by a positive number, 2.28.
+Boop, boop, boop, boop, boop, boop. And that gives us this new orange curve.
+Now the neural network tells us to add the y-axis coordinates from the blue curve to the orange curve.
+For example, when dosage equals 0, the y-axis coordinate on the blue curve is negative 9.2, excuse me, negative 2.93.
+And the y-axis coordinate on the orange curve is 3.49.
+And we add negative 2.93 to 3.49, we get 0.56, that green dot.
+Likewise, we just keep adding the y-axis coordinates from the blue curve to the orange curve.
+And that gives us this green squiggle.
+Then finally, we subtract 0.58 from the y-axis values on the green squiggle.
+Boop. And we have this green squiggle that fits the data.
+Triple bam.
+To summarize, we started out with two identical activation functions.
+But then we plugged in some values.
+And we saw how using multiplication and addition slices, flips, and stretches the activation functions into new and exciting shapes.
+Which are then added together to get a squiggle that is entirely new.
+Bam. And the squiggle is then shifted to fit the data.
+Now remember the rules we just illustrated here.
+Repetition is helpful and do the math.
+By plugging numbers into the neural network and doing the math, we have a better understanding of how this neural network fits the squiggle to the data.
+Doing the math usually requires using relatively simple examples.
+In this case, I created the simplest neural network that could illustrate the main idea.
+That we're fitting a squiggle to data instead of a straight line.
+For me, one of the hardest parts of my job is coming up with relatively simple examples.
+If you look on the internet for like neural network examples, everyone uses this character recognition example.
+Like how to translate numbers into, like, predict like, oh, that's a number three or something like character recognition.
+Which is cool. Neural networks can do that, and that's amazing, right?
+But the neural network required to do that is so complicated that you can't visualize what the shape of the data is and how it's fitting a squiggle to that data.
+Right? Because ultimately, we've just got pixels, you know, and intensities.
+And it ends up just being a big blob of data, of points, basically, in a high dimensional space that's too high dimensional for us to actually look at.
+So we can't, even if we wanted to, we can't draw that picture.
+So I had to come up with like a much, much simpler thing, because I wanted to see it.
+Because it wasn't enough just to believe that it worked. I had to see it work.
+And I had to understand why. And by doing that, I was able to see this insight.
+That we're taking these little chunks of this thing, these activation functions, and we're twisting them, and we're flipping them, and we're stretching them.
+And we add these different shapes together. And it's that adding of two weird looking shapes that gives us this squiggle.
+And it's also interesting, if you notice that, it doesn't really fit. I mean, it fits the data perfectly.
+But outside, in between the data, it doesn't fit it perfectly.
+That's an interesting insight we would not have gotten if we couldn't see how this is working.
+This is an interesting thing. Neural networks can fit the points perfectly, and it does.
+But in between, the neural network can do what it wants. And we didn't. We wouldn't have known that.
+We wouldn't have been able to see it if we couldn't draw it.
+And so that was a big insight for me when I was teaching myself neural networks.
+I was like, oh. So that means in between the data that the neural networks have seen, the output could be unpredictable.
+Because it does not extrapolate the way you and me would do it.
+The way you and I would do this, we would fit a nice bell-shaped curve to this data, like a normal curve or something.
+And it'd be nice and awesome. But the neural network doesn't care about normal curves.
+Neural network says, these are the data you gave me, and I'm going to fit them.
+And that's all I'm going to worry about. And everything in between, who cares?
+And so I think about that when people talk about getting neural networks to drive cars.
+Anyways, once I have a relatively simple example, everything else becomes relatively easy.
+OK, rule number six is always start with data.
+And you may remember that when we started to talk about neural networks, we started out with this super simple data set.
+It showed that a straight line would not fit the data well.
+So we needed to fit a squiggle to the data. Knowing that we need to fit a squiggle to the data gives us a context from which we can understand neural networks.
+Right. Why are we learning this thing? What's the big deal? Who cares?
+Well, we're like, well, we've got problems. We've got data shapes that data can make that we may, you know, we may not have a good function that can fit.
+And especially if that function or that data is really high dimensional and we can't see it, we we can't say that we can just fit a normal curve to that.
+We have to come up with something that can automatically fit a shape to data. And that's what neural networks do.
+They look at data and they go, I don't care if we can look at it or not. I'm going to fit a shape to you.
+OK, in other words. We know that the goal of this fancy looking thing is to fit a squiggle to the data.
+And in general, knowing what the problem is and why other methods fail to solve it helps us understand why we're doing all this math.
+OK, rule number seven, limit to the presentation of three main ideas, which seems contradictory, but I didn't say these were main ideas.
+I said these were rules. The difference. Anyways, for neural networks, main idea number one is that we start with identical nonlinear activation functions.
+Nonlinear is key. I didn't I didn't harp on that. But if they were just linear, if this was just a straight line, then we'd add them together.
+We just get another straight line. It's the fact that there's a curve or a bend or something weird going on that allows us to create more complicated shapes.
+Main idea number two is the activation functions are sliced, flipped and stretched into new and exciting shapes.
+And we say double bam. And the main idea, number three, is that the curves are added together in the end.
+So we have the little pieces of curve and we and we add them together to make a squiggle that is entirely new.
+Triple bam. Note, if you came to this seminar, not understanding how neural networks work is a good chance that you now know.
+And you came to that understanding by looking at pictures and doing some basic math, just multiplication and addition with a little like log and exponential here, but we're not going to talk about that.
+OK, and we completely ignored this equation.
+Again, this is because the equation is not the main idea.
+All it is is a compact notation.
+I mentioned this because I did a little Twitter poll a few weeks ago.
+Well, I guess a few months ago. OK. In order to understand neural networks, you need to first understand linear algebra.
+Of the almost 4000 people that responded, 74 percent agreed that you needed to understand linear algebra before you can understand neural networks.
+In other words, 74 percent think you need to understand this equation.
+Before it's possible to understand this diagram of a neural network and how it makes predictions.
+However, in my opinion, it is the exact opposite.
+Instead, we need to start with this diagram and learn how it makes predictions first.
+Before we learn about this equation.
+In summary, I believe that StatQuest, my YouTube channel is successful because rule number one, I do the I try as hard as I can to focus on the main ideas.
+I don't always succeed, but I try. Rule number two, I have empathy for the audience.
+Again, I do not always succeed, but I try.
+And I know and my secret to that is I specifically have a handful of people that are my audience.
+You know, it's my former lab mates. I try to talk to them. Three, I use pictures.
+Those are helpful for some, not all. Rules number four and five, repetition is helpful and do the math.
+And rule number six, always start with data. And rule number seven, limit the presentation of three main ideas.
+I've noticed that if I try to do more than three BAMs in a presentation, it's better just to split it into two presentations.
+Too much. You know, it's like, oh, you go to for me.
+I remember when I used to have to go to seminars and they it was like a I don't know how like an octave BAM presentation.
+And I get to like the third or fourth BAM and I'd be like they weren't saying the BAM.
+But, you know, there were there were all these things that you could tell they had so much they wanted to convey.
+But I got saturated and I got frustrated because once I get saturated with information, I can't take more on.
+I can only learn my brain can only learn so much in so much time.
+And and I would just frustrate me when they were like, well, I'm just going to keep going.
+And I'm like, but I'm tired. So I say limit the presentation to three main ideas.
+And then I say the end. And I finished a little bit early so we can have questions or.
+We need to leave this room by 1230 so we can have a short three session.
+And if you are going to meet George later, I would suggest you save that for later.
+And I see that. Yeah. Thanks for doing that.
+So I'm just wondering if you have any thoughts on how to address people with sort of some disabilities like hearing and visual.
+Yeah. So. In theory.
+So I have there's a couple of issues that I come up against with colorblindness.
+I try to use a lot of colors, as you saw, because to me, colors help differentiate things.
+But I'm very bad with my palette, my color palette. But there are tools you can use to check colorblindness.
+I need to use those. I don't do it enough.
+And there's also blind people blind people like so there's people that listen to my videos.
+And I don't do this perfectly.
+But when I do the script.
+I often will be like the script will be like, and the data point in the upper left hand corner, I tried to narrate everything so that blind people can even though it's all in their head.
+I try to narrate all the details so that they can just by hearing my voice they can learn what's going on. I try to do that.
+And you just have to be very aware that you can't just say there's data over there, you have to say there's a data and the way they're spread out means we can't fit a straight line to them.
+And if we do try to fit a straight line we can only fit it to three or they're in a triangle form so you have to think about that so yeah if you're specifically trying to communicate to disabilities, you have to keep all that stuff in mind and I try.
+I'm, I'm, I could do better.
+Okay, my question is, so you're doing the stack quest YouTube you're explaining a lot of different things to people, how do you decide what topics, you want to prioritize and how do you like make sure you don't run out of things to explain.
+Okay, yeah, that was a problem I had early on. Okay, so early on.
+I was really just doing this for my coworkers, and I just was whatever they were doing.
+I already talked to Chris about this earlier. So one thing that was cool about doing this for my coworkers, you know, it's all a couple problems they learned when they needed to learn and I taught when I wanted to basically, but, but it also meant that like my first
+video got nine views in a year.
+And that was success. Right, because I didn't make a video for the whole world. I made it just for my co workers, and I only had so many co workers, and they were watching my videos so it was a huge success.
+And so I just let them decide, because that that was my audience, and in a way they're still my audience but things are a little different in that.
+I know people post comments. Can you teach transformers Can you teach large language models, how's Jackie bt work, I get those questions.
+20 times a day.
+And so I started off like once I you know early on once I got past T tests and are squared linear regression, I was like, I don't know what I'm going to teach now, I was like, like, and so I actually, if you watch my early videos are like and if you have any
+ideas posted in the comments below. I don't do that anymore.
+I got a to do list that like goes it goes because the thing is is there's always, there's always new methods being created.
+And so there's always good stuff, but it's, but it's also sort of responding to the people around me, and it used to be that there were a lot of people with problems and so I teach them what they needed to know.
+And now it's the whole world is like hey, we don't understand large language models or how Jackie bt works, can you teach us.
+And so that and that keeps me plenty busy.
+But, yeah, just ask the people you want to teach.
+There was an online question. And where did it go. I'm going to open the chat.
+I got to hold on, I got to get the old main glasses.
+What does this say.
+Interesting modeling and machine learning.
+It seems like clinical physicians do not believe any data for modeling or machine.
+That's hilarious.
+So,
+is there modeling.
+It's just some.
+When I was a kid I used to build models like model planes, right, a model plane is not a real plane, it can't fly I can get on it.
+It's a, it's an approximation now, it's much smaller approximation.
+It has this general shape. And for the purposes of me being an eight year old kid. It was good enough. Right. It's all it solved the problem of me not having anything to do in the afternoon on a rainy day.
+So, that's a model right and what we end up with these days we end up with.
+Instead of like, you know, I'm a person and I'm a complicated thing.
+And with a complicated brain, I guess. And so we can create a model of that that's a simplification, it's not the same as my brain.
+It's a handful of equations. I mean you plug in inputs that might be simulating oral input.
+And we can say, well, let's see what's just on how's he going to respond to this sound. Let me run it through the equations and we go, and we predict that I'll say, Pam, when I hear that sound.
+That's a good prediction, because a good chance I will say that.
+So models are just basically anything that's simpler than the actual thing. And we use the simple things, the models, because the actual thing maybe maybe it's illegal or unethical to use the actual thing or maybe it's too complicated to use the actual thing.
+We don't have the computing power to use the actual thing. So we use a simplification. Models, there can be different types of models, some are statistical models and those give us sort of, it's like doing a statistical analysis, where we can have measures of variability.
+Right, you can say, not only will Josh say bam, but we're 63% confident he'll say bam, and otherwise he'll say double bam.
+Or something like that, right? We get measures of variation, and measures of variation are awesome, right, because it gives us a sense of what the range of applicability is and how much we can trust the models.
+And these clinicians, apparently, that don't trust the models, that may be something that they need to understand is how to interpret the output of a more statistical analysis that gives us a sense of the variability.
+Statistics is all about understanding and variation and using it to our advantage to make good decisions.
+But there's also, you know, neural networks and machine learning type models, which are less statistical in nature and just tend to give you yes or no answers without a whole lot of bounds on the variation.
+And those models can be very helpful and very good, but they're also sometimes difficult to interpret in terms of like, what's the variation on the output? How much faith can I put in it?
+And there's ways around that, I was talking to Chris about this earlier too, in that we can test our model once we've trained it, once we've estimated all these values on this data set, we can throw new data at it that we know whether or not it was effective.
+And we can see how well this model works with that data. And that would give us some sense of like, it works good for data that's like right close to the actual training data and it doesn't work so well for the in between.
+You know, that would give us some sense of understanding the range of applicability of that model. These are all very important things that we have to do. Maybe we don't do them all well enough or thoroughly enough.
+But it's, but it's stuff we can do. And so hopefully one day we'll teach the clinicians to have faith in science.
+So, this kind of follows my other question. So, you're explaining things to a lot of people, a lot of people are watching these videos and getting good information from them, which is great, but how do you know that you're prepared enough to explain a new concept
+and how do you make sure you've like taught yourself rigorously enough that you can explain to others and you feel confident that this is a good explanation that's going to help people?
+Yeah. So, yeah, that's, I could do a whole talk on that. But the gist is I read everything I can. And then what I do is I try to, I do the math by hand.
+And I also compare it to a real thing like when I did when I made this neural network, I created like a real neural network in like using a neural network framework and I trained it.
+And I made it work and I didn't know how it worked.
+So, I got these, I pulled out these values and I just did the math by hand and I made mistakes. And when I, and I had the thing printing out intermediate values and I had my intermediate math over here, and I could compare.
+And I drew this picture and I made sure that ultimately everything matched from zero to one, I always got it. And then I took that program and I,
+basically I tried a lot of programs that can validate that I've learned it correctly. I ended up writing this whole thing from scratch. And I ended up training it, I ended up writing my own back propagation algorithm to train it and I ended up with the same values.
+And, and so I was just like, okay, and then I and then I was like well let's generalize let's try something else let's try a different model, different input data and see if I can figure it out, and I was able to figure it out.
+And it was kind of funny in the end, it's kind of weird I got so good at these things where I could just look at the data I was trying to fit, and I could imagine what these values would be, and I could just come up with them off the top of my head.
+And I'd be like oh that's probably this probably this, and they would be pretty close to the optimized model.
+And I was like, I got this.
+The other thing I do is I do drafts, I test them on people. Good way to understand that you don't understand is when you start teaching people, and they ask you a question and they go and what about this and you're like, I don't know.
+That's a way, so I for this video, specifically, I tested it on like 10 different groups. There was like, like, it was on there was like COVID time. So it was like I was just zooming left and right there was like a group in Turkey they're like, teach about neural
+because I said, I can't do that yet but I can show you what I'm working on, and they were like okay we'll do that instead. And so we did that instead I said any questions and they would shoot me with tons of questions, and they would and I'd be like, I can answer
+some of those I can't answer all of them because I don't fully understand it yet.
+And I got to where I can answer everybody's questions and I was like, I got this.
+So it's a lot of work, especially because I'm not an expert. I'm, I'm, I'm a student. I have to learn this stuff from scratch, I didn't I wasn't born knowing this.
+I didn't, I never took a class on neural networks I never took a class on machine learning no one's ever taught this stuff to me. It's all been learned.
+I can make it work on my own corporate blah blah blah we have to go, I'm sorry but you get the idea right do lots of validation and lots of awesome convincing and I asked people questions.
+Okay, great.
+Thank you.
+Yeah.
+Oh, I feel like throughout the seminar I get colder and colder.
+Like, overcompensate. Yeah.
+I think, I think I'm generally more.
+Actually I think I have a four.
+I think that's my theory.
+Because I'm always really hot or really cold.
+Yeah.
+Yeah, never satisfied.
+Cool.
+Yeah.

@@ -1,0 +1,560 @@
+start	end	text
+0	13080	Yeah, okay.
+13080	17080	Yeah, yeah.
+17080	20080	Yeah.
+20080	22080	Yeah.
+22080	24080	Yeah.
+24080	29080	Yeah.
+29080	33080	That's really interesting. Yeah.
+33080	39080	Welcome to our seminar.
+39080	59080	Just summary is a data scientist, educator and musician is the founder and CEO of stat quest online educational platform that teaches data science machine learning and statistics is also the AI educator at lightning AI, and the member of the
+59080	64080	Board of Directors for the Society for Scientific Advancement.
+64080	66080	Prior to this.
+66080	78080	He was an assistant professor at the University of North Carolina at Chapel Hill, where he developed statistics and visualization methods for high throughput sequencing technologies.
+78080	86080	Please give him a round of applause.
+86080	94080	This is my quest to stack list, and it's gonna be clearly explained.
+94080	99080	Right.
+99080	105080	Hey, can the people online can they hear how do we can we, we know that they're hearing things.
+105080	110080	Yes, affirmative. Hooray. Okay.
+110080	117080	So, um, note this seminar will probably be a little different from what you're used to.
+117080	125080	The big difference is that I'm going to read everything right off the slide, like I'm doing right now.
+125080	127080	I do this for two reasons.
+127080	135080	One, often for people that speak English as a second language, reading can be easier than listening.
+135080	139080	So if you're familiar with a sing along. Think of this as a readable.
+139080	146080	And also generally speaking, when I script every single word, the stuff that comes out of my mouth makes more sense.
+146080	150080	In other words, I'm just not good at telling a story without writing it down.
+151080	171080	Also, and I don't actually know if this is true, it may be purely anecdotal, but I've read a few places online which is very reputable, because it's just online, that if you read, and you hear the exact same things at the same time, it helps with retention.
+171080	179080	I don't know that actually true it's just something I saw on the internet, and I believe it.
+179080	182080	I want to see some data.
+182080	195080	I'd like to believe it. Okay, so with that said, let's get started. All right. If you don't already know, my name is Josh Starmer and I run a YouTube channel called StatQuest.
+195080	197080	I'll tell you more about this picture later.
+197080	212080	Every day, people around the world watch StatQuest to learn statistics, machine learning, and other data science subjects.
+212080	229080	Okay, more importantly, people say StatQuest helped them win data science competitions, pass exams, graduate, and get jobs and promotions. Hooray!
+229080	236080	So far, no one has told me that StatQuest helped them get married, but maybe one day it'll happen.
+236080	239080	That'd be cool, right? Who knows?
+239080	245080	People watch StatQuest because it makes complicated sounding things easy to understand.
+245080	250080	And here's some nice comments that people said about me and my channel.
+250080	253080	They said, awesome!
+253080	259080	Anyway, believe it or not, creating a YouTube channel was never the plan.
+259080	264080	Instead, when I was in high school, I wanted to become a classical cello player.
+264080	267080	And that's a picture of me in high school with my string quartet.
+267080	273080	I got the cello, obviously. That's me again, back in the day.
+273080	278080	I used to dream about playing the Elgar cello concerto like Jacqueline Dupre.
+278080	285080	If you're not familiar with the Elgar cello concerto, I'd highly recommend checking it out. It's awesome.
+285080	286080	And she played it great.
+286080	292080	Anyways, I ended up going to Oberlin, which is a school up in Ohio. It's a tiny school.
+292080	298080	But they have a music conservatory, so I got a degree in music from them.
+298080	301080	So I got a Bachelor in Music Composition.
+301080	309080	And just to be safe, my parents made me.
+309080	313080	I got a Bachelor of Arts in Computer Science.
+314080	318080	So I ended up with two possible career paths.
+318080	322080	And this is one of those things where I hate to say that my parents were right, but they were.
+322080	324080	It's embarrassing.
+324080	328080	When I was 19 years old, I was so certain. I had it all figured out.
+328080	336080	Okay, anyways, on the one hand, I could potentially become a professional orchestral musician.
+336080	340080	Or I could become a professional coder.
+340080	345080	On the surface, being a musician seemed glamorous.
+345080	349080	You get to wear fancy clothes. Look at me now.
+349080	353080	You spend time with fancy people.
+353080	358080	But it's fundamentally boring.
+358080	361080	At least to me. And here's why.
+361080	370080	Beethoven wrote his Fifth Symphony in 1808, over 200 years ago, and it has not changed much since.
+370080	374080	Don't get me wrong, Beethoven's Fifth Symphony is awesome.
+374080	380080	But playing it every year for the rest of my life might get tedious.
+380080	387080	In contrast, being a coder seemed like the exact opposite of glamorous.
+387080	392080	You get to wear, these aren't jeans, but you get the idea, and t-shirts.
+392080	398080	Fancy people tended to avoid coders. We were nerds.
+398080	403080	Fundamentally exciting, though. What? Coding? What? What are you talking about?
+403080	407080	At least to me. I thought coding was fundamentally exciting.
+407080	411080	Why? Because languages, frameworks, problems, everything's always changing.
+411080	416080	There's always something new to learn. And I love learning.
+416080	423080	I love learning new things.
+423080	430080	Okay, now, despite the fact that I actually like to dress up from time to time,
+430080	437080	and I think it's really cool that I once talked to Yo-Yo Ma, who's a super famous cello player, and I talked to him in person,
+437080	443080	and thus the superficial things about being an orchestral musician had some appeal.
+443080	447080	I've never played orchestral with rock and roll. I was in a touring rock band.
+447080	452080	I used to play the 40-watt back in the day. I've done the whole rock thing as well, okay?
+452080	459080	And this applies. Beethoven's Fifth, obviously great, but if you're in a rock band and you have a hit song,
+459080	462080	you have to play that hit song for the rest of your life until you die.
+462080	467080	It gets boring. I mean, I know it's not supposed to because it looks romantic and awesome,
+467080	472080	but after like 500 nights every night for the rest of your life, you're like, ah.
+472080	481080	Anyways, it applies. Okay, so I focused on the fundamental difference between being an orchestral slash rock and roll musician and a coder.
+481080	488080	Now, I had a few opportunities to talk with professional orchestral musicians, and they were a pretty sad group,
+488080	495080	and this is the same with the rock people. They were all burned out, and they'd lost their passion for music.
+495080	503080	Just as I expected, playing Beethoven's Fifth Symphony every year for your whole life gets boring.
+503080	511080	So this thing about music being fundamentally boring was something I'd seen and experienced firsthand in real life.
+511080	521080	So I ultimately picked coding over being a musician because I wanted a job that would always be exciting, at least to me.
+521080	526080	Bam? Not yet.
+526080	539080	Although I came to the conclusion that being a coder was fundamentally exciting, it was also fundamentally scary.
+539080	544080	And it's scary for the exact same reasons that it seemed exciting.
+544080	549080	In computing, everything changes all the time.
+549080	554080	What that means is that a lot of the skills that I learned in college would be obsolete in a few years.
+554080	560080	People no longer program in Perl. I'm a great Perl programmer.
+560080	564080	That skill is not very useful anymore.
+564080	568080	And at the same time, my skills became obsolete.
+568080	575080	New people would graduate and enter the job market having mastered the latest, greatest new skills.
+575080	579080	At the same time, I was like, I know Perl. They're all like, well, I know Python.
+579080	584080	And I'm like, I got to learn Python.
+584080	589080	So I imagine the life of a coder as being a life of always playing catch-up.
+589080	592080	Python's awesome. It'll go away.
+592080	595080	You know, when I was a kid, everyone was doing things in C.
+595080	600080	C's still around, but it's not hot like it was back in the 80s.
+600080	603080	And Python is hot now. It won't be hot.
+603080	608080	We're not going to have to do it. Things are going to change.
+608080	614080	You just have to know it. And whatever you're doing right now, if it's in tech, you won't be doing it in five to ten years.
+614080	617080	You'll be doing something different. Okay.
+617080	624080	So I imagine I'd always be playing catch up with younger people that had just learned the latest skills.
+624080	629080	That's when I decided I needed to learn statistics.
+629080	638080	At Beethoven's Fifth Symphony, the T-test that we use in statistics has not changed much in a long time.
+638080	642080	So in some sense, T-tests will get boring sooner or later.
+642080	648080	But with big data, I can combine T-tests with computing to keep things interesting.
+648080	652080	So with statistics, I thought I would get the best of both worlds.
+652080	657080	Something that doesn't change every three years combines with something that does.
+657080	661080	And that's bioinformatics, right? You guys are in bioinformatics.
+661080	666080	So you're in the sweet spot. Bam.
+666080	671080	Okay. Anyways, I used to work in a lab helping these guys with their statistics.
+671080	676080	And although I was doing all the math, I wanted them to understand what I was doing so that I could speak,
+677080	684080	so that they could speak confidently and correctly about their results at conferences.
+684080	693080	So I started to give little presentations on statistics for the lab every Friday morning.
+693080	698080	But this was an academic lab and new people were coming and going all the time.
+698080	705080	So I thought it might be better to put the presentations on YouTube.
+705080	710080	Putting the presentations on YouTube solved two problems.
+710080	715080	One, it spared me from having to give the same lecture every three to six months.
+715080	719080	So it's a time saver for me.
+719080	726080	And two, maybe even better and more important, it allowed people to get the information when they needed it,
+726080	729080	rather than when I had time to teach it.
+729080	737080	So I can teach R-squared, but they may not need to know R-squared for another six months or a year or who knows when they're going to need to know.
+737080	741080	But when it's on YouTube, it's there when they need it. And they don't have to call me up in the middle of the night and go,
+741080	746080	Hey, Starmer, what's R-squared again? I can't remember. You talked to me like a year ago.
+746080	750080	Just watch the video. Go back to bed.
+750080	757080	Okay. So now let's talk about some of the things that have helped my YouTube channel be successful.
+757080	762080	So I've got these rules. Rule number one is focus on the main ideas.
+762080	767080	So imagine we wanted to teach someone how to drive a car.
+767080	772080	Should we start by teaching them about fuel injection?
+772080	776080	Or should we start by describing the master cylinder?
+776080	780080	And what about the head gasket?
+780080	792080	Now, even though fuel injection, master cylinders, and head gaskets are critical parts of cars, they are not the main idea.
+792080	798080	In other words, we don't need to know about these parts in order to drive.
+798080	807080	In fact, even though I bet most of the people in the seminar know how to drive, I'd be surprised if you knew about these parts.
+807080	813080	Now, if I wanted to teach someone how to drive, I would focus on the main ideas.
+813080	818080	I would start by teaching them about the brake pedal so that they can stop the car.
+818080	828080	Stopping the car is the most important thing to teach first so that we can avoid hurting other people.
+828080	832080	Then I would teach about the steering wheel so that they can turn the car.
+832080	836080	The steering wheel is the second most important thing because we can use it to avoid hurting people.
+836080	841080	Again, we don't want to, you know, have a tragedy while we're learning how to drive.
+841080	847080	Lastly, I would teach them about the gas pedal so that we can finally move the car.
+847080	859080	The brake and gas pedals and the steering wheel are the main ideas of driving because you need all three to drive, but you don't need anything else.
+859080	877080	Knowing about the brake and gas pedals and the steering wheel may not make someone a great driver or a very knowledgeable driver, but at least they know enough to practice and they can easily learn more.
+877080	889080	Similarly, when I want to teach someone about a neural network, I would not start with some complicated looking equation.
+889080	901080	Even though understanding this equation takes a lot of work and makes me all proud of myself, it's not the main idea of neural networks and it never will be.
+901080	912080	Instead, all this is is a compact notation for describing what's going on. That's all it is. It's very different from the main idea.
+912080	920080	It's important to never confuse a compact notation for the actual main ideas.
+920080	932080	So instead of a complicated equation, I would start out with a super simple data set that showed whether or not different drug dosages were effective against a virus.
+932080	941080	The low and high dosages were not effective, but the medium dosages were.
+941080	947080	Then I would show that fitting a straight line to that data isn't very helpful.
+947080	959080	Because no matter how we rotate this line, it can only be close to two of the three clusters of points.
+959080	964080	So what we really need is to fit a squiggle to the data.
+964080	978080	And the main idea behind neural networks is that no matter how fancy they look or sound, all they do is fit squiggles to data.
+978080	985080	Now that we understand the main idea behind neural networks, we can dive into the details.
+985080	990080	Like these nonlinear functions are called activation functions.
+990080	1001080	And because the activation functions are between the input and the output, we can say that the activation functions are in a hidden layer.
+1001080	1010080	And there's lots of other details, but we'll save them for later, because right now we're focusing on the main idea.
+1010080	1016080	And the main idea of neural networks is that they fit squiggles to your data.
+1016080	1020080	So this is rule number one, and it's the most important rule of all.
+1020080	1026080	It seems simple, but it's easy to be distracted by things that are not the main idea.
+1027080	1037080	For example, when we were talking about cars, we were talking about the master cylinder and fuel injection and things like that.
+1037080	1046080	If you watch a car commercial, if you're watching TV, they're not telling you, like, our car has a brake pedal and a steering wheel and a gas pedal.
+1046080	1050080	No, they're talking about, we've got this kind of fancy fuel injection.
+1050080	1054080	They're talking about all these things that are not the main idea.
+1054080	1064080	So it's easy to get distracted and think, oh, there's other things that are really important, because I was watching TV and all they talked about was how important fuel injection was.
+1064080	1071080	And that's not the main idea.
+1071080	1082080	So it's hard to focus on the main idea, especially when there's a lot of hype, like there is around neural networks, and there's tons of hype on neural networks.
+1082080	1084080	Okay.
+1084080	1090080	So rule number two is know and have empathy for your audience.
+1090080	1101080	Everyone has different experiences, backgrounds, and perspectives, and it is important to keep this in mind when explaining anything.
+1101080	1108080	For example, if I'm going to teach someone how to drive, and they know how to ride a bike,
+1108080	1114080	then I'll explain how to drive in terms of how to ride a bike.
+1114080	1118080	And the handlebar is the steering wheel.
+1118080	1123080	And the pedals are the gas, etc.
+1123080	1135080	In contrast, if they knew how to ride a horse, then I'd explain how to drive in terms of how to ride a horse, which would be very hard because I don't know how to ride a horse, but I would try hard because I've seen it in movies.
+1135080	1138080	And I'd say, it's kind of like getting on a horse, I guess.
+1138080	1140080	Okay, so giddy up.
+1140080	1150080	And if someone had piloted a boat before, then I would explain how to drive in terms of how to pilot a boat, and I do have a funny boat story, and I'll save that for bowling, okay?
+1150080	1152080	So come bowling later.
+1152080	1154080	Okay, anchors away.
+1154080	1162080	Okay, when I make my videos, I specifically think of my old co-workers in Terry Magnuson's lab at UNC.
+1162080	1171080	By making videos that communicated statistics to a bunch of geneticists, I ended up with videos that communicated statistics to people all over the world.
+1171080	1175080	And this is another thing, you guys are bioinformatics people, right?
+1175080	1189080	Yes, okay. So that means you have to talk to biologists, you have to talk to statistics people, you've got to talk to all these different people who have different backgrounds and different frameworks, and you have to be like chameleons in a way, or translators.
+1189080	1195080	Because when you're talking to the statistics person, you've got to talk to them one way, and when you talk to the biologists, you've got to talk to them in another way.
+1195080	1203080	So you always have to kind of know who you're talking to, and if you mix them up, and you talk to the biologists the way you talk to a statistician, they'll punch you in the face.
+1203080	1206080	You don't want that to happen, right?
+1206080	1210080	So it's good to know who you're talking to.
+1211080	1227080	And so I specifically think of my old co-workers at UNC. And in fact, a week from today, I'm actually presenting for this old group of co-workers, my latest video to see if I can still convince them or teach them how things work.
+1227080	1230080	And the goal is for them not to fall asleep while I'm talking.
+1230080	1236080	And there's this one guy, he's not in that picture, his name's Dom, and he is a tough one.
+1236080	1239080	So I've got my work cut out for me.
+1239080	1247080	So lastly, when you don't know your audience, try your best to explain in a way that anyone could relate to, and that's tough.
+1247080	1253080	And try to anticipate questions from people that have different backgrounds and experiences, and that's hard to do too.
+1253080	1265080	But one way to explain things so that anyone can relate to the subject, and helps anticipate questions, is to use pictures.
+1265080	1270080	So that leads us to rule number three, which is use pictures.
+1270080	1273080	A lot of people are visual learners.
+1273080	1289080	If you're not a visual learner, and it's easier to look at this equation than it is to look at this graph, then you need to make sure you understand rule number two, have empathy for your audience.
+1289080	1293080	Because that's another punch in the nose you got to be watching out for.
+1293080	1304080	These people are tough. Okay, regardless of whether or not you're a visual learner, visual cues often make things easier to remember.
+1304080	1311080	Okay, here's an example of some unvisual directions to the grocery store.
+1311080	1315080	Go straight ahead 731 meters.
+1315080	1318080	Turn pi divided by two radians.
+1318080	1323080	Go straight for 1196 meters.
+1323080	1327080	Turn three pi divided by two radians.
+1327080	1331080	And then go straight for 52 meters.
+1331080	1333080	Bam.
+1333080	1334080	Okay, you guys ready.
+1334080	1338080	There's a pop quiz.
+1338080	1345080	No one thought there was going to be a quiz. Okay. Can anyone remember the first step in the directions to the grocery store.
+1346080	1357080	Are you kidding me.
+1357080	1360080	We have a winner. Okay.
+1360080	1362080	Did anyone else know that.
+1362080	1363080	Okay.
+1363080	1368080	And why right.
+1368080	1369080	Yeah.
+1369080	1372080	Okay, this may be precise and accurate.
+1372080	1381080	But for some people, and I'm not going to name names, but I consider myself a member of this group.
+1381080	1384080	It's hard to remember.
+1384080	1388080	Here's an example of visual directions to the grocery store.
+1388080	1391080	Go straight to get to the gas station.
+1391080	1393080	Turn left.
+1393080	1395080	Go straight to get to the playground.
+1395080	1397080	Turn right.
+1397080	1402080	Go straight to get to the grocery store.
+1402080	1404080	Bam.
+1404080	1406080	Okay, to summarize this rule.
+1406080	1415080	We almost always have a true choice between not using pictures to explain something.
+1415080	1420080	And using pictures to explain something.
+1420080	1424080	Pictures are one easy to relate to.
+1424080	1427080	We have a lot of questions.
+1427080	1431080	And we often help people answer their own questions.
+1431080	1437080	For example, we may not have anticipated that they don't actually know what grocery store they were just saying, these are directions to the grocery store.
+1437080	1439080	And they're like, what kind of grocery store is it.
+1439080	1441080	Well, it's a Whole Foods.
+1441080	1443080	You can tell just by looking at the picture.
+1443080	1445080	Or you could say, go straight to the gas station.
+1445080	1447080	They're like, what gas station is it.
+1447080	1449080	It looks like it's a BP station.
+1449080	1452080	And you can tell just by looking at the picture.
+1452080	1454080	You can tell just by looking at the picture.
+1454080	1456080	Without having to do any extra work.
+1456080	1458080	That's a bam.
+1458080	1460080	And relatively easy to remember for people like me.
+1460080	1462080	Not everybody.
+1462080	1464080	Okay, bam.
+1464080	1466080	Rules four and five.
+1466080	1468080	Repetition is helpful and do the math.
+1468080	1471080	This step is going to take a long time to get through.
+1471080	1473080	Because we're going to do lots of repetition.
+1473080	1475080	And we're going to do lots of math.
+1476080	1478080	It's just going to be hard.
+1478080	1479080	Okay.
+1479080	1487080	So no matter how simple the equation, plugging in a few numbers makes it way easier to understand and explain.
+1487080	1493080	And doing this more than once makes it way easier to remember.
+1493080	1496080	However, complicated looking things.
+1496080	1503080	Plugging in the numbers is crucial and can provide deeper and more memorable insights.
+1503080	1505080	Okay.
+1505080	1507080	So let's take an example.
+1507080	1511080	Let's plug some data into this neural network.
+1511080	1515080	However, first, let's remember the main idea.
+1515080	1519080	Neural networks fit squiggles to your data.
+1519080	1525080	So the goal is to figure out how this fits a squiggle to the data.
+1525080	1527080	Okay.
+1527080	1532080	So with that said, to keep the math simple, let's assume dosages go from zero for low to one for high.
+1532080	1537080	The first thing we do is plug the lowest dosage of zero into the neural network.
+1537080	1545080	Now to get from the input node to the top node in the hidden layer.
+1545080	1550080	This connection multiplies the dosage by negative 34.4.
+1550080	1555080	And then adds 2.14.
+1555080	1561080	And the result is an x-axis coordinate for the activation function.
+1561080	1567080	These values come from fitting the neural network to data with a method called back propagation.
+1567080	1570080	And that method is beyond the scope of this seminar.
+1570080	1572080	We'd have to sit here for another hour.
+1572080	1576080	And we don't want to do that because we haven't had lunch yet.
+1576080	1578080	But if you're interested, there's a video on it.
+1578080	1580080	You can check out the quest.
+1580080	1585080	But for now, you guys are familiar with linear regression, right?
+1585080	1588080	And you have like these slope and intercept.
+1588080	1591080	And you have to find the optimal values for those.
+1591080	1595080	And you do that by fitting, you know, you can do it iteratively.
+1595080	1598080	Or you can do it directly with the derivative.
+1598080	1604080	So imagine these values in these boxes are like these.
+1604080	1607080	These are the things that we solve for when you fit that line to the data.
+1607080	1609080	We got our y-axis intercept.
+1609080	1611080	And we got our slope.
+1611080	1615080	And it's interesting that we also, you know, we've got a number we multiply the input.
+1615080	1617080	And we've got a number we add.
+1617080	1619080	And here we're multiplying the input.
+1619080	1620080	And we're adding.
+1620080	1621080	Okay.
+1621080	1626080	So we're actually doing the same thing that this equation does, just with different numbers, right?
+1626080	1633080	And earlier, behind the scenes, before you guys were watching, I fit this to our data.
+1633080	1639080	It's because, and the reason why we have backpropagation, I'm just going to skip to this.
+1639080	1646080	The reason why we have backpropagation is because we can, there's a closed form solution for just linear regression.
+1646080	1648080	And you can solve for directly.
+1648080	1652080	Unfortunately, for linear, for neural networks, there's no closed form solution.
+1652080	1658080	So you've got to, we've got to do something that is iterative and approximates an optimal solution.
+1658080	1660080	So, okay.
+1660080	1664080	We're good that these are just values that we've just imagined we're solving.
+1664080	1666080	We're just plugging into numbers like this.
+1666080	1669080	And we're calculating y-axis coordinates, right?
+1669080	1670080	No big deal.
+1670080	1671080	Bam.
+1671080	1672080	Yes.
+1672080	1673080	Okay.
+1673080	1674080	Okay.
+1674080	1688080	Now, given that we have already estimated these parameters, the lowest dosage zero is multiplied by negative 34.4.
+1688080	1692080	And then we add 2.14.
+1692080	1701080	And that, and to get 2.14 as the x-axis coordinate for the activation function.
+1701080	1713080	To get the corresponding y-axis value, we plug 2.14 into the activation function, which in this case is the soft plus function.
+1713080	1723080	Note, if we had chosen the sigmoid curve for the activation function, then we would just plug 2.14 into the equation for the sigmoid curve.
+1723080	1724080	It's no big deal.
+1724080	1735080	But since we're using the soft plus for the activation function, we plug 2.14 into the soft plus equation.
+1735080	1743080	And the log of 1 plus e raised to 2.14 is 2.25.
+1743080	1753080	And just to be clear, in statistics, machine learning, and most programming languages, the log function implies the natural log or the log base e.
+1753080	1757080	So if you're doing this math at home, that's why we got 2.25.
+1757080	1761080	Anyway, the y-axis coordinate for the activation function is 2.25.
+1761080	1764080	And it's right there, boom, right on the curve.
+1764080	1765080	Right.
+1765080	1770080	Okay, so let's extend this y-axis up a little bit.
+1770080	1777080	And put a blue dot at 2.25 for when the dosage equals zero.
+1777080	1790080	Now, if we increase the dosage a little bit and plug in 0.1 into the input, the x-axis coordinate for the activation function is negative 1.3.
+1790080	1798080	And the corresponding y-axis coordinate is 0.24.
+1798080	1805080	So let's put a blue dot at 0.24 for when dosage equals 0.1.
+1806080	1818080	And if we continue to increase the dosage values all the way to one, the maximum dosage, we get this blue curve.
+1818080	1820080	Bam.
+1820080	1835080	Note, before we move on, I want to point out that the full range of dosage values from 0 to 1 corresponds to this relatively narrow range of values from the activation function.
+1835080	1845080	In other words, when we plug dosage values from 0 to 1 into the neural network, and then multiply them by negative 34.4 and add 2.14,
+1845080	1852080	then we only get x-axis coordinates that are within the red box. Does that make sense?
+1852080	1864080	That any number between 0 and 1 is only going to give us a number in this range. It's not going to give us a number way out here, just in this little window.
+1864080	1873080	And thus, only the corresponding y-axis values, only these things up here
+1873080	1881080	in the red box are used to make this new curve. And we take this, basically we're taking this and we're flipping it because we've got a negative sign.
+1881080	1885080	Flip it and bam.
+1885080	1888080	Cool.
+1888080	1895080	Now we scale the y-axis values on the blue curve by negative 1.3.
+1895080	1902080	For example, when dosage equals 0, the current y-axis coordinate for the blue curve is 2.25.
+1902080	1910080	So that's that point on the curve and that's that blue point over there. Now we're going to multiply it by that.
+1910080	1918080	So we multiply 2.25 by negative 1.3 and we get negative 2.93.
+1918080	1925080	Negative 2.93 corresponds to this position way down on the y-axis.
+1925080	1932080	Likewise, we multiply all the other y-axis coordinates on the blue curve by negative 1.3.
+1932080	1939080	And we end up with this new blue curve.
+1939080	1941080	Bam.
+1941080	1949080	Okay, now let's focus on the connection from the input node to the bottom node in the hidden layer.
+1949080	1957080	However, this time we multiply the dosage by negative 2.52 instead of negative 34.4.
+1957080	1969080	And we add 1.29 instead of 2.14 to get the x-axis coordinate for the activation function.
+1969080	1981080	Now if we plug in the lowest dosage 0 into the neural network, the x-axis coordinate for the activation function is 1.29 right there.
+1981080	1988080	And now we plug 1.29 into the activation function to get the corresponding y-axis value.
+1988080	1993080	And we get 1.53 right there.
+1993080	2000080	And that corresponds to this yellow dot. So that's 1.53 up on the y-axis.
+2000080	2006080	Now we just plug in dosage values from 0 to 1 to get the corresponding y-axis values.
+2006080	2012080	And we get this orange curve.
+2012080	2018080	Note, just like before, I want to point out that the full range of dosage values from 0 to 1,
+2018080	2022080	in this case, it only corresponds to this narrow range of values, right?
+2022080	2032080	When we plug in values from 0 to 1 here, we only get x-axis coordinates in this little sliver, and we don't get values out here and out here.
+2032080	2041080	So we're actually cutting a smaller slice of the activation function than we did before.
+2041080	2048080	I might have gotten ahead of myself. So in other words, when we plug in dosage values from 0 to 1 in the neural network,
+2048080	2053080	we only get x-axis coordinates that are within the red box.
+2053080	2061080	And thus, only the corresponding y-axis values in the red box are used to make this new orange curve.
+2061080	2067080	So we see that fitting a neural network to data gives us different parameter estimates on the connections.
+2067080	2078080	And that results in each node in the hidden layer using different portions of the activation functions to create these new and exciting shapes.
+2078080	2083080	Do you guys have that? Great. OK, double that then.
+2083080	2089080	OK, OK. Now, just like before, we scale the y-axis coordinates on the orange curve.
+2089080	2094080	Only this time, we scale by a positive number, 2.28.
+2094080	2101080	Boop, boop, boop, boop, boop, boop. And that gives us this new orange curve.
+2101080	2109080	Now the neural network tells us to add the y-axis coordinates from the blue curve to the orange curve.
+2109080	2118080	For example, when dosage equals 0, the y-axis coordinate on the blue curve is negative 9.2, excuse me, negative 2.93.
+2118080	2124080	And the y-axis coordinate on the orange curve is 3.49.
+2124080	2133080	And we add negative 2.93 to 3.49, we get 0.56, that green dot.
+2133080	2141080	Likewise, we just keep adding the y-axis coordinates from the blue curve to the orange curve.
+2141080	2146080	And that gives us this green squiggle.
+2146080	2153080	Then finally, we subtract 0.58 from the y-axis values on the green squiggle.
+2153080	2159080	Boop. And we have this green squiggle that fits the data.
+2159080	2162080	Triple bam.
+2162080	2169080	To summarize, we started out with two identical activation functions.
+2169080	2172080	But then we plugged in some values.
+2172080	2183080	And we saw how using multiplication and addition slices, flips, and stretches the activation functions into new and exciting shapes.
+2183080	2188080	Which are then added together to get a squiggle that is entirely new.
+2188080	2197080	Bam. And the squiggle is then shifted to fit the data.
+2197080	2200080	Now remember the rules we just illustrated here.
+2200080	2204080	Repetition is helpful and do the math.
+2204080	2215080	By plugging numbers into the neural network and doing the math, we have a better understanding of how this neural network fits the squiggle to the data.
+2215080	2221080	Doing the math usually requires using relatively simple examples.
+2221080	2226080	In this case, I created the simplest neural network that could illustrate the main idea.
+2226080	2230080	That we're fitting a squiggle to data instead of a straight line.
+2230080	2235080	For me, one of the hardest parts of my job is coming up with relatively simple examples.
+2235080	2241080	If you look on the internet for like neural network examples, everyone uses this character recognition example.
+2241080	2249080	Like how to translate numbers into, like, predict like, oh, that's a number three or something like character recognition.
+2249080	2253080	Which is cool. Neural networks can do that, and that's amazing, right?
+2253080	2262080	But the neural network required to do that is so complicated that you can't visualize what the shape of the data is and how it's fitting a squiggle to that data.
+2262080	2267080	Right? Because ultimately, we've just got pixels, you know, and intensities.
+2267080	2276080	And it ends up just being a big blob of data, of points, basically, in a high dimensional space that's too high dimensional for us to actually look at.
+2276080	2279080	So we can't, even if we wanted to, we can't draw that picture.
+2279080	2285080	So I had to come up with like a much, much simpler thing, because I wanted to see it.
+2285080	2290080	Because it wasn't enough just to believe that it worked. I had to see it work.
+2290080	2296080	And I had to understand why. And by doing that, I was able to see this insight.
+2296080	2303080	That we're taking these little chunks of this thing, these activation functions, and we're twisting them, and we're flipping them, and we're stretching them.
+2303080	2311080	And we add these different shapes together. And it's that adding of two weird looking shapes that gives us this squiggle.
+2311080	2316080	And it's also interesting, if you notice that, it doesn't really fit. I mean, it fits the data perfectly.
+2316080	2320080	But outside, in between the data, it doesn't fit it perfectly.
+2320080	2325080	That's an interesting insight we would not have gotten if we couldn't see how this is working.
+2325080	2330080	This is an interesting thing. Neural networks can fit the points perfectly, and it does.
+2330080	2335080	But in between, the neural network can do what it wants. And we didn't. We wouldn't have known that.
+2335080	2338080	We wouldn't have been able to see it if we couldn't draw it.
+2338080	2341080	And so that was a big insight for me when I was teaching myself neural networks.
+2341080	2350080	I was like, oh. So that means in between the data that the neural networks have seen, the output could be unpredictable.
+2350080	2353080	Because it does not extrapolate the way you and me would do it.
+2353080	2360080	The way you and I would do this, we would fit a nice bell-shaped curve to this data, like a normal curve or something.
+2360080	2365080	And it'd be nice and awesome. But the neural network doesn't care about normal curves.
+2365080	2368080	Neural network says, these are the data you gave me, and I'm going to fit them.
+2368080	2372080	And that's all I'm going to worry about. And everything in between, who cares?
+2372080	2378080	And so I think about that when people talk about getting neural networks to drive cars.
+2379080	2388080	Anyways, once I have a relatively simple example, everything else becomes relatively easy.
+2388080	2392080	OK, rule number six is always start with data.
+2392080	2399080	And you may remember that when we started to talk about neural networks, we started out with this super simple data set.
+2399080	2404080	It showed that a straight line would not fit the data well.
+2404080	2414080	So we needed to fit a squiggle to the data. Knowing that we need to fit a squiggle to the data gives us a context from which we can understand neural networks.
+2414080	2418080	Right. Why are we learning this thing? What's the big deal? Who cares?
+2418080	2427080	Well, we're like, well, we've got problems. We've got data shapes that data can make that we may, you know, we may not have a good function that can fit.
+2427080	2435080	And especially if that function or that data is really high dimensional and we can't see it, we we can't say that we can just fit a normal curve to that.
+2435080	2440080	We have to come up with something that can automatically fit a shape to data. And that's what neural networks do.
+2440080	2445080	They look at data and they go, I don't care if we can look at it or not. I'm going to fit a shape to you.
+2445080	2453080	OK, in other words. We know that the goal of this fancy looking thing is to fit a squiggle to the data.
+2453080	2463080	And in general, knowing what the problem is and why other methods fail to solve it helps us understand why we're doing all this math.
+2463080	2470080	OK, rule number seven, limit to the presentation of three main ideas, which seems contradictory, but I didn't say these were main ideas.
+2470080	2480080	I said these were rules. The difference. Anyways, for neural networks, main idea number one is that we start with identical nonlinear activation functions.
+2480080	2490080	Nonlinear is key. I didn't I didn't harp on that. But if they were just linear, if this was just a straight line, then we'd add them together.
+2490080	2500080	We just get another straight line. It's the fact that there's a curve or a bend or something weird going on that allows us to create more complicated shapes.
+2501080	2508080	Main idea number two is the activation functions are sliced, flipped and stretched into new and exciting shapes.
+2508080	2515080	And we say double bam. And the main idea, number three, is that the curves are added together in the end.
+2515080	2524080	So we have the little pieces of curve and we and we add them together to make a squiggle that is entirely new.
+2525080	2536080	Triple bam. Note, if you came to this seminar, not understanding how neural networks work is a good chance that you now know.
+2536080	2549080	And you came to that understanding by looking at pictures and doing some basic math, just multiplication and addition with a little like log and exponential here, but we're not going to talk about that.
+2549080	2555080	OK, and we completely ignored this equation.
+2555080	2561080	Again, this is because the equation is not the main idea.
+2561080	2566080	All it is is a compact notation.
+2566080	2570080	I mentioned this because I did a little Twitter poll a few weeks ago.
+2570080	2582080	Well, I guess a few months ago. OK. In order to understand neural networks, you need to first understand linear algebra.
+2582080	2594080	Of the almost 4000 people that responded, 74 percent agreed that you needed to understand linear algebra before you can understand neural networks.
+2594080	2600080	In other words, 74 percent think you need to understand this equation.
+2600080	2607080	Before it's possible to understand this diagram of a neural network and how it makes predictions.
+2607080	2611080	However, in my opinion, it is the exact opposite.
+2611080	2617080	Instead, we need to start with this diagram and learn how it makes predictions first.
+2617080	2621080	Before we learn about this equation.
+2621080	2632080	In summary, I believe that StatQuest, my YouTube channel is successful because rule number one, I do the I try as hard as I can to focus on the main ideas.
+2632080	2637080	I don't always succeed, but I try. Rule number two, I have empathy for the audience.
+2637080	2641080	Again, I do not always succeed, but I try.
+2641080	2647080	And I know and my secret to that is I specifically have a handful of people that are my audience.
+2648080	2654080	You know, it's my former lab mates. I try to talk to them. Three, I use pictures.
+2654080	2660080	Those are helpful for some, not all. Rules number four and five, repetition is helpful and do the math.
+2660080	2667080	And rule number six, always start with data. And rule number seven, limit the presentation of three main ideas.
+2667080	2674080	I've noticed that if I try to do more than three BAMs in a presentation, it's better just to split it into two presentations.
+2674080	2678080	Too much. You know, it's like, oh, you go to for me.
+2678080	2684080	I remember when I used to have to go to seminars and they it was like a I don't know how like an octave BAM presentation.
+2684080	2689080	And I get to like the third or fourth BAM and I'd be like they weren't saying the BAM.
+2689080	2693080	But, you know, there were there were all these things that you could tell they had so much they wanted to convey.
+2693080	2700080	But I got saturated and I got frustrated because once I get saturated with information, I can't take more on.
+2700080	2704080	I can only learn my brain can only learn so much in so much time.
+2704080	2709080	And and I would just frustrate me when they were like, well, I'm just going to keep going.
+2709080	2717080	And I'm like, but I'm tired. So I say limit the presentation to three main ideas.
+2717080	2735080	And then I say the end. And I finished a little bit early so we can have questions or.
+2735080	2740080	We need to leave this room by 1230 so we can have a short three session.
+2740080	2747080	And if you are going to meet George later, I would suggest you save that for later.
+2747080	2750080	And I see that. Yeah. Thanks for doing that.
+2750080	2760080	So I'm just wondering if you have any thoughts on how to address people with sort of some disabilities like hearing and visual.
+2760080	2769080	Yeah. So. In theory.
+2769080	2774080	So I have there's a couple of issues that I come up against with colorblindness.
+2774080	2779080	I try to use a lot of colors, as you saw, because to me, colors help differentiate things.
+2779080	2786080	But I'm very bad with my palette, my color palette. But there are tools you can use to check colorblindness.
+2786080	2789080	I need to use those. I don't do it enough.
+2789080	2794080	And there's also blind people blind people like so there's people that listen to my videos.
+2794080	2797080	And I don't do this perfectly.
+2797080	2799080	But when I do the script.
+2799080	2811080	I often will be like the script will be like, and the data point in the upper left hand corner, I tried to narrate everything so that blind people can even though it's all in their head.
+2812080	2820080	I try to narrate all the details so that they can just by hearing my voice they can learn what's going on. I try to do that.
+2820080	2832080	And you just have to be very aware that you can't just say there's data over there, you have to say there's a data and the way they're spread out means we can't fit a straight line to them.
+2832080	2845080	And if we do try to fit a straight line we can only fit it to three or they're in a triangle form so you have to think about that so yeah if you're specifically trying to communicate to disabilities, you have to keep all that stuff in mind and I try.
+2845080	2854080	I'm, I'm, I could do better.
+2855080	2869080	Okay, my question is, so you're doing the stack quest YouTube you're explaining a lot of different things to people, how do you decide what topics, you want to prioritize and how do you like make sure you don't run out of things to explain.
+2869080	2875080	Okay, yeah, that was a problem I had early on. Okay, so early on.
+2875080	2881080	I was really just doing this for my coworkers, and I just was whatever they were doing.
+2882080	2896080	I already talked to Chris about this earlier. So one thing that was cool about doing this for my coworkers, you know, it's all a couple problems they learned when they needed to learn and I taught when I wanted to basically, but, but it also meant that like my first
+2896080	2899080	video got nine views in a year.
+2900080	2911080	And that was success. Right, because I didn't make a video for the whole world. I made it just for my co workers, and I only had so many co workers, and they were watching my videos so it was a huge success.
+2911080	2919080	And so I just let them decide, because that that was my audience, and in a way they're still my audience but things are a little different in that.
+2919080	2928080	I know people post comments. Can you teach transformers Can you teach large language models, how's Jackie bt work, I get those questions.
+2928080	2930080	20 times a day.
+2930080	2946080	And so I started off like once I you know early on once I got past T tests and are squared linear regression, I was like, I don't know what I'm going to teach now, I was like, like, and so I actually, if you watch my early videos are like and if you have any
+2946080	2950080	ideas posted in the comments below. I don't do that anymore.
+2950080	2959080	I got a to do list that like goes it goes because the thing is is there's always, there's always new methods being created.
+2959080	2968080	And so there's always good stuff, but it's, but it's also sort of responding to the people around me, and it used to be that there were a lot of people with problems and so I teach them what they needed to know.
+2968080	2976080	And now it's the whole world is like hey, we don't understand large language models or how Jackie bt works, can you teach us.
+2976080	2980080	And so that and that keeps me plenty busy.
+2980080	2986080	But, yeah, just ask the people you want to teach.
+2986080	2991080	There was an online question. And where did it go. I'm going to open the chat.
+2991080	2995080	I got to hold on, I got to get the old main glasses.
+2995080	2997080	What does this say.
+2997080	3001080	Interesting modeling and machine learning.
+3001080	3008080	It seems like clinical physicians do not believe any data for modeling or machine.
+3008080	3010080	That's hilarious.
+3010080	3014080	So,
+3014080	3019080	is there modeling.
+3019080	3022080	It's just some.
+3022080	3029080	When I was a kid I used to build models like model planes, right, a model plane is not a real plane, it can't fly I can get on it.
+3029080	3033080	It's a, it's an approximation now, it's much smaller approximation.
+3033080	3047080	It has this general shape. And for the purposes of me being an eight year old kid. It was good enough. Right. It's all it solved the problem of me not having anything to do in the afternoon on a rainy day.
+3048080	3054080	So, that's a model right and what we end up with these days we end up with.
+3054080	3058080	Instead of like, you know, I'm a person and I'm a complicated thing.
+3058080	3065080	And with a complicated brain, I guess. And so we can create a model of that that's a simplification, it's not the same as my brain.
+3066080	3073080	It's a handful of equations. I mean you plug in inputs that might be simulating oral input.
+3073080	3084080	And we can say, well, let's see what's just on how's he going to respond to this sound. Let me run it through the equations and we go, and we predict that I'll say, Pam, when I hear that sound.
+3084080	3088080	That's a good prediction, because a good chance I will say that.
+3088080	3104080	So models are just basically anything that's simpler than the actual thing. And we use the simple things, the models, because the actual thing maybe maybe it's illegal or unethical to use the actual thing or maybe it's too complicated to use the actual thing.
+3104080	3121080	We don't have the computing power to use the actual thing. So we use a simplification. Models, there can be different types of models, some are statistical models and those give us sort of, it's like doing a statistical analysis, where we can have measures of variability.
+3121080	3133080	Right, you can say, not only will Josh say bam, but we're 63% confident he'll say bam, and otherwise he'll say double bam.
+3133080	3146080	Or something like that, right? We get measures of variation, and measures of variation are awesome, right, because it gives us a sense of what the range of applicability is and how much we can trust the models.
+3146080	3159080	And these clinicians, apparently, that don't trust the models, that may be something that they need to understand is how to interpret the output of a more statistical analysis that gives us a sense of the variability.
+3160080	3167080	Statistics is all about understanding and variation and using it to our advantage to make good decisions.
+3167080	3178080	But there's also, you know, neural networks and machine learning type models, which are less statistical in nature and just tend to give you yes or no answers without a whole lot of bounds on the variation.
+3178080	3190080	And those models can be very helpful and very good, but they're also sometimes difficult to interpret in terms of like, what's the variation on the output? How much faith can I put in it?
+3190080	3207080	And there's ways around that, I was talking to Chris about this earlier too, in that we can test our model once we've trained it, once we've estimated all these values on this data set, we can throw new data at it that we know whether or not it was effective.
+3207080	3222080	And we can see how well this model works with that data. And that would give us some sense of like, it works good for data that's like right close to the actual training data and it doesn't work so well for the in between.
+3222080	3234080	You know, that would give us some sense of understanding the range of applicability of that model. These are all very important things that we have to do. Maybe we don't do them all well enough or thoroughly enough.
+3234080	3247080	But it's, but it's stuff we can do. And so hopefully one day we'll teach the clinicians to have faith in science.
+3248080	3262080	So, this kind of follows my other question. So, you're explaining things to a lot of people, a lot of people are watching these videos and getting good information from them, which is great, but how do you know that you're prepared enough to explain a new concept
+3262080	3272080	and how do you make sure you've like taught yourself rigorously enough that you can explain to others and you feel confident that this is a good explanation that's going to help people?
+3272080	3283080	Yeah. So, yeah, that's, I could do a whole talk on that. But the gist is I read everything I can. And then what I do is I try to, I do the math by hand.
+3283080	3297080	And I also compare it to a real thing like when I did when I made this neural network, I created like a real neural network in like using a neural network framework and I trained it.
+3297080	3300080	And I made it work and I didn't know how it worked.
+3301080	3312080	So, I got these, I pulled out these values and I just did the math by hand and I made mistakes. And when I, and I had the thing printing out intermediate values and I had my intermediate math over here, and I could compare.
+3312080	3325080	And I drew this picture and I made sure that ultimately everything matched from zero to one, I always got it. And then I took that program and I,
+3325080	3338080	basically I tried a lot of programs that can validate that I've learned it correctly. I ended up writing this whole thing from scratch. And I ended up training it, I ended up writing my own back propagation algorithm to train it and I ended up with the same values.
+3338080	3350080	And, and so I was just like, okay, and then I and then I was like well let's generalize let's try something else let's try a different model, different input data and see if I can figure it out, and I was able to figure it out.
+3350080	3364080	And it was kind of funny in the end, it's kind of weird I got so good at these things where I could just look at the data I was trying to fit, and I could imagine what these values would be, and I could just come up with them off the top of my head.
+3364080	3370080	And I'd be like oh that's probably this probably this, and they would be pretty close to the optimized model.
+3370080	3374080	And I was like, I got this.
+3374080	3387080	The other thing I do is I do drafts, I test them on people. Good way to understand that you don't understand is when you start teaching people, and they ask you a question and they go and what about this and you're like, I don't know.
+3387080	3399080	That's a way, so I for this video, specifically, I tested it on like 10 different groups. There was like, like, it was on there was like COVID time. So it was like I was just zooming left and right there was like a group in Turkey they're like, teach about neural
+3400080	3410080	because I said, I can't do that yet but I can show you what I'm working on, and they were like okay we'll do that instead. And so we did that instead I said any questions and they would shoot me with tons of questions, and they would and I'd be like, I can answer
+3410080	3414080	some of those I can't answer all of them because I don't fully understand it yet.
+3414080	3419080	And I got to where I can answer everybody's questions and I was like, I got this.
+3419080	3429080	So it's a lot of work, especially because I'm not an expert. I'm, I'm, I'm a student. I have to learn this stuff from scratch, I didn't I wasn't born knowing this.
+3429080	3437080	I didn't, I never took a class on neural networks I never took a class on machine learning no one's ever taught this stuff to me. It's all been learned.
+3438080	3448080	I can make it work on my own corporate blah blah blah we have to go, I'm sorry but you get the idea right do lots of validation and lots of awesome convincing and I asked people questions.
+3448080	3450080	Okay, great.
+3450080	3460080	Thank you.
+3461080	3484080	Yeah.
+3484080	3487080	Oh, I feel like throughout the seminar I get colder and colder.
+3488080	3492080	Like, overcompensate. Yeah.
+3492080	3497080	I think, I think I'm generally more.
+3497080	3501080	Actually I think I have a four.
+3501080	3507080	I think that's my theory.
+3507080	3511080	Because I'm always really hot or really cold.
+3511080	3516080	Yeah.
+3516080	3519080	Yeah, never satisfied.
+3519080	3521080	Cool.
+3521080	3526080	Yeah.

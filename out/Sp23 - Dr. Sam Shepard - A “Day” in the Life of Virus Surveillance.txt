@@ -1,0 +1,375 @@
+It's my life. Now I'm going to crack, it's fine.
+And I have the tea kettle at home.
+Yeah.
+Everybody.
+If you don't mind starting the recording, that'd be swell.
+Hello everybody, and thanks for coming in today.
+Sam Shepherd is.
+Sam Shepherd serves as a health scientist in the informatics group within the CDC influenza divisions office of the director.
+He earned his master's degrees in applied math and computer science from Bowling Green State University, Ohio.
+And before he
+took a PhD in biomedical sciences with a certificate in bioinformatics at the University of Toledo in Ohio.
+After graduation.
+Dr. Shepherd went to the final Shula in Salzburg, Austria, as part of the Marshall as a Marshall Plan scholar, he joined the CDC in 2011 as an arise fellow, he became a full time employee at the CDC influenza division in 2013, where he contributes to global
+influenza surveillance supports vital program functions, it's the CDC is covered 19 response and provide mentorship to graduate fellows.
+He was my mentor at CDC while I was an arise fellow and helped provide exceptional guidance, that's I transitioned to from financial to biology.
+Sam Shepherd was one of two associate directors for informatics from 2019 until recently, and is a 2017 Charles C Shepherd award winner for his work on the iterative refinement meta assembler for about, which is a tool for next gen sequence assembly
+viruses.
+Thank you, Sam for taking the trip down to visit and teach us a little bit about your work at CDC, please join me in welcoming Dr. Sam Shepherd.
+It's great to be here and I'm Sam Shepherd.
+It should be said that any opinions you may hear today are my own do not represent the policy, the United States government so just want to say that to cover myself a little bit.
+Yes, I've been working in flu for pretty much my whole career at CDC but lately I've had the pleasure of also simultaneously working on coded.
+So say we all.
+So, I want to talk a little bit about virus surveillance today which is a topic near and dear to my heart.
+And the first word and virus surveillance is a virus.
+As you probably know viruses enter ourselves replicate efficiently and quickly until they are finally hopefully stopped.
+For RNA viruses, which is flu is, you can have mutations, every replication cycle.
+So instead of a monolithic virus you actually have a virus swarm swimming around there.
+You get sick. You go to the doctor, get swabbed cases reported, and maybe a specimen gets shipped somewhere.
+Next we have influenza reference centers that share sequencing load and send data or specimens to CDC.
+You can see one in California and New York and Wisconsin.
+They can act as catchment areas for other state public health labs, which is one in every state around the world, this model is kind of replicated.
+This is the global influenza surveillance response system and they're all these little triangles are so called national influenza centers that are responsible for local surveillance, so they may submit on behalf of other labs around the area.
+For this talk we'll share information from more of a lab data perspective. The case reporting from possible networks and all the stuff you probably saw happening on the news about COVID, the epidemiology is very important for that sort of work, but it's not my specialty so I'm not going to talk as much about that.
+So, on to sequence surveillance.
+Consider flu.
+I think probably one of the most deadly viruses in 1918, influenza kills 50 million. There's been multiple pandemics since then. There's always the threat of a bird flu which is extremely lethal.
+It's threatening all the time.
+We want to track the virus's evolution, mutations of concern that starts with sequence assembly.
+And for the genome for flu we are dealing with the segmented viruses so each gene can fit on a different gene segment.
+Each specimen could be a lot of different types, subtypes, lineages, this amounts to a bit of reference juggling if you go with the traditional sequencing and assembly approach.
+And flu is always evolving, always. It's very diverse.
+We're doing hundreds of isolates with eight segments every week, and each could be a variety of different types, subtypes, lineages, and so that's a lot to juggle.
+Or maybe perhaps you get a virus that somebody had in a freezer that actually happened, and you've not seen anything quite like it.
+So that's kind of the context for the work that I did on sequence assembly. So as mentioned earlier, this was the Irma project, which basically we needed to deal with influenza's diversity in a high throughput way without involving humans as much.
+Obviously that's the point of slowdown.
+The next portion is iterative refinement, which is something you've probably seen in your classes and used every day.
+The sequence surveillance starts before assembly with lots of important work done by the lab for RNA extraction and cDNA and library construction and actually running the machines that do the sequencing.
+The portion where I sort of, is this portion on the bottom.
+It covers a whole bunch of different steps that are necessary as well.
+To assemble flu, we assess quality. I won't go into that.
+And then we have two iterative refinement phases for dealing with influenza's diversity. There's an iterative read gathering step and there's an iterative final assembly step.
+You can think of read gathering as a two bucket system where you have reads in an unmatched bucket being moved to a matched bucket for particular genomes or gene segments. Reads are matched and moved to what we're specifically targeting.
+And so, as I mentioned, flu is segmented and has multiple types and subtypes. So we have to classify or sort into a variety of buckets actually.
+In the real world, we don't know the consensus ahead of time. And instead of selecting from a panel of references we pick a reference and hope that we can move it towards our reads.
+I call this a reference seed or initial reference, which is, in this case, a very consensus from a very large multiple sequence alignment.
+We could have picked other things like a clade representative, but it's worked well in practice.
+We match our data to the references, sort them into our buckets and generate a rough alignment for each of those. This is called reference editing.
+Although generally we try not to throw away references as we go along.
+We look at our unmatched read pool by matching against the now edited reference, find more reads to match, and this increases the size of our read pool.
+We do this again and again. So we either have no more reads to match against or until we have some sort of cut off.
+And now we have gathered our reads and we have a candidate reference that matches them.
+And so if the first step is to sort of maximize the number of reads that match our different subtypes and gene segments and lineages,
+the next one is that we want to maximize the actual alignment score using something like Smith-Waterman, which I'm sure you could all write out, nice recurrence relation for me.
+We try a series of changes. If it helps, we keep editing. If not, we stop, to put it simply.
+These are governed by various rules and heuristics. And so you can do things like mutate, insert, delete reference at this point.
+Because you don't, sometimes that can happen.
+As before, we move the reference towards the reads, maximize the score, but different from before, the read pool here you can see is kind of, it's constant.
+And now we're just maximizing the score.
+And then when we're done, we're ready for things like consensus generation, calling SNPs, or really we call them single nucleotide variants.
+Look for variant phasing, generate tables and figures, and all sorts of other intermediate data.
+There's a lot more to say about this topic, but you can probably read that online if you're really interested and find the paper.
+So now I want to move on to the next topic. We have a bunch of sequences. What do we do with them?
+So it makes sense that we want to group them genetically for downstream analysis for comparison, to compare, contrast.
+Creating genetic groups is usually done with a phylogenetic tree.
+There's as much art here as science.
+So when you find lump or split different groups, the most important thing actually is that everybody agrees on what those groups are, which may seem counterintuitive to you, but it's actually the truth.
+I worked on a program called Label that does plate annotation using hierarchical classifiers.
+And in my opinion, as you get more and more detail and requirements for a particular process, your solution begins to mimic the data itself.
+That's just sort of my own anecdote.
+To make a long story short, Label takes queries, scores them against profile hidden Markov models, and then classifies them recursively using support vector machines.
+There are lots of other classifiers and techniques like Nextplay that we also use at CDC, and you can lump them all together and chop things different ways.
+I mentioned Label and earlier Irma because they're my work, and we do use them at CDC.
+But also because I got help from a jolly man with a beard that you might know.
+Not that one.
+Justin Ball, the great collaborator.
+So until now, I've talked mostly about things related to genotype.
+But we have another area that's very important.
+Virus antigenicity.
+This is how the virus proteins, their molecular shape affects their detection by antibodies.
+The virus contains the antigen, while the antibodies can be isolated from blood serum.
+If you get exposed to some virus your body generates antibodies to it, simple enough.
+I have antibodies that combines the antigen.
+If you get exposed to a virus, you probably have multiple different kinds of antibodies that you generated.
+And some of those will be weaker or stronger in their affinity.
+Now, for routine analysis, it makes sense that you use a naive animal to try and get blood that has just been exposed to the virus of interest.
+And now you're ready for an antigenic assay.
+This is a classic antigenic assay called hemagglutinin inhibition.
+Hemagglutinin is the surface protein for flu.
+The goal is to measure when antibodies go from stopping the virus from sticking the cells together to letting them clone.
+And so there's a serial dilution involved.
+There are other types of tests to measure antigenicity, but they're all about trying to stop the virus's activity on some sort of cell via dilution of antibody.
+So from the assay, you get a table of titers with columns of sera raised to different reference viruses, say a vaccine or different clade representatives.
+And for the rows, you have viruses that are circulating that you want to test against.
+And for the columns, you have that panel.
+And you may realize this already, but broadly speaking, if you have features of a breach test virus, you can manipulate these until you have a distance matrix.
+And if you have a distance matrix, why, depending on the analysis you want to do, you can look at it a lot of different ways, whether from scaling the data, looking at a heat map, doing nearest neighbor, or even creating a tree with distances.
+But consider this distance data just as an example.
+For the same set of viruses, you can build heat maps from both pairwise genetic distances, so maybe P distance, maybe Tamarini or some other evolutionary distance.
+Maybe for amino acid difference, physicochemical distance.
+And then, of course, you can take those titers and build antigenic distances.
+And you may notice that relating the antigenic and the genetic information for the same set of data is not one-to-one.
+It's not always clear cut and dry, even for very high quality data.
+It's more nuanced.
+But we do try.
+Here's another case where we're looking at distance data.
+And this is for antigenic data for both sides in the same set of viruses.
+But in this case, we have an avian host that we're raising CR2 chickens.
+And on the left, you're having actually ferrets, mammals.
+So even using the same set of viruses to inoculate, we can get clade-specific variations depending upon how we're raising those antibodies.
+And, of course, we have to continuously surveil virus antigenicity.
+And so a flu, that usually means ferrets for animal model.
+And if you're wondering, a ferret is not a human.
+We're not the same.
+Have you ever seen them?
+They have lots of sharp pointy teeth.
+So when it comes time to pick a new vaccine, it's not like we can find a bunch of immunogenically naive humans, inoculate each of them with different viruses and hope that will work.
+Instead, we have to rely upon human serum pools from different populations around the world.
+So, generally, we're trying to ask the question, when we test spurious circulating strains, is the antigenicity as good as our vaccine virus?
+So this assumes that we have persons that can give us blood before and after vaccination to the current vaccine.
+So we set a goodness cutoff and compare the vaccine antigen and our representative strains.
+And if the reactivity is good, great.
+If not, we have a bad vaccine match and probably have to change it.
+And so we can do this across different populations and age cohorts to get a better picture of what's happening around the world, at least antigenically.
+Vaccine selection is actually a very holistic process.
+You can almost think of it as like a big workshop involving WHO collaborating centers.
+And it combines the very best epidemiology, genetic, antigenic, and even structural data that we have from a whole bunch of different places, very smart people.
+You want to pick a vaccine strain that can be used to offer good protection to whatever will be circulating wildly in the coming year.
+As you know, there are multiple viruses to consider, not just flu A, but also flu B, and not just flu B, but also yam and vic, not just flu A, but also H1 and H3.
+There's a lot of clades then within each of those.
+So it can be complex.
+But we don't have a crystal ball, unfortunately.
+It broke.
+Someone kicked it.
+So we must recommend a vaccine early to be ready for the actual flu season.
+I think that's something that people don't realize is that there's a whole bunch of months in between making a recommendation from WHO and actually having vaccines available for you to get your shot when that started the flu season.
+So it can be a ramp of time.
+And between those times, things can change in terms of what's circulating.
+And it should be also mentioned, because I think this is a little quirk that I think is interesting, at least.
+There are actually two vaccine selections that go on.
+There's a northern and a southern hemisphere.
+And it turns out, next Monday, they're starting the northern hemisphere vaccine selection.
+So that's happening overseas.
+And WHO, CDC will participate.
+And weather, as you know, differs between northern and southern hemisphere, and so does the flu season. So that's why we have these two different vaccine selections.
+Okay.
+So we've talked about sequence surveillance.
+We've talked about plate annotation.
+We've talked about antigenicity.
+This topic, I think, is probably understated in grad school a little bit.
+Maybe not in some of your labs, but just when I was going to grad school.
+Undergirding a lot of the decision-making and things that happen in public health and virology are analytics capability.
+So this is making decisions powered by data.
+And to be able to make good decisions, you have to integrate data, query it, explore the patterns that exist.
+I'm mainly going to focus on lab data, but this is equally relevant for the epidemiology.
+So the role of traditional relational databases is important.
+We have them in usage for transactional systems, for laboratory information management, other buckets of different information.
+These systems start to kind of get weak in the knees when your data gets large, which is true for genomic data.
+You can ask Garrick about his experience later.
+We can overcome this using distributed storage, distributed compute capacity.
+We can ingest data from different sources, flatten it, analyze it at scale.
+And there are a lot of data domains to consider when integrating data.
+So flexibility and robustness are extremely important.
+I'm just going to pause and let you look at those words.
+It may not be exhaustive.
+If you're doing your job right, this is an unfortunate fact.
+Others may not notice what turns out to be essential to the whole process, which is clean standardized data.
+It's kind of like the pipetting of bioinformatics data and data and a data model that makes things both natural and coherent.
+So pop quiz. If you're at CDC starting out, do you need to know R or Python for data engineering?
+No one's going to venture a guess. Well, the correct answer is yes.
+And also SQL. So learn everything you can.
+If you're like me, I don't know if you guys are big Linux fans, you might have worked a little bit like this where you're dicing data up and sorting it and running things through multiple different scripts and trying to pick out patterns and predicates and all that stuff.
+I still do this.
+However, when you get a well modeled database, you can find that you can reduce your work substantially using a query, which does all of those types of transformations, projections, aggregations for you.
+And then once you get hooked on doing that, you start working in your little query editor and answering questions that way.
+And then I'm going to connect my BI tool and I'm going to create visualizations from that.
+And then if you're like one of my colleagues, you're going to integrate everything and display it at the weekly meeting and a lot of information there. I can go into it.
+So the point here is that once you take the trouble to really manage your data well and hosted and distributed query engine, you can use it however you want.
+Query engine lets you prepare your data for downstream analysis use cases, perform more advanced analysis.
+I kind of mentioned this before, but there's just a lot of different kinds of.
+I would say even mathematical operations, but also computational layers you can add to your data.
+So it's whether it's a script or visualizing or making even more data sets doesn't matter as long as you have a strong central data store.
+We like using query engine so much and Garrett can attest to this that we write custom user defined functions and aggregates libraries to avoid repetitive tasks that would otherwise exist in our scripts.
+That can be populated that will otherwise have to be pushed downstream and this is actually useful because a lot of different people can connect to your data.
+So, let me try to put this concretely.
+You can put a lot of application logic on top of a query engine.
+So say you have antigenic and genetic sources you can apply your statistics, create business rules, developed from exploratory analysis, and then make decisions about where to put your precious lap time based upon some analysis on your database system.
+And I tried to allude to this earlier, but there's a lot of different roles that will access that data in different ways. And so, if you have a good strong analytics practice in your team.
+You can democratize that data democratize those analyses.
+So, now, may ask yourself, that's great.
+I like research. Why public health.
+I also love research, and the questions I know ask are probably focused by and refined by the mission that I have been given at CDC.
+So, public health is impacted, not just by advances in science and technology, but season by season out by outbreak by outbreak need by need emerging infectious disease by emerging infectious disease, our mission and our scope change just like that.
+So, off my notes, but I went from working on flu, working on flu and COVID, and taking the things I learned in flu and applying them to COVID, and then taking things I did in COVID and applying it back to flu.
+And sometimes there's nothing like it.
+I don't know, suppose it's sentimental as well but having a good vaccine, being able to understand whether or not strains are becoming drug resistant
+developing cross cutting approaches that can help with multiple diseases I think these all can make a real impact and a real difference.
+So, that's something to consider as you think about your future prospects, which leads me probably to a question that you already have. It'll answer now.
+Maybe you want to get involved in government work, so there are a lot of different paths, you could take their, their contracts, but do business with government contract companies that you can find and you can they'll tell you sometimes they're doing business
+with CDC.
+So, government work can be more, you know, seasonal or ephemeral depending on the contract.
+There are fellowships which are more academic.
+They're more about training and research like a postdoc.
+And Garrett to tell you about his personal experience with that.
+It was a very special time at CDC with the pandemic.
+They're a really great way to get your foot in the door. If you're interested in kind of weighing into it. I wasn't an arise fellow for example, and I decided to stay somehow.
+And then if you're really, you know, I'm ready or wanted for sleeves.
+You could try USA jobs which is where you can find a permanent position. And those can be quite competitive, but, you know, they're open to anyone wants to apply and has the has the background.
+All right. I think I covered a lot of different topics, kind of broadly and high level.
+I'm happy to answer your questions about things in particular.
+So, besides, like other specific divisions as you can look at.
+So you're asking the other other divisions that look at other viruses. Yeah, all kinds. Yes. So, things get kind of divided up, I won't say arbitrarily along different lines so there's a entire center devoted to immunization respiratory diseases.
+There's another tire entire center devoted to emerging infectious diseases.
+And there are other things that are non infectious disease, entirely. They're also looked at by CDC. And so, just within the respiratory immunization center.
+We have a division of viral diseases.
+We have a division of bacterial diseases which are respiratory. And then, very recently, I don't know, I'll say this on the DL we we just got approved for for coronavirus and other respiratory virus diseases which means that there's still more viruses being on so
+So, depending upon the outbreak, or the need CC will reorganize itself to try and look at different, different types of pathogens.
+And sometimes they're at the branch level or the team level sometimes a division might handle multiple different viruses or, or maybe there's an entire polio group or entire group related to, you know, foodborne.
+It depends on on the particular one but yeah it's, we probably have a group for everything.
+So, that's your answer answer your question.
+So I know it changes by season, but what percentage of your week is communicating with other teams and just doing science communication in general.
+So with other teams within my division, or just in in general, how much, how much of your week.
+Since, since the pandemic I do it almost every day, because I collaborate, I do two jobs, essentially, I work on COVID and flu and so the, the people who are moving into that new COVID division.
+I work with them, and I work with the different groups on flu. I sit in the office of director for flu which means I work with our different branches so we have a immunology branch we have a like a lab branch.
+And I think we have new global branch. And so we can work with any of those branches where we sit as information, but then within each of those there could be data analysts, data scientists, other bioinformaticians, so, you know, information
+can be embedded at different levels of the hierarchy, and you communicate with all of them at different points, but yeah I would say at least, you know, at least 3033 third of my time is spent communicating and going back and forth and reviewing other people's work.
+Yes.
+I have a really dumb philosophical question would you be okay if I ask yes, please. Um, so, biology one on one my first biology class they said that viruses, technically, aren't life with someone like someone like you who works with viruses all day, would you agree
+with that.
+It depends on what you consider to be alive. Do they do they replicate. Yes.
+Do they evolve. Yes.
+Can they do it on their own. No. So, are they do they have encapsulation. Yes, do they rely upon someone else's metabolism.
+But they don't have their own metabolism. So it's, it's just depends on how you want to ask how you want to go I think of them as, you know, if, if chat GPT is alive, essentially, that's what viruses are, you know, somewhere there somewhere pretty close
+they've got some sort of genetic program going on but, and they make a lot of sense to talk about like they're alive but same time without their hosts.
+They're not, they're not fully.
+You know they need that, that help. I think they're alive.
+And I think that's that's reasonable.
+Oh, and I asked, I'm very curious about the freezer virus that you mentioned, oh yeah yeah story of the freezer virus. Oh dear, it's been so many years ago.
+I think it was an equine, some sort of horse.
+It was a lab that had it in a freezer, and they decided to send it to CDC.
+And the lady who was working on the assembly had to go through this rigorous process where she did basically what my program does where she would try to blast it pick a reference, she would assemble it it wasn't quite right.
+She did that she tried to assemble it again, assemble it again and eventually she has something out them we work together on this program, and I took the data and I got the same consensus and I was like, there you go, I saved you a bunch of work if you
+had had that earlier but, um, but yeah, those things do to happen.
+Most of the samples we get I would say are so called surveillance samples, but there are other kinds of samples we get to.
+Yeah.
+You said there's a lot of lag time between when you decide on a vaccine and when you actually administer the vaccine, when it is yeah. Is there a way to assess.
+If you think that vaccine is going to be less effective way to tweak it to get a more effective version. Is there a way to also measure the effectiveness of the vaccine.
+So the last question is yes, routinely.
+People do so called vaccine effectiveness studies, so a lot of these are involved in this activity.
+Look at Carrie read from CDC you'll find some of her work there I know she's she's worked on that.
+But there's, there's routine evaluation of vaccine effectiveness.
+Sometimes vaccines are figured out to be an ineffective I remember a few years ago there was a time where we were not recommending the so called live attenuated for a time, maybe for children or something because it was ineffective.
+And then later on we said it was fine again so sometimes you can, you can come out and say that of the viruses that are available or vaccines that are available.
+You should maybe pick this one and not that one for data driven reasons.
+In terms of actually trying to deal with the problem of, of the, you know, the time lag.
+I think people are trying to always make those processes faster, trying to do different kinds of prediction.
+There's a lot of science involved but there's probably some parts to.
+I personally only have worked on data that goes into what's called our package. So we have a whole big package from our collaborating center which is CDC.
+I've worked on that data but I've not actually gone and done the so called workshop for the so called vaccine consultation meeting is what it's called I'm not gone myself, but they're always interested in ways to try and short that leg or get a better,
+better prediction of what's going to happen to the future.
+Hopefully that's your question.
+Okay, please go ahead, please.
+Can someone ask the question on their behalf, Gary.
+Just go ahead and have me.
+Is it a chat question or no.
+He's got a raised hand.
+Oh, sorry I had to turn my volume up I could barely. No, no audio.
+Can you hear me, give her audio.
+Can you hear me now.
+Okay.
+Thanks for the talk, and you briefly mentioned storing the analytical data, but my question is related to the metadata, especially with something like coronavirus.
+I'm wondering how rapidly you guys are able to implement infrastructure, and what sort of resources you have for resources in terms of both humans and digital resources for both capturing sharing and ultimately using the metadata internally.
+I'm not sure what what kind of metadata like collection metadata laboratory information system metadata. Yeah, both so information about any sort of field work or the laboratory work that was done.
+Yeah. So, unfortunately, the, the phrase is building a plane while you fly it. What they like to use. And so, on the covert side.
+We were kind of fortunate in the fact that fluid already done some of this work, but the work, and the data streams were different.
+So we're able to apply infrastructure that flu had developed and programs that have been developed to cope it and collaborate to do that.
+And so it evolved over the course of the pandemic to now it's sort of old hat, but in the beginning, there was a wild scramble to try and transfer things down should have been that way.
+I don't know. I work in fluid we have we have we were ready to go. We're always trying to be ready to go. But, you know, maybe the idea of a coronavirus pandemic of that time.
+So, I'm not going to lay blame I'm just gonna say that descriptively.
+A lot of work went into adapting existing infrastructure.
+And then those data streams with the metadata that you're interested in.
+Those can exist in different kinds of systems, so getting the right data flow to then integrate that data.
+It's kind of, it's not scientific work really it's data engineering, but it does take a lot of finesse, and a lot of preparation a lot of thought to try and get it to run smoothly, and then scale because data just keeps coming and if you're not ready
+for it.
+Your system will be able to handle it so I don't know if that answers your question but feel free to clarify. Yeah, thanks.
+Yes.
+My question is more like career development. Sure. So, what's the difference of role as a magician or epidemiology CDC. Does it take different job station.
+Yeah, so for better or worse, historically speaking, CDC has been an epidemiologist first institution lab.
+I would say it's been then the second kind of tears. It's been very important in informatics, for better or worse has been sort of, you know, the follower, because of the pandemic in particular.
+There's been a surge in all kinds of hiring actions related to data scientists data analysis, and more information, we've always had information that are needed.
+I think the awareness has increased how critical that work is, even though because historically speaking we think about CDC roots with
+Was it malaria, I'm trying to remember.
+Now was it malaria, some sort of some sort of vector born. Maybe it was, I don't remember. Anyway, but, you know, things have gone from, you know, very simple routes to very complex and comprehensive public health mission.
+So, that's going to involve data that's going to involve computer science, that's going to involve statistics, that's going to bio stats that's going to involve algorithms and and traditional bioinformatics as well as more, you know, more software engineering
+types of approaches and data engineering so that there's a whole broad spectrum of things that you can do with that skill set.
+I would say that CDC is more mission oriented, say, probably working in academia, although I've only been an intern and had grad school experience but I you know your, your work is definitely shaped by what what information products agency needs to
+produce.
+You contribute to that.
+For the question. So, what do you think like as a mathematician, what kind of quality is lacking compared to the epidemiologist.
+What kind of. So let me try to understand the question what kind of qualities are lacking from an epidemiologist versus, you know, as I'm a, I'm a fourth year student as a mathematician.
+If I want to make a shift to be an epidemiologist qualities, they're just different disciplines focus areas, they're both important.
+And some of them are, you know, more focusing on the collection of of epidemiological data. Some of them are more focused on the forecasting and prediction statistical modeling sides of it.
+So there's a lot of different things you can do in epidemiology there's also, I know groups here that probably study, so called genomic epidemiology, things like that are.
+So you molecular epidemiology is probably what you would call it. So, on the bioinformatics side that's kind of why sequence surveillance is so interesting to us is because it combines
+the bioinformatics work, plus some data engineering plus some other pieces with some of the public health epidemiology side but instead of focusing on traditional case reporting, you're focusing on sequence evolution and expansion of clades expansion
+of drug resistant mutations or not.
+You know, trying to compare genotype with phenotype.
+So there's a lot of epidemiology, more molecular epidemiology tasks to do on the informatics side although you probably be working with other people who did more pure epi work.
+Yeah.
+So related question, and one more question.
+So in your experience, is it like, is there a blend or is there silos from molecular epi like our epi's folk, like, have you seen epi's that do molecular epi or is it like you have to work together and you guys do that.
+The genomic side I mean, so they do have some crosstalk. But as long as I've been at CDC, there's been this lab.
+At the initiative, trying to bring us together.
+So information is typically will work with. If you're a magician working with the lab you're buying a petition, basically, if you're a mathematician working with epi is you're basically a data scientist or a data engineer, like that's kind of, if you're
+going to support, you know, the lab people are the traditional happy people that's kind of the role that you'll find yourself in.
+You know I've collaborated with them.
+The serology work for example that I showed where we're trying to look at
+representative strain to see if they're at least as good as the vaccine that I mentioned.
+There's a lot of work that was done by the, by the epi branch that then we productionalized within informatics and informatics still does it because we have enough statistical background to do it.
+But then we could go a step farther and we can apply all the clay annotations to all the sequences and we can, we can integrate all those extra sequence metadata that we have that the epi's didn't have when they were running it on their own.
+It's just sort of like find opportunities for those collaborations, but typically, the honest question is they've, they've been more separate but but there are there is crosstalk and we're trying to bring them together as much as we can.
+Okay.
+Um, and then the other question is,
+I was wondering how you decided to go from arise to FT versus yes like, have you had experience with yes officers.
+Do you know if it was like super necessary.
+I mean, explanation of those acronyms.
+Yeah, so I'm.
+Go ahead.
+So, so, to me, and I had limited exposure to them, they're doing a lot more pure epi, whereas I'm coming from computer science first and math, and then biomedical science, and then mathematics.
+So I'm coming from a different worldview probably.
+And so I'm trying to bring so my particular background from my personal experience like I'm trying to find math and computer science that I can bring and leverage and in the biological domain of viruses for the public health mission that I have.
+So, because that's where I lean I kind of lean towards that computational side. Yeah. But the other people that lean more towards the biology, or the six.
+So if you lean more towards traditional statistics, you might consider epi, because there's a lot of stats and epi.
+But there's a whole lot of other aspects to it too.
+I'm not qualified to talk about.
+Yeah, I just don't have a good picture of how melding happens, because what from what you're saying it sounds like it's more collaboration that individuals having like being more multidisciplinary in themselves.
+I mean, mathematics is multidisciplinary, but, but in terms of doing that we had an epi in our group but she had to stay, who switched to bioinformatics, and she left for personal reasons but I'm not related to our work.
+From my experience observing her she enjoyed informatics, but I guess I don't know anyone who's.
+I don't know if I have an anecdote of somebody who went from informatics to epi.
+I know I know the reverse I've seen the reverse.
+If you were to work with epis, you would end up probably starting out doing data engineering data science, I would imagine that that's because you would use your same skill sets in programming, and hopefully statistics to to leverage yourself that way.
+Data visualization. Yeah.
+All those things are important.
+And the epis are not necessarily, they're not usually very computational.
+That's kind of what I was wondering. They're using SAS, R, maybe, and they know what they know they're experts, they're to be respected but that's why there are other positions they can augment their function.
+And they get informaticians too, they have they, they will hire informaticians, but I'm saying the role they play is more of a data science data engineering.
+Yeah.
+Yeah.
+So,
+at CDC, like would they extensively train you to start using like the same kinds of analysis, they use or would they bring your own individual expertise.
+I can't speak for for everyone at CDC.
+But my own personal experience watching others is that there's usually some sort of cross pollination, where there's particular project or report that they that they need to do so I can, I can think of some data analysts that I know, data scientists
+or data analysts that I collaborate with that are very good, they work with the epis.
+And so they're probably bringing their Python programming and their data visualization background, and they're helping at these solve their problems so it's more like they're bringing their skills to their problems.
+So, these are providing the data, the data domain, whereas the competitions are providing the skill missing skill sets for that data domain. Oh, that's your question.
+So I imagine it again like your mileage may vary on who you are with.
+It'd be different in different groups.
+Small anecdote.
+Any other questions.
+Online.
+All right.
+Thanks very much. Those who are sticking around for lunch.
+See you later.
+Thank you.
+We have to follow.
+Everything has to be exactly we just
