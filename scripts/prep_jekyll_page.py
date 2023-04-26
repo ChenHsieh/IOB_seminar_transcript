@@ -22,6 +22,6 @@ for video_title,url in zip(videos['video_title'], videos['url']):
         for sn,info in transcripts.iterrows():
 
             time_string = '{:02d}:{:02d}:{:06.3f}'.format((info['start'] // 3600000) % 24, (info['start'] // 60000) % 60, (info['start'] % 60000) / 1000)
-            f.write(f"![{time_string}]({url}&t={int(info['start']/1000)})\t{info['text']}")
+            f.write(f"[{time_string}]({url}&t={int(info['start']/1000)})\t{info['text']}")
             f.write('\n\n')
 
