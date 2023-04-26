@@ -23,5 +23,4 @@ Finally, I used `prep_jekyll_page.py` to generate the markdown file for each tra
 
 I will update when I want to. Please feel free to use the transcripts for your own purpose or contact me for more interesting project. 
 
-
-y.at/💻🌲🎓🚀🌕
+links: https://y.at/💻🌲🎓🚀🌕
